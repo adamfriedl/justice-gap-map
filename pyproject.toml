@@ -1,0 +1,13 @@
+[project]
+name = "justice-gap-map"
+version = "0.1.0"
+description = "Where consumer-debt harm is high and civil legal aid is thin"
+requires-python = ">=3.12"
+dependencies = [
+    "duckdb",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+]

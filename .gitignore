@@ -1,0 +1,21 @@
+# Downloaded and generated data (never commit raw data)
+data/
+
+# Python
+__pycache__/
+*.py[oc]
+.venv/
+.pytest_cache/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+
+# Secrets
+.env
+*.env
+
+.DS_Store
