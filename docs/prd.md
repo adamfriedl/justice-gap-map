@@ -34,7 +34,7 @@ The longer-term goal is legal-process education for people who default on a comp
 1. **One defensible finding.** For example: "These N service areas have the highest debt-collection complaint rate per eligible resident and the lowest LSC funding per eligible resident." It must hold up to a legal-aid reader's scrutiny.
 2. **Reproducible and refreshable.** One command (or a schedule) pulls new data, rebuilds the tables, and regenerates the map. No manual steps.
 3. **An independent archive.** Keep dated, unchangeable snapshots of the CFPB data. The CFPB has been politically exposed since 2025, and an archive matters if the public data is restricted.
-4. **All infrastructure in Terraform on AWS**, hand-written by the maintainer (see `AGENTS.md`), and explainable in 10 minutes.
+4. **All infrastructure in Terraform on AWS**, written to be read: the maintainer reviews every infra PR and can explain it in 10 minutes.
 5. **Cheap.** Idle cost near $0, and under ~$10/month while active.
 
 ## Non-goals (v1)
@@ -128,7 +128,7 @@ This decides whether the project is viable. No AWS needed, so it suits cloud ses
 
 **Go/no-go:** continue if LSC data can be attached to some geography, more than ~70% of complaints can be placed, and nobody has already published this. Otherwise write down why in `docs/phase0/` and stop.
 
-### Phase 1: AWS bootstrap (local, by the maintainer)
+### Phase 1: AWS bootstrap (run once locally with admin credentials)
 
 - [ ] Account hygiene, S3 Terraform state backend with `use_lockfile`, GitHub OIDC provider and plan/apply roles scoped to this repo
 - [ ] A GitHub `production` environment with required reviewers, so `apply` needs approval

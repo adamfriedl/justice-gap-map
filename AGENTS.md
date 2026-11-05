@@ -9,7 +9,7 @@ A data pipeline and map joining CFPB debt-collection complaints, LSC legal aid f
 ## Rules
 
 - **Never run `terraform apply` or any command that changes AWS.** Cloud sessions have no AWS credentials, by design. Infra changes go through a PR, where GitHub Actions runs `plan`, and `apply` runs on main after manual approval.
-- **Terraform under `infra/` is hand-written by the maintainer.** Review it, explain it, and suggest changes in PR comments or chat. Don't author or rewrite it unless the maintainer asks you to in that session.
+- **You may write the Terraform under `infra/`.** Keep it plain and explainable: small modules, no clever abstractions, comments on any non-obvious IAM or networking choice. Every infra PR description says what it creates, what it costs, and what the IAM grants. The maintainer reads it before approving `apply`.
 - **Raw data never goes in git.** Downloads go under `data/` (gitignored). Commit only small derived results: summary tables, data-quality reports, and notes under `docs/`.
 - **No secrets in the repo.** `CENSUS_API_KEY` and `HUD_API_TOKEN` come from the environment. If one is missing, say so and stop that step. Don't hardcode a workaround.
 - **Be descriptive, not causal.** Findings describe where need and resources diverge. Don't rank or criticize individual legal aid programs.
