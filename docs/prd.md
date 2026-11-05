@@ -88,6 +88,12 @@ The longer-term goal is legal-process education for people who default on a comp
 - R11. GitHub Actions authenticating through OIDC. `terraform plan` on PRs; `apply` on main behind a GitHub environment that needs manual approval.
 - R12. Least privilege: the ingest role writes only to raw, the transform role reads raw and writes curated, the query role is read-only on curated.
 - R13. Scales to zero when idle. No always-on compute.
+- R14. **Read-only cloud-session access.** An IAM user `claude-cloud-readonly`, defined in Terraform, whose access key lives only in the Claude Code cloud environment's env vars. It may:
+  - read the raw and curated buckets (`s3:GetObject`, `s3:ListBucket`)
+  - run Athena queries in the project workgroup only, writing results only to an `athena-scratch/` prefix (the one write it has), and read the Glue catalog
+  - read the project's CloudWatch logs and ECS/Lambda job status
+
+  It has no IAM, no resource creation or deletion, no access to other buckets, and no writes to raw or curated. A permissions boundary caps it even if its policy is later loosened by mistake. Keys are rotated at least every 90 days and on any suspicion. Its access must be visible in CloudTrail.
 
 ## Architecture (v1)
 
@@ -132,12 +138,14 @@ This decides whether the project is viable. No AWS needed, so it suits cloud ses
 
 - [ ] Account hygiene, S3 Terraform state backend with `use_lockfile`, GitHub OIDC provider and plan/apply roles scoped to this repo
 - [ ] A GitHub `production` environment with required reviewers, so `apply` needs approval
+- [ ] The permissions boundary for `claude-cloud-readonly` (R14). The user and its scoped policy land in Phase 2, once the buckets and workgroup exist.
 
-Cloud sessions never get AWS credentials. Everything after this phase reaches AWS only through Actions.
+Cloud sessions never get write access to AWS. Every change reaches AWS through Actions. After Phase 2 they can hold the read-only key from R14 for querying and debugging.
 
 ### Phase 2: pipeline infrastructure (~6–8 hours)
 
-- [ ] Terraform modules under `infra/`: `storage` (raw/curated buckets, versioning, Object Lock, lifecycle), `catalog` (Glue database and tables, Athena workgroup with a 1 GB scan cap), `jobs` (ECR repo, Fargate task definitions, Lambda), `schedule` (EventBridge Scheduler), `iam` (the three roles from R12), `budget`
+- [ ] Terraform modules under `infra/`: `storage` (raw/curated buckets, versioning, Object Lock, lifecycle), `catalog` (Glue database and tables, Athena workgroup with a 1 GB scan cap), `jobs` (ECR repo, Fargate task definitions, Lambda), `schedule` (EventBridge Scheduler), `iam` (the three roles from R12, plus the `claude-cloud-readonly` user from R14), `budget`
+- [ ] After apply, the maintainer creates the read-only user's access key in the console and pastes it into the cloud environment's env vars (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`). Terraform must not create the key, so it never lands in state.
 - [ ] Threat model, one page, written **before** building: data integrity of the archive, IAM blast radius, and the public site (STRIDE)
 - [ ] CI: plan on PRs, apply on main, tflint + checkov
 
