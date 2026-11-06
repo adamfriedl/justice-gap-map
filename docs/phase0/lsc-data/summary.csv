@@ -1,0 +1,12 @@
+source,type,geography_class,areas
+map module,Agricultural Worker,,33
+map module,Basic Field General,,130
+map module,Native American,,27
+2027 competition,Agricultural Worker,all_counties,9
+2027 competition,Agricultural Worker,whole_counties,1
+2027 competition,Basic Field - General,all_counties,13
+2027 competition,Basic Field - General,partial,2
+2027 competition,Basic Field - General,whole_counties,21
+2027 competition,Native American,all_counties,2
+2027 competition,Native American,partial,10
+2027 competition,Native American,whole_counties,2

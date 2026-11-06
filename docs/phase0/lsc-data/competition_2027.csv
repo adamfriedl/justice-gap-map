@@ -1,0 +1,61 @@
+area,state,type,poverty_population,estimated_grant,geographic_area,geography_class
+AK-1,AK,Basic Field - General,98225,1120120,Serves all counties,all_counties
+NAK-1,AK,Native American,,784099,Serves all counties,all_counties
+AZ-2,AZ,Basic Field - General,51556,587928,"Coconino, Apache (the Navajo and Hopi reservation areas), Navajo (the Navajo and Hopi Reservation areas)",partial
+NAZ-5,AZ,Native American,,3783315,"Serves Native Americans living on or near the Navajo Reservation in Arizona, New Mexico and Utah, and the Hopi Reservation in Arizona, and members living off reservation who have cases which require litigation in tribal court",partial
+MCA,CA,Agricultural Worker,385500,4396090,Serves all counties,all_counties
+CA-14,CA,Basic Field - General,291884,3328538,San Diego,whole_counties
+CA-31,CA,Basic Field - General,546703,6234396,"Colusa, Imperial, Kern (northwest portion), Madera, Monterey, San Benito, San Joaquin, San Luis Obispo, Santa Barbara, Santa Clara (Gilroy and Morgan Hill Area), Santa Cruz, Sonoma, Stanislaus, Sutter, Ventura, Yuba",partial
+NCT-1,CT,Native American,,22699,Serves all counties,all_counties
+DE-1,DE,Basic Field - General,103180,1176631,Serves all counties,all_counties
+MID,ID,Agricultural Worker,37518,427846,Serves all counties,all_counties
+ID-1,ID,Basic Field - General,156117,1780293,Serves all counties,all_counties
+NID-1,ID,Native American,,94194,"Serves Native Americans living in all counties in Idaho, including the Coeur D'Arlene, Nez Perce, Kootenai, Fort Hall, Northwestern Band of Shoshoni and Duck Valley Indian Reservations",partial
+MIA,IA,Agricultural Worker,26165,298371,Serves all counties,all_counties
+IA-3,IA,Basic Field - General,325060,3706864,Serves all counties,all_counties
+KS-1,KS,Basic Field - General,319650,3645166,Serves all counties,all_counties
+KY-5,KY,Basic Field - General,192463,2194777,"Adair, Bell, Breathitt, Casey, Clark, Clay, Clinton, Cumberland, Estill, Floyd, Garrard, Harlan, Jackson, Johnson, Knott, Knox, Laurel, Lawrence, Lee, Leslie, Letcher, Lincoln, McCreary, Madison, Magoffin, Martin, Monroe, Owsley, Perry, Pike, Powell, Pulaski, Rockcastle, Russell, Wayne, Whitley, Wolfe",whole_counties
+MMX-1,ME,Agricultural Worker,33224,378874,"Serves agricultural workers in all counties in Connecticut, New Hampshire, Maine, Massachusetts, Rhode Island, and Vermont",whole_counties
+ME-1,ME,Basic Field - General,131063,1494597,Serves all counties,all_counties
+NME-1,ME,Native American,,93449,"Serves Native Americans living in all counties in Maine, including the Micmac tribe",whole_counties
+MI-13,MI,Basic Field - General,523954,5974974,"Macomb, Oakland, Wayne",whole_counties
+MI-14,MI,Basic Field - General,191484,2183610,"Arenac, Bay, Clare, Genesee, Gladwin, Gratiot, Huron, Isabella, Lapeer, Midland, Saginaw, St. Clair, Sanilac, Tuscola",whole_counties
+NMN-1,MN,Native American,,346486,"Serves Native Americans living within the boundaries of the Leech Lake, White Earth and Red Lake Indian Reservations",partial
+MNE,NE,Agricultural Worker,20875,238047,Serves all counties,all_counties
+NE-4,NE,Basic Field - General,181205,2066396,Serves all counties,all_counties
+NNE-1,NE,Native American,,47925,"Serves Native Americans living in all counties in Nebraska, including those who live on the Winnebago, Omaha and Santee Sioux Indian Reservations",partial
+NV-1,NV,Basic Field - General,377505,4304922,Serves all counties,all_counties
+NNV-1,NV,Native American,,192792,"Serves Native Americans living in all counties in Nevada, including those who live on the Yerington, Pyramid Lake, Walker River & Moapa River Indian Reservations.",partial
+MNJ,NJ,Agricultural Worker,15222,173582,Serves all counties,all_counties
+NJ-8,NJ,Basic Field - General,116220,1325331,Essex,whole_counties
+NJ-15,NJ,Basic Field - General,63953,729296,"Hunterdon, Morris, Somerset, Sussex, Warren",whole_counties
+NJ-17,NJ,Basic Field - General,157647,1797742,"Mercer, Middlesex, Union",whole_counties
+NJ-18,NJ,Basic Field - General,237350,2706644,"Bergen, Hudson, Passaic",whole_counties
+NJ-20,NJ,Basic Field - General,296379,3379789,"Monmouth, Ocean,Atlantic, Burlington, Camden, Cape May, Cumberland, Gloucester, Salem",whole_counties
+NM-1,NM,Basic Field - General,23991,273581,San Juan,whole_counties
+NM-2,NM,Native American,,32940,Serves Native Americans living on or near the Jicarilla Indian Reservation,partial
+OH-24,OH,Basic Field - General,439824,5015580,"Adams, Athens, Belmont, Carroll, Coshocton, Delaware, Fairfield, Fayette, Franklin, Gallia, Guernsey, Harrison, Hocking, Holmes, Jackson, Jefferson, Knox, Lawrence, Licking, Madison, Marion, Meigs, Monroe, Morgan, Morrow, Muskingum, Noble, Perry, Pickaway, Pike, Ross, Scioto, Tuscarawas, Union, Vinton, Washington",whole_counties
+MOR,OR,Agricultural Worker,54373,620052,Serves all counties,all_counties
+OR-6,OR,Basic Field - General,452172,5156392,Serves all counties,all_counties
+NOR-1,OR,Native American,,267643,"Serves Native Americans living in all counties in Oregon, including those who live on all reservations in Oregon",partial
+PA-25,PA,Basic Field - General,317563,3621363,"Adams, Bedford, Berks, Blair, Centre, Clearfield, Cumberland, Dauphin, Franklin, Fulton, Huntingdon, Juniata, Lancaster, Lebanon, Mifflin, Perry, Schuylkill, York",whole_counties
+PA-27,PA,Basic Field - General,137645,1569649,"Armstrong, Cambria, Clarion, Fayette, Greene, Indiana, Jefferson, Somerset, Washington, Westmoreland",whole_counties
+RI-1,RI,Basic Field - General,113657,1296101,Serves all counties,all_counties
+SD-4,SD,Basic Field - General,48650,554786,"Bennett, Brule, Buffalo, Butte, Campbell, Charles Mix, Corson, Custer, Dewey, Fall River, Grant, Gregory, Haakon, Harding, Hughes, Hyde, Jackson, Jones, Lawrence, Lyman, Meade, Mellette, Pennington, Perkins, Potter, Roberts, Shannon, Stanley, Sully, Todd, Tripp, Walworth, Ziebach",whole_counties
+NSD-1,SD,Native American,,1353726,"Serves Native Americans living in all counties in South Dakota, including those who live on the Standing Rock, Cheyenne River, Crow Creek, Pine Ridge, Rosebud, Lower Brule, Yankton and Lake Traverse Indian Reservations",partial
+TN-4,TN,Basic Field - General,178022,2030093,"Fayette, Lauderdale, Shelby, Tipton",whole_counties
+TX-14,TX,Basic Field - General,1113549,12698489,"Andrews, Archer, Armstrong, Bailey, Baylor, Borden, Briscoe, Brown, Callahan, Carson, Castro, Childress, Clay, Cochran, Coke, Coleman, Collin, Collingsworth, Comanche, Concho, Cooke, Cottle, Crane, Crosby, Dallam, Dallas, Dawson, Deaf Smith, Denton, Dickens, Donley, Eastland, Ector, Ellis, Erath, Fannin, Fisher, Floyd, Foard, Gaines, Garza, Glasscock, Gray, Grayson, Hale, Hall, Hansford, Hardeman, Hartley, Haskell, Hemphill, Hockley, Hood, Howard, Hunt, Hutchinson, Irion, Jack, Johnson, Jones, Kaufman, Kent, King, Knox, Lamb, Lipscomb, Loving, Lubbock, Lynn, McCulloch, Martin, Menard, Midland, Mills, Mitchell, Montague, Moore, Motley, Nolan, Ochiltree, Oldham, Palo Pinto, Parker, Parmer, Potter, Randall, Reagan, Roberts, Rockwall, Runnels, San Saba, Schleicher, Scurry, Shackelford, Sherman, Somervell, Stephens, Sterling, Stonewall, Swisher, Tarrant, Taylor, Terry, Throckmorton, Tom Green, Upton, Ward, Wheeler, Wichita, Wilbarger, Winkler, Wise, Yoakum, Young",whole_counties
+MUT,UT,Agricultural Worker,10737,122438,Serves all counties,all_counties
+UT-1,UT,Basic Field - General,293513,3347112,Serves all counties,all_counties
+NUT-1,UT,Native American,,119278,"Serves Native Americans living in all counties in Utah, except those living on or near the Navajo Reservation, including Native Americans who live on or near the Indian Reservations of Goshute, Skull Valley, Southern Paiute, Uintah and Ouray",partial
+VT-1,VT,Basic Field - General,54718,623978,Serves all counties,all_counties
+VI-1,VI,Basic Field - General,19338,220523,Serves all islands in the U.S. Virgin Islands,whole_counties
+MVA,VA,Agricultural Worker,30848,351779,Serves all counties,all_counties
+VA-15,VA,Basic Field - General,97256,1109067,"Bland, Buchanan, Carroll, Dickenson, Floyd, Giles, Grayson, Lee, Montgomery, Pulaski, Russell, Scott, Smyth, Tazewell, Washington, Wise, Wythe, Bristol city, Galax city, Norton city, Radford city",whole_counties
+VA-16,VA,Basic Field - General,182636,2082710,"Accomack, Gloucester, James City, Mathews, Middlesex, Northampton, York, Chesapeake city, Hampton city, Newport News city, Norfolk city, Poquoson city, Portsmouth city, Virginia Beach city, Williamsburg city",whole_counties
+VA-18,VA,Basic Field - General,150823,1719931,"Albemarle, Charles City, Chesterfield, Dinwiddie, Fluvanna, Goochland, Greene, Hanover, Henrico, Louisa, Nelson, New Kent, Powhatan, Prince George, Surry, Charlottesville city, Colonial Heights city, Hopewell city, Petersburg city, Richmond city",whole_counties
+MWA,WA,Agricultural Worker,101018,1151972,Serves all counties,all_counties
+WA-1,WA,Basic Field - General,693407,7907345,Serves all counties,all_counties
+NWA-1,WA,Native American,,413014,"Serves Native Americans living in all counties in Washington, including those who live on its more than 25 Indian Reservations",partial
+WI-2,WI,Basic Field - General,115311,1314967,"Ashland, Barron, Bayfield, Burnett, Chippewa, Clark, Douglas, Dunn, Eau Claire, Florence, Forest, Iron, Langlade, Lincoln, Marathon, Marinette, Menominee, Oconto, Oneida, Pepin, Pierce, Polk, Portage, Price, Rusk, St. Croix, Sawyer, Shawano, Taylor, Vilas, Washburn, Waupaca, Wood",whole_counties
+NWI-1,WI,Native American,,224902,"Serves Native Americans living in all counties in Wisconsin, including the Indian Country of the Menominee, Stockbridge-Munsee, Ho-Chunk, Potawatomi, Lac du Flambeau, Oneida, Mole Lake, Lac Courte Oreilles, St.Croix, Bad River, and Red Cliff",whole_counties
