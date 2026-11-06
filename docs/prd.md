@@ -131,8 +131,9 @@ Each phase ends with something you can show. Estimates assume part-time evenings
 This decides whether the project is viable. No AWS needed, so it suits cloud sessions. Raw downloads stay out of git. Commit only small results (tables, notes) under `docs/phase0/`.
 
 - [ ] **LSC:** find out exactly what's downloadable: service area boundaries or their county lists, funding by grantee or service area, and GAR case closures. If service areas can't be rebuilt from counties, switch the unit to county and write the reason down.
-- [ ] **CFPB:** download the full CSV. Measure the share of debt-collection complaints with a 5-digit ZIP, a 3-digit ZIP, or none, by state. If more than ~30% can't be placed, reconsider the unit (state, or 3-digit ZIP areas).
-- [ ] **Crosswalk:** pull HUD ZIP→county and check how many complaint ZIPs it matches.
+- [x] **CFPB:** download the full CSV. Measure the share of debt-collection complaints with a 5-digit ZIP, a 3-digit ZIP, or none, by state. If more than ~30% can't be placed, reconsider the unit (state, or 3-digit ZIP areas).
+- [x] **Crosswalk:** pull HUD ZIP→county and check how many complaint ZIPs it matches.
+  _Both done 2026-11-06: 89.5% of debt-collection complaints place in a county, but masking hits rural states hardest. See `docs/phase0/cfpb-zip-and-crosswalk.md`._
 - [ ] **Do complaints measure need?** Most debt cases end in default, and people who default are the least likely to file a CFPB complaint, so complaint rates may run opposite to need.
   - Get a pressure measure that doesn't depend on awareness: confirm the Urban Institute's county-level debt-in-collections data is downloadable and how recent it is.
   - In one state with open court data (January Advisors' Texas work first), compare county complaint rates with county debt-lawsuit filing rates, and with debt in collections.
