@@ -39,7 +39,7 @@ The longer-term goal is legal-process education for people who default on a comp
 
 ## Non-goals (v1)
 
-- Court records or lawsuit data. CFPB complaints are a stand-in for consumer harm, not for lawsuits. Court data is a v2 question.
+- Court records or lawsuit data as a national measure. CFPB complaints are a stand-in for consumer harm, not for lawsuits. One state's court data is used in Phase 0 only to test whether complaints track lawsuits.
 - Products other than debt collection. The pipeline should handle any product, but only debt collection gets analyzed.
 - Causal claims. This is descriptive: it shows where need and resources diverge, not why.
 - Ranking or criticizing individual legal aid programs.
@@ -53,6 +53,8 @@ The longer-term goal is legal-process education for people who default on a comp
 | [CFPB Consumer Complaint Database](https://www.consumerfinance.gov/data-research/consumer-complaints/) | Every published complaint: product, issue, company, date, state, ZIP, company response, optional narrative | 5-digit ZIP, 3-digit ZIP, or blank | Daily | ZIP is shortened or hidden for small-population areas, and the rules differ between docs ([field reference](https://cfpb.github.io/api/ccdb/fields.html), [data-use page](https://www.consumerfinance.gov/complaint/data-use/)). Only people who know about the CFPB file, so expect awareness bias. The data may not continue. |
 | [LSC research & data](https://www.lsc.gov/research-data), [service areas](https://www.lsc.gov/grants-grantee-resources/our-grant-programs/basic-field-grant/lsc-service-areas), [DataEase](https://www.lscdataease.org/) | Grantee funding and Grantee Activity Report case closures | LSC service area (usually made of counties; **not confirmed**) | Annual | **Downloadable boundaries and grantee data not yet confirmed.** This is the riskiest source. |
 | Census ACS 5-year (API) | Population at or below 125% of poverty (LSC's eligibility line), renters, limited English, broadband, age | Tract, county, ZCTA | Annual | Margins of error get large in small areas |
+| [Urban Institute, Debt in America](https://apps.urban.org/features/debt-interactive-map/) (**Phase 0 candidate**) | Share of people with debt in collections, from credit bureau records | County (**not confirmed**) | Irregular | Measures who is being collected on, whether or not they complain. Download format and latest year not yet confirmed. |
+| IRS Form 990 data for legal-services nonprofits (**Phase 0 candidate**) | Revenue of legal aid organizations, LSC-funded or not | Organization address | Annual | An address isn't a service area; statewide organizations are usually headquartered in the capital. |
 | [HUD-USPS ZIP crosswalk](https://www.huduser.gov/portal/datasets/usps_crosswalk.html) | Weights for converting ZIP ↔ county/tract | ZIP → county | Quarterly | Use the file that goes in the right direction. Some ZIPs are missing. Needs a registered API token. |
 
 **Unit of analysis:** the LSC service area if Phase 0 confirms boundaries can be built (probably as sets of counties). Fall back to county otherwise, attaching LSC funding where a service area maps cleanly to counties.
@@ -64,6 +66,8 @@ The longer-term goal is legal-process education for people who default on a comp
 - LSC case closures per eligible resident, if the data allows
 - A simple **gap score**: high complaint rate plus low funding (rank-based, and explained in plain words, not a black box)
 - Context columns: share of renters, share with limited English, share without broadband
+
+These metrics are provisional. The Phase 0 validity checks may replace complaints as the pressure measure, or LSC funding as the resource measure.
 
 ## Requirements
 
@@ -122,17 +126,30 @@ Design choice: DuckDB inside the Fargate task does the heavy transforms (cheap a
 
 Each phase ends with something you can show. Estimates assume part-time evenings.
 
-### Phase 0: data spikes and gap check (1–2 evenings, before any infra)
+### Phase 0: data spikes and gap check (3–4 evenings, before any infra)
 
 This decides whether the project is viable. No AWS needed, so it suits cloud sessions. Raw downloads stay out of git. Commit only small results (tables, notes) under `docs/phase0/`.
 
 - [ ] **LSC:** find out exactly what's downloadable: service area boundaries or their county lists, funding by grantee or service area, and GAR case closures. If service areas can't be rebuilt from counties, switch the unit to county and write the reason down.
 - [ ] **CFPB:** download the full CSV. Measure the share of debt-collection complaints with a 5-digit ZIP, a 3-digit ZIP, or none, by state. If more than ~30% can't be placed, reconsider the unit (state, or 3-digit ZIP areas).
 - [ ] **Crosswalk:** pull HUD ZIP→county and check how many complaint ZIPs it matches.
+- [ ] **Do complaints measure need?** Most debt cases end in default, and people who default are the least likely to file a CFPB complaint, so complaint rates may run opposite to need.
+  - Get a pressure measure that doesn't depend on awareness: confirm the Urban Institute's county-level debt-in-collections data is downloadable and how recent it is.
+  - In one state with open court data (January Advisors' Texas work first), compare county complaint rates with county debt-lawsuit filing rates, and with debt in collections.
+  - Explain the 2024–26 jump in debt-collection complaints (68K in 2023, 283K in 2025). Compare 2021 and 2025 by submission channel, issue mix, and company concentration. If bulk third-party filings drive it, filter them or use a pre-2024 baseline.
+- [ ] **Does LSC funding measure capacity?** LSC is a minority of civil legal aid funding, and state, IOLTA, and private money varies a lot by state. LSC-only figures would make states that fund legal aid heavily look underserved.
+  - Check whether LSC publishes grantees' total revenue from all sources, not just their LSC grant.
+  - Test IRS 990 data for legal-services nonprofits (NTEE I80-range) as a way to include non-LSC organizations. Decide how to handle statewide organizations.
+  - Pull state-level civil legal aid funding totals (e.g. the ABA's access-to-justice resource center) as a check on the state skew.
 - [ ] **Gap check, done properly:** search Google Scholar and SSRN. Check LSC's own reports, the NCSC, Pew, January Advisors (debt lawsuit data), and the Stanford Legal Design Lab and Suffolk LIT Lab sites. If someone already did this, look for what they left out or contribute to their work instead.
 - [ ] **One hand-built prototype:** a single state (pick one with clean ZIPs and county-based service areas) in DuckDB. Does any signal show up?
 
-**Go/no-go:** continue if LSC data can be attached to some geography, more than ~70% of complaints can be placed, and nobody has already published this. Otherwise write down why in `docs/phase0/` and stop.
+**Go/no-go:** continue if LSC data can be attached to some geography, more than ~70% of complaints can be placed, and nobody has already published this. Also:
+
+- **Pressure:** there's a pressure measure that holds up. Either complaints track lawsuit filings in the test state, or an awareness-free measure (debt in collections) is usable. If neither, stop: the map would point help at the wrong places.
+- **Resources:** there's a resource measure beyond LSC funding. If there isn't, narrow the claim to "federal legal aid investment vs. need" and say so in the title, or map pressure alone.
+
+Otherwise write down why in `docs/phase0/` and stop.
 
 ### Phase 1: AWS bootstrap (run once locally with admin credentials)
 
@@ -174,7 +191,7 @@ Findings about legal aid funding can read as criticism, so the people affected s
 
 - [ ] Read-only query layer (R9): MCP server over Athena, showing the SQL it ran
 - [ ] Add a second CFPB product (credit reporting, mortgages)
-- [ ] v2: court-side data for a state with open debt-lawsuit records, to test whether complaint rates track default rates
+- [ ] v2: court-side data for more states with open debt-lawsuit records, building on the Phase 0 test state
 
 **Total to a published v1:** roughly 30–40 hours after Phase 0.
 
@@ -193,6 +210,8 @@ Findings about legal aid funding can read as criticism, so the people affected s
 | LSC data is too coarse or not downloadable | Medium-high | Phase 0 spike; fall back to county or state; ask LSC's data office directly |
 | CFPB ZIP masking hides too much in rural areas | Medium | Measure in Phase 0; report it openly; use 3-digit ZIP areas or state for affected regions |
 | CFPB data restricted or discontinued | Medium | Archive from week one. If it happens, the archive becomes the story. |
+| Complaints track awareness, not need: people who default rarely complain | High | Phase 0 test against court filings and debt in collections; switch the pressure measure if complaints fail |
+| LSC funding misses most legal aid capacity, skewing results by state | High | Phase 0 check of grantee total revenue, 990 data, and state funding totals; otherwise narrow the claim to federal funding |
 | The finding just matches "poor places have less help" | Medium | Still useful locally. Look for surprises (well-funded areas with high complaint rates, and the reverse). Say so plainly if nothing surprising shows up. |
 | Scope creep into a web app | High | Static site only until v1 is published |
 | The finding reads as an attack on LSC or grantees | Low-medium | Phase 5 private review; frame it as "where more help is needed," not "who is failing" |
@@ -201,5 +220,6 @@ Findings about legal aid funding can read as criticism, so the people affected s
 
 1. What unit of analysis can the LSC data actually support? (Phase 0)
 2. Is a 3-year complaint window right, or should it be by year to show trends? Decide after seeing the data.
-3. Is there a state with open debt-collection court data good enough for the v2 check? January Advisors' Texas work is the first place to look.
-4. Is the education product the follow-on, with this map picking where to start? The idea: a 30-second "what happens next" walkthrough reachable from the summons, for one case type in one jurisdiction.
+3. Is there a state with open debt-collection court data good enough for the Phase 0 validity test? January Advisors' Texas work is the first place to look.
+4. If both debt in collections and complaints are usable, is the gap between them the real finding? Counties with lots of debt in collections but few complaints are where people aren't fighting back, which is where defaults happen.
+5. Is the education product the follow-on, with this map picking where to start? The idea: a 30-second "what happens next" walkthrough reachable from the summons, for one case type in one jurisdiction.
