@@ -134,10 +134,11 @@ This decides whether the project is viable. No AWS needed, so it suits cloud ses
 - [x] **CFPB:** download the full CSV. Measure the share of debt-collection complaints with a 5-digit ZIP, a 3-digit ZIP, or none, by state. If more than ~30% can't be placed, reconsider the unit (state, or 3-digit ZIP areas).
 - [x] **Crosswalk:** pull HUD ZIP→county and check how many complaint ZIPs it matches.
   _Both done 2026-11-06: 89.5% of debt-collection complaints place in a county, but masking hits rural states hardest. See `docs/phase0/cfpb-zip-and-crosswalk.md`._
-- [ ] **Do complaints measure need?** Most debt cases end in default, and people who default are the least likely to file a CFPB complaint, so complaint rates may run opposite to need.
+- [x] **Do complaints measure need?** Most debt cases end in default, and people who default are the least likely to file a CFPB complaint, so complaint rates may run opposite to need.
   - Get a pressure measure that doesn't depend on awareness: confirm the Urban Institute's county-level debt-in-collections data is downloadable and how recent it is.
   - In one state with open court data (January Advisors' Texas work first), compare county complaint rates with county debt-lawsuit filing rates, and with debt in collections.
   - Explain the 2024–26 jump in debt-collection complaints (68K in 2023, 283K in 2025). Compare 2021 and 2025 by submission channel, issue mix, and company concentration. If bulk third-party filings drive it, filter them or use a pre-2024 baseline.
+  _Done 2026-11-06: complaints fail (in Texas they barely track debt lawsuits, and the poorest counties complain least); Urban's county debt-in-collections share is usable and becomes the pressure measure. See `docs/phase0/complaints-vs-need.md`._
 - [ ] **Does LSC funding measure capacity?** LSC is a minority of civil legal aid funding, and state, IOLTA, and private money varies a lot by state. LSC-only figures would make states that fund legal aid heavily look underserved.
   - Check whether LSC publishes grantees' total revenue from all sources, not just their LSC grant.
   - Test IRS 990 data for legal-services nonprofits (NTEE I80-range) as a way to include non-LSC organizations. Decide how to handle statewide organizations.

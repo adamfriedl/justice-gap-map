@@ -1,0 +1,14 @@
+sample,x,y,description,n,spearman
+"pop >= 50,000, reporting >= 90%",rate_2025,filings_per_1k_2025,2025 complaint rate vs. 2025 debt-claim filing rate,66,0.24
+"pop >= 50,000, reporting >= 90%",rate_pre_surge,filings_per_1k_2025,2019-23 complaint rate vs. 2025 debt-claim filing rate,66,0.13
+"pop >= 50,000, reporting >= 90%",rate_2025_no_batch,filings_per_1k_2025,2025 rate excluding same-day batches vs. filing rate,66,0.176
+"pop >= 50,000, reporting >= 90%",totcoll,filings_per_1k_2025,debt in collections vs. 2025 debt-claim filing rate,66,0.101
+"pop >= 50,000, reporting >= 90%",rate_2025,totcoll,2025 complaint rate vs. debt in collections,66,-0.177
+"pop >= 50,000, reporting >= 90%",pct_lt125,filings_per_1k_2025,share under 125% of poverty vs. filing rate,66,-0.094
+"all counties, reporting >= 90%",rate_2025,filings_per_1k_2025,2025 complaint rate vs. 2025 debt-claim filing rate,225,0.452
+"all counties, reporting >= 90%",rate_pre_surge,filings_per_1k_2025,2019-23 complaint rate vs. 2025 debt-claim filing rate,225,0.443
+"all counties, reporting >= 90%",rate_2025_no_batch,filings_per_1k_2025,2025 rate excluding same-day batches vs. filing rate,225,0.518
+"all counties, reporting >= 90%",totcoll,filings_per_1k_2025,debt in collections vs. 2025 debt-claim filing rate,210,0.151
+"all counties, reporting >= 90%",rate_2025,totcoll,2025 complaint rate vs. debt in collections,210,0.135
+"all counties, reporting >= 90%",pct_lt125,filings_per_1k_2025,share under 125% of poverty vs. filing rate,225,-0.028
+"pop >= 50,000, reporting >= 90% both years",filed_ratio,complaint_ratio,2023->2025 growth in filings vs. growth in complaints,62,-0.042
