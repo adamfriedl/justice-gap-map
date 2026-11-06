@@ -1,0 +1,2 @@
+scope,distinct_zip5,distinct_zip5_matched,pct_distinct_matched,zip5_complaints,zip5_complaints_matched,pct_complaints_matched,pct_matched_in_single_county_zip,pct_matched_90pct_one_county,matched_complaints_no_residential_addr,pct_matched_state_mismatch,pct_zip3_in_single_county_prefix
+all,23292,22436,96.32,1103850,1102124,99.84,74.47,92.95,726,0.1,7.21
