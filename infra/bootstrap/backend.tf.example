@@ -1,0 +1,13 @@
+# Step 2 of the bootstrap (docs/aws-setup.md): after the first apply creates the
+# state bucket, copy this file to backend.tf, put in the bucket name from the
+# `state_bucket` output, and run `terraform init -migrate-state`.
+
+terraform {
+  backend "s3" {
+    bucket       = "justice-gap-map-tfstate-ACCOUNT_ID"
+    key          = "bootstrap/terraform.tfstate"
+    region       = "us-east-1"
+    encrypt      = true
+    use_lockfile = true
+  }
+}

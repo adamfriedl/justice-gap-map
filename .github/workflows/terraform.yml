@@ -1,0 +1,72 @@
+# Terraform for infra/main: plan on pull requests, apply on main after the
+# maintainer approves the "production" environment. infra/bootstrap is applied
+# by hand (docs/aws-setup.md) and is only format- and validity-checked here.
+name: terraform
+
+on:
+  pull_request:
+    paths: ["infra/**", ".github/workflows/terraform.yml"]
+  push:
+    branches: [main]
+    paths: ["infra/main/**", ".github/workflows/terraform.yml"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: terraform-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  TF_IN_AUTOMATION: "1"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.16.7
+      - run: terraform fmt -check -recursive infra
+      - run: terraform -chdir=infra/bootstrap init -backend=false -input=false && terraform -chdir=infra/bootstrap validate
+      - run: terraform -chdir=infra/main init -backend=false -input=false && terraform -chdir=infra/main validate
+
+  plan:
+    if: github.event_name == 'pull_request' && vars.AWS_PLAN_ROLE_ARN != ''
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write   # lets the job request a GitHub OIDC token for AWS
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.16.7
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_PLAN_ROLE_ARN }}
+          aws-region: us-east-1
+      - run: terraform -chdir=infra/main init -input=false -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
+      - run: terraform -chdir=infra/main plan -input=false -no-color
+
+  apply:
+    if: github.event_name == 'push' && vars.AWS_APPLY_ROLE_ARN != ''
+    needs: check
+    runs-on: ubuntu-latest
+    environment: production   # requires the maintainer's approval before this job starts
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.16.7
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_APPLY_ROLE_ARN }}
+          aws-region: us-east-1
+      - run: terraform -chdir=infra/main init -input=false -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
+      - run: terraform -chdir=infra/main apply -input=false -auto-approve -no-color

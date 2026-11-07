@@ -175,6 +175,8 @@ This decides whether the project is viable. No AWS needed, so it suits cloud ses
 
 Otherwise write down why in `docs/phase0/` and stop.
 
+**Decision (2026-11-07): go.** The maintainer chose to proceed to Phase 1, with v1 as a debt-lawsuit monitor.
+
 **Status (2026-11-07):**
 
 | Condition | Status | Evidence |
@@ -188,6 +190,7 @@ Otherwise write down why in `docs/phase0/` and stop.
 ### Phase 1: AWS bootstrap (run once locally with admin credentials)
 
 - [ ] Account hygiene, S3 Terraform state backend with `use_lockfile`, GitHub OIDC provider and plan/apply roles scoped to this repo
+  _Written in `infra/bootstrap/` with a runbook in `docs/aws-setup.md`; the maintainer applies it by hand. The IAM user is a plain IAM admin user with MFA (no IAM Identity Center), and its access key is deleted after the bootstrap._
 - [ ] A GitHub `production` environment with required reviewers, so `apply` needs approval
 - [ ] The permissions boundary for `claude-cloud-readonly` (R14). The user and its scoped policy land in Phase 2, once the buckets and workgroup exist.
 
