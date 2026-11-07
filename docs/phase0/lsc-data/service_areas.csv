@@ -1,0 +1,191 @@
+area,type,states
+AK-1,Basic Field General,02
+AL-4,Basic Field General,01
+AR-6,Basic Field General,05
+AR-7,Basic Field General,05
+AS-1,Basic Field General,60
+AZ-2,Basic Field General,04
+AZ-3,Basic Field General,04
+AZ-5,Basic Field General,04
+CA-1,Basic Field General,06
+CA-12,Basic Field General,06
+CA-14,Basic Field General,06
+CA-19,Basic Field General,06
+CA-2,Basic Field General,06
+CA-26,Basic Field General,06
+CA-27,Basic Field General,06
+CA-28,Basic Field General,06
+CA-29,Basic Field General,06
+CA-30,Basic Field General,06
+CA-31,Basic Field General,06
+CO-6,Basic Field General,08
+CT-1,Basic Field General,09
+DC-1,Basic Field General,11
+DE-1,Basic Field General,10
+FL-13,Basic Field General,12
+FL-14,Basic Field General,12
+FL-15,Basic Field General,12
+FL-16,Basic Field General,12
+FL-17,Basic Field General,12
+FL-18,Basic Field General,12
+FL-5,Basic Field General,12
+GA-1,Basic Field General,13
+GA-2,Basic Field General,13
+GU-1,Basic Field General,66
+HI-1,Basic Field General,15
+IA-3,Basic Field General,19
+ID-1,Basic Field General,16
+IL-3,Basic Field General,17
+IL-6,Basic Field General,17
+IL-7,Basic Field General,17
+IN-5,Basic Field General,18
+KS-1,Basic Field General,20
+KY-10,Basic Field General,21
+KY-2,Basic Field General,21
+KY-5,Basic Field General,21
+KY-9,Basic Field General,21
+LA-13,Basic Field General,22
+LA-15,Basic Field General,22
+MA-10,Basic Field General,25
+MA-11,Basic Field General,25
+MA-12,Basic Field General,25
+MA-4,Basic Field General,25
+MD-1,Basic Field General,24
+ME-1,Basic Field General,23
+MI-12,Basic Field General,26
+MI-13,Basic Field General,26
+MI-14,Basic Field General,26
+MI-15,Basic Field General,26
+MI-9,Basic Field General,26
+MN-1,Basic Field General,27
+MN-4,Basic Field General,27
+MN-5,Basic Field General,27
+MN-6,Basic Field General,27
+MO-3,Basic Field General,29
+MO-4,Basic Field General,29
+MO-5,Basic Field General,29
+MO-7,Basic Field General,29
+MP-1,Basic Field General,69
+MS-10,Basic Field General,28
+MS-9,Basic Field General,28
+MT-1,Basic Field General,30
+NC-5,Basic Field General,37
+ND-3,Basic Field General,38
+NE-4,Basic Field General,31
+NH-1,Basic Field General,33
+NJ-15,Basic Field General,34
+NJ-17,Basic Field General,34
+NJ-18,Basic Field General,34
+NJ-20,Basic Field General,34
+NJ-8,Basic Field General,34
+NM-1,Basic Field General,35
+NM-5,Basic Field General,35
+NV-1,Basic Field General,32
+NY-20,Basic Field General,36
+NY-21,Basic Field General,36
+NY-22,Basic Field General,36
+NY-23,Basic Field General,36
+NY-24,Basic Field General,36
+NY-7,Basic Field General,36
+NY-9,Basic Field General,36
+OH-18,Basic Field General,39
+OH-20,Basic Field General,39
+OH-21,Basic Field General,39
+OH-23,Basic Field General,39
+OH-24,Basic Field General,39
+OK-3,Basic Field General,40
+OR-6,Basic Field General,41
+PA-1,Basic Field General,42
+PA-23,Basic Field General,42
+PA-24,Basic Field General,42
+PA-25,Basic Field General,42
+PA-26,Basic Field General,42
+PA-27,Basic Field General,42
+PA-8,Basic Field General,42
+PR-1,Basic Field General,72
+PR-2,Basic Field General,72
+RI-1,Basic Field General,44
+SC-8,Basic Field General,45
+SD-2,Basic Field General,46
+SD-4,Basic Field General,46
+TN-10,Basic Field General,47
+TN-4,Basic Field General,47
+TN-7,Basic Field General,47
+TN-9,Basic Field General,47
+TX-13,Basic Field General,48
+TX-14,Basic Field General,48
+TX-15,Basic Field General,48
+UT-1,Basic Field General,49
+VA-15,Basic Field General,51
+VA-16,Basic Field General,51
+VA-17,Basic Field General,51
+VA-18,Basic Field General,51
+VA-19,Basic Field General,51
+VA-20,Basic Field General,51
+VI-1,Basic Field General,78
+VT-1,Basic Field General,50
+WA-1,Basic Field General,53
+WI-2,Basic Field General,55
+WI-5,Basic Field General,55
+WV-5,Basic Field General,54
+WY-4,Basic Field General,56
+MAZ,Agricultural Worker,04
+MCA,Agricultural Worker,06
+MCO,Agricultural Worker,08
+MDE,Agricultural Worker,10
+MFL,Agricultural Worker,12
+MGA,Agricultural Worker,13
+MIA,Agricultural Worker,19
+MID,Agricultural Worker,16
+MIL,Agricultural Worker,17
+MIN,Agricultural Worker,18
+MMD,Agricultural Worker,24
+MMI,Agricultural Worker,26
+MMN,Agricultural Worker,27
+MMO,Agricultural Worker,29
+MMT,Agricultural Worker,30
+MMX-1,Agricultural Worker,09 23 25 33 44 50
+MNC,Agricultural Worker,37
+MND,Agricultural Worker,38
+MNE,Agricultural Worker,31
+MNJ,Agricultural Worker,34
+MNM,Agricultural Worker,35
+MNY,Agricultural Worker,36
+MOH,Agricultural Worker,39
+MOK,Agricultural Worker,40
+MOR,Agricultural Worker,41
+MPA,Agricultural Worker,42
+MPR,Agricultural Worker,72
+MSC,Agricultural Worker,45
+MSX-2,Agricultural Worker,01 05 21 22 28 47 48
+MUT,Agricultural Worker,49
+MVA,Agricultural Worker,51
+MWA,Agricultural Worker,53
+MWI,Agricultural Worker,55
+NAK-1,Native American,02
+NAZ-5,Native American,04
+NAZ-6,Native American,04
+NCA-1,Native American,06
+NCO-1,Native American,08
+NCT-1,Native American,09
+NHI-1,Native American,15
+NID-1,Native American,16
+NME-1,Native American,23
+NMI-1,Native American,26
+NMN-1,Native American,27
+NMS-1,Native American,28
+NMT-1,Native American,30
+NNC-1,Native American,37
+NND-3,Native American,38
+NNE-1,Native American,31
+NNM-2,Native American,35
+NNM-4,Native American,35
+NNV-1,Native American,32
+NOK-1,Native American,40
+NOR-1,Native American,41
+NSD-1,Native American,46
+NTX-1,Native American,48
+NUT-1,Native American,49
+NWA-1,Native American,53
+NWI-1,Native American,55
+NWY-1,Native American,56
