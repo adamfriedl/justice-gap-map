@@ -1,0 +1,3223 @@
+county_fips,state,areas,n_areas,any_partial
+01001,Alabama,AL-4,1,False
+01003,Alabama,AL-4,1,False
+01005,Alabama,AL-4,1,False
+01007,Alabama,AL-4,1,False
+01009,Alabama,AL-4,1,False
+01011,Alabama,AL-4,1,False
+01013,Alabama,AL-4,1,False
+01015,Alabama,AL-4,1,False
+01017,Alabama,AL-4,1,False
+01019,Alabama,AL-4,1,False
+01021,Alabama,AL-4,1,False
+01023,Alabama,AL-4,1,False
+01025,Alabama,AL-4,1,False
+01027,Alabama,AL-4,1,False
+01029,Alabama,AL-4,1,False
+01031,Alabama,AL-4,1,False
+01033,Alabama,AL-4,1,False
+01035,Alabama,AL-4,1,False
+01037,Alabama,AL-4,1,False
+01039,Alabama,AL-4,1,False
+01041,Alabama,AL-4,1,False
+01043,Alabama,AL-4,1,False
+01045,Alabama,AL-4,1,False
+01047,Alabama,AL-4,1,False
+01049,Alabama,AL-4,1,False
+01051,Alabama,AL-4,1,False
+01053,Alabama,AL-4,1,False
+01055,Alabama,AL-4,1,False
+01057,Alabama,AL-4,1,False
+01059,Alabama,AL-4,1,False
+01061,Alabama,AL-4,1,False
+01063,Alabama,AL-4,1,False
+01065,Alabama,AL-4,1,False
+01067,Alabama,AL-4,1,False
+01069,Alabama,AL-4,1,False
+01071,Alabama,AL-4,1,False
+01073,Alabama,AL-4,1,False
+01075,Alabama,AL-4,1,False
+01077,Alabama,AL-4,1,False
+01079,Alabama,AL-4,1,False
+01081,Alabama,AL-4,1,False
+01083,Alabama,AL-4,1,False
+01085,Alabama,AL-4,1,False
+01087,Alabama,AL-4,1,False
+01089,Alabama,AL-4,1,False
+01091,Alabama,AL-4,1,False
+01093,Alabama,AL-4,1,False
+01095,Alabama,AL-4,1,False
+01097,Alabama,AL-4,1,False
+01099,Alabama,AL-4,1,False
+01101,Alabama,AL-4,1,False
+01103,Alabama,AL-4,1,False
+01105,Alabama,AL-4,1,False
+01107,Alabama,AL-4,1,False
+01109,Alabama,AL-4,1,False
+01111,Alabama,AL-4,1,False
+01113,Alabama,AL-4,1,False
+01115,Alabama,AL-4,1,False
+01117,Alabama,AL-4,1,False
+01119,Alabama,AL-4,1,False
+01121,Alabama,AL-4,1,False
+01123,Alabama,AL-4,1,False
+01125,Alabama,AL-4,1,False
+01127,Alabama,AL-4,1,False
+01129,Alabama,AL-4,1,False
+01131,Alabama,AL-4,1,False
+01133,Alabama,AL-4,1,False
+02013,Alaska,AK-1,1,False
+02016,Alaska,AK-1,1,False
+02020,Alaska,AK-1,1,False
+02050,Alaska,AK-1,1,False
+02060,Alaska,AK-1,1,False
+02063,Alaska,AK-1,1,False
+02066,Alaska,AK-1,1,False
+02068,Alaska,AK-1,1,False
+02070,Alaska,AK-1,1,False
+02090,Alaska,AK-1,1,False
+02100,Alaska,AK-1,1,False
+02105,Alaska,AK-1,1,False
+02110,Alaska,AK-1,1,False
+02122,Alaska,AK-1,1,False
+02130,Alaska,AK-1,1,False
+02150,Alaska,AK-1,1,False
+02158,Alaska,AK-1,1,False
+02164,Alaska,AK-1,1,False
+02170,Alaska,AK-1,1,False
+02180,Alaska,AK-1,1,False
+02185,Alaska,AK-1,1,False
+02188,Alaska,AK-1,1,False
+02195,Alaska,AK-1,1,False
+02198,Alaska,AK-1,1,False
+02220,Alaska,AK-1,1,False
+02230,Alaska,AK-1,1,False
+02240,Alaska,AK-1,1,False
+02275,Alaska,AK-1,1,False
+02282,Alaska,AK-1,1,False
+02290,Alaska,AK-1,1,False
+04001,Arizona,AZ-2 AZ-5,2,True
+04003,Arizona,AZ-5,1,False
+04005,Arizona,AZ-2,1,False
+04007,Arizona,AZ-5,1,False
+04009,Arizona,AZ-5,1,False
+04011,Arizona,AZ-5,1,False
+04012,Arizona,AZ-3,1,False
+04013,Arizona,AZ-3,1,False
+04015,Arizona,AZ-3,1,False
+04017,Arizona,AZ-2 AZ-5,2,True
+04019,Arizona,AZ-5,1,False
+04021,Arizona,AZ-5,1,False
+04023,Arizona,AZ-5,1,False
+04025,Arizona,AZ-3,1,False
+04027,Arizona,AZ-3,1,False
+05001,Arkansas,AR-7,1,False
+05003,Arkansas,AR-7,1,False
+05005,Arkansas,AR-6,1,False
+05007,Arkansas,AR-6,1,False
+05009,Arkansas,AR-6,1,False
+05011,Arkansas,AR-7,1,False
+05013,Arkansas,AR-7,1,False
+05015,Arkansas,AR-6,1,False
+05017,Arkansas,AR-7,1,False
+05019,Arkansas,AR-7,1,False
+05021,Arkansas,AR-6,1,False
+05023,Arkansas,AR-6,1,False
+05025,Arkansas,AR-7,1,False
+05027,Arkansas,AR-7,1,False
+05029,Arkansas,AR-7,1,False
+05031,Arkansas,AR-6,1,False
+05033,Arkansas,AR-7,1,False
+05035,Arkansas,AR-6,1,False
+05037,Arkansas,AR-6,1,False
+05039,Arkansas,AR-7,1,False
+05041,Arkansas,AR-7,1,False
+05043,Arkansas,AR-7,1,False
+05045,Arkansas,AR-7,1,False
+05047,Arkansas,AR-7,1,False
+05049,Arkansas,AR-6,1,False
+05051,Arkansas,AR-7,1,False
+05053,Arkansas,AR-7,1,False
+05055,Arkansas,AR-6,1,False
+05057,Arkansas,AR-7,1,False
+05059,Arkansas,AR-7,1,False
+05061,Arkansas,AR-7,1,False
+05063,Arkansas,AR-6,1,False
+05065,Arkansas,AR-6,1,False
+05067,Arkansas,AR-6,1,False
+05069,Arkansas,AR-7,1,False
+05071,Arkansas,AR-7,1,False
+05073,Arkansas,AR-7,1,False
+05075,Arkansas,AR-6,1,False
+05077,Arkansas,AR-6,1,False
+05079,Arkansas,AR-7,1,False
+05081,Arkansas,AR-7,1,False
+05083,Arkansas,AR-7,1,False
+05085,Arkansas,AR-7,1,False
+05087,Arkansas,AR-6,1,False
+05089,Arkansas,AR-6,1,False
+05091,Arkansas,AR-7,1,False
+05093,Arkansas,AR-6,1,False
+05095,Arkansas,AR-6,1,False
+05097,Arkansas,AR-7,1,False
+05099,Arkansas,AR-7,1,False
+05101,Arkansas,AR-6,1,False
+05103,Arkansas,AR-7,1,False
+05105,Arkansas,AR-7,1,False
+05107,Arkansas,AR-6,1,False
+05109,Arkansas,AR-7,1,False
+05111,Arkansas,AR-6,1,False
+05113,Arkansas,AR-7,1,False
+05115,Arkansas,AR-7,1,False
+05117,Arkansas,AR-7,1,False
+05119,Arkansas,AR-7,1,False
+05121,Arkansas,AR-6,1,False
+05123,Arkansas,AR-6,1,False
+05125,Arkansas,AR-7,1,False
+05127,Arkansas,AR-7,1,False
+05129,Arkansas,AR-6,1,False
+05131,Arkansas,AR-7,1,False
+05133,Arkansas,AR-7,1,False
+05135,Arkansas,AR-6,1,False
+05137,Arkansas,AR-6,1,False
+05139,Arkansas,AR-7,1,False
+05141,Arkansas,AR-6,1,False
+05143,Arkansas,AR-6,1,False
+05145,Arkansas,AR-7,1,False
+05147,Arkansas,AR-6,1,False
+05149,Arkansas,AR-7,1,False
+06001,California,CA-28,1,False
+06003,California,CA-1,1,False
+06005,California,CA-27,1,False
+06007,California,CA-27,1,False
+06009,California,CA-27,1,False
+06011,California,CA-31,1,False
+06013,California,CA-28,1,False
+06015,California,CA-27,1,False
+06017,California,CA-27,1,False
+06019,California,CA-26,1,False
+06021,California,CA-27,1,False
+06023,California,CA-27,1,False
+06025,California,CA-31,1,False
+06027,California,CA-1,1,False
+06029,California,CA-2 CA-31,2,True
+06031,California,CA-26,1,False
+06033,California,CA-27,1,False
+06035,California,CA-27,1,False
+06037,California,CA-19 CA-29 CA-30,3,True
+06039,California,CA-31,1,False
+06041,California,CA-28,1,False
+06043,California,CA-26,1,False
+06045,California,CA-27,1,False
+06047,California,CA-26,1,False
+06049,California,CA-27,1,False
+06051,California,CA-1,1,False
+06053,California,CA-31,1,False
+06055,California,CA-28,1,False
+06057,California,CA-27,1,False
+06059,California,CA-19,1,False
+06061,California,CA-27,1,False
+06063,California,CA-27,1,False
+06065,California,CA-12,1,False
+06067,California,CA-27,1,False
+06069,California,CA-31,1,False
+06071,California,CA-12,1,False
+06073,California,CA-14,1,False
+06075,California,CA-28,1,False
+06077,California,CA-31,1,False
+06079,California,CA-31,1,False
+06081,California,CA-28,1,False
+06083,California,CA-31,1,False
+06085,California,CA-28 CA-31,2,True
+06087,California,CA-31,1,False
+06089,California,CA-27,1,False
+06091,California,CA-27,1,False
+06093,California,CA-27,1,False
+06095,California,CA-27,1,False
+06097,California,CA-31,1,False
+06099,California,CA-31,1,False
+06101,California,CA-31,1,False
+06103,California,CA-27,1,False
+06105,California,CA-27,1,False
+06107,California,CA-26,1,False
+06109,California,CA-26,1,False
+06111,California,CA-31,1,False
+06113,California,CA-27,1,False
+06115,California,CA-31,1,False
+08001,Colorado,CO-6,1,False
+08003,Colorado,CO-6,1,False
+08005,Colorado,CO-6,1,False
+08007,Colorado,CO-6,1,False
+08009,Colorado,CO-6,1,False
+08011,Colorado,CO-6,1,False
+08013,Colorado,CO-6,1,False
+08014,Colorado,CO-6,1,False
+08015,Colorado,CO-6,1,False
+08017,Colorado,CO-6,1,False
+08019,Colorado,CO-6,1,False
+08021,Colorado,CO-6,1,False
+08023,Colorado,CO-6,1,False
+08025,Colorado,CO-6,1,False
+08027,Colorado,CO-6,1,False
+08029,Colorado,CO-6,1,False
+08031,Colorado,CO-6,1,False
+08033,Colorado,CO-6,1,False
+08035,Colorado,CO-6,1,False
+08037,Colorado,CO-6,1,False
+08039,Colorado,CO-6,1,False
+08041,Colorado,CO-6,1,False
+08043,Colorado,CO-6,1,False
+08045,Colorado,CO-6,1,False
+08047,Colorado,CO-6,1,False
+08049,Colorado,CO-6,1,False
+08051,Colorado,CO-6,1,False
+08053,Colorado,CO-6,1,False
+08055,Colorado,CO-6,1,False
+08057,Colorado,CO-6,1,False
+08059,Colorado,CO-6,1,False
+08061,Colorado,CO-6,1,False
+08063,Colorado,CO-6,1,False
+08065,Colorado,CO-6,1,False
+08067,Colorado,CO-6,1,False
+08069,Colorado,CO-6,1,False
+08071,Colorado,CO-6,1,False
+08073,Colorado,CO-6,1,False
+08075,Colorado,CO-6,1,False
+08077,Colorado,CO-6,1,False
+08079,Colorado,CO-6,1,False
+08081,Colorado,CO-6,1,False
+08083,Colorado,CO-6,1,False
+08085,Colorado,CO-6,1,False
+08087,Colorado,CO-6,1,False
+08089,Colorado,CO-6,1,False
+08091,Colorado,CO-6,1,False
+08093,Colorado,CO-6,1,False
+08095,Colorado,CO-6,1,False
+08097,Colorado,CO-6,1,False
+08099,Colorado,CO-6,1,False
+08101,Colorado,CO-6,1,False
+08103,Colorado,CO-6,1,False
+08105,Colorado,CO-6,1,False
+08107,Colorado,CO-6,1,False
+08109,Colorado,CO-6,1,False
+08111,Colorado,CO-6,1,False
+08113,Colorado,CO-6,1,False
+08115,Colorado,CO-6,1,False
+08117,Colorado,CO-6,1,False
+08119,Colorado,CO-6,1,False
+08121,Colorado,CO-6,1,False
+08123,Colorado,CO-6,1,False
+08125,Colorado,CO-6,1,False
+09110,Connecticut,CT-1,1,False
+09120,Connecticut,CT-1,1,False
+09130,Connecticut,CT-1,1,False
+09140,Connecticut,CT-1,1,False
+09150,Connecticut,CT-1,1,False
+09160,Connecticut,CT-1,1,False
+09170,Connecticut,CT-1,1,False
+09180,Connecticut,CT-1,1,False
+09190,Connecticut,CT-1,1,False
+10001,Delaware,DE-1,1,False
+10003,Delaware,DE-1,1,False
+10005,Delaware,DE-1,1,False
+11001,District of Columbia,DC-1,1,False
+12001,Florida,FL-14,1,False
+12003,Florida,FL-14,1,False
+12005,Florida,FL-13,1,False
+12007,Florida,FL-14,1,False
+12009,Florida,FL-15,1,False
+12011,Florida,FL-18,1,False
+12013,Florida,FL-13,1,False
+12015,Florida,FL-17,1,False
+12017,Florida,FL-15,1,False
+12019,Florida,FL-14,1,False
+12021,Florida,FL-18,1,False
+12023,Florida,FL-14,1,False
+12027,Florida,FL-17,1,False
+12029,Florida,FL-14,1,False
+12031,Florida,FL-14,1,False
+12033,Florida,FL-13,1,False
+12035,Florida,FL-15,1,False
+12037,Florida,FL-13,1,False
+12039,Florida,FL-13,1,False
+12041,Florida,FL-14,1,False
+12043,Florida,FL-17,1,False
+12045,Florida,FL-13,1,False
+12047,Florida,FL-14,1,False
+12049,Florida,FL-17,1,False
+12051,Florida,FL-17,1,False
+12053,Florida,FL-15,1,False
+12055,Florida,FL-17,1,False
+12057,Florida,FL-16,1,False
+12059,Florida,FL-13,1,False
+12061,Florida,FL-17,1,False
+12063,Florida,FL-13,1,False
+12065,Florida,FL-13,1,False
+12067,Florida,FL-14,1,False
+12069,Florida,FL-15,1,False
+12071,Florida,FL-17,1,False
+12073,Florida,FL-13,1,False
+12075,Florida,FL-14,1,False
+12077,Florida,FL-13,1,False
+12079,Florida,FL-14,1,False
+12081,Florida,FL-16,1,False
+12083,Florida,FL-15,1,False
+12085,Florida,FL-17,1,False
+12086,Florida,FL-5,1,False
+12087,Florida,FL-5,1,False
+12089,Florida,FL-14,1,False
+12091,Florida,FL-13,1,False
+12093,Florida,FL-17,1,False
+12095,Florida,FL-15,1,False
+12097,Florida,FL-15,1,False
+12099,Florida,FL-17,1,False
+12101,Florida,FL-16,1,False
+12103,Florida,FL-16,1,False
+12105,Florida,FL-17,1,False
+12107,Florida,FL-15,1,False
+12109,Florida,FL-14,1,False
+12111,Florida,FL-17,1,False
+12113,Florida,FL-13,1,False
+12115,Florida,FL-16,1,False
+12117,Florida,FL-15,1,False
+12119,Florida,FL-15,1,False
+12121,Florida,FL-14,1,False
+12123,Florida,FL-14,1,False
+12125,Florida,FL-14,1,False
+12127,Florida,FL-15,1,False
+12129,Florida,FL-13,1,False
+12131,Florida,FL-13,1,False
+12133,Florida,FL-13,1,False
+13001,Georgia,GA-2,1,False
+13003,Georgia,GA-2,1,False
+13005,Georgia,GA-2,1,False
+13007,Georgia,GA-2,1,False
+13009,Georgia,GA-2,1,False
+13011,Georgia,GA-2,1,False
+13013,Georgia,GA-2,1,False
+13015,Georgia,GA-2,1,False
+13017,Georgia,GA-2,1,False
+13019,Georgia,GA-2,1,False
+13021,Georgia,GA-2,1,False
+13023,Georgia,GA-2,1,False
+13025,Georgia,GA-2,1,False
+13027,Georgia,GA-2,1,False
+13029,Georgia,GA-2,1,False
+13031,Georgia,GA-2,1,False
+13033,Georgia,GA-2,1,False
+13035,Georgia,GA-2,1,False
+13037,Georgia,GA-2,1,False
+13039,Georgia,GA-2,1,False
+13043,Georgia,GA-2,1,False
+13045,Georgia,GA-2,1,False
+13047,Georgia,GA-2,1,False
+13049,Georgia,GA-2,1,False
+13051,Georgia,GA-2,1,False
+13053,Georgia,GA-2,1,False
+13055,Georgia,GA-2,1,False
+13057,Georgia,GA-2,1,False
+13059,Georgia,GA-2,1,False
+13061,Georgia,GA-2,1,False
+13063,Georgia,GA-1,1,False
+13065,Georgia,GA-2,1,False
+13067,Georgia,GA-1,1,False
+13069,Georgia,GA-2,1,False
+13071,Georgia,GA-2,1,False
+13073,Georgia,GA-2,1,False
+13075,Georgia,GA-2,1,False
+13077,Georgia,GA-2,1,False
+13079,Georgia,GA-2,1,False
+13081,Georgia,GA-2,1,False
+13083,Georgia,GA-2,1,False
+13085,Georgia,GA-2,1,False
+13087,Georgia,GA-2,1,False
+13089,Georgia,GA-1,1,False
+13091,Georgia,GA-2,1,False
+13093,Georgia,GA-2,1,False
+13095,Georgia,GA-2,1,False
+13097,Georgia,GA-2,1,False
+13099,Georgia,GA-2,1,False
+13101,Georgia,GA-2,1,False
+13103,Georgia,GA-2,1,False
+13105,Georgia,GA-2,1,False
+13107,Georgia,GA-2,1,False
+13109,Georgia,GA-2,1,False
+13111,Georgia,GA-2,1,False
+13113,Georgia,GA-2,1,False
+13115,Georgia,GA-2,1,False
+13117,Georgia,GA-2,1,False
+13119,Georgia,GA-2,1,False
+13121,Georgia,GA-1,1,False
+13123,Georgia,GA-2,1,False
+13125,Georgia,GA-2,1,False
+13127,Georgia,GA-2,1,False
+13129,Georgia,GA-2,1,False
+13131,Georgia,GA-2,1,False
+13133,Georgia,GA-2,1,False
+13135,Georgia,GA-1,1,False
+13137,Georgia,GA-2,1,False
+13139,Georgia,GA-2,1,False
+13141,Georgia,GA-2,1,False
+13143,Georgia,GA-2,1,False
+13145,Georgia,GA-2,1,False
+13147,Georgia,GA-2,1,False
+13149,Georgia,GA-2,1,False
+13151,Georgia,GA-2,1,False
+13153,Georgia,GA-2,1,False
+13155,Georgia,GA-2,1,False
+13157,Georgia,GA-2,1,False
+13159,Georgia,GA-2,1,False
+13161,Georgia,GA-2,1,False
+13163,Georgia,GA-2,1,False
+13165,Georgia,GA-2,1,False
+13167,Georgia,GA-2,1,False
+13169,Georgia,GA-2,1,False
+13171,Georgia,GA-2,1,False
+13173,Georgia,GA-2,1,False
+13175,Georgia,GA-2,1,False
+13177,Georgia,GA-2,1,False
+13179,Georgia,GA-2,1,False
+13181,Georgia,GA-2,1,False
+13183,Georgia,GA-2,1,False
+13185,Georgia,GA-2,1,False
+13187,Georgia,GA-2,1,False
+13189,Georgia,GA-2,1,False
+13191,Georgia,GA-2,1,False
+13193,Georgia,GA-2,1,False
+13195,Georgia,GA-2,1,False
+13197,Georgia,GA-2,1,False
+13199,Georgia,GA-2,1,False
+13201,Georgia,GA-2,1,False
+13205,Georgia,GA-2,1,False
+13207,Georgia,GA-2,1,False
+13209,Georgia,GA-2,1,False
+13211,Georgia,GA-2,1,False
+13213,Georgia,GA-2,1,False
+13215,Georgia,GA-2,1,False
+13217,Georgia,GA-2,1,False
+13219,Georgia,GA-2,1,False
+13221,Georgia,GA-2,1,False
+13223,Georgia,GA-2,1,False
+13225,Georgia,GA-2,1,False
+13227,Georgia,GA-2,1,False
+13229,Georgia,GA-2,1,False
+13231,Georgia,GA-2,1,False
+13233,Georgia,GA-2,1,False
+13235,Georgia,GA-2,1,False
+13237,Georgia,GA-2,1,False
+13239,Georgia,GA-2,1,False
+13241,Georgia,GA-2,1,False
+13243,Georgia,GA-2,1,False
+13245,Georgia,GA-2,1,False
+13247,Georgia,GA-2,1,False
+13249,Georgia,GA-2,1,False
+13251,Georgia,GA-2,1,False
+13253,Georgia,GA-2,1,False
+13255,Georgia,GA-2,1,False
+13257,Georgia,GA-2,1,False
+13259,Georgia,GA-2,1,False
+13261,Georgia,GA-2,1,False
+13263,Georgia,GA-2,1,False
+13265,Georgia,GA-2,1,False
+13267,Georgia,GA-2,1,False
+13269,Georgia,GA-2,1,False
+13271,Georgia,GA-2,1,False
+13273,Georgia,GA-2,1,False
+13275,Georgia,GA-2,1,False
+13277,Georgia,GA-2,1,False
+13279,Georgia,GA-2,1,False
+13281,Georgia,GA-2,1,False
+13283,Georgia,GA-2,1,False
+13285,Georgia,GA-2,1,False
+13287,Georgia,GA-2,1,False
+13289,Georgia,GA-2,1,False
+13291,Georgia,GA-2,1,False
+13293,Georgia,GA-2,1,False
+13295,Georgia,GA-2,1,False
+13297,Georgia,GA-2,1,False
+13299,Georgia,GA-2,1,False
+13301,Georgia,GA-2,1,False
+13303,Georgia,GA-2,1,False
+13305,Georgia,GA-2,1,False
+13307,Georgia,GA-2,1,False
+13309,Georgia,GA-2,1,False
+13311,Georgia,GA-2,1,False
+13313,Georgia,GA-2,1,False
+13315,Georgia,GA-2,1,False
+13317,Georgia,GA-2,1,False
+13319,Georgia,GA-2,1,False
+13321,Georgia,GA-2,1,False
+15001,Hawaii,HI-1,1,False
+15003,Hawaii,HI-1,1,False
+15005,Hawaii,HI-1,1,False
+15007,Hawaii,HI-1,1,False
+15009,Hawaii,HI-1,1,False
+16001,Idaho,ID-1,1,False
+16003,Idaho,ID-1,1,False
+16005,Idaho,ID-1,1,False
+16007,Idaho,ID-1,1,False
+16009,Idaho,ID-1,1,False
+16011,Idaho,ID-1,1,False
+16013,Idaho,ID-1,1,False
+16015,Idaho,ID-1,1,False
+16017,Idaho,ID-1,1,False
+16019,Idaho,ID-1,1,False
+16021,Idaho,ID-1,1,False
+16023,Idaho,ID-1,1,False
+16025,Idaho,ID-1,1,False
+16027,Idaho,ID-1,1,False
+16029,Idaho,ID-1,1,False
+16031,Idaho,ID-1,1,False
+16033,Idaho,ID-1,1,False
+16035,Idaho,ID-1,1,False
+16037,Idaho,ID-1,1,False
+16039,Idaho,ID-1,1,False
+16041,Idaho,ID-1,1,False
+16043,Idaho,ID-1,1,False
+16045,Idaho,ID-1,1,False
+16047,Idaho,ID-1,1,False
+16049,Idaho,ID-1,1,False
+16051,Idaho,ID-1,1,False
+16053,Idaho,ID-1,1,False
+16055,Idaho,ID-1,1,False
+16057,Idaho,ID-1,1,False
+16059,Idaho,ID-1,1,False
+16061,Idaho,ID-1,1,False
+16063,Idaho,ID-1,1,False
+16065,Idaho,ID-1,1,False
+16067,Idaho,ID-1,1,False
+16069,Idaho,ID-1,1,False
+16071,Idaho,ID-1,1,False
+16073,Idaho,ID-1,1,False
+16075,Idaho,ID-1,1,False
+16077,Idaho,ID-1,1,False
+16079,Idaho,ID-1,1,False
+16081,Idaho,ID-1,1,False
+16083,Idaho,ID-1,1,False
+16085,Idaho,ID-1,1,False
+16087,Idaho,ID-1,1,False
+17001,Illinois,IL-3,1,False
+17003,Illinois,IL-3,1,False
+17005,Illinois,IL-3,1,False
+17007,Illinois,IL-7,1,False
+17009,Illinois,IL-3,1,False
+17011,Illinois,IL-7,1,False
+17013,Illinois,IL-3,1,False
+17015,Illinois,IL-7,1,False
+17017,Illinois,IL-3,1,False
+17019,Illinois,IL-3,1,False
+17021,Illinois,IL-3,1,False
+17023,Illinois,IL-3,1,False
+17025,Illinois,IL-3,1,False
+17027,Illinois,IL-3,1,False
+17029,Illinois,IL-3,1,False
+17031,Illinois,IL-6,1,False
+17033,Illinois,IL-3,1,False
+17035,Illinois,IL-3,1,False
+17037,Illinois,IL-7,1,False
+17039,Illinois,IL-3,1,False
+17041,Illinois,IL-3,1,False
+17043,Illinois,IL-7,1,False
+17045,Illinois,IL-3,1,False
+17047,Illinois,IL-3,1,False
+17049,Illinois,IL-3,1,False
+17051,Illinois,IL-3,1,False
+17053,Illinois,IL-3,1,False
+17055,Illinois,IL-3,1,False
+17057,Illinois,IL-7,1,False
+17059,Illinois,IL-3,1,False
+17061,Illinois,IL-3,1,False
+17063,Illinois,IL-7,1,False
+17065,Illinois,IL-3,1,False
+17067,Illinois,IL-3,1,False
+17069,Illinois,IL-3,1,False
+17071,Illinois,IL-7,1,False
+17073,Illinois,IL-7,1,False
+17075,Illinois,IL-7,1,False
+17077,Illinois,IL-3,1,False
+17079,Illinois,IL-3,1,False
+17081,Illinois,IL-3,1,False
+17083,Illinois,IL-3,1,False
+17085,Illinois,IL-7,1,False
+17087,Illinois,IL-3,1,False
+17089,Illinois,IL-7,1,False
+17091,Illinois,IL-7,1,False
+17093,Illinois,IL-7,1,False
+17095,Illinois,IL-7,1,False
+17097,Illinois,IL-7,1,False
+17099,Illinois,IL-7,1,False
+17101,Illinois,IL-3,1,False
+17103,Illinois,IL-7,1,False
+17105,Illinois,IL-7,1,False
+17107,Illinois,IL-3,1,False
+17109,Illinois,IL-7,1,False
+17111,Illinois,IL-7,1,False
+17113,Illinois,IL-7,1,False
+17115,Illinois,IL-3,1,False
+17117,Illinois,IL-3,1,False
+17119,Illinois,IL-3,1,False
+17121,Illinois,IL-3,1,False
+17123,Illinois,IL-7,1,False
+17125,Illinois,IL-3,1,False
+17127,Illinois,IL-3,1,False
+17129,Illinois,IL-3,1,False
+17131,Illinois,IL-7,1,False
+17133,Illinois,IL-3,1,False
+17135,Illinois,IL-3,1,False
+17137,Illinois,IL-3,1,False
+17139,Illinois,IL-3,1,False
+17141,Illinois,IL-7,1,False
+17143,Illinois,IL-7,1,False
+17145,Illinois,IL-3,1,False
+17147,Illinois,IL-3,1,False
+17149,Illinois,IL-3,1,False
+17151,Illinois,IL-3,1,False
+17153,Illinois,IL-3,1,False
+17155,Illinois,IL-7,1,False
+17157,Illinois,IL-3,1,False
+17159,Illinois,IL-3,1,False
+17161,Illinois,IL-7,1,False
+17163,Illinois,IL-3,1,False
+17165,Illinois,IL-3,1,False
+17167,Illinois,IL-3,1,False
+17169,Illinois,IL-3,1,False
+17171,Illinois,IL-3,1,False
+17173,Illinois,IL-3,1,False
+17175,Illinois,IL-7,1,False
+17177,Illinois,IL-7,1,False
+17179,Illinois,IL-7,1,False
+17181,Illinois,IL-3,1,False
+17183,Illinois,IL-3,1,False
+17185,Illinois,IL-3,1,False
+17187,Illinois,IL-7,1,False
+17189,Illinois,IL-3,1,False
+17191,Illinois,IL-3,1,False
+17193,Illinois,IL-3,1,False
+17195,Illinois,IL-7,1,False
+17197,Illinois,IL-7,1,False
+17199,Illinois,IL-3,1,False
+17201,Illinois,IL-7,1,False
+17203,Illinois,IL-7,1,False
+18001,Indiana,IN-5,1,False
+18003,Indiana,IN-5,1,False
+18005,Indiana,IN-5,1,False
+18007,Indiana,IN-5,1,False
+18009,Indiana,IN-5,1,False
+18011,Indiana,IN-5,1,False
+18013,Indiana,IN-5,1,False
+18015,Indiana,IN-5,1,False
+18017,Indiana,IN-5,1,False
+18019,Indiana,IN-5,1,False
+18021,Indiana,IN-5,1,False
+18023,Indiana,IN-5,1,False
+18025,Indiana,IN-5,1,False
+18027,Indiana,IN-5,1,False
+18029,Indiana,IN-5,1,False
+18031,Indiana,IN-5,1,False
+18033,Indiana,IN-5,1,False
+18035,Indiana,IN-5,1,False
+18037,Indiana,IN-5,1,False
+18039,Indiana,IN-5,1,False
+18041,Indiana,IN-5,1,False
+18043,Indiana,IN-5,1,False
+18045,Indiana,IN-5,1,False
+18047,Indiana,IN-5,1,False
+18049,Indiana,IN-5,1,False
+18051,Indiana,IN-5,1,False
+18053,Indiana,IN-5,1,False
+18055,Indiana,IN-5,1,False
+18057,Indiana,IN-5,1,False
+18059,Indiana,IN-5,1,False
+18061,Indiana,IN-5,1,False
+18063,Indiana,IN-5,1,False
+18065,Indiana,IN-5,1,False
+18067,Indiana,IN-5,1,False
+18069,Indiana,IN-5,1,False
+18071,Indiana,IN-5,1,False
+18073,Indiana,IN-5,1,False
+18075,Indiana,IN-5,1,False
+18077,Indiana,IN-5,1,False
+18079,Indiana,IN-5,1,False
+18081,Indiana,IN-5,1,False
+18083,Indiana,IN-5,1,False
+18085,Indiana,IN-5,1,False
+18087,Indiana,IN-5,1,False
+18089,Indiana,IN-5,1,False
+18091,Indiana,IN-5,1,False
+18093,Indiana,IN-5,1,False
+18095,Indiana,IN-5,1,False
+18097,Indiana,IN-5,1,False
+18099,Indiana,IN-5,1,False
+18101,Indiana,IN-5,1,False
+18103,Indiana,IN-5,1,False
+18105,Indiana,IN-5,1,False
+18107,Indiana,IN-5,1,False
+18109,Indiana,IN-5,1,False
+18111,Indiana,IN-5,1,False
+18113,Indiana,IN-5,1,False
+18115,Indiana,IN-5,1,False
+18117,Indiana,IN-5,1,False
+18119,Indiana,IN-5,1,False
+18121,Indiana,IN-5,1,False
+18123,Indiana,IN-5,1,False
+18125,Indiana,IN-5,1,False
+18127,Indiana,IN-5,1,False
+18129,Indiana,IN-5,1,False
+18131,Indiana,IN-5,1,False
+18133,Indiana,IN-5,1,False
+18135,Indiana,IN-5,1,False
+18137,Indiana,IN-5,1,False
+18139,Indiana,IN-5,1,False
+18141,Indiana,IN-5,1,False
+18143,Indiana,IN-5,1,False
+18145,Indiana,IN-5,1,False
+18147,Indiana,IN-5,1,False
+18149,Indiana,IN-5,1,False
+18151,Indiana,IN-5,1,False
+18153,Indiana,IN-5,1,False
+18155,Indiana,IN-5,1,False
+18157,Indiana,IN-5,1,False
+18159,Indiana,IN-5,1,False
+18161,Indiana,IN-5,1,False
+18163,Indiana,IN-5,1,False
+18165,Indiana,IN-5,1,False
+18167,Indiana,IN-5,1,False
+18169,Indiana,IN-5,1,False
+18171,Indiana,IN-5,1,False
+18173,Indiana,IN-5,1,False
+18175,Indiana,IN-5,1,False
+18177,Indiana,IN-5,1,False
+18179,Indiana,IN-5,1,False
+18181,Indiana,IN-5,1,False
+18183,Indiana,IN-5,1,False
+19001,Iowa,IA-3,1,False
+19003,Iowa,IA-3,1,False
+19005,Iowa,IA-3,1,False
+19007,Iowa,IA-3,1,False
+19009,Iowa,IA-3,1,False
+19011,Iowa,IA-3,1,False
+19013,Iowa,IA-3,1,False
+19015,Iowa,IA-3,1,False
+19017,Iowa,IA-3,1,False
+19019,Iowa,IA-3,1,False
+19021,Iowa,IA-3,1,False
+19023,Iowa,IA-3,1,False
+19025,Iowa,IA-3,1,False
+19027,Iowa,IA-3,1,False
+19029,Iowa,IA-3,1,False
+19031,Iowa,IA-3,1,False
+19033,Iowa,IA-3,1,False
+19035,Iowa,IA-3,1,False
+19037,Iowa,IA-3,1,False
+19039,Iowa,IA-3,1,False
+19041,Iowa,IA-3,1,False
+19043,Iowa,IA-3,1,False
+19045,Iowa,IA-3,1,False
+19047,Iowa,IA-3,1,False
+19049,Iowa,IA-3,1,False
+19051,Iowa,IA-3,1,False
+19053,Iowa,IA-3,1,False
+19055,Iowa,IA-3,1,False
+19057,Iowa,IA-3,1,False
+19059,Iowa,IA-3,1,False
+19061,Iowa,IA-3,1,False
+19063,Iowa,IA-3,1,False
+19065,Iowa,IA-3,1,False
+19067,Iowa,IA-3,1,False
+19069,Iowa,IA-3,1,False
+19071,Iowa,IA-3,1,False
+19073,Iowa,IA-3,1,False
+19075,Iowa,IA-3,1,False
+19077,Iowa,IA-3,1,False
+19079,Iowa,IA-3,1,False
+19081,Iowa,IA-3,1,False
+19083,Iowa,IA-3,1,False
+19085,Iowa,IA-3,1,False
+19087,Iowa,IA-3,1,False
+19089,Iowa,IA-3,1,False
+19091,Iowa,IA-3,1,False
+19093,Iowa,IA-3,1,False
+19095,Iowa,IA-3,1,False
+19097,Iowa,IA-3,1,False
+19099,Iowa,IA-3,1,False
+19101,Iowa,IA-3,1,False
+19103,Iowa,IA-3,1,False
+19105,Iowa,IA-3,1,False
+19107,Iowa,IA-3,1,False
+19109,Iowa,IA-3,1,False
+19111,Iowa,IA-3,1,False
+19113,Iowa,IA-3,1,False
+19115,Iowa,IA-3,1,False
+19117,Iowa,IA-3,1,False
+19119,Iowa,IA-3,1,False
+19121,Iowa,IA-3,1,False
+19123,Iowa,IA-3,1,False
+19125,Iowa,IA-3,1,False
+19127,Iowa,IA-3,1,False
+19129,Iowa,IA-3,1,False
+19131,Iowa,IA-3,1,False
+19133,Iowa,IA-3,1,False
+19135,Iowa,IA-3,1,False
+19137,Iowa,IA-3,1,False
+19139,Iowa,IA-3,1,False
+19141,Iowa,IA-3,1,False
+19143,Iowa,IA-3,1,False
+19145,Iowa,IA-3,1,False
+19147,Iowa,IA-3,1,False
+19149,Iowa,IA-3,1,False
+19151,Iowa,IA-3,1,False
+19153,Iowa,IA-3,1,False
+19155,Iowa,IA-3,1,False
+19157,Iowa,IA-3,1,False
+19159,Iowa,IA-3,1,False
+19161,Iowa,IA-3,1,False
+19163,Iowa,IA-3,1,False
+19165,Iowa,IA-3,1,False
+19167,Iowa,IA-3,1,False
+19169,Iowa,IA-3,1,False
+19171,Iowa,IA-3,1,False
+19173,Iowa,IA-3,1,False
+19175,Iowa,IA-3,1,False
+19177,Iowa,IA-3,1,False
+19179,Iowa,IA-3,1,False
+19181,Iowa,IA-3,1,False
+19183,Iowa,IA-3,1,False
+19185,Iowa,IA-3,1,False
+19187,Iowa,IA-3,1,False
+19189,Iowa,IA-3,1,False
+19191,Iowa,IA-3,1,False
+19193,Iowa,IA-3,1,False
+19195,Iowa,IA-3,1,False
+19197,Iowa,IA-3,1,False
+20001,Kansas,KS-1,1,False
+20003,Kansas,KS-1,1,False
+20005,Kansas,KS-1,1,False
+20007,Kansas,KS-1,1,False
+20009,Kansas,KS-1,1,False
+20011,Kansas,KS-1,1,False
+20013,Kansas,KS-1,1,False
+20015,Kansas,KS-1,1,False
+20017,Kansas,KS-1,1,False
+20019,Kansas,KS-1,1,False
+20021,Kansas,KS-1,1,False
+20023,Kansas,KS-1,1,False
+20025,Kansas,KS-1,1,False
+20027,Kansas,KS-1,1,False
+20029,Kansas,KS-1,1,False
+20031,Kansas,KS-1,1,False
+20033,Kansas,KS-1,1,False
+20035,Kansas,KS-1,1,False
+20037,Kansas,KS-1,1,False
+20039,Kansas,KS-1,1,False
+20041,Kansas,KS-1,1,False
+20043,Kansas,KS-1,1,False
+20045,Kansas,KS-1,1,False
+20047,Kansas,KS-1,1,False
+20049,Kansas,KS-1,1,False
+20051,Kansas,KS-1,1,False
+20053,Kansas,KS-1,1,False
+20055,Kansas,KS-1,1,False
+20057,Kansas,KS-1,1,False
+20059,Kansas,KS-1,1,False
+20061,Kansas,KS-1,1,False
+20063,Kansas,KS-1,1,False
+20065,Kansas,KS-1,1,False
+20067,Kansas,KS-1,1,False
+20069,Kansas,KS-1,1,False
+20071,Kansas,KS-1,1,False
+20073,Kansas,KS-1,1,False
+20075,Kansas,KS-1,1,False
+20077,Kansas,KS-1,1,False
+20079,Kansas,KS-1,1,False
+20081,Kansas,KS-1,1,False
+20083,Kansas,KS-1,1,False
+20085,Kansas,KS-1,1,False
+20087,Kansas,KS-1,1,False
+20089,Kansas,KS-1,1,False
+20091,Kansas,KS-1,1,False
+20093,Kansas,KS-1,1,False
+20095,Kansas,KS-1,1,False
+20097,Kansas,KS-1,1,False
+20099,Kansas,KS-1,1,False
+20101,Kansas,KS-1,1,False
+20103,Kansas,KS-1,1,False
+20105,Kansas,KS-1,1,False
+20107,Kansas,KS-1,1,False
+20109,Kansas,KS-1,1,False
+20111,Kansas,KS-1,1,False
+20113,Kansas,KS-1,1,False
+20115,Kansas,KS-1,1,False
+20117,Kansas,KS-1,1,False
+20119,Kansas,KS-1,1,False
+20121,Kansas,KS-1,1,False
+20123,Kansas,KS-1,1,False
+20125,Kansas,KS-1,1,False
+20127,Kansas,KS-1,1,False
+20129,Kansas,KS-1,1,False
+20131,Kansas,KS-1,1,False
+20133,Kansas,KS-1,1,False
+20135,Kansas,KS-1,1,False
+20137,Kansas,KS-1,1,False
+20139,Kansas,KS-1,1,False
+20141,Kansas,KS-1,1,False
+20143,Kansas,KS-1,1,False
+20145,Kansas,KS-1,1,False
+20147,Kansas,KS-1,1,False
+20149,Kansas,KS-1,1,False
+20151,Kansas,KS-1,1,False
+20153,Kansas,KS-1,1,False
+20155,Kansas,KS-1,1,False
+20157,Kansas,KS-1,1,False
+20159,Kansas,KS-1,1,False
+20161,Kansas,KS-1,1,False
+20163,Kansas,KS-1,1,False
+20165,Kansas,KS-1,1,False
+20167,Kansas,KS-1,1,False
+20169,Kansas,KS-1,1,False
+20171,Kansas,KS-1,1,False
+20173,Kansas,KS-1,1,False
+20175,Kansas,KS-1,1,False
+20177,Kansas,KS-1,1,False
+20179,Kansas,KS-1,1,False
+20181,Kansas,KS-1,1,False
+20183,Kansas,KS-1,1,False
+20185,Kansas,KS-1,1,False
+20187,Kansas,KS-1,1,False
+20189,Kansas,KS-1,1,False
+20191,Kansas,KS-1,1,False
+20193,Kansas,KS-1,1,False
+20195,Kansas,KS-1,1,False
+20197,Kansas,KS-1,1,False
+20199,Kansas,KS-1,1,False
+20201,Kansas,KS-1,1,False
+20203,Kansas,KS-1,1,False
+20205,Kansas,KS-1,1,False
+20207,Kansas,KS-1,1,False
+20209,Kansas,KS-1,1,False
+21001,Kentucky,KY-5,1,False
+21003,Kentucky,KY-9,1,False
+21005,Kentucky,KY-10,1,False
+21007,Kentucky,KY-9,1,False
+21009,Kentucky,KY-9,1,False
+21011,Kentucky,KY-10,1,False
+21013,Kentucky,KY-5,1,False
+21015,Kentucky,KY-10,1,False
+21017,Kentucky,KY-10,1,False
+21019,Kentucky,KY-10,1,False
+21021,Kentucky,KY-10,1,False
+21023,Kentucky,KY-10,1,False
+21025,Kentucky,KY-5,1,False
+21027,Kentucky,KY-2,1,False
+21029,Kentucky,KY-2,1,False
+21031,Kentucky,KY-9,1,False
+21033,Kentucky,KY-9,1,False
+21035,Kentucky,KY-9,1,False
+21037,Kentucky,KY-10,1,False
+21039,Kentucky,KY-9,1,False
+21041,Kentucky,KY-10,1,False
+21043,Kentucky,KY-10,1,False
+21045,Kentucky,KY-5,1,False
+21047,Kentucky,KY-9,1,False
+21049,Kentucky,KY-5,1,False
+21051,Kentucky,KY-5,1,False
+21053,Kentucky,KY-5,1,False
+21055,Kentucky,KY-9,1,False
+21057,Kentucky,KY-5,1,False
+21059,Kentucky,KY-9,1,False
+21061,Kentucky,KY-9,1,False
+21063,Kentucky,KY-10,1,False
+21065,Kentucky,KY-5,1,False
+21067,Kentucky,KY-10,1,False
+21069,Kentucky,KY-10,1,False
+21071,Kentucky,KY-5,1,False
+21073,Kentucky,KY-10,1,False
+21075,Kentucky,KY-9,1,False
+21077,Kentucky,KY-10,1,False
+21079,Kentucky,KY-5,1,False
+21081,Kentucky,KY-10,1,False
+21083,Kentucky,KY-9,1,False
+21085,Kentucky,KY-2,1,False
+21087,Kentucky,KY-9,1,False
+21089,Kentucky,KY-10,1,False
+21091,Kentucky,KY-9,1,False
+21093,Kentucky,KY-2,1,False
+21095,Kentucky,KY-5,1,False
+21097,Kentucky,KY-10,1,False
+21099,Kentucky,KY-9,1,False
+21101,Kentucky,KY-9,1,False
+21103,Kentucky,KY-2,1,False
+21105,Kentucky,KY-9,1,False
+21107,Kentucky,KY-9,1,False
+21109,Kentucky,KY-5,1,False
+21111,Kentucky,KY-2,1,False
+21113,Kentucky,KY-10,1,False
+21115,Kentucky,KY-5,1,False
+21117,Kentucky,KY-10,1,False
+21119,Kentucky,KY-5,1,False
+21121,Kentucky,KY-5,1,False
+21123,Kentucky,KY-2,1,False
+21125,Kentucky,KY-5,1,False
+21127,Kentucky,KY-5,1,False
+21129,Kentucky,KY-5,1,False
+21131,Kentucky,KY-5,1,False
+21133,Kentucky,KY-5,1,False
+21135,Kentucky,KY-10,1,False
+21137,Kentucky,KY-5,1,False
+21139,Kentucky,KY-9,1,False
+21141,Kentucky,KY-9,1,False
+21143,Kentucky,KY-9,1,False
+21145,Kentucky,KY-9,1,False
+21147,Kentucky,KY-5,1,False
+21149,Kentucky,KY-9,1,False
+21151,Kentucky,KY-5,1,False
+21153,Kentucky,KY-5,1,False
+21155,Kentucky,KY-2,1,False
+21157,Kentucky,KY-9,1,False
+21159,Kentucky,KY-5,1,False
+21161,Kentucky,KY-10,1,False
+21163,Kentucky,KY-2,1,False
+21165,Kentucky,KY-10,1,False
+21167,Kentucky,KY-10,1,False
+21169,Kentucky,KY-9,1,False
+21171,Kentucky,KY-5,1,False
+21173,Kentucky,KY-10,1,False
+21175,Kentucky,KY-10,1,False
+21177,Kentucky,KY-9,1,False
+21179,Kentucky,KY-2,1,False
+21181,Kentucky,KY-10,1,False
+21183,Kentucky,KY-9,1,False
+21185,Kentucky,KY-2,1,False
+21187,Kentucky,KY-10,1,False
+21189,Kentucky,KY-5,1,False
+21191,Kentucky,KY-10,1,False
+21193,Kentucky,KY-5,1,False
+21195,Kentucky,KY-5,1,False
+21197,Kentucky,KY-5,1,False
+21199,Kentucky,KY-5,1,False
+21201,Kentucky,KY-10,1,False
+21203,Kentucky,KY-5,1,False
+21205,Kentucky,KY-10,1,False
+21207,Kentucky,KY-5,1,False
+21209,Kentucky,KY-10,1,False
+21211,Kentucky,KY-2,1,False
+21213,Kentucky,KY-9,1,False
+21215,Kentucky,KY-2,1,False
+21217,Kentucky,KY-9,1,False
+21219,Kentucky,KY-9,1,False
+21221,Kentucky,KY-9,1,False
+21223,Kentucky,KY-2,1,False
+21225,Kentucky,KY-9,1,False
+21227,Kentucky,KY-9,1,False
+21229,Kentucky,KY-2,1,False
+21231,Kentucky,KY-5,1,False
+21233,Kentucky,KY-9,1,False
+21235,Kentucky,KY-5,1,False
+21237,Kentucky,KY-5,1,False
+21239,Kentucky,KY-10,1,False
+22001,Louisiana,LA-15,1,False
+22003,Louisiana,LA-15,1,False
+22005,Louisiana,LA-13,1,False
+22007,Louisiana,LA-13,1,False
+22009,Louisiana,LA-15,1,False
+22011,Louisiana,LA-15,1,False
+22013,Louisiana,LA-15,1,False
+22015,Louisiana,LA-15,1,False
+22017,Louisiana,LA-15,1,False
+22019,Louisiana,LA-15,1,False
+22021,Louisiana,LA-15,1,False
+22023,Louisiana,LA-15,1,False
+22025,Louisiana,LA-15,1,False
+22027,Louisiana,LA-15,1,False
+22029,Louisiana,LA-15,1,False
+22031,Louisiana,LA-15,1,False
+22033,Louisiana,LA-13,1,False
+22035,Louisiana,LA-15,1,False
+22037,Louisiana,LA-13,1,False
+22039,Louisiana,LA-15,1,False
+22041,Louisiana,LA-15,1,False
+22043,Louisiana,LA-15,1,False
+22045,Louisiana,LA-15,1,False
+22047,Louisiana,LA-13,1,False
+22049,Louisiana,LA-15,1,False
+22051,Louisiana,LA-13,1,False
+22053,Louisiana,LA-15,1,False
+22055,Louisiana,LA-15,1,False
+22057,Louisiana,LA-13,1,False
+22059,Louisiana,LA-15,1,False
+22061,Louisiana,LA-15,1,False
+22063,Louisiana,LA-13,1,False
+22065,Louisiana,LA-15,1,False
+22067,Louisiana,LA-15,1,False
+22069,Louisiana,LA-15,1,False
+22071,Louisiana,LA-13,1,False
+22073,Louisiana,LA-15,1,False
+22075,Louisiana,LA-13,1,False
+22077,Louisiana,LA-13,1,False
+22079,Louisiana,LA-15,1,False
+22081,Louisiana,LA-15,1,False
+22083,Louisiana,LA-15,1,False
+22085,Louisiana,LA-15,1,False
+22087,Louisiana,LA-13,1,False
+22089,Louisiana,LA-13,1,False
+22091,Louisiana,LA-13,1,False
+22093,Louisiana,LA-13,1,False
+22095,Louisiana,LA-13,1,False
+22097,Louisiana,LA-15,1,False
+22099,Louisiana,LA-15,1,False
+22101,Louisiana,LA-15,1,False
+22103,Louisiana,LA-13,1,False
+22105,Louisiana,LA-13,1,False
+22107,Louisiana,LA-15,1,False
+22109,Louisiana,LA-13,1,False
+22111,Louisiana,LA-15,1,False
+22113,Louisiana,LA-15,1,False
+22115,Louisiana,LA-15,1,False
+22117,Louisiana,LA-13,1,False
+22119,Louisiana,LA-15,1,False
+22121,Louisiana,LA-13,1,False
+22123,Louisiana,LA-15,1,False
+22125,Louisiana,LA-13,1,False
+22127,Louisiana,LA-15,1,False
+23001,Maine,ME-1,1,False
+23003,Maine,ME-1,1,False
+23005,Maine,ME-1,1,False
+23007,Maine,ME-1,1,False
+23009,Maine,ME-1,1,False
+23011,Maine,ME-1,1,False
+23013,Maine,ME-1,1,False
+23015,Maine,ME-1,1,False
+23017,Maine,ME-1,1,False
+23019,Maine,ME-1,1,False
+23021,Maine,ME-1,1,False
+23023,Maine,ME-1,1,False
+23025,Maine,ME-1,1,False
+23027,Maine,ME-1,1,False
+23029,Maine,ME-1,1,False
+23031,Maine,ME-1,1,False
+24001,Maryland,MD-1,1,False
+24003,Maryland,MD-1,1,False
+24005,Maryland,MD-1,1,False
+24009,Maryland,MD-1,1,False
+24011,Maryland,MD-1,1,False
+24013,Maryland,MD-1,1,False
+24015,Maryland,MD-1,1,False
+24017,Maryland,MD-1,1,False
+24019,Maryland,MD-1,1,False
+24021,Maryland,MD-1,1,False
+24023,Maryland,MD-1,1,False
+24025,Maryland,MD-1,1,False
+24027,Maryland,MD-1,1,False
+24029,Maryland,MD-1,1,False
+24031,Maryland,MD-1,1,False
+24033,Maryland,MD-1,1,False
+24035,Maryland,MD-1,1,False
+24037,Maryland,MD-1,1,False
+24039,Maryland,MD-1,1,False
+24041,Maryland,MD-1,1,False
+24043,Maryland,MD-1,1,False
+24045,Maryland,MD-1,1,False
+24047,Maryland,MD-1,1,False
+24510,Maryland,MD-1,1,False
+25001,Massachusetts,MA-12,1,False
+25003,Massachusetts,MA-10,1,False
+25005,Massachusetts,MA-12,1,False
+25007,Massachusetts,MA-12,1,False
+25009,Massachusetts,MA-4,1,False
+25011,Massachusetts,MA-10,1,False
+25013,Massachusetts,MA-10,1,False
+25015,Massachusetts,MA-10,1,False
+25017,Massachusetts,MA-11 MA-4,2,True
+25019,Massachusetts,MA-12,1,False
+25021,Massachusetts,MA-11 MA-12,2,True
+25023,Massachusetts,MA-12,1,True
+25025,Massachusetts,MA-11,1,False
+25027,Massachusetts,MA-10,1,False
+26001,Michigan,MI-9,1,False
+26003,Michigan,MI-9,1,False
+26005,Michigan,MI-15,1,False
+26007,Michigan,MI-9,1,False
+26009,Michigan,MI-9,1,False
+26011,Michigan,MI-14,1,False
+26013,Michigan,MI-9,1,False
+26015,Michigan,MI-12,1,False
+26017,Michigan,MI-14,1,False
+26019,Michigan,MI-9,1,False
+26021,Michigan,MI-15,1,False
+26023,Michigan,MI-12,1,False
+26025,Michigan,MI-12,1,False
+26027,Michigan,MI-15,1,False
+26029,Michigan,MI-9,1,False
+26031,Michigan,MI-9,1,False
+26033,Michigan,MI-9,1,False
+26035,Michigan,MI-14,1,False
+26037,Michigan,MI-12,1,False
+26039,Michigan,MI-9,1,False
+26041,Michigan,MI-9,1,False
+26043,Michigan,MI-9,1,False
+26045,Michigan,MI-12,1,False
+26047,Michigan,MI-9,1,False
+26049,Michigan,MI-14,1,False
+26051,Michigan,MI-14,1,False
+26053,Michigan,MI-9,1,False
+26055,Michigan,MI-9,1,False
+26057,Michigan,MI-14,1,False
+26059,Michigan,MI-12,1,False
+26061,Michigan,MI-9,1,False
+26063,Michigan,MI-14,1,False
+26065,Michigan,MI-12,1,False
+26067,Michigan,MI-15,1,False
+26069,Michigan,MI-9,1,False
+26071,Michigan,MI-9,1,False
+26073,Michigan,MI-14,1,False
+26075,Michigan,MI-12,1,False
+26077,Michigan,MI-15,1,False
+26079,Michigan,MI-9,1,False
+26081,Michigan,MI-15,1,False
+26083,Michigan,MI-9,1,False
+26085,Michigan,MI-15,1,False
+26087,Michigan,MI-14,1,False
+26089,Michigan,MI-9,1,False
+26091,Michigan,MI-12,1,False
+26093,Michigan,MI-12,1,False
+26095,Michigan,MI-9,1,False
+26097,Michigan,MI-9,1,False
+26099,Michigan,MI-13,1,False
+26101,Michigan,MI-9,1,False
+26103,Michigan,MI-9,1,False
+26105,Michigan,MI-15,1,False
+26107,Michigan,MI-15,1,False
+26109,Michigan,MI-9,1,False
+26111,Michigan,MI-14,1,False
+26113,Michigan,MI-9,1,False
+26115,Michigan,MI-12,1,False
+26117,Michigan,MI-15,1,False
+26119,Michigan,MI-9,1,False
+26121,Michigan,MI-15,1,False
+26123,Michigan,MI-15,1,False
+26125,Michigan,MI-13,1,False
+26127,Michigan,MI-15,1,False
+26129,Michigan,MI-9,1,False
+26131,Michigan,MI-9,1,False
+26133,Michigan,MI-15,1,False
+26135,Michigan,MI-9,1,False
+26137,Michigan,MI-9,1,False
+26139,Michigan,MI-15,1,False
+26141,Michigan,MI-9,1,False
+26143,Michigan,MI-9,1,False
+26145,Michigan,MI-14,1,False
+26147,Michigan,MI-14,1,False
+26149,Michigan,MI-15,1,False
+26151,Michigan,MI-14,1,False
+26153,Michigan,MI-9,1,False
+26155,Michigan,MI-12,1,False
+26157,Michigan,MI-14,1,False
+26159,Michigan,MI-15,1,False
+26161,Michigan,MI-12,1,False
+26163,Michigan,MI-13,1,False
+26165,Michigan,MI-9,1,False
+27001,Minnesota,MN-1,1,False
+27003,Minnesota,MN-6,1,False
+27005,Minnesota,MN-4,1,False
+27007,Minnesota,MN-4,1,False
+27009,Minnesota,MN-6,1,False
+27011,Minnesota,MN-6,1,False
+27013,Minnesota,MN-5,1,False
+27015,Minnesota,MN-5,1,False
+27017,Minnesota,MN-1,1,False
+27019,Minnesota,MN-5,1,False
+27021,Minnesota,MN-1,1,False
+27023,Minnesota,MN-6,1,False
+27025,Minnesota,MN-6,1,False
+27027,Minnesota,MN-4,1,False
+27029,Minnesota,MN-4,1,False
+27031,Minnesota,MN-1,1,False
+27033,Minnesota,MN-5,1,False
+27035,Minnesota,MN-1,1,False
+27037,Minnesota,MN-5,1,False
+27039,Minnesota,MN-5,1,False
+27041,Minnesota,MN-4,1,False
+27043,Minnesota,MN-5,1,False
+27045,Minnesota,MN-5,1,False
+27047,Minnesota,MN-5,1,False
+27049,Minnesota,MN-5,1,False
+27051,Minnesota,MN-4,1,False
+27053,Minnesota,MN-6,1,False
+27055,Minnesota,MN-5,1,False
+27057,Minnesota,MN-4,1,False
+27059,Minnesota,MN-6,1,False
+27061,Minnesota,MN-1,1,False
+27063,Minnesota,MN-5,1,False
+27065,Minnesota,MN-1,1,False
+27067,Minnesota,MN-6,1,False
+27069,Minnesota,MN-4,1,False
+27071,Minnesota,MN-1,1,False
+27073,Minnesota,MN-6,1,False
+27075,Minnesota,MN-1,1,False
+27077,Minnesota,MN-4,1,False
+27079,Minnesota,MN-5,1,False
+27081,Minnesota,MN-6,1,False
+27083,Minnesota,MN-6,1,False
+27085,Minnesota,MN-5,1,False
+27087,Minnesota,MN-4,1,False
+27089,Minnesota,MN-4,1,False
+27091,Minnesota,MN-5,1,False
+27093,Minnesota,MN-6,1,False
+27095,Minnesota,MN-6,1,False
+27097,Minnesota,MN-6,1,False
+27099,Minnesota,MN-5,1,False
+27101,Minnesota,MN-5,1,False
+27103,Minnesota,MN-5,1,False
+27105,Minnesota,MN-5,1,False
+27107,Minnesota,MN-4,1,False
+27109,Minnesota,MN-5,1,False
+27111,Minnesota,MN-4,1,False
+27113,Minnesota,MN-4,1,False
+27115,Minnesota,MN-1,1,False
+27117,Minnesota,MN-5,1,False
+27119,Minnesota,MN-4,1,False
+27121,Minnesota,MN-4,1,False
+27123,Minnesota,MN-5,1,False
+27125,Minnesota,MN-4,1,False
+27127,Minnesota,MN-5,1,False
+27129,Minnesota,MN-6,1,False
+27131,Minnesota,MN-5,1,False
+27133,Minnesota,MN-5,1,False
+27135,Minnesota,MN-4,1,False
+27137,Minnesota,MN-1,1,False
+27139,Minnesota,MN-5,1,False
+27141,Minnesota,MN-6,1,False
+27143,Minnesota,MN-5,1,False
+27145,Minnesota,MN-6,1,False
+27147,Minnesota,MN-5,1,False
+27149,Minnesota,MN-4,1,False
+27151,Minnesota,MN-6,1,False
+27153,Minnesota,MN-6,1,False
+27155,Minnesota,MN-4,1,False
+27157,Minnesota,MN-5,1,False
+27159,Minnesota,MN-4,1,False
+27161,Minnesota,MN-5,1,False
+27163,Minnesota,MN-5,1,False
+27165,Minnesota,MN-5,1,False
+27167,Minnesota,MN-4,1,False
+27169,Minnesota,MN-5,1,False
+27171,Minnesota,MN-6,1,False
+27173,Minnesota,MN-6,1,False
+28001,Mississippi,MS-10,1,False
+28003,Mississippi,MS-9,1,False
+28005,Mississippi,MS-10,1,False
+28007,Mississippi,MS-9,1,False
+28009,Mississippi,MS-9,1,False
+28011,Mississippi,MS-9,1,False
+28013,Mississippi,MS-9,1,False
+28015,Mississippi,MS-9,1,False
+28017,Mississippi,MS-9,1,False
+28019,Mississippi,MS-9,1,False
+28021,Mississippi,MS-10,1,False
+28023,Mississippi,MS-10,1,False
+28025,Mississippi,MS-9,1,False
+28027,Mississippi,MS-9,1,False
+28029,Mississippi,MS-10,1,False
+28031,Mississippi,MS-10,1,False
+28033,Mississippi,MS-9,1,False
+28035,Mississippi,MS-10,1,False
+28037,Mississippi,MS-10,1,False
+28039,Mississippi,MS-10,1,False
+28041,Mississippi,MS-10,1,False
+28043,Mississippi,MS-9,1,False
+28045,Mississippi,MS-10,1,False
+28047,Mississippi,MS-10,1,False
+28049,Mississippi,MS-10,1,False
+28051,Mississippi,MS-10,1,False
+28053,Mississippi,MS-9,1,False
+28055,Mississippi,MS-9,1,False
+28057,Mississippi,MS-9,1,False
+28059,Mississippi,MS-10,1,False
+28061,Mississippi,MS-10,1,False
+28063,Mississippi,MS-10,1,False
+28065,Mississippi,MS-10,1,False
+28067,Mississippi,MS-10,1,False
+28069,Mississippi,MS-10,1,False
+28071,Mississippi,MS-9,1,False
+28073,Mississippi,MS-10,1,False
+28075,Mississippi,MS-10,1,False
+28077,Mississippi,MS-10,1,False
+28079,Mississippi,MS-10,1,False
+28081,Mississippi,MS-9,1,False
+28083,Mississippi,MS-9,1,False
+28085,Mississippi,MS-10,1,False
+28087,Mississippi,MS-9,1,False
+28089,Mississippi,MS-10,1,False
+28091,Mississippi,MS-10,1,False
+28093,Mississippi,MS-9,1,False
+28095,Mississippi,MS-9,1,False
+28097,Mississippi,MS-9,1,False
+28099,Mississippi,MS-10,1,False
+28101,Mississippi,MS-10,1,False
+28103,Mississippi,MS-10,1,False
+28105,Mississippi,MS-9,1,False
+28107,Mississippi,MS-9,1,False
+28109,Mississippi,MS-10,1,False
+28111,Mississippi,MS-10,1,False
+28113,Mississippi,MS-10,1,False
+28115,Mississippi,MS-9,1,False
+28117,Mississippi,MS-9,1,False
+28119,Mississippi,MS-9,1,False
+28121,Mississippi,MS-10,1,False
+28123,Mississippi,MS-10,1,False
+28125,Mississippi,MS-9,1,False
+28127,Mississippi,MS-10,1,False
+28129,Mississippi,MS-10,1,False
+28131,Mississippi,MS-10,1,False
+28133,Mississippi,MS-9,1,False
+28135,Mississippi,MS-9,1,False
+28137,Mississippi,MS-9,1,False
+28139,Mississippi,MS-9,1,False
+28141,Mississippi,MS-9,1,False
+28143,Mississippi,MS-9,1,False
+28145,Mississippi,MS-9,1,False
+28147,Mississippi,MS-10,1,False
+28149,Mississippi,MS-10,1,False
+28151,Mississippi,MS-9,1,False
+28153,Mississippi,MS-10,1,False
+28155,Mississippi,MS-9,1,False
+28157,Mississippi,MS-10,1,False
+28159,Mississippi,MS-9,1,False
+28161,Mississippi,MS-9,1,False
+28163,Mississippi,MS-10,1,False
+29001,Missouri,MO-4,1,False
+29003,Missouri,MO-3,1,False
+29005,Missouri,MO-3,1,False
+29007,Missouri,MO-5,1,False
+29009,Missouri,MO-7,1,False
+29011,Missouri,MO-3,1,False
+29013,Missouri,MO-3,1,False
+29015,Missouri,MO-3,1,False
+29017,Missouri,MO-7,1,False
+29019,Missouri,MO-5,1,False
+29021,Missouri,MO-3,1,False
+29023,Missouri,MO-7,1,False
+29025,Missouri,MO-3,1,False
+29027,Missouri,MO-5,1,False
+29029,Missouri,MO-3,1,False
+29031,Missouri,MO-7,1,False
+29033,Missouri,MO-3,1,False
+29035,Missouri,MO-7,1,False
+29037,Missouri,MO-3,1,False
+29039,Missouri,MO-7,1,False
+29041,Missouri,MO-5,1,False
+29043,Missouri,MO-7,1,False
+29045,Missouri,MO-4,1,False
+29047,Missouri,MO-3,1,False
+29049,Missouri,MO-3,1,False
+29051,Missouri,MO-5,1,False
+29053,Missouri,MO-5,1,False
+29055,Missouri,MO-7,1,False
+29057,Missouri,MO-7,1,False
+29059,Missouri,MO-7,1,False
+29061,Missouri,MO-3,1,False
+29063,Missouri,MO-3,1,False
+29065,Missouri,MO-7,1,False
+29067,Missouri,MO-7,1,False
+29069,Missouri,MO-7,1,False
+29071,Missouri,MO-4,1,False
+29073,Missouri,MO-7,1,False
+29075,Missouri,MO-3,1,False
+29077,Missouri,MO-7,1,False
+29079,Missouri,MO-3,1,False
+29081,Missouri,MO-3,1,False
+29083,Missouri,MO-3,1,False
+29085,Missouri,MO-3,1,False
+29087,Missouri,MO-3,1,False
+29089,Missouri,MO-5,1,False
+29091,Missouri,MO-7,1,False
+29093,Missouri,MO-7,1,False
+29095,Missouri,MO-3,1,False
+29097,Missouri,MO-3,1,False
+29099,Missouri,MO-4,1,False
+29101,Missouri,MO-3,1,False
+29103,Missouri,MO-4,1,False
+29105,Missouri,MO-7,1,False
+29107,Missouri,MO-3,1,False
+29109,Missouri,MO-7,1,False
+29111,Missouri,MO-4,1,False
+29113,Missouri,MO-4,1,False
+29115,Missouri,MO-3,1,False
+29117,Missouri,MO-3,1,False
+29119,Missouri,MO-3,1,False
+29121,Missouri,MO-4,1,False
+29123,Missouri,MO-7,1,False
+29125,Missouri,MO-7,1,False
+29127,Missouri,MO-4,1,False
+29129,Missouri,MO-3,1,False
+29131,Missouri,MO-5,1,False
+29133,Missouri,MO-7,1,False
+29135,Missouri,MO-5,1,False
+29137,Missouri,MO-4,1,False
+29139,Missouri,MO-4,1,False
+29141,Missouri,MO-3,1,False
+29143,Missouri,MO-7,1,False
+29145,Missouri,MO-3,1,False
+29147,Missouri,MO-3,1,False
+29149,Missouri,MO-7,1,False
+29151,Missouri,MO-5,1,False
+29153,Missouri,MO-7,1,False
+29155,Missouri,MO-7,1,False
+29157,Missouri,MO-7,1,False
+29159,Missouri,MO-3,1,False
+29161,Missouri,MO-7,1,False
+29163,Missouri,MO-4,1,False
+29165,Missouri,MO-3,1,False
+29167,Missouri,MO-7,1,False
+29169,Missouri,MO-7,1,False
+29171,Missouri,MO-3,1,False
+29173,Missouri,MO-4,1,False
+29175,Missouri,MO-5,1,False
+29177,Missouri,MO-3,1,False
+29179,Missouri,MO-7,1,False
+29181,Missouri,MO-7,1,False
+29183,Missouri,MO-4,1,False
+29185,Missouri,MO-3,1,False
+29186,Missouri,MO-7,1,False
+29187,Missouri,MO-7,1,False
+29189,Missouri,MO-4,1,False
+29195,Missouri,MO-3,1,False
+29197,Missouri,MO-4,1,False
+29199,Missouri,MO-4,1,False
+29201,Missouri,MO-7,1,False
+29203,Missouri,MO-7,1,False
+29205,Missouri,MO-4,1,False
+29207,Missouri,MO-7,1,False
+29209,Missouri,MO-7,1,False
+29211,Missouri,MO-3,1,False
+29213,Missouri,MO-7,1,False
+29215,Missouri,MO-7,1,False
+29217,Missouri,MO-3,1,False
+29219,Missouri,MO-4,1,False
+29221,Missouri,MO-4,1,False
+29223,Missouri,MO-7,1,False
+29225,Missouri,MO-7,1,False
+29227,Missouri,MO-3,1,False
+29229,Missouri,MO-7,1,False
+29510,Missouri,MO-4,1,False
+30001,Montana,MT-1,1,False
+30003,Montana,MT-1,1,False
+30005,Montana,MT-1,1,False
+30007,Montana,MT-1,1,False
+30009,Montana,MT-1,1,False
+30011,Montana,MT-1,1,False
+30013,Montana,MT-1,1,False
+30015,Montana,MT-1,1,False
+30017,Montana,MT-1,1,False
+30019,Montana,MT-1,1,False
+30021,Montana,MT-1,1,False
+30023,Montana,MT-1,1,False
+30025,Montana,MT-1,1,False
+30027,Montana,MT-1,1,False
+30029,Montana,MT-1,1,False
+30031,Montana,MT-1,1,False
+30033,Montana,MT-1,1,False
+30035,Montana,MT-1,1,False
+30037,Montana,MT-1,1,False
+30039,Montana,MT-1,1,False
+30041,Montana,MT-1,1,False
+30043,Montana,MT-1,1,False
+30045,Montana,MT-1,1,False
+30047,Montana,MT-1,1,False
+30049,Montana,MT-1,1,False
+30051,Montana,MT-1,1,False
+30053,Montana,MT-1,1,False
+30055,Montana,MT-1,1,False
+30057,Montana,MT-1,1,False
+30059,Montana,MT-1,1,False
+30061,Montana,MT-1,1,False
+30063,Montana,MT-1,1,False
+30065,Montana,MT-1,1,False
+30067,Montana,MT-1,1,False
+30069,Montana,MT-1,1,False
+30071,Montana,MT-1,1,False
+30073,Montana,MT-1,1,False
+30075,Montana,MT-1,1,False
+30077,Montana,MT-1,1,False
+30079,Montana,MT-1,1,False
+30081,Montana,MT-1,1,False
+30083,Montana,MT-1,1,False
+30085,Montana,MT-1,1,False
+30087,Montana,MT-1,1,False
+30089,Montana,MT-1,1,False
+30091,Montana,MT-1,1,False
+30093,Montana,MT-1,1,False
+30095,Montana,MT-1,1,False
+30097,Montana,MT-1,1,False
+30099,Montana,MT-1,1,False
+30101,Montana,MT-1,1,False
+30103,Montana,MT-1,1,False
+30105,Montana,MT-1,1,False
+30107,Montana,MT-1,1,False
+30109,Montana,MT-1,1,False
+30111,Montana,MT-1,1,False
+31001,Nebraska,NE-4,1,False
+31003,Nebraska,NE-4,1,False
+31005,Nebraska,NE-4,1,False
+31007,Nebraska,NE-4,1,False
+31009,Nebraska,NE-4,1,False
+31011,Nebraska,NE-4,1,False
+31013,Nebraska,NE-4,1,False
+31015,Nebraska,NE-4,1,False
+31017,Nebraska,NE-4,1,False
+31019,Nebraska,NE-4,1,False
+31021,Nebraska,NE-4,1,False
+31023,Nebraska,NE-4,1,False
+31025,Nebraska,NE-4,1,False
+31027,Nebraska,NE-4,1,False
+31029,Nebraska,NE-4,1,False
+31031,Nebraska,NE-4,1,False
+31033,Nebraska,NE-4,1,False
+31035,Nebraska,NE-4,1,False
+31037,Nebraska,NE-4,1,False
+31039,Nebraska,NE-4,1,False
+31041,Nebraska,NE-4,1,False
+31043,Nebraska,NE-4,1,False
+31045,Nebraska,NE-4,1,False
+31047,Nebraska,NE-4,1,False
+31049,Nebraska,NE-4,1,False
+31051,Nebraska,NE-4,1,False
+31053,Nebraska,NE-4,1,False
+31055,Nebraska,NE-4,1,False
+31057,Nebraska,NE-4,1,False
+31059,Nebraska,NE-4,1,False
+31061,Nebraska,NE-4,1,False
+31063,Nebraska,NE-4,1,False
+31065,Nebraska,NE-4,1,False
+31067,Nebraska,NE-4,1,False
+31069,Nebraska,NE-4,1,False
+31071,Nebraska,NE-4,1,False
+31073,Nebraska,NE-4,1,False
+31075,Nebraska,NE-4,1,False
+31077,Nebraska,NE-4,1,False
+31079,Nebraska,NE-4,1,False
+31081,Nebraska,NE-4,1,False
+31083,Nebraska,NE-4,1,False
+31085,Nebraska,NE-4,1,False
+31087,Nebraska,NE-4,1,False
+31089,Nebraska,NE-4,1,False
+31091,Nebraska,NE-4,1,False
+31093,Nebraska,NE-4,1,False
+31095,Nebraska,NE-4,1,False
+31097,Nebraska,NE-4,1,False
+31099,Nebraska,NE-4,1,False
+31101,Nebraska,NE-4,1,False
+31103,Nebraska,NE-4,1,False
+31105,Nebraska,NE-4,1,False
+31107,Nebraska,NE-4,1,False
+31109,Nebraska,NE-4,1,False
+31111,Nebraska,NE-4,1,False
+31113,Nebraska,NE-4,1,False
+31115,Nebraska,NE-4,1,False
+31117,Nebraska,NE-4,1,False
+31119,Nebraska,NE-4,1,False
+31121,Nebraska,NE-4,1,False
+31123,Nebraska,NE-4,1,False
+31125,Nebraska,NE-4,1,False
+31127,Nebraska,NE-4,1,False
+31129,Nebraska,NE-4,1,False
+31131,Nebraska,NE-4,1,False
+31133,Nebraska,NE-4,1,False
+31135,Nebraska,NE-4,1,False
+31137,Nebraska,NE-4,1,False
+31139,Nebraska,NE-4,1,False
+31141,Nebraska,NE-4,1,False
+31143,Nebraska,NE-4,1,False
+31145,Nebraska,NE-4,1,False
+31147,Nebraska,NE-4,1,False
+31149,Nebraska,NE-4,1,False
+31151,Nebraska,NE-4,1,False
+31153,Nebraska,NE-4,1,False
+31155,Nebraska,NE-4,1,False
+31157,Nebraska,NE-4,1,False
+31159,Nebraska,NE-4,1,False
+31161,Nebraska,NE-4,1,False
+31163,Nebraska,NE-4,1,False
+31165,Nebraska,NE-4,1,False
+31167,Nebraska,NE-4,1,False
+31169,Nebraska,NE-4,1,False
+31171,Nebraska,NE-4,1,False
+31173,Nebraska,NE-4,1,False
+31175,Nebraska,NE-4,1,False
+31177,Nebraska,NE-4,1,False
+31179,Nebraska,NE-4,1,False
+31181,Nebraska,NE-4,1,False
+31183,Nebraska,NE-4,1,False
+31185,Nebraska,NE-4,1,False
+32001,Nevada,NV-1,1,False
+32003,Nevada,NV-1,1,False
+32005,Nevada,NV-1,1,False
+32007,Nevada,NV-1,1,False
+32009,Nevada,NV-1,1,False
+32011,Nevada,NV-1,1,False
+32013,Nevada,NV-1,1,False
+32015,Nevada,NV-1,1,False
+32017,Nevada,NV-1,1,False
+32019,Nevada,NV-1,1,False
+32021,Nevada,NV-1,1,False
+32023,Nevada,NV-1,1,False
+32027,Nevada,NV-1,1,False
+32029,Nevada,NV-1,1,False
+32031,Nevada,NV-1,1,False
+32033,Nevada,NV-1,1,False
+32510,Nevada,NV-1,1,False
+33001,New Hampshire,NH-1,1,False
+33003,New Hampshire,NH-1,1,False
+33005,New Hampshire,NH-1,1,False
+33007,New Hampshire,NH-1,1,False
+33009,New Hampshire,NH-1,1,False
+33011,New Hampshire,NH-1,1,False
+33013,New Hampshire,NH-1,1,False
+33015,New Hampshire,NH-1,1,False
+33017,New Hampshire,NH-1,1,False
+33019,New Hampshire,NH-1,1,False
+34001,New Jersey,NJ-20,1,False
+34003,New Jersey,NJ-18,1,False
+34005,New Jersey,NJ-20,1,False
+34007,New Jersey,NJ-20,1,False
+34009,New Jersey,NJ-20,1,False
+34011,New Jersey,NJ-20,1,False
+34013,New Jersey,NJ-8,1,False
+34015,New Jersey,NJ-20,1,False
+34017,New Jersey,NJ-18,1,False
+34019,New Jersey,NJ-15,1,False
+34021,New Jersey,NJ-17,1,False
+34023,New Jersey,NJ-17,1,False
+34025,New Jersey,NJ-20,1,False
+34027,New Jersey,NJ-15,1,False
+34029,New Jersey,NJ-20,1,False
+34031,New Jersey,NJ-18,1,False
+34033,New Jersey,NJ-20,1,False
+34035,New Jersey,NJ-15,1,False
+34037,New Jersey,NJ-15,1,False
+34039,New Jersey,NJ-17,1,False
+34041,New Jersey,NJ-15,1,False
+35001,New Mexico,NM-5,1,False
+35003,New Mexico,NM-5,1,False
+35005,New Mexico,NM-5,1,False
+35006,New Mexico,NM-5,1,False
+35007,New Mexico,NM-5,1,False
+35009,New Mexico,NM-5,1,False
+35011,New Mexico,NM-5,1,False
+35013,New Mexico,NM-5,1,False
+35015,New Mexico,NM-5,1,False
+35017,New Mexico,NM-5,1,False
+35019,New Mexico,NM-5,1,False
+35021,New Mexico,NM-5,1,False
+35023,New Mexico,NM-5,1,False
+35025,New Mexico,NM-5,1,False
+35027,New Mexico,NM-5,1,False
+35028,New Mexico,NM-5,1,False
+35029,New Mexico,NM-5,1,False
+35031,New Mexico,NM-5,1,False
+35033,New Mexico,NM-5,1,False
+35035,New Mexico,NM-5,1,False
+35037,New Mexico,NM-5,1,False
+35039,New Mexico,NM-5,1,False
+35041,New Mexico,NM-5,1,False
+35043,New Mexico,NM-5,1,False
+35045,New Mexico,NM-1,1,False
+35047,New Mexico,NM-5,1,False
+35049,New Mexico,NM-5,1,False
+35051,New Mexico,NM-5,1,False
+35053,New Mexico,NM-5,1,False
+35055,New Mexico,NM-5,1,False
+35057,New Mexico,NM-5,1,False
+35059,New Mexico,NM-5,1,False
+35061,New Mexico,NM-5,1,False
+36001,New York,NY-21,1,False
+36003,New York,NY-23,1,False
+36005,New York,NY-9,1,False
+36007,New York,NY-22,1,False
+36009,New York,NY-23,1,False
+36011,New York,NY-22,1,False
+36013,New York,NY-23,1,False
+36015,New York,NY-23,1,False
+36017,New York,NY-22,1,False
+36019,New York,NY-21,1,False
+36021,New York,NY-21,1,False
+36023,New York,NY-22,1,False
+36025,New York,NY-22,1,False
+36027,New York,NY-20,1,False
+36029,New York,NY-24,1,False
+36031,New York,NY-21,1,False
+36033,New York,NY-21,1,False
+36035,New York,NY-21,1,False
+36037,New York,NY-24,1,False
+36039,New York,NY-21,1,False
+36041,New York,NY-21,1,False
+36043,New York,NY-22,1,False
+36045,New York,NY-22,1,False
+36047,New York,NY-9,1,False
+36049,New York,NY-22,1,False
+36051,New York,NY-23,1,False
+36053,New York,NY-22,1,False
+36055,New York,NY-23,1,False
+36057,New York,NY-21,1,False
+36059,New York,NY-7,1,False
+36061,New York,NY-9,1,False
+36063,New York,NY-24,1,False
+36065,New York,NY-22,1,False
+36067,New York,NY-22,1,False
+36069,New York,NY-23,1,False
+36071,New York,NY-20,1,False
+36073,New York,NY-24,1,False
+36075,New York,NY-22,1,False
+36077,New York,NY-22,1,False
+36079,New York,NY-20,1,False
+36081,New York,NY-9,1,False
+36083,New York,NY-21,1,False
+36085,New York,NY-9,1,False
+36087,New York,NY-20,1,False
+36089,New York,NY-21,1,False
+36091,New York,NY-21,1,False
+36093,New York,NY-21,1,False
+36095,New York,NY-21,1,False
+36097,New York,NY-23,1,False
+36099,New York,NY-23,1,False
+36101,New York,NY-23,1,False
+36103,New York,NY-7,1,False
+36105,New York,NY-20,1,False
+36107,New York,NY-23,1,False
+36109,New York,NY-23,1,False
+36111,New York,NY-20,1,False
+36113,New York,NY-21,1,False
+36115,New York,NY-21,1,False
+36117,New York,NY-23,1,False
+36119,New York,NY-20,1,False
+36121,New York,NY-24,1,False
+36123,New York,NY-23,1,False
+37001,North Carolina,NC-5,1,False
+37003,North Carolina,NC-5,1,False
+37005,North Carolina,NC-5,1,False
+37007,North Carolina,NC-5,1,False
+37009,North Carolina,NC-5,1,False
+37011,North Carolina,NC-5,1,False
+37013,North Carolina,NC-5,1,False
+37015,North Carolina,NC-5,1,False
+37017,North Carolina,NC-5,1,False
+37019,North Carolina,NC-5,1,False
+37021,North Carolina,NC-5,1,False
+37023,North Carolina,NC-5,1,False
+37025,North Carolina,NC-5,1,False
+37027,North Carolina,NC-5,1,False
+37029,North Carolina,NC-5,1,False
+37031,North Carolina,NC-5,1,False
+37033,North Carolina,NC-5,1,False
+37035,North Carolina,NC-5,1,False
+37037,North Carolina,NC-5,1,False
+37039,North Carolina,NC-5,1,False
+37041,North Carolina,NC-5,1,False
+37043,North Carolina,NC-5,1,False
+37045,North Carolina,NC-5,1,False
+37047,North Carolina,NC-5,1,False
+37049,North Carolina,NC-5,1,False
+37051,North Carolina,NC-5,1,False
+37053,North Carolina,NC-5,1,False
+37055,North Carolina,NC-5,1,False
+37057,North Carolina,NC-5,1,False
+37059,North Carolina,NC-5,1,False
+37061,North Carolina,NC-5,1,False
+37063,North Carolina,NC-5,1,False
+37065,North Carolina,NC-5,1,False
+37067,North Carolina,NC-5,1,False
+37069,North Carolina,NC-5,1,False
+37071,North Carolina,NC-5,1,False
+37073,North Carolina,NC-5,1,False
+37075,North Carolina,NC-5,1,False
+37077,North Carolina,NC-5,1,False
+37079,North Carolina,NC-5,1,False
+37081,North Carolina,NC-5,1,False
+37083,North Carolina,NC-5,1,False
+37085,North Carolina,NC-5,1,False
+37087,North Carolina,NC-5,1,False
+37089,North Carolina,NC-5,1,False
+37091,North Carolina,NC-5,1,False
+37093,North Carolina,NC-5,1,False
+37095,North Carolina,NC-5,1,False
+37097,North Carolina,NC-5,1,False
+37099,North Carolina,NC-5,1,False
+37101,North Carolina,NC-5,1,False
+37103,North Carolina,NC-5,1,False
+37105,North Carolina,NC-5,1,False
+37107,North Carolina,NC-5,1,False
+37109,North Carolina,NC-5,1,False
+37111,North Carolina,NC-5,1,False
+37113,North Carolina,NC-5,1,False
+37115,North Carolina,NC-5,1,False
+37117,North Carolina,NC-5,1,False
+37119,North Carolina,NC-5,1,False
+37121,North Carolina,NC-5,1,False
+37123,North Carolina,NC-5,1,False
+37125,North Carolina,NC-5,1,False
+37127,North Carolina,NC-5,1,False
+37129,North Carolina,NC-5,1,False
+37131,North Carolina,NC-5,1,False
+37133,North Carolina,NC-5,1,False
+37135,North Carolina,NC-5,1,False
+37137,North Carolina,NC-5,1,False
+37139,North Carolina,NC-5,1,False
+37141,North Carolina,NC-5,1,False
+37143,North Carolina,NC-5,1,False
+37145,North Carolina,NC-5,1,False
+37147,North Carolina,NC-5,1,False
+37149,North Carolina,NC-5,1,False
+37151,North Carolina,NC-5,1,False
+37153,North Carolina,NC-5,1,False
+37155,North Carolina,NC-5,1,False
+37157,North Carolina,NC-5,1,False
+37159,North Carolina,NC-5,1,False
+37161,North Carolina,NC-5,1,False
+37163,North Carolina,NC-5,1,False
+37165,North Carolina,NC-5,1,False
+37167,North Carolina,NC-5,1,False
+37169,North Carolina,NC-5,1,False
+37171,North Carolina,NC-5,1,False
+37173,North Carolina,NC-5,1,False
+37175,North Carolina,NC-5,1,False
+37177,North Carolina,NC-5,1,False
+37179,North Carolina,NC-5,1,False
+37181,North Carolina,NC-5,1,False
+37183,North Carolina,NC-5,1,False
+37185,North Carolina,NC-5,1,False
+37187,North Carolina,NC-5,1,False
+37189,North Carolina,NC-5,1,False
+37191,North Carolina,NC-5,1,False
+37193,North Carolina,NC-5,1,False
+37195,North Carolina,NC-5,1,False
+37197,North Carolina,NC-5,1,False
+37199,North Carolina,NC-5,1,False
+38001,North Dakota,ND-3,1,False
+38003,North Dakota,ND-3,1,False
+38005,North Dakota,ND-3,1,False
+38007,North Dakota,ND-3,1,False
+38009,North Dakota,ND-3,1,False
+38011,North Dakota,ND-3,1,False
+38013,North Dakota,ND-3,1,False
+38015,North Dakota,ND-3,1,False
+38017,North Dakota,ND-3,1,False
+38019,North Dakota,ND-3,1,False
+38021,North Dakota,ND-3,1,False
+38023,North Dakota,ND-3,1,False
+38025,North Dakota,ND-3,1,False
+38027,North Dakota,ND-3,1,False
+38029,North Dakota,ND-3,1,False
+38031,North Dakota,ND-3,1,False
+38033,North Dakota,ND-3,1,False
+38035,North Dakota,ND-3,1,False
+38037,North Dakota,ND-3,1,False
+38039,North Dakota,ND-3,1,False
+38041,North Dakota,ND-3,1,False
+38043,North Dakota,ND-3,1,False
+38045,North Dakota,ND-3,1,False
+38047,North Dakota,ND-3,1,False
+38049,North Dakota,ND-3,1,False
+38051,North Dakota,ND-3,1,False
+38053,North Dakota,ND-3,1,False
+38055,North Dakota,ND-3,1,False
+38057,North Dakota,ND-3,1,False
+38059,North Dakota,ND-3,1,False
+38061,North Dakota,ND-3,1,False
+38063,North Dakota,ND-3,1,False
+38065,North Dakota,ND-3,1,False
+38067,North Dakota,ND-3,1,False
+38069,North Dakota,ND-3,1,False
+38071,North Dakota,ND-3,1,False
+38073,North Dakota,ND-3,1,False
+38075,North Dakota,ND-3,1,False
+38077,North Dakota,ND-3,1,False
+38079,North Dakota,ND-3,1,False
+38081,North Dakota,ND-3,1,False
+38083,North Dakota,ND-3,1,False
+38085,North Dakota,ND-3,1,False
+38087,North Dakota,ND-3,1,False
+38089,North Dakota,ND-3,1,False
+38091,North Dakota,ND-3,1,False
+38093,North Dakota,ND-3,1,False
+38095,North Dakota,ND-3,1,False
+38097,North Dakota,ND-3,1,False
+38099,North Dakota,ND-3,1,False
+38101,North Dakota,ND-3,1,False
+38103,North Dakota,ND-3,1,False
+38105,North Dakota,ND-3,1,False
+39001,Ohio,OH-24,1,False
+39003,Ohio,OH-23,1,False
+39005,Ohio,OH-23,1,False
+39007,Ohio,OH-21,1,False
+39009,Ohio,OH-24,1,False
+39011,Ohio,OH-23,1,False
+39013,Ohio,OH-24,1,False
+39015,Ohio,OH-18,1,False
+39017,Ohio,OH-18,1,False
+39019,Ohio,OH-24,1,False
+39021,Ohio,OH-23,1,False
+39023,Ohio,OH-23,1,False
+39025,Ohio,OH-18,1,False
+39027,Ohio,OH-18,1,False
+39029,Ohio,OH-20,1,False
+39031,Ohio,OH-24,1,False
+39033,Ohio,OH-23,1,False
+39035,Ohio,OH-21,1,False
+39037,Ohio,OH-23,1,False
+39039,Ohio,OH-23,1,False
+39041,Ohio,OH-24,1,False
+39043,Ohio,OH-23,1,False
+39045,Ohio,OH-24,1,False
+39047,Ohio,OH-24,1,False
+39049,Ohio,OH-24,1,False
+39051,Ohio,OH-23,1,False
+39053,Ohio,OH-24,1,False
+39055,Ohio,OH-21,1,False
+39057,Ohio,OH-23,1,False
+39059,Ohio,OH-24,1,False
+39061,Ohio,OH-18,1,False
+39063,Ohio,OH-23,1,False
+39065,Ohio,OH-23,1,False
+39067,Ohio,OH-24,1,False
+39069,Ohio,OH-23,1,False
+39071,Ohio,OH-18,1,False
+39073,Ohio,OH-24,1,False
+39075,Ohio,OH-24,1,False
+39077,Ohio,OH-23,1,False
+39079,Ohio,OH-24,1,False
+39081,Ohio,OH-24,1,False
+39083,Ohio,OH-24,1,False
+39085,Ohio,OH-21,1,False
+39087,Ohio,OH-24,1,False
+39089,Ohio,OH-24,1,False
+39091,Ohio,OH-23,1,False
+39093,Ohio,OH-21,1,False
+39095,Ohio,OH-23,1,False
+39097,Ohio,OH-24,1,False
+39099,Ohio,OH-20,1,False
+39101,Ohio,OH-24,1,False
+39103,Ohio,OH-20,1,False
+39105,Ohio,OH-24,1,False
+39107,Ohio,OH-23,1,False
+39109,Ohio,OH-23,1,False
+39111,Ohio,OH-24,1,False
+39113,Ohio,OH-23,1,False
+39115,Ohio,OH-24,1,False
+39117,Ohio,OH-24,1,False
+39119,Ohio,OH-24,1,False
+39121,Ohio,OH-24,1,False
+39123,Ohio,OH-23,1,False
+39125,Ohio,OH-23,1,False
+39127,Ohio,OH-24,1,False
+39129,Ohio,OH-24,1,False
+39131,Ohio,OH-24,1,False
+39133,Ohio,OH-20,1,False
+39135,Ohio,OH-23,1,False
+39137,Ohio,OH-23,1,False
+39139,Ohio,OH-23,1,False
+39141,Ohio,OH-24,1,False
+39143,Ohio,OH-23,1,False
+39145,Ohio,OH-24,1,False
+39147,Ohio,OH-23,1,False
+39149,Ohio,OH-23,1,False
+39151,Ohio,OH-20,1,False
+39153,Ohio,OH-20,1,False
+39155,Ohio,OH-20,1,False
+39157,Ohio,OH-24,1,False
+39159,Ohio,OH-24,1,False
+39161,Ohio,OH-23,1,False
+39163,Ohio,OH-24,1,False
+39165,Ohio,OH-18,1,False
+39167,Ohio,OH-24,1,False
+39169,Ohio,OH-20,1,False
+39171,Ohio,OH-23,1,False
+39173,Ohio,OH-23,1,False
+39175,Ohio,OH-23,1,False
+40001,Oklahoma,OK-3,1,False
+40003,Oklahoma,OK-3,1,False
+40005,Oklahoma,OK-3,1,False
+40007,Oklahoma,OK-3,1,False
+40009,Oklahoma,OK-3,1,False
+40011,Oklahoma,OK-3,1,False
+40013,Oklahoma,OK-3,1,False
+40015,Oklahoma,OK-3,1,False
+40017,Oklahoma,OK-3,1,False
+40019,Oklahoma,OK-3,1,False
+40021,Oklahoma,OK-3,1,False
+40023,Oklahoma,OK-3,1,False
+40025,Oklahoma,OK-3,1,False
+40027,Oklahoma,OK-3,1,False
+40029,Oklahoma,OK-3,1,False
+40031,Oklahoma,OK-3,1,False
+40033,Oklahoma,OK-3,1,False
+40035,Oklahoma,OK-3,1,False
+40037,Oklahoma,OK-3,1,False
+40039,Oklahoma,OK-3,1,False
+40041,Oklahoma,OK-3,1,False
+40043,Oklahoma,OK-3,1,False
+40045,Oklahoma,OK-3,1,False
+40047,Oklahoma,OK-3,1,False
+40049,Oklahoma,OK-3,1,False
+40051,Oklahoma,OK-3,1,False
+40053,Oklahoma,OK-3,1,False
+40055,Oklahoma,OK-3,1,False
+40057,Oklahoma,OK-3,1,False
+40059,Oklahoma,OK-3,1,False
+40061,Oklahoma,OK-3,1,False
+40063,Oklahoma,OK-3,1,False
+40065,Oklahoma,OK-3,1,False
+40067,Oklahoma,OK-3,1,False
+40069,Oklahoma,OK-3,1,False
+40071,Oklahoma,OK-3,1,False
+40073,Oklahoma,OK-3,1,False
+40075,Oklahoma,OK-3,1,False
+40077,Oklahoma,OK-3,1,False
+40079,Oklahoma,OK-3,1,False
+40081,Oklahoma,OK-3,1,False
+40083,Oklahoma,OK-3,1,False
+40085,Oklahoma,OK-3,1,False
+40087,Oklahoma,OK-3,1,False
+40089,Oklahoma,OK-3,1,False
+40091,Oklahoma,OK-3,1,False
+40093,Oklahoma,OK-3,1,False
+40095,Oklahoma,OK-3,1,False
+40097,Oklahoma,OK-3,1,False
+40099,Oklahoma,OK-3,1,False
+40101,Oklahoma,OK-3,1,False
+40103,Oklahoma,OK-3,1,False
+40105,Oklahoma,OK-3,1,False
+40107,Oklahoma,OK-3,1,False
+40109,Oklahoma,OK-3,1,False
+40111,Oklahoma,OK-3,1,False
+40113,Oklahoma,OK-3,1,False
+40115,Oklahoma,OK-3,1,False
+40117,Oklahoma,OK-3,1,False
+40119,Oklahoma,OK-3,1,False
+40121,Oklahoma,OK-3,1,False
+40123,Oklahoma,OK-3,1,False
+40125,Oklahoma,OK-3,1,False
+40127,Oklahoma,OK-3,1,False
+40129,Oklahoma,OK-3,1,False
+40131,Oklahoma,OK-3,1,False
+40133,Oklahoma,OK-3,1,False
+40135,Oklahoma,OK-3,1,False
+40137,Oklahoma,OK-3,1,False
+40139,Oklahoma,OK-3,1,False
+40141,Oklahoma,OK-3,1,False
+40143,Oklahoma,OK-3,1,False
+40145,Oklahoma,OK-3,1,False
+40147,Oklahoma,OK-3,1,False
+40149,Oklahoma,OK-3,1,False
+40151,Oklahoma,OK-3,1,False
+40153,Oklahoma,OK-3,1,False
+41001,Oregon,OR-6,1,False
+41003,Oregon,OR-6,1,False
+41005,Oregon,OR-6,1,False
+41007,Oregon,OR-6,1,False
+41009,Oregon,OR-6,1,False
+41011,Oregon,OR-6,1,False
+41013,Oregon,OR-6,1,False
+41015,Oregon,OR-6,1,False
+41017,Oregon,OR-6,1,False
+41019,Oregon,OR-6,1,False
+41021,Oregon,OR-6,1,False
+41023,Oregon,OR-6,1,False
+41025,Oregon,OR-6,1,False
+41027,Oregon,OR-6,1,False
+41029,Oregon,OR-6,1,False
+41031,Oregon,OR-6,1,False
+41033,Oregon,OR-6,1,False
+41035,Oregon,OR-6,1,False
+41037,Oregon,OR-6,1,False
+41039,Oregon,OR-6,1,False
+41041,Oregon,OR-6,1,False
+41043,Oregon,OR-6,1,False
+41045,Oregon,OR-6,1,False
+41047,Oregon,OR-6,1,False
+41049,Oregon,OR-6,1,False
+41051,Oregon,OR-6,1,False
+41053,Oregon,OR-6,1,False
+41055,Oregon,OR-6,1,False
+41057,Oregon,OR-6,1,False
+41059,Oregon,OR-6,1,False
+41061,Oregon,OR-6,1,False
+41063,Oregon,OR-6,1,False
+41065,Oregon,OR-6,1,False
+41067,Oregon,OR-6,1,False
+41069,Oregon,OR-6,1,False
+41071,Oregon,OR-6,1,False
+42001,Pennsylvania,PA-25,1,False
+42003,Pennsylvania,PA-8,1,False
+42005,Pennsylvania,PA-27,1,False
+42007,Pennsylvania,PA-8,1,False
+42009,Pennsylvania,PA-25,1,False
+42011,Pennsylvania,PA-25,1,False
+42013,Pennsylvania,PA-25,1,False
+42015,Pennsylvania,PA-24,1,False
+42017,Pennsylvania,PA-23,1,False
+42019,Pennsylvania,PA-8,1,False
+42021,Pennsylvania,PA-27,1,False
+42023,Pennsylvania,PA-26,1,False
+42025,Pennsylvania,PA-24,1,False
+42027,Pennsylvania,PA-25,1,False
+42029,Pennsylvania,PA-23,1,False
+42031,Pennsylvania,PA-27,1,False
+42033,Pennsylvania,PA-25,1,False
+42035,Pennsylvania,PA-24,1,False
+42037,Pennsylvania,PA-24,1,False
+42039,Pennsylvania,PA-26,1,False
+42041,Pennsylvania,PA-25,1,False
+42043,Pennsylvania,PA-25,1,False
+42045,Pennsylvania,PA-23,1,False
+42047,Pennsylvania,PA-26,1,False
+42049,Pennsylvania,PA-26,1,False
+42051,Pennsylvania,PA-27,1,False
+42053,Pennsylvania,PA-26,1,False
+42055,Pennsylvania,PA-25,1,False
+42057,Pennsylvania,PA-25,1,False
+42059,Pennsylvania,PA-27,1,False
+42061,Pennsylvania,PA-25,1,False
+42063,Pennsylvania,PA-27,1,False
+42065,Pennsylvania,PA-27,1,False
+42067,Pennsylvania,PA-25,1,False
+42069,Pennsylvania,PA-24,1,False
+42071,Pennsylvania,PA-25,1,False
+42073,Pennsylvania,PA-8,1,False
+42075,Pennsylvania,PA-25,1,False
+42077,Pennsylvania,PA-24,1,False
+42079,Pennsylvania,PA-24,1,False
+42081,Pennsylvania,PA-24,1,False
+42083,Pennsylvania,PA-26,1,False
+42085,Pennsylvania,PA-26,1,False
+42087,Pennsylvania,PA-25,1,False
+42089,Pennsylvania,PA-24,1,False
+42091,Pennsylvania,PA-23,1,False
+42093,Pennsylvania,PA-24,1,False
+42095,Pennsylvania,PA-24,1,False
+42097,Pennsylvania,PA-24,1,False
+42099,Pennsylvania,PA-25,1,False
+42101,Pennsylvania,PA-1,1,False
+42103,Pennsylvania,PA-24,1,False
+42105,Pennsylvania,PA-26,1,False
+42107,Pennsylvania,PA-25,1,False
+42109,Pennsylvania,PA-24,1,False
+42111,Pennsylvania,PA-27,1,False
+42113,Pennsylvania,PA-24,1,False
+42115,Pennsylvania,PA-24,1,False
+42117,Pennsylvania,PA-24,1,False
+42119,Pennsylvania,PA-24,1,False
+42121,Pennsylvania,PA-26,1,False
+42123,Pennsylvania,PA-26,1,False
+42125,Pennsylvania,PA-27,1,False
+42127,Pennsylvania,PA-24,1,False
+42129,Pennsylvania,PA-27,1,False
+42131,Pennsylvania,PA-24,1,False
+42133,Pennsylvania,PA-25,1,False
+44001,Rhode Island,RI-1,1,False
+44003,Rhode Island,RI-1,1,False
+44005,Rhode Island,RI-1,1,False
+44007,Rhode Island,RI-1,1,False
+44009,Rhode Island,RI-1,1,False
+45001,South Carolina,SC-8,1,False
+45003,South Carolina,SC-8,1,False
+45005,South Carolina,SC-8,1,False
+45007,South Carolina,SC-8,1,False
+45009,South Carolina,SC-8,1,False
+45011,South Carolina,SC-8,1,False
+45013,South Carolina,SC-8,1,False
+45015,South Carolina,SC-8,1,False
+45017,South Carolina,SC-8,1,False
+45019,South Carolina,SC-8,1,False
+45021,South Carolina,SC-8,1,False
+45023,South Carolina,SC-8,1,False
+45025,South Carolina,SC-8,1,False
+45027,South Carolina,SC-8,1,False
+45029,South Carolina,SC-8,1,False
+45031,South Carolina,SC-8,1,False
+45033,South Carolina,SC-8,1,False
+45035,South Carolina,SC-8,1,False
+45037,South Carolina,SC-8,1,False
+45039,South Carolina,SC-8,1,False
+45041,South Carolina,SC-8,1,False
+45043,South Carolina,SC-8,1,False
+45045,South Carolina,SC-8,1,False
+45047,South Carolina,SC-8,1,False
+45049,South Carolina,SC-8,1,False
+45051,South Carolina,SC-8,1,False
+45053,South Carolina,SC-8,1,False
+45055,South Carolina,SC-8,1,False
+45057,South Carolina,SC-8,1,False
+45059,South Carolina,SC-8,1,False
+45061,South Carolina,SC-8,1,False
+45063,South Carolina,SC-8,1,False
+45065,South Carolina,SC-8,1,False
+45067,South Carolina,SC-8,1,False
+45069,South Carolina,SC-8,1,False
+45071,South Carolina,SC-8,1,False
+45073,South Carolina,SC-8,1,False
+45075,South Carolina,SC-8,1,False
+45077,South Carolina,SC-8,1,False
+45079,South Carolina,SC-8,1,False
+45081,South Carolina,SC-8,1,False
+45083,South Carolina,SC-8,1,False
+45085,South Carolina,SC-8,1,False
+45087,South Carolina,SC-8,1,False
+45089,South Carolina,SC-8,1,False
+45091,South Carolina,SC-8,1,False
+46003,South Dakota,SD-2,1,False
+46005,South Dakota,SD-2,1,False
+46007,South Dakota,SD-4,1,False
+46009,South Dakota,SD-2,1,False
+46011,South Dakota,SD-2,1,False
+46013,South Dakota,SD-2,1,False
+46015,South Dakota,SD-4,1,False
+46017,South Dakota,SD-4,1,False
+46019,South Dakota,SD-4,1,False
+46021,South Dakota,SD-4,1,False
+46023,South Dakota,SD-4,1,False
+46025,South Dakota,SD-2,1,False
+46027,South Dakota,SD-2,1,False
+46029,South Dakota,SD-2,1,False
+46031,South Dakota,SD-4,1,False
+46033,South Dakota,SD-4,1,False
+46035,South Dakota,SD-2,1,False
+46037,South Dakota,SD-2,1,False
+46039,South Dakota,SD-2,1,False
+46041,South Dakota,SD-4,1,False
+46043,South Dakota,SD-2,1,False
+46045,South Dakota,SD-2,1,False
+46047,South Dakota,SD-4,1,False
+46049,South Dakota,SD-2,1,False
+46051,South Dakota,SD-4,1,False
+46053,South Dakota,SD-4,1,False
+46055,South Dakota,SD-4,1,False
+46057,South Dakota,SD-2,1,False
+46059,South Dakota,SD-2,1,False
+46061,South Dakota,SD-2,1,False
+46063,South Dakota,SD-4,1,False
+46065,South Dakota,SD-4,1,False
+46067,South Dakota,SD-2,1,False
+46069,South Dakota,SD-4,1,False
+46071,South Dakota,SD-4,1,False
+46073,South Dakota,SD-2,1,False
+46075,South Dakota,SD-4,1,False
+46077,South Dakota,SD-2,1,False
+46079,South Dakota,SD-2,1,False
+46081,South Dakota,SD-4,1,False
+46083,South Dakota,SD-2,1,False
+46085,South Dakota,SD-4,1,False
+46087,South Dakota,SD-2,1,False
+46089,South Dakota,SD-2,1,False
+46091,South Dakota,SD-2,1,False
+46093,South Dakota,SD-4,1,False
+46095,South Dakota,SD-4,1,False
+46097,South Dakota,SD-2,1,False
+46099,South Dakota,SD-2,1,False
+46101,South Dakota,SD-2,1,False
+46102,South Dakota,SD-4,1,False
+46103,South Dakota,SD-4,1,False
+46105,South Dakota,SD-4,1,False
+46107,South Dakota,SD-4,1,False
+46109,South Dakota,SD-4,1,False
+46111,South Dakota,SD-2,1,False
+46115,South Dakota,SD-2,1,False
+46117,South Dakota,SD-4,1,False
+46119,South Dakota,SD-4,1,False
+46121,South Dakota,SD-4,1,False
+46123,South Dakota,SD-4,1,False
+46125,South Dakota,SD-2,1,False
+46127,South Dakota,SD-2,1,False
+46129,South Dakota,SD-4,1,False
+46135,South Dakota,SD-2,1,False
+46137,South Dakota,SD-4,1,False
+47001,Tennessee,TN-10,1,False
+47003,Tennessee,TN-10,1,False
+47005,Tennessee,TN-7,1,False
+47007,Tennessee,TN-9,1,False
+47009,Tennessee,TN-9,1,False
+47011,Tennessee,TN-9,1,False
+47013,Tennessee,TN-10,1,False
+47015,Tennessee,TN-10,1,False
+47017,Tennessee,TN-7,1,False
+47019,Tennessee,TN-9,1,False
+47021,Tennessee,TN-10,1,False
+47023,Tennessee,TN-7,1,False
+47025,Tennessee,TN-10,1,False
+47027,Tennessee,TN-10,1,False
+47029,Tennessee,TN-9,1,False
+47031,Tennessee,TN-10,1,False
+47033,Tennessee,TN-7,1,False
+47035,Tennessee,TN-10,1,False
+47037,Tennessee,TN-10,1,False
+47039,Tennessee,TN-7,1,False
+47041,Tennessee,TN-10,1,False
+47043,Tennessee,TN-10,1,False
+47045,Tennessee,TN-7,1,False
+47047,Tennessee,TN-4,1,False
+47049,Tennessee,TN-10,1,False
+47051,Tennessee,TN-10,1,False
+47053,Tennessee,TN-7,1,False
+47055,Tennessee,TN-10,1,False
+47057,Tennessee,TN-9,1,False
+47059,Tennessee,TN-9,1,False
+47061,Tennessee,TN-10,1,False
+47063,Tennessee,TN-9,1,False
+47065,Tennessee,TN-9,1,False
+47067,Tennessee,TN-9,1,False
+47069,Tennessee,TN-7,1,False
+47071,Tennessee,TN-7,1,False
+47073,Tennessee,TN-9,1,False
+47075,Tennessee,TN-7,1,False
+47077,Tennessee,TN-7,1,False
+47079,Tennessee,TN-7,1,False
+47081,Tennessee,TN-10,1,False
+47083,Tennessee,TN-10,1,False
+47085,Tennessee,TN-10,1,False
+47087,Tennessee,TN-10,1,False
+47089,Tennessee,TN-9,1,False
+47091,Tennessee,TN-9,1,False
+47093,Tennessee,TN-9,1,False
+47095,Tennessee,TN-7,1,False
+47097,Tennessee,TN-4,1,False
+47099,Tennessee,TN-10,1,False
+47101,Tennessee,TN-10,1,False
+47103,Tennessee,TN-10,1,False
+47105,Tennessee,TN-9,1,False
+47107,Tennessee,TN-9,1,False
+47109,Tennessee,TN-7,1,False
+47111,Tennessee,TN-10,1,False
+47113,Tennessee,TN-7,1,False
+47115,Tennessee,TN-9,1,False
+47117,Tennessee,TN-10,1,False
+47119,Tennessee,TN-10,1,False
+47121,Tennessee,TN-9,1,False
+47123,Tennessee,TN-9,1,False
+47125,Tennessee,TN-10,1,False
+47127,Tennessee,TN-10,1,False
+47129,Tennessee,TN-10,1,False
+47131,Tennessee,TN-7,1,False
+47133,Tennessee,TN-10,1,False
+47135,Tennessee,TN-10,1,False
+47137,Tennessee,TN-10,1,False
+47139,Tennessee,TN-9,1,False
+47141,Tennessee,TN-10,1,False
+47143,Tennessee,TN-9,1,False
+47145,Tennessee,TN-10,1,False
+47147,Tennessee,TN-10,1,False
+47149,Tennessee,TN-10,1,False
+47151,Tennessee,TN-10,1,False
+47153,Tennessee,TN-9,1,False
+47155,Tennessee,TN-9,1,False
+47157,Tennessee,TN-4,1,False
+47159,Tennessee,TN-10,1,False
+47161,Tennessee,TN-10,1,False
+47163,Tennessee,TN-9,1,False
+47165,Tennessee,TN-10,1,False
+47167,Tennessee,TN-4,1,False
+47169,Tennessee,TN-10,1,False
+47171,Tennessee,TN-9,1,False
+47173,Tennessee,TN-10,1,False
+47175,Tennessee,TN-10,1,False
+47177,Tennessee,TN-10,1,False
+47179,Tennessee,TN-9,1,False
+47181,Tennessee,TN-10,1,False
+47183,Tennessee,TN-7,1,False
+47185,Tennessee,TN-10,1,False
+47187,Tennessee,TN-10,1,False
+47189,Tennessee,TN-10,1,False
+48001,Texas,TX-13,1,False
+48003,Texas,TX-14,1,False
+48005,Texas,TX-13,1,False
+48007,Texas,TX-15,1,False
+48009,Texas,TX-14,1,False
+48011,Texas,TX-14,1,False
+48013,Texas,TX-15,1,False
+48015,Texas,TX-13,1,False
+48017,Texas,TX-14,1,False
+48019,Texas,TX-15,1,False
+48021,Texas,TX-15,1,False
+48023,Texas,TX-14,1,False
+48025,Texas,TX-15,1,False
+48027,Texas,TX-13,1,False
+48029,Texas,TX-15,1,False
+48031,Texas,TX-15,1,False
+48033,Texas,TX-14,1,False
+48035,Texas,TX-13,1,False
+48037,Texas,TX-13,1,False
+48039,Texas,TX-13,1,False
+48041,Texas,TX-13,1,False
+48043,Texas,TX-15,1,False
+48045,Texas,TX-14,1,False
+48047,Texas,TX-15,1,False
+48049,Texas,TX-14,1,False
+48051,Texas,TX-13,1,False
+48053,Texas,TX-15,1,False
+48055,Texas,TX-15,1,False
+48057,Texas,TX-15,1,False
+48059,Texas,TX-14,1,False
+48061,Texas,TX-15,1,False
+48063,Texas,TX-13,1,False
+48065,Texas,TX-14,1,False
+48067,Texas,TX-13,1,False
+48069,Texas,TX-14,1,False
+48071,Texas,TX-13,1,False
+48073,Texas,TX-13,1,False
+48075,Texas,TX-14,1,False
+48077,Texas,TX-14,1,False
+48079,Texas,TX-14,1,False
+48081,Texas,TX-14,1,False
+48083,Texas,TX-14,1,False
+48085,Texas,TX-14,1,False
+48087,Texas,TX-14,1,False
+48089,Texas,TX-13,1,False
+48091,Texas,TX-15,1,False
+48093,Texas,TX-14,1,False
+48095,Texas,TX-14,1,False
+48097,Texas,TX-14,1,False
+48099,Texas,TX-13,1,False
+48101,Texas,TX-14,1,False
+48103,Texas,TX-14,1,False
+48105,Texas,TX-15,1,False
+48107,Texas,TX-14,1,False
+48109,Texas,TX-15,1,False
+48111,Texas,TX-14,1,False
+48113,Texas,TX-14,1,False
+48115,Texas,TX-14,1,False
+48117,Texas,TX-14,1,False
+48119,Texas,TX-13,1,False
+48121,Texas,TX-14,1,False
+48123,Texas,TX-15,1,False
+48125,Texas,TX-14,1,False
+48127,Texas,TX-15,1,False
+48129,Texas,TX-14,1,False
+48131,Texas,TX-15,1,False
+48133,Texas,TX-14,1,False
+48135,Texas,TX-14,1,False
+48137,Texas,TX-15,1,False
+48139,Texas,TX-14,1,False
+48141,Texas,TX-15,1,False
+48143,Texas,TX-14,1,False
+48145,Texas,TX-13,1,False
+48147,Texas,TX-14,1,False
+48149,Texas,TX-13,1,False
+48151,Texas,TX-14,1,False
+48153,Texas,TX-14,1,False
+48155,Texas,TX-14,1,False
+48157,Texas,TX-13,1,False
+48159,Texas,TX-13,1,False
+48161,Texas,TX-13,1,False
+48163,Texas,TX-15,1,False
+48165,Texas,TX-14,1,False
+48167,Texas,TX-13,1,False
+48169,Texas,TX-14,1,False
+48171,Texas,TX-15,1,False
+48173,Texas,TX-14,1,False
+48175,Texas,TX-15,1,False
+48177,Texas,TX-15,1,False
+48179,Texas,TX-14,1,False
+48181,Texas,TX-14,1,False
+48183,Texas,TX-13,1,False
+48185,Texas,TX-13,1,False
+48187,Texas,TX-15,1,False
+48189,Texas,TX-14,1,False
+48191,Texas,TX-14,1,False
+48193,Texas,TX-13,1,False
+48195,Texas,TX-14,1,False
+48197,Texas,TX-14,1,False
+48199,Texas,TX-13,1,False
+48201,Texas,TX-13,1,False
+48203,Texas,TX-13,1,False
+48205,Texas,TX-14,1,False
+48207,Texas,TX-14,1,False
+48209,Texas,TX-15,1,False
+48211,Texas,TX-14,1,False
+48213,Texas,TX-13,1,False
+48215,Texas,TX-15,1,False
+48217,Texas,TX-13,1,False
+48219,Texas,TX-14,1,False
+48221,Texas,TX-14,1,False
+48223,Texas,TX-13,1,False
+48225,Texas,TX-13,1,False
+48227,Texas,TX-14,1,False
+48229,Texas,TX-15,1,False
+48231,Texas,TX-14,1,False
+48233,Texas,TX-14,1,False
+48235,Texas,TX-14,1,False
+48237,Texas,TX-14,1,False
+48239,Texas,TX-15,1,False
+48241,Texas,TX-13,1,False
+48243,Texas,TX-15,1,False
+48245,Texas,TX-13,1,False
+48247,Texas,TX-15,1,False
+48249,Texas,TX-15,1,False
+48251,Texas,TX-14,1,False
+48253,Texas,TX-14,1,False
+48255,Texas,TX-15,1,False
+48257,Texas,TX-14,1,False
+48259,Texas,TX-15,1,False
+48261,Texas,TX-15,1,False
+48263,Texas,TX-14,1,False
+48265,Texas,TX-15,1,False
+48267,Texas,TX-15,1,False
+48269,Texas,TX-14,1,False
+48271,Texas,TX-15,1,False
+48273,Texas,TX-15,1,False
+48275,Texas,TX-14,1,False
+48277,Texas,TX-13,1,False
+48279,Texas,TX-14,1,False
+48281,Texas,TX-13,1,False
+48283,Texas,TX-15,1,False
+48285,Texas,TX-15,1,False
+48287,Texas,TX-13,1,False
+48289,Texas,TX-13,1,False
+48291,Texas,TX-13,1,False
+48293,Texas,TX-13,1,False
+48295,Texas,TX-14,1,False
+48297,Texas,TX-15,1,False
+48299,Texas,TX-15,1,False
+48301,Texas,TX-14,1,False
+48303,Texas,TX-14,1,False
+48305,Texas,TX-14,1,False
+48307,Texas,TX-14,1,False
+48309,Texas,TX-13,1,False
+48311,Texas,TX-15,1,False
+48313,Texas,TX-13,1,False
+48315,Texas,TX-13,1,False
+48317,Texas,TX-14,1,False
+48319,Texas,TX-15,1,False
+48321,Texas,TX-13,1,False
+48323,Texas,TX-15,1,False
+48325,Texas,TX-15,1,False
+48327,Texas,TX-14,1,False
+48329,Texas,TX-14,1,False
+48331,Texas,TX-13,1,False
+48333,Texas,TX-14,1,False
+48335,Texas,TX-14,1,False
+48337,Texas,TX-14,1,False
+48339,Texas,TX-13,1,False
+48341,Texas,TX-14,1,False
+48343,Texas,TX-13,1,False
+48345,Texas,TX-14,1,False
+48347,Texas,TX-13,1,False
+48349,Texas,TX-13,1,False
+48351,Texas,TX-13,1,False
+48353,Texas,TX-14,1,False
+48355,Texas,TX-15,1,False
+48357,Texas,TX-14,1,False
+48359,Texas,TX-14,1,False
+48361,Texas,TX-13,1,False
+48363,Texas,TX-14,1,False
+48365,Texas,TX-13,1,False
+48367,Texas,TX-14,1,False
+48369,Texas,TX-14,1,False
+48371,Texas,TX-15,1,False
+48373,Texas,TX-13,1,False
+48375,Texas,TX-14,1,False
+48377,Texas,TX-15,1,False
+48379,Texas,TX-13,1,False
+48381,Texas,TX-14,1,False
+48383,Texas,TX-14,1,False
+48385,Texas,TX-15,1,False
+48387,Texas,TX-13,1,False
+48389,Texas,TX-15,1,False
+48391,Texas,TX-15,1,False
+48393,Texas,TX-14,1,False
+48395,Texas,TX-13,1,False
+48397,Texas,TX-14,1,False
+48399,Texas,TX-14,1,False
+48401,Texas,TX-13,1,False
+48403,Texas,TX-13,1,False
+48405,Texas,TX-13,1,False
+48407,Texas,TX-13,1,False
+48409,Texas,TX-15,1,False
+48411,Texas,TX-14,1,False
+48413,Texas,TX-14,1,False
+48415,Texas,TX-14,1,False
+48417,Texas,TX-14,1,False
+48419,Texas,TX-13,1,False
+48421,Texas,TX-14,1,False
+48423,Texas,TX-13,1,False
+48425,Texas,TX-14,1,False
+48427,Texas,TX-15,1,False
+48429,Texas,TX-14,1,False
+48431,Texas,TX-14,1,False
+48433,Texas,TX-14,1,False
+48435,Texas,TX-15,1,False
+48437,Texas,TX-14,1,False
+48439,Texas,TX-14,1,False
+48441,Texas,TX-14,1,False
+48443,Texas,TX-15,1,False
+48445,Texas,TX-14,1,False
+48447,Texas,TX-14,1,False
+48449,Texas,TX-13,1,False
+48451,Texas,TX-14,1,False
+48453,Texas,TX-15,1,False
+48455,Texas,TX-13,1,False
+48457,Texas,TX-13,1,False
+48459,Texas,TX-13,1,False
+48461,Texas,TX-14,1,False
+48463,Texas,TX-15,1,False
+48465,Texas,TX-15,1,False
+48467,Texas,TX-13,1,False
+48469,Texas,TX-15,1,False
+48471,Texas,TX-13,1,False
+48473,Texas,TX-13,1,False
+48475,Texas,TX-14,1,False
+48477,Texas,TX-13,1,False
+48479,Texas,TX-15,1,False
+48481,Texas,TX-13,1,False
+48483,Texas,TX-14,1,False
+48485,Texas,TX-14,1,False
+48487,Texas,TX-14,1,False
+48489,Texas,TX-15,1,False
+48491,Texas,TX-15,1,False
+48493,Texas,TX-15,1,False
+48495,Texas,TX-14,1,False
+48497,Texas,TX-14,1,False
+48499,Texas,TX-13,1,False
+48501,Texas,TX-14,1,False
+48503,Texas,TX-14,1,False
+48505,Texas,TX-15,1,False
+48507,Texas,TX-15,1,False
+49001,Utah,UT-1,1,False
+49003,Utah,UT-1,1,False
+49005,Utah,UT-1,1,False
+49007,Utah,UT-1,1,False
+49009,Utah,UT-1,1,False
+49011,Utah,UT-1,1,False
+49013,Utah,UT-1,1,False
+49015,Utah,UT-1,1,False
+49017,Utah,UT-1,1,False
+49019,Utah,UT-1,1,False
+49021,Utah,UT-1,1,False
+49023,Utah,UT-1,1,False
+49025,Utah,UT-1,1,False
+49027,Utah,UT-1,1,False
+49029,Utah,UT-1,1,False
+49031,Utah,UT-1,1,False
+49033,Utah,UT-1,1,False
+49035,Utah,UT-1,1,False
+49037,Utah,UT-1,1,False
+49039,Utah,UT-1,1,False
+49041,Utah,UT-1,1,False
+49043,Utah,UT-1,1,False
+49045,Utah,UT-1,1,False
+49047,Utah,UT-1,1,False
+49049,Utah,UT-1,1,False
+49051,Utah,UT-1,1,False
+49053,Utah,UT-1,1,False
+49055,Utah,UT-1,1,False
+49057,Utah,UT-1,1,False
+50001,Vermont,VT-1,1,False
+50003,Vermont,VT-1,1,False
+50005,Vermont,VT-1,1,False
+50007,Vermont,VT-1,1,False
+50009,Vermont,VT-1,1,False
+50011,Vermont,VT-1,1,False
+50013,Vermont,VT-1,1,False
+50015,Vermont,VT-1,1,False
+50017,Vermont,VT-1,1,False
+50019,Vermont,VT-1,1,False
+50021,Vermont,VT-1,1,False
+50023,Vermont,VT-1,1,False
+50025,Vermont,VT-1,1,False
+50027,Vermont,VT-1,1,False
+51001,Virginia,VA-16,1,False
+51003,Virginia,VA-18,1,False
+51005,Virginia,VA-19,1,False
+51007,Virginia,VA-17,1,False
+51009,Virginia,VA-17,1,False
+51011,Virginia,VA-17,1,False
+51013,Virginia,VA-20,1,False
+51015,Virginia,VA-19,1,False
+51017,Virginia,VA-19,1,False
+51019,Virginia,VA-19,1,False
+51021,Virginia,VA-15,1,False
+51023,Virginia,VA-19,1,False
+51025,Virginia,VA-17,1,False
+51027,Virginia,VA-15,1,False
+51029,Virginia,VA-17,1,False
+51031,Virginia,VA-17,1,False
+51033,Virginia,VA-20,1,False
+51035,Virginia,VA-15,1,False
+51036,Virginia,VA-18,1,False
+51037,Virginia,VA-17,1,False
+51041,Virginia,VA-18,1,False
+51043,Virginia,VA-19,1,False
+51045,Virginia,VA-19,1,False
+51047,Virginia,VA-20,1,False
+51049,Virginia,VA-17,1,False
+51051,Virginia,VA-15,1,False
+51053,Virginia,VA-18,1,False
+51057,Virginia,VA-20,1,False
+51059,Virginia,VA-20,1,False
+51061,Virginia,VA-20,1,False
+51063,Virginia,VA-15,1,False
+51065,Virginia,VA-18,1,False
+51067,Virginia,VA-19,1,False
+51069,Virginia,VA-19,1,False
+51071,Virginia,VA-15,1,False
+51073,Virginia,VA-16,1,False
+51075,Virginia,VA-18,1,False
+51077,Virginia,VA-15,1,False
+51079,Virginia,VA-18,1,False
+51081,Virginia,VA-17,1,False
+51083,Virginia,VA-17,1,False
+51085,Virginia,VA-18,1,False
+51087,Virginia,VA-18,1,False
+51089,Virginia,VA-17,1,False
+51091,Virginia,VA-19,1,False
+51093,Virginia,VA-17,1,False
+51095,Virginia,VA-16,1,False
+51097,Virginia,VA-20,1,False
+51099,Virginia,VA-20,1,False
+51101,Virginia,VA-20,1,False
+51103,Virginia,VA-20,1,False
+51105,Virginia,VA-15,1,False
+51107,Virginia,VA-20,1,False
+51109,Virginia,VA-18,1,False
+51111,Virginia,VA-17,1,False
+51113,Virginia,VA-20,1,False
+51115,Virginia,VA-16,1,False
+51117,Virginia,VA-17,1,False
+51119,Virginia,VA-16,1,False
+51121,Virginia,VA-15,1,False
+51125,Virginia,VA-18,1,False
+51127,Virginia,VA-18,1,False
+51131,Virginia,VA-16,1,False
+51133,Virginia,VA-20,1,False
+51135,Virginia,VA-17,1,False
+51137,Virginia,VA-20,1,False
+51139,Virginia,VA-19,1,False
+51141,Virginia,VA-17,1,False
+51143,Virginia,VA-17,1,False
+51145,Virginia,VA-18,1,False
+51147,Virginia,VA-17,1,False
+51149,Virginia,VA-18,1,False
+51153,Virginia,VA-20,1,False
+51155,Virginia,VA-15,1,False
+51157,Virginia,VA-20,1,False
+51159,Virginia,VA-20,1,False
+51161,Virginia,VA-19,1,False
+51163,Virginia,VA-19,1,False
+51165,Virginia,VA-19,1,False
+51167,Virginia,VA-15,1,False
+51169,Virginia,VA-15,1,False
+51171,Virginia,VA-19,1,False
+51173,Virginia,VA-15,1,False
+51175,Virginia,VA-17,1,False
+51177,Virginia,VA-20,1,False
+51179,Virginia,VA-20,1,False
+51181,Virginia,VA-18,1,False
+51183,Virginia,VA-17,1,False
+51185,Virginia,VA-15,1,False
+51187,Virginia,VA-19,1,False
+51191,Virginia,VA-15,1,False
+51193,Virginia,VA-20,1,False
+51195,Virginia,VA-15,1,False
+51197,Virginia,VA-15,1,False
+51199,Virginia,VA-16,1,False
+51510,Virginia,VA-20,1,False
+51520,Virginia,VA-15,1,False
+51530,Virginia,VA-19,1,False
+51540,Virginia,VA-18,1,False
+51550,Virginia,VA-16,1,False
+51570,Virginia,VA-18,1,False
+51580,Virginia,VA-19,1,False
+51590,Virginia,VA-17,1,False
+51595,Virginia,VA-17,1,False
+51600,Virginia,VA-20,1,False
+51610,Virginia,VA-20,1,False
+51620,Virginia,VA-17,1,False
+51630,Virginia,VA-20,1,False
+51640,Virginia,VA-15,1,False
+51650,Virginia,VA-16,1,False
+51660,Virginia,VA-19,1,False
+51670,Virginia,VA-18,1,False
+51678,Virginia,VA-19,1,False
+51680,Virginia,VA-17,1,False
+51683,Virginia,VA-20,1,False
+51685,Virginia,VA-20,1,False
+51690,Virginia,VA-17,1,False
+51700,Virginia,VA-16,1,False
+51710,Virginia,VA-16,1,False
+51720,Virginia,VA-15,1,False
+51730,Virginia,VA-18,1,False
+51735,Virginia,VA-16,1,False
+51740,Virginia,VA-16,1,False
+51750,Virginia,VA-15,1,False
+51760,Virginia,VA-18,1,False
+51770,Virginia,VA-19,1,False
+51775,Virginia,VA-19,1,False
+51790,Virginia,VA-19,1,False
+51800,Virginia,VA-17,1,False
+51810,Virginia,VA-16,1,False
+51820,Virginia,VA-19,1,False
+51830,Virginia,VA-16,1,False
+51840,Virginia,VA-19,1,False
+53001,Washington,WA-1,1,False
+53003,Washington,WA-1,1,False
+53005,Washington,WA-1,1,False
+53007,Washington,WA-1,1,False
+53009,Washington,WA-1,1,False
+53011,Washington,WA-1,1,False
+53013,Washington,WA-1,1,False
+53015,Washington,WA-1,1,False
+53017,Washington,WA-1,1,False
+53019,Washington,WA-1,1,False
+53021,Washington,WA-1,1,False
+53023,Washington,WA-1,1,False
+53025,Washington,WA-1,1,False
+53027,Washington,WA-1,1,False
+53029,Washington,WA-1,1,False
+53031,Washington,WA-1,1,False
+53033,Washington,WA-1,1,False
+53035,Washington,WA-1,1,False
+53037,Washington,WA-1,1,False
+53039,Washington,WA-1,1,False
+53041,Washington,WA-1,1,False
+53043,Washington,WA-1,1,False
+53045,Washington,WA-1,1,False
+53047,Washington,WA-1,1,False
+53049,Washington,WA-1,1,False
+53051,Washington,WA-1,1,False
+53053,Washington,WA-1,1,False
+53055,Washington,WA-1,1,False
+53057,Washington,WA-1,1,False
+53059,Washington,WA-1,1,False
+53061,Washington,WA-1,1,False
+53063,Washington,WA-1,1,False
+53065,Washington,WA-1,1,False
+53067,Washington,WA-1,1,False
+53069,Washington,WA-1,1,False
+53071,Washington,WA-1,1,False
+53073,Washington,WA-1,1,False
+53075,Washington,WA-1,1,False
+53077,Washington,WA-1,1,False
+54001,West Virginia,WV-5,1,False
+54003,West Virginia,WV-5,1,False
+54005,West Virginia,WV-5,1,False
+54007,West Virginia,WV-5,1,False
+54009,West Virginia,WV-5,1,False
+54011,West Virginia,WV-5,1,False
+54013,West Virginia,WV-5,1,False
+54015,West Virginia,WV-5,1,False
+54017,West Virginia,WV-5,1,False
+54019,West Virginia,WV-5,1,False
+54021,West Virginia,WV-5,1,False
+54023,West Virginia,WV-5,1,False
+54025,West Virginia,WV-5,1,False
+54027,West Virginia,WV-5,1,False
+54029,West Virginia,WV-5,1,False
+54031,West Virginia,WV-5,1,False
+54033,West Virginia,WV-5,1,False
+54035,West Virginia,WV-5,1,False
+54037,West Virginia,WV-5,1,False
+54039,West Virginia,WV-5,1,False
+54041,West Virginia,WV-5,1,False
+54043,West Virginia,WV-5,1,False
+54045,West Virginia,WV-5,1,False
+54047,West Virginia,WV-5,1,False
+54049,West Virginia,WV-5,1,False
+54051,West Virginia,WV-5,1,False
+54053,West Virginia,WV-5,1,False
+54055,West Virginia,WV-5,1,False
+54057,West Virginia,WV-5,1,False
+54059,West Virginia,WV-5,1,False
+54061,West Virginia,WV-5,1,False
+54063,West Virginia,WV-5,1,False
+54065,West Virginia,WV-5,1,False
+54067,West Virginia,WV-5,1,False
+54069,West Virginia,WV-5,1,False
+54071,West Virginia,WV-5,1,False
+54073,West Virginia,WV-5,1,False
+54075,West Virginia,WV-5,1,False
+54077,West Virginia,WV-5,1,False
+54079,West Virginia,WV-5,1,False
+54081,West Virginia,WV-5,1,False
+54083,West Virginia,WV-5,1,False
+54085,West Virginia,WV-5,1,False
+54087,West Virginia,WV-5,1,False
+54089,West Virginia,WV-5,1,False
+54091,West Virginia,WV-5,1,False
+54093,West Virginia,WV-5,1,False
+54095,West Virginia,WV-5,1,False
+54097,West Virginia,WV-5,1,False
+54099,West Virginia,WV-5,1,False
+54101,West Virginia,WV-5,1,False
+54103,West Virginia,WV-5,1,False
+54105,West Virginia,WV-5,1,False
+54107,West Virginia,WV-5,1,False
+54109,West Virginia,WV-5,1,False
+55001,Wisconsin,WI-5,1,False
+55003,Wisconsin,WI-2,1,False
+55005,Wisconsin,WI-2,1,False
+55007,Wisconsin,WI-2,1,False
+55009,Wisconsin,WI-5,1,False
+55011,Wisconsin,WI-5,1,False
+55013,Wisconsin,WI-2,1,False
+55015,Wisconsin,WI-5,1,False
+55017,Wisconsin,WI-2,1,False
+55019,Wisconsin,WI-2,1,False
+55021,Wisconsin,WI-5,1,False
+55023,Wisconsin,WI-5,1,False
+55025,Wisconsin,WI-5,1,False
+55027,Wisconsin,WI-5,1,False
+55029,Wisconsin,WI-5,1,False
+55031,Wisconsin,WI-2,1,False
+55033,Wisconsin,WI-2,1,False
+55035,Wisconsin,WI-2,1,False
+55037,Wisconsin,WI-2,1,False
+55039,Wisconsin,WI-5,1,False
+55041,Wisconsin,WI-2,1,False
+55043,Wisconsin,WI-5,1,False
+55045,Wisconsin,WI-5,1,False
+55047,Wisconsin,WI-5,1,False
+55049,Wisconsin,WI-5,1,False
+55051,Wisconsin,WI-2,1,False
+55053,Wisconsin,WI-5,1,False
+55055,Wisconsin,WI-5,1,False
+55057,Wisconsin,WI-5,1,False
+55059,Wisconsin,WI-5,1,False
+55061,Wisconsin,WI-5,1,False
+55063,Wisconsin,WI-5,1,False
+55065,Wisconsin,WI-5,1,False
+55067,Wisconsin,WI-2,1,False
+55069,Wisconsin,WI-2,1,False
+55071,Wisconsin,WI-5,1,False
+55073,Wisconsin,WI-2,1,False
+55075,Wisconsin,WI-2,1,False
+55077,Wisconsin,WI-5,1,False
+55078,Wisconsin,WI-2,1,False
+55079,Wisconsin,WI-5,1,False
+55081,Wisconsin,WI-5,1,False
+55083,Wisconsin,WI-2,1,False
+55085,Wisconsin,WI-2,1,False
+55087,Wisconsin,WI-5,1,False
+55089,Wisconsin,WI-5,1,False
+55091,Wisconsin,WI-2,1,False
+55093,Wisconsin,WI-2,1,False
+55095,Wisconsin,WI-2,1,False
+55097,Wisconsin,WI-2,1,False
+55099,Wisconsin,WI-2,1,False
+55101,Wisconsin,WI-5,1,False
+55103,Wisconsin,WI-5,1,False
+55105,Wisconsin,WI-5,1,False
+55107,Wisconsin,WI-2,1,False
+55109,Wisconsin,WI-2,1,False
+55111,Wisconsin,WI-5,1,False
+55113,Wisconsin,WI-2,1,False
+55115,Wisconsin,WI-2,1,False
+55117,Wisconsin,WI-5,1,False
+55119,Wisconsin,WI-2,1,False
+55121,Wisconsin,WI-5,1,False
+55123,Wisconsin,WI-5,1,False
+55125,Wisconsin,WI-2,1,False
+55127,Wisconsin,WI-5,1,False
+55129,Wisconsin,WI-2,1,False
+55131,Wisconsin,WI-5,1,False
+55133,Wisconsin,WI-5,1,False
+55135,Wisconsin,WI-2,1,False
+55137,Wisconsin,WI-5,1,False
+55139,Wisconsin,WI-5,1,False
+55141,Wisconsin,WI-2,1,False
+56001,Wyoming,WY-4,1,False
+56003,Wyoming,WY-4,1,False
+56005,Wyoming,WY-4,1,False
+56007,Wyoming,WY-4,1,False
+56009,Wyoming,WY-4,1,False
+56011,Wyoming,WY-4,1,False
+56013,Wyoming,WY-4,1,False
+56015,Wyoming,WY-4,1,False
+56017,Wyoming,WY-4,1,False
+56019,Wyoming,WY-4,1,False
+56021,Wyoming,WY-4,1,False
+56023,Wyoming,WY-4,1,False
+56025,Wyoming,WY-4,1,False
+56027,Wyoming,WY-4,1,False
+56029,Wyoming,WY-4,1,False
+56031,Wyoming,WY-4,1,False
+56033,Wyoming,WY-4,1,False
+56035,Wyoming,WY-4,1,False
+56037,Wyoming,WY-4,1,False
+56039,Wyoming,WY-4,1,False
+56041,Wyoming,WY-4,1,False
+56043,Wyoming,WY-4,1,False
+56045,Wyoming,WY-4,1,False
+72001,Puerto Rico,PR-1,1,False
+72003,Puerto Rico,PR-1,1,False
+72005,Puerto Rico,PR-1,1,False
+72007,Puerto Rico,PR-1,1,False
+72009,Puerto Rico,PR-1,1,False
+72011,Puerto Rico,PR-1,1,False
+72013,Puerto Rico,PR-1,1,False
+72015,Puerto Rico,PR-1,1,False
+72017,Puerto Rico,PR-1,1,False
+72019,Puerto Rico,PR-1,1,False
+72021,Puerto Rico,PR-1,1,False
+72023,Puerto Rico,PR-1,1,False
+72025,Puerto Rico,PR-1,1,False
+72027,Puerto Rico,PR-1,1,False
+72029,Puerto Rico,PR-1,1,False
+72031,Puerto Rico,PR-1,1,False
+72033,Puerto Rico,PR-1,1,False
+72035,Puerto Rico,PR-1,1,False
+72037,Puerto Rico,PR-1,1,False
+72039,Puerto Rico,PR-1,1,False
+72041,Puerto Rico,PR-1,1,False
+72043,Puerto Rico,PR-1,1,False
+72045,Puerto Rico,PR-1,1,False
+72047,Puerto Rico,PR-1,1,False
+72049,Puerto Rico,PR-1,1,False
+72051,Puerto Rico,PR-1,1,False
+72053,Puerto Rico,PR-1,1,False
+72054,Puerto Rico,PR-1,1,False
+72055,Puerto Rico,PR-1,1,False
+72057,Puerto Rico,PR-1,1,False
+72059,Puerto Rico,PR-1,1,False
+72061,Puerto Rico,PR-1,1,False
+72063,Puerto Rico,PR-1,1,False
+72065,Puerto Rico,PR-1,1,False
+72067,Puerto Rico,PR-1,1,False
+72069,Puerto Rico,PR-1,1,False
+72071,Puerto Rico,PR-1,1,False
+72073,Puerto Rico,PR-1,1,False
+72075,Puerto Rico,PR-1,1,False
+72077,Puerto Rico,PR-1,1,False
+72079,Puerto Rico,PR-1,1,False
+72081,Puerto Rico,PR-1,1,False
+72083,Puerto Rico,PR-1,1,False
+72085,Puerto Rico,PR-1,1,False
+72087,Puerto Rico,PR-1,1,False
+72089,Puerto Rico,PR-1,1,False
+72091,Puerto Rico,PR-1,1,False
+72093,Puerto Rico,PR-1,1,False
+72095,Puerto Rico,PR-1,1,False
+72097,Puerto Rico,PR-1,1,False
+72099,Puerto Rico,PR-1,1,False
+72101,Puerto Rico,PR-1,1,False
+72103,Puerto Rico,PR-1,1,False
+72105,Puerto Rico,PR-1,1,False
+72107,Puerto Rico,PR-1,1,False
+72109,Puerto Rico,PR-1,1,False
+72111,Puerto Rico,PR-1,1,False
+72113,Puerto Rico,PR-1,1,False
+72115,Puerto Rico,PR-1,1,False
+72117,Puerto Rico,PR-1,1,False
+72119,Puerto Rico,PR-1,1,False
+72121,Puerto Rico,PR-1,1,False
+72123,Puerto Rico,PR-1,1,False
+72125,Puerto Rico,PR-1,1,False
+72127,Puerto Rico,PR-1 PR-2,2,True
+72129,Puerto Rico,PR-1,1,False
+72131,Puerto Rico,PR-1,1,False
+72133,Puerto Rico,PR-1,1,False
+72135,Puerto Rico,PR-1,1,False
+72137,Puerto Rico,PR-1,1,False
+72139,Puerto Rico,PR-1,1,False
+72141,Puerto Rico,PR-1,1,False
+72143,Puerto Rico,PR-1,1,False
+72145,Puerto Rico,PR-1,1,False
+72147,Puerto Rico,PR-1,1,False
+72149,Puerto Rico,PR-1,1,False
+72151,Puerto Rico,PR-1,1,False
+72153,Puerto Rico,PR-1,1,False

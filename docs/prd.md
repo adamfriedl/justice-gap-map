@@ -131,7 +131,7 @@ Each phase ends with something you can show. Estimates assume part-time evenings
 This decides whether the project is viable. No AWS needed, so it suits cloud sessions. Raw downloads stay out of git. Commit only small results (tables, notes) under `docs/phase0/`.
 
 - [x] **LSC:** find out exactly what's downloadable: service area boundaries or their county lists, funding by grantee or service area, and GAR case closures. If service areas can't be rebuilt from counties, switch the unit to county and write the reason down.
-  _Done 2026-11-06 (partly): 190 service areas listed; in the 2027 competition sample 34 of 36 general areas are whole counties or states, so county sets look viable. No boundary file; full county lists and per-area awards are behind LSC's public `api.lscdataease.org` JSON, not yet allowlisted. Funding by state yes; GAR closures by state only. See `docs/phase0/lsc-data-availability.md`._
+  _Done 2026-11-07: all 130 general service areas parse into county sets covering every county; 13 split a county (11.5% of eligible people), so merging those gives 122 analysis units with each county in exactly one. FY2025 LSC awards by area come from the same source. GAR closures by state only. See `docs/phase0/lsc-data-availability.md`._
 - [x] **CFPB:** download the full CSV. Measure the share of debt-collection complaints with a 5-digit ZIP, a 3-digit ZIP, or none, by state. If more than ~30% can't be placed, reconsider the unit (state, or 3-digit ZIP areas).
 - [x] **Crosswalk:** pull HUD ZIP→county and check how many complaint ZIPs it matches.
   _Both done 2026-11-06: 89.5% of debt-collection complaints place in a county, but masking hits rural states hardest. See `docs/phase0/cfpb-zip-and-crosswalk.md`._
