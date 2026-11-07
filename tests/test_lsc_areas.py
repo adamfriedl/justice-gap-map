@@ -36,3 +36,26 @@ def test_parse_competition():
                        "geographic_area": "Macomb, Oakland, Wayne", "geography_class": "whole_counties"}
     assert rows[1]["type"] == "Native American" and rows[1]["poverty_population"] == ""
     assert rows[1]["geography_class"] == "all_counties"
+
+
+from phase0_lsc_about import parse_area  # noqa: E402
+
+COUNTIES = {"Georgia": ["Clayton County", "Cobb County", "Fulton County", "Bibb County"],
+            "Puerto Rico": ["Adjuntas Municipio", "San Juan Municipio"]}
+
+
+def test_parse_area_patterns():
+    assert parse_area("Serves the following counties in Tennessee:\nFayette, Lauderdale", [], {}) == [
+        ("Tennessee", "Fayette", False), ("Tennessee", "Lauderdale", False)]
+    assert parse_area("Serves the following parishes in Louisiana:\nAcadia Parish, Allen Parish", [], {}) == [
+        ("Louisiana", "Acadia Parish", False), ("Louisiana", "Allen Parish", False)]
+    # "King and Queen" is one county; a list's final ", and" is not.
+    assert [n for _, n, _ in parse_area("Arlington, King and Queen, and Loudoun", ["Virginia"], {})] == [
+        "Arlington", "King and Queen", "Loudoun"]
+    assert parse_area("Serves the following counties in California:\nKern (northwest portion), Madera", [], {}) == [
+        ("California", "Kern", True), ("California", "Madera", False)]
+    assert parse_area("Serves all counties in Georgia except Clayton, Cobb, and Fulton", [], COUNTIES) == [
+        ("Georgia", "Bibb County", False)]
+    assert parse_area("Serves Philadelphia", ["Pennsylvania"], {}) == [("Pennsylvania", "Philadelphia", False)]
+    assert parse_area("Serves all of Puerto Rico except the Hato Rey area of San Juan Municipio", [], COUNTIES) == [
+        ("Puerto Rico", "Adjuntas Municipio", False), ("Puerto Rico", "San Juan Municipio", True)]
