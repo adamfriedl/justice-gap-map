@@ -139,10 +139,11 @@ This decides whether the project is viable. No AWS needed, so it suits cloud ses
   - In one state with open court data (January Advisors' Texas work first), compare county complaint rates with county debt-lawsuit filing rates, and with debt in collections.
   - Explain the 2024–26 jump in debt-collection complaints (68K in 2023, 283K in 2025). Compare 2021 and 2025 by submission channel, issue mix, and company concentration. If bulk third-party filings drive it, filter them or use a pre-2024 baseline.
   _Done 2026-11-06: complaints fail (in Texas they barely track debt lawsuits, and the poorest counties complain least); Urban's county debt-in-collections share is usable and becomes the pressure measure. See `docs/phase0/complaints-vs-need.md`._
-- [ ] **Does LSC funding measure capacity?** LSC is a minority of civil legal aid funding, and state, IOLTA, and private money varies a lot by state. LSC-only figures would make states that fund legal aid heavily look underserved.
+- [x] **Does LSC funding measure capacity?** LSC is a minority of civil legal aid funding, and state, IOLTA, and private money varies a lot by state. LSC-only figures would make states that fund legal aid heavily look underserved.
   - Check whether LSC publishes grantees' total revenue from all sources, not just their LSC grant.
   - Test IRS 990 data for legal-services nonprofits (NTEE I80-range) as a way to include non-LSC organizations. Decide how to handle statewide organizations.
   - Pull state-level civil legal aid funding totals (e.g. the ABA's access-to-justice resource center) as a check on the state skew.
+  _Done 2026-11-06: LSC funding is nearly flat per eligible person by formula and fails as a capacity measure; 990 nonprofit revenue works at the state level (matches LSC's grantee totals within 1%) but not below it; ABA totals blocked (site returns 403). See `docs/phase0/lsc-funding-vs-capacity.md`._
 - [ ] **Gap check, done properly:** search Google Scholar and SSRN. Check LSC's own reports, the NCSC, Pew, January Advisors (debt lawsuit data), and the Stanford Legal Design Lab and Suffolk LIT Lab sites. If someone already did this, look for what they left out or contribute to their work instead.
 - [ ] **One hand-built prototype:** a single state (pick one with clean ZIPs and county-based service areas) in DuckDB. Does any signal show up?
 

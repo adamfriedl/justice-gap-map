@@ -44,7 +44,7 @@ For Terraform (once `infra/` exists): `terraform fmt -check -recursive infra && 
 - CFPB: `files.consumerfinance.gov`, `www.consumerfinance.gov`, `cfpb.github.io`
 - Census: `api.census.gov`, `www.census.gov`, `www2.census.gov`
 - HUD: `www.huduser.gov`
-- LSC: `www.lsc.gov`, `www.lscdataease.org`
+- LSC: `www.lsc.gov`, `www.lscdataease.org`, `lsc-live.app.box.com`, `lsc-live.box.com`, `app.box.com`, `public.boxcloud.com`, `dl.boxcloud.com` (LSC's files on Box), `public.tableau.com` (DataEase dashboards)
 - Phase 0 validity checks: `apps.urban.org`, `datacatalog.urban.org` (debt in collections), `www.irs.gov`, `projects.propublica.org` (990 data), `www.americanbar.org` (state funding), `www.txcourts.gov`, `card.txcourts.gov`, `januaryadvisors.com`, `www.januaryadvisors.com` (Texas court data)
 - Code and packages: `pypi.org`, `files.pythonhosted.org`, `github.com`, `raw.githubusercontent.com`
 

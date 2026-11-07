@@ -1,0 +1,9 @@
+stat,n,value
+lsc_per_eligible vs provider_rev_per_eligible (Spearman),51,0.133
+lsc_per_eligible vs lsc_grantee_rev_per_eligible (Spearman),51,0.193
+"lsc_per_eligible: n, min, p10, median, p90, max",51,"6.64, 7.84, 8.56, 9.0, 11.79"
+"lsc_grantee_rev_per_eligible: n, min, p10, median, p90, max",52,"8.89, 14.73, 28.84, 56.23, 173.67"
+"provider_rev_per_eligible: n, min, p10, median, p90, max",52,"17.72, 26.21, 52.2, 159.43, 1623.45"
+sum of LSC state-profile funding,,455224519
+sum of LSC grantee revenue in BMF (states in profiles),,2174839392
+sum of provider revenue in BMF (states in profiles),,4348359403
