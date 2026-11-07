@@ -1,6 +1,6 @@
 # Justice Gap Map: PRD and plan
 
-_Drafted 2026-11-05; revised 2026-11-07 after the Phase 0 data checks. Working name. Gated on the Phase 0 go/no-go: the data checks pass; the maintainer's literature search and the one-state prototype remain._
+_Drafted 2026-11-05; revised 2026-11-07 after the Phase 0 data checks, and again on 2026-11-07 to make v1 a debt-lawsuit monitor. Working name. Gated on the Phase 0 go/no-go: the data checks pass; the maintainer's literature search and the one-state prototype remain._
 
 ## Summary
 
@@ -10,6 +10,8 @@ A small, repeatable data pipeline on AWS that joins public datasets:
 - CFPB debt-collection complaints (a secondary signal: where people push back)
 - Legal Services Corporation (LSC) service areas and awards, plus IRS data on all legal aid nonprofits' revenue
 - Census ACS demographics
+
+**v1 is a debt-lawsuit monitor.** It watches where debt-collection suits are filed, who files them, and how they end, refreshing each source on its own schedule (daily to yearly). It keeps its own history and sends an alert when something moves. Lawsuit data is state by state, so coverage grows one state or county at a time. Debt in collections and CFPB complaints are national context.
 
 It answers one question: **where are people taking the most consumer-debt harm while having the least civil legal aid?** The outputs are a published map, a short write-up, and an optional plain-English query layer in the style of [civicaitools.org](https://civicaitools.org/).
 
@@ -32,6 +34,7 @@ The longer-term goal is legal-process education for people who default on a comp
 
 ## Goals
 
+0. **A working monitor.** Scheduled pulls keep county debt-filing counts current (monthly where courts publish monthly), and case-level feeds current within a day for the counties that offer them. A weekly alert flags unusual changes by county or plaintiff.
 1. **One defensible finding.** For example: "These N service areas have the highest debt-collection complaint rate per eligible resident and the lowest LSC funding per eligible resident." It must hold up to a legal-aid reader's scrutiny.
 2. **Reproducible and refreshable.** One command (or a schedule) pulls new data, rebuilds the tables, and regenerates the map. No manual steps.
 3. **An independent archive.** Keep dated, unchangeable snapshots of the CFPB data. The CFPB has been politically exposed since 2025, and an archive matters if the public data is restricted.
@@ -40,7 +43,8 @@ The longer-term goal is legal-process education for people who default on a comp
 
 ## Non-goals (v1)
 
-- Court records or lawsuit data as a national measure. Texas court data was used in Phase 0 only to test the pressure measures. Multi-state court data (LSC's Baseline Court Statistics, CCDI) is a v2 option.
+- A national lawsuit measure. Court data comes state by state (Texas, Indiana and Virginia so far; see `docs/lawsuits/`). Coverage grows as states are added, and maps say which states are covered.
+- Storing names or street addresses of people sued (R15).
 - Products other than debt collection. The pipeline should handle any product, but only debt collection gets analyzed.
 - Causal claims. This is descriptive: it shows where need and resources diverge, not why.
 - Ranking or criticizing individual legal aid programs.
@@ -56,6 +60,10 @@ The longer-term goal is legal-process education for people who default on a comp
 | Census ACS 5-year (API) | Population at or below 125% of poverty (LSC's eligibility line), renters, limited English, broadband, age | Tract, county, ZCTA | Annual | Margins of error get large in small areas |
 | [Urban Institute, Debt in America](https://apps.urban.org/features/debt-interactive-map/) | Share of people with a credit record who have any debt in collections (4% panel from one bureau) | County (3,071 of 3,143 with values) | Irregular (current: August 2025 data, published 2025-11-20) | Measures who is being collected on, whether or not they complain. Excludes people without credit records. Connecticut uses pre-2022 counties. CSVs pulled from the map's own data path. |
 | [IRS Exempt Organizations Business Master File](https://www.irs.gov/pub/irs-soi/) | Revenue of legal aid nonprofits (NTEE I80, plus LSC grantees), LSC-funded or not | Organization headquarters | Monthly | An address isn't a service area: use at state level, or spread a statewide organization over its area. Funders and defenders must be set aside. |
+| Texas Office of Court Administration ([card.txcourts.gov](https://card.txcourts.gov/)) | Justice-court debt-claim filings, defaults, dispositions | County (254) | Monthly | Report form, not an API: one request per county per period. Some counties report late or not at all (Hidalgo). |
+| [Harris County JP Public Data Extract](https://jpwebsite.harriscountytx.gov/PublicExtracts/search.jsp) | Each debt-claim case: plaintiff and attorney, filing date, claim amount, next hearing, disposition, judgment | Case; defendant ZIP | Daily | Contains defendants' names and addresses: stripped in memory before storage (R15). Up to 180 days per request. |
+| [Indiana Court Online Reports](https://publicaccess.courts.in.gov/ICOR/) | Collection (CC) filings, defaults, dispositions | County (92) | Quarterly | Small claims also hold debt suits, not separated. |
+| [Virginia General District Court filing report](https://www.courts.state.va.us/static/courtadmin/aoc/djs/programs/cpss/csi/stats/gdc_filings.pdf) | General Civil filings (mostly warrants in debt) and garnishments | Court (125) | Monthly | PDF; category broader than debt (**not confirmed** share). |
 | [HUD-USPS ZIP crosswalk](https://www.huduser.gov/portal/datasets/usps_crosswalk.html) | Weights for converting ZIP ↔ county/tract | ZIP → county | Quarterly | Use the file that goes in the right direction. Some ZIPs are missing. Needs a registered API token. |
 
 **Unit of analysis:** 122 analysis units built from LSC's 130 Basic Field–General service areas as county sets, merging the areas that share a split county (`docs/phase0/lsc-data/`). County is the building block. State is used where only state data exists (all-source revenue, case closures).
@@ -79,11 +87,14 @@ Why these changed (Phase 0, `docs/phase0/`):
 
 ### Pipeline
 
-- R1. Download each source into a raw S3 bucket under dated keys, unchanged. The raw bucket is versioned, and the CFPB prefix has Object Lock (governance mode).
+- R1. Download each source into a raw S3 bucket under dated keys, unchanged (except case-level court data, reduced under R15 before it is written). The raw bucket is versioned, and the CFPB prefix has Object Lock (governance mode).
 - R2. Normalize to Parquet in a curated bucket, partitioned by source and snapshot date.
 - R3. Write geography crosswalks (ZIP → county → service area) once per snapshot and version them.
 - R4. Build the metric tables with SQL (Athena, with DuckDB for local development). Keep queries in the repo.
 - R5. Every published number traces back to the snapshot dates and query that produced it.
+- R15. **No personal identifiers for people sued.** Case-level court feeds are reduced in memory before anything is stored: defendant names, street addresses, the case style, and "judgment against" fields are dropped; only defendant ZIP and whether they had an attorney are kept. Plaintiffs (businesses) and their attorneys are kept. Tests enforce this.
+- R16. **Alerts.** A weekly job compares each county's and each top plaintiff's filings with their own recent baseline and emails a short summary (SNS) when something moves well outside it. Thresholds live in the repo.
+- R17. **Polite collection.** Each court source has a documented request rate and pause, honors its terms and robots.txt, and backs off on errors. No source is hit more often than it updates.
 - R6. Report data quality on every run: how many complaints were dropped for missing or 3-digit ZIPs, broken down by state, and how many ZIPs the crosswalk couldn't match.
 
 ### Outputs
@@ -108,7 +119,8 @@ Why these changed (Phase 0, `docs/phase0/`):
 ## Architecture (v1)
 
 ```text
-EventBridge Scheduler (weekly CFPB, quarterly HUD, annual ACS/LSC)
+EventBridge Scheduler: daily Harris County cases; weekly CFPB; monthly Texas OCA
+and Virginia courts; quarterly Indiana courts and HUD; annual ACS, Urban, IRS, LSC
         │
         ▼
 Ingest job (Lambda for small pulls; ECS Fargate task for the ~GB CFPB zip)
@@ -123,10 +135,11 @@ Transform job (Fargate, Python + DuckDB) ── crosswalks, Parquet, DQ report
 S3 curated (Parquet) ── Glue catalog ── Athena workgroup (scan cap)
         │
         ├── metrics export → static map site (GitHub Pages)
+        ├── weekly alert job → SNS email (R16)
         └── optional: read-only MCP server / notebook
 ```
 
-Design choice: DuckDB inside the Fargate task does the heavy transforms (cheap and testable locally), and Athena is the shared query surface. Glue crawlers are skipped. Table definitions live in Terraform.
+Why AWS: the case-level feeds grow by roughly 100K+ debt cases a year for Harris County alone (OCA counted 91,823 in 2025; the first extract week, October 1–7, 2026, held 2,863), and need daily scheduling, a locked archive, and a query surface; county counts update monthly. Design choice: DuckDB inside the Fargate task does the heavy transforms (cheap and testable locally), and Athena is the shared query surface. Glue crawlers are skipped. Table definitions live in Terraform.
 
 ## Plan
 
@@ -190,6 +203,8 @@ Cloud sessions never get write access to AWS. Every change reaches AWS through A
 ### Phase 3: ingest + transform (~8–10 hours)
 
 - [ ] Ingest jobs for CFPB, ACS, the HUD crosswalk, Urban debt in collections, the IRS BMF, and LSC (`about.json` per service area plus state profiles; scriptable, no manual drop needed)
+- [ ] Court ingest jobs: Harris County cases (daily, R15 applied in the job), Texas OCA counties (monthly), Virginia filing report (monthly), Indiana ICOR (quarterly). The fetch scripts in `scripts/lawsuits_fetch_*.py` and `scripts/phase0_tx_courts_fetch.py` are the starting point.
+- [ ] Plaintiff name normalization (case, punctuation, "successor by merger" variants) as a versioned lookup table.
 - [ ] Transform job: CSV → Parquet, apply the crosswalk, write the DQ report (R6)
 - [ ] Local dev path: the same Python running against local files with DuckDB, plus a small fixture dataset for tests
 - [ ] Turn on the schedule. Confirm a weekly CFPB snapshot lands and is locked.
@@ -237,6 +252,8 @@ Findings about legal aid funding can read as criticism, so the people affected s
 | LSC builds the same thing (its Civil Court Data Initiative) | Medium | Contact LSC's data office early; aim to complement or contribute rather than duplicate |
 | The finding just matches "poor places have less help" | Medium | Still useful locally. Look for surprises (well-funded areas with high complaint rates, and the reverse). Say so plainly if nothing surprising shows up. |
 | Scope creep into a web app | High | Static site only until v1 is published |
+| Court sites change layout or block automated access | Medium | Each fetcher checks expected columns and fails loudly (the Harris fetcher does); polite rates (R17); monthly sources tolerate a missed run |
+| Personal data about people sued leaks or is retained | Low with R15 | Strip in memory before storage; tests; no defendant fields in the curated schema; threat model covers it |
 | The finding reads as an attack on LSC or grantees | Low-medium | Phase 5 private review; frame it as "where more help is needed," not "who is failing" |
 
 ## Open questions
@@ -245,5 +262,5 @@ Findings about legal aid funding can read as criticism, so the people affected s
 2. Is a 3-year complaint window right, or should it be by year to show trends? Decide after seeing the data.
 3. ~~Is there a state with open debt-collection court data good enough for the Phase 0 validity test?~~ Answered: Texas OCA justice-court data. LSC's Baseline Court Statistics has explicit debt case types for 7 more states.
 4. Is the gap between debt in collections and complaints the real finding? (Now a planned layer; see core metrics.) Counties with lots of debt in collections but few complaints are where people aren't fighting back, which is where defaults happen.
-5. Is the education product the follow-on, with this map picking where to start? The idea: a 30-second "what happens next" walkthrough reachable from the summons, for one case type in one jurisdiction.
+5. Is the education product the follow-on, with this map picking where to start? The Harris County feed includes next hearing dates by court, which shows where and when people sued for debt are about to appear. The idea: a 30-second "what happens next" walkthrough reachable from the summons, for one case type in one jurisdiction.
 6. How should a statewide organization's revenue be spread over its service area? By eligible population, or not at all below state level?
