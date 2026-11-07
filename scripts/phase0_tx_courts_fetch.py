@@ -91,16 +91,19 @@ def main():
     p.add_argument("--years", type=int, nargs="+", default=[2025])
     p.add_argument("--out", default=f"data/txcourts/{dt.date.today():%Y-%m-%d}")
     p.add_argument("--pause", type=float, default=1.0)
+    p.add_argument("--statewide", action="store_true", help="fetch the statewide total only (one file per year)")
     a = p.parse_args()
 
     card = Card()
-    county_list = counties(criteria_page(card))
+    county_list = [("0", "Statewide")] if a.statewide else counties(criteria_page(card))
     print(f"{len(county_list)} counties")
     for year in a.years:
         out = Path(a.out) / str(year)
         out.mkdir(parents=True, exist_ok=True)
         for value, name in county_list:
-            path = out / f"{int(value):03d}_{name.replace(' ', '_')}.xls"
+            sub = out / "statewide" if a.statewide else out
+            sub.mkdir(parents=True, exist_ok=True)
+            path = sub / f"{int(value):03d}_{name.replace(' ', '_')}.xls"
             if path.exists() and path.stat().st_size > 0:
                 continue
             for attempt in range(4):
