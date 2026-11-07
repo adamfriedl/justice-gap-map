@@ -1,0 +1,11 @@
+check_name,n,spearman
+"TX filings per 1K, 2019 vs 2025 (Spearman)",124,0.542
+"TX filings per 1K, 2023 vs 2025 (Spearman)",219,0.706
+"IN filings per 1K, 2014 vs 2024 (Spearman)",92,0.615
+VA 2025 general civil per 1K vs 2016-19 warrants in debt per 1K,121,0.752
+VA 2025 garnishments per 1K vs 2016-19 warrants in debt per 1K,121,0.735
+TX 2025 filings per 1K vs share under 125% poverty,225,-0.029
+TX 2025 filings per 1K vs debt in collections,210,0.15
+IN 2024 filings per 1K vs share under 125% poverty,92,0.141
+IN 2024 filings per 1K vs debt in collections,92,0.589
+VA 2025 general civil per 1K vs share under 125% poverty,125,0.44

@@ -48,3 +48,21 @@ def test_spearman():
     assert con.sql(spearman("t", "x", "y")).fetchall()[0] == (6, -0.771)  # ranks 1..6 vs 4,5,6,3,2,1
     # Within each state the order is perfect, one way in each: they cancel to zero.
     assert con.sql(spearman_within_state("t", "x", "y")).fetchall()[0] == (6, 0.0)
+
+
+def test_indiana_cells():
+    sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
+    from lawsuits import in_cells
+
+    grid = {"Tables": [{
+        "ColumnSections": [{"Columns": [{"Title3": "rowLabels"}, {"Title3": "CC"}, {"Title3": "SC"}]}],
+        "RowSections": [{"Rows": [
+            {"isTitle": True, "Title": "BEFORE COURT", "Cells": []},
+            {"Title": "New Filings", "Cells": [{"TxtVal": "New Filings"}, {"TxtVal": "4,729"}, {"TxtVal": "11645"}]},
+            {"Title": "Default", "Cells": [{"TxtVal": "Default"}, {"TxtVal": ""}, {"TxtVal": "5201"}]},
+        ]}],
+    }]}
+    assert in_cells(grid, "New Filings", "CC") == 4729
+    assert in_cells(grid, "New Filings", "SC") == 11645
+    assert in_cells(grid, "Default", "CC") is None
+    assert in_cells(grid, "New Filings", "MF") is None
