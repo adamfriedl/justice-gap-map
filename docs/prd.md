@@ -190,7 +190,7 @@ Otherwise write down why in `docs/phase0/` and stop.
 ### Phase 1: AWS bootstrap (run once locally with admin credentials)
 
 - [ ] Account hygiene, S3 Terraform state backend with `use_lockfile`, GitHub OIDC provider and plan/apply roles scoped to this repo
-  _Written in `infra/bootstrap/` with a runbook in `docs/aws-setup.md`; the maintainer applies it by hand. The IAM user is a plain IAM admin user with MFA (no IAM Identity Center), and its access key is deleted after the bootstrap._
+  _Written in `infra/bootstrap/` with a runbook in `docs/aws-setup.md`; the maintainer applies it by hand. The bootstrap runs as a plain IAM admin user (no IAM Identity Center), a machine user whose access key exists only for the bootstrap and is deleted afterwards._
 - [ ] A GitHub `production` environment with required reviewers, so `apply` needs approval
 - [ ] The permissions boundary for `claude-cloud-readonly` (R14). The user and its scoped policy land in Phase 2, once the buckets and workgroup exist.
 

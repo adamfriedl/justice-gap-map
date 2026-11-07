@@ -18,9 +18,10 @@ A one-time setup, done by the maintainer from their own computer, plus one GitHu
 1. As the root user:
    - Turn on MFA for root if it isn't already.
    - In **Account → IAM user and role access to Billing information**, choose **Activate**. That lets your IAM user see billing and budgets.
-2. **IAM → Users → Create user**. Give it console access and attach the AWS-managed policy **AdministratorAccess**.
-3. Open the user → **Security credentials** → **Assign MFA device**.
-4. Right before step 3 below: **Security credentials → Create access key** (use case: Command Line Interface). You'll delete it in step 6.
+2. **IAM → Users → Create user**, and attach the AWS-managed policy **AdministratorAccess**. Two options:
+   - **Machine user** (no console access; simplest). There's nothing to sign in with, so MFA doesn't apply. What protects it is that its access key exists only while you run the bootstrap.
+   - **Person user** (console access). Also assign an MFA device under **Security credentials → Assign MFA device**.
+3. Right before step 3 below: **Security credentials → Create access key** (use case: Command Line Interface). You'll delete it in step 6.
 
 ## 2. Your computer
 
@@ -100,7 +101,9 @@ These are identifiers, not secrets.
 
 ## 6. Delete the access key
 
-**IAM → your user → Security credentials** → deactivate, then delete, the access key from step 1.4. Keep console login with MFA.
+**IAM → your user → Security credentials** → deactivate, then delete, the access key from step 1.3. Also remove the `[jgm-admin]` profile from `~/.aws/credentials` and `~/.aws/config` on your computer.
+
+A machine user with no keys can't be used by anyone; you can also delete it. GitHub does everything from here through its own roles. If the bootstrap ever needs a change, create a fresh key (or user) for that session and delete it again.
 
 ## 7. Check it end to end
 
