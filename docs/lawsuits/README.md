@@ -60,9 +60,8 @@ uv run python scripts/lawsuits_map.py --atlas data/atlas/package/counties-albers
 | --- | --- | --- | --- |
 | Filings vs. share in poverty (under 125%) | −0.03 (2025) | 0.14 (2024) | 0.44 (2025) |
 | Filings vs. debt in collections (Urban) | 0.15 | 0.59 | — |
-| Filings, early year vs. latest year | 0.54 (2019 vs 2025)\*, 0.71 (2023 vs 2025) | 0.62 (2014 vs 2024) | 0.75 (2016–19 warrants vs 2025 General Civil) |
+| Filings, early year vs. latest year | 0.53 (2019 vs 2025), 0.71 (2023 vs 2025) | 0.62 (2014 vs 2024) | 0.75 (2016–19 warrants vs 2025 General Civil) |
 
-\* Partial: the Texas 2019 county download was still finishing when this table was made. It will be refreshed when complete.
 
 So:
 - The places with the most suits stay fairly consistent over time.
