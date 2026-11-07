@@ -1,0 +1,29 @@
+sample,x,y,description,n,spearman
+"pop >= 50,000",rate_2025,totcoll,2025 complaint rate vs. share with debt in collections,990,0.465
+"pop >= 50,000",rate_pre_surge,totcoll,2019-23 avg complaint rate vs. share with debt in collections,990,0.301
+"pop >= 50,000",rate_2025_no_bureau,totcoll,2025 rate excluding credit-bureau complaints vs. debt in collections,990,0.458
+"pop >= 50,000",rate_2025_no_batch,totcoll,2025 rate excluding same-day batches vs. debt in collections,990,0.443
+"pop >= 50,000",zipday_rate_2025,totcoll,2025 ZIP-days per 10K vs. debt in collections,990,0.456
+"pop >= 50,000",rate_2025,pct_lt125,2025 complaint rate vs. share under 125% of poverty,999,0.123
+"pop >= 50,000",totcoll,pct_lt125,debt in collections vs. share under 125% of poverty,990,0.686
+"pop >= 50,000",rate_2025,household_income_avg,2025 complaint rate vs. average household income,990,0.096
+"pop >= 50,000",rate_pre_surge,rate_2025,2019-23 complaint rate vs. 2025 complaint rate,999,0.779
+"pop >= 50,000, ranked within state",rate_2025,totcoll,2025 complaint rate vs. share with debt in collections,990,0.21
+"pop >= 50,000, ranked within state",rate_pre_surge,totcoll,2019-23 avg complaint rate vs. share with debt in collections,990,0.095
+"pop >= 50,000, ranked within state",rate_2025_no_bureau,totcoll,2025 rate excluding credit-bureau complaints vs. debt in collections,990,0.225
+"pop >= 50,000, ranked within state",rate_2025_no_batch,totcoll,2025 rate excluding same-day batches vs. debt in collections,990,0.19
+"pop >= 50,000, ranked within state",zipday_rate_2025,totcoll,2025 ZIP-days per 10K vs. debt in collections,990,0.206
+all counties,rate_2025,totcoll,2025 complaint rate vs. share with debt in collections,3063,0.395
+all counties,rate_pre_surge,totcoll,2019-23 avg complaint rate vs. share with debt in collections,3063,0.248
+all counties,rate_2025_no_bureau,totcoll,2025 rate excluding credit-bureau complaints vs. debt in collections,3063,0.378
+all counties,rate_2025_no_batch,totcoll,2025 rate excluding same-day batches vs. debt in collections,3063,0.361
+all counties,zipday_rate_2025,totcoll,2025 ZIP-days per 10K vs. debt in collections,3063,0.384
+all counties,rate_2025,pct_lt125,2025 complaint rate vs. share under 125% of poverty,3144,0.086
+all counties,totcoll,pct_lt125,debt in collections vs. share under 125% of poverty,3063,0.677
+all counties,rate_2025,household_income_avg,2025 complaint rate vs. average household income,3135,0.123
+all counties,rate_pre_surge,rate_2025,2019-23 complaint rate vs. 2025 complaint rate,3144,0.642
+"all counties, ranked within state",rate_2025,totcoll,2025 complaint rate vs. share with debt in collections,3063,0.156
+"all counties, ranked within state",rate_pre_surge,totcoll,2019-23 avg complaint rate vs. share with debt in collections,3063,0.06
+"all counties, ranked within state",rate_2025_no_bureau,totcoll,2025 rate excluding credit-bureau complaints vs. debt in collections,3063,0.155
+"all counties, ranked within state",rate_2025_no_batch,totcoll,2025 rate excluding same-day batches vs. debt in collections,3063,0.142
+"all counties, ranked within state",zipday_rate_2025,totcoll,2025 ZIP-days per 10K vs. debt in collections,3063,0.152

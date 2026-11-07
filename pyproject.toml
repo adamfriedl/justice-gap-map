@@ -5,6 +5,7 @@ description = "Where consumer-debt harm is high and civil legal aid is thin"
 requires-python = ">=3.12"
 dependencies = [
     "duckdb",
+    "xlrd>=2.0.2",
 ]
 
 [dependency-groups]

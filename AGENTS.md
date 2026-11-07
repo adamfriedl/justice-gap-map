@@ -45,7 +45,7 @@ For Terraform (once `infra/` exists): `terraform fmt -check -recursive infra && 
 - Census: `api.census.gov`, `www.census.gov`, `www2.census.gov`
 - HUD: `www.huduser.gov`
 - LSC: `www.lsc.gov`, `www.lscdataease.org`
-- Phase 0 validity checks: `apps.urban.org`, `datacatalog.urban.org` (debt in collections), `www.irs.gov`, `projects.propublica.org` (990 data), `www.americanbar.org` (state funding), `www.txcourts.gov`, `januaryadvisors.com` (Texas court data)
+- Phase 0 validity checks: `apps.urban.org`, `datacatalog.urban.org` (debt in collections), `www.irs.gov`, `projects.propublica.org` (990 data), `www.americanbar.org` (state funding), `www.txcourts.gov`, `card.txcourts.gov`, `januaryadvisors.com`, `www.januaryadvisors.com` (Texas court data)
 - Code and packages: `pypi.org`, `files.pythonhosted.org`, `github.com`, `raw.githubusercontent.com`
 
 If a request is blocked, report which host so the environment allowlist can be updated. Don't route around it.

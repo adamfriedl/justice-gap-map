@@ -1,0 +1,37 @@
+field,value,n_2021,n_2023,n_2025
+issue,Attempts to collect debt not owed,38989,36188,115682
+issue,Written notification about debt,16098,12828,64049
+issue,Took or threatened to take negative or legal action,5082,6733,48578
+issue,False statements or representation,4997,5651,38459
+issue,Communication tactics,4156,4947,9518
+issue,Electronic communications,0,436,4311
+issue,Threatened to contact someone or share information improperly,978,1324,2602
+issue,Disclosure verification of debt,0,0,0
+issue,Taking/threatening an illegal action,0,0,0
+issue,Cont'd attempts collect debt not owed,0,0,0
+issue,Improper contact or sharing of info,0,0,0
+sub_product,I do not know,16427,18263,154405
+sub_product,Other debt,17227,16702,44945
+sub_product,Credit card debt,19105,15602,38635
+sub_product,Rental debt,0,1794,11512
+sub_product,Telecommunications debt,0,1889,11240
+sub_product,Medical debt,10490,7410,8842
+sub_product,Auto debt,3341,3288,8252
+sub_product,Payday loan debt,1662,1436,2753
+sub_product,Federal student loan debt,500,429,976
+sub_product,Private student loan debt,540,456,921
+sub_product,Mortgage debt,1008,838,718
+sub_product,Mortgage,0,0,0
+sub_product,Auto,0,0,0
+sub_product,Medical,0,0,0
+sub_product,Non-federal student loan,0,0,0
+sub_product,Payday loan,0,0,0
+sub_product,Credit card,0,0,0
+sub_product,Federal student loan,0,0,0
+sub_product,"Other (i.e. phone, health club, etc.)",0,0,0
+submitted_via,Web,67417,66024,280954
+submitted_via,Phone,1685,1689,1147
+submitted_via,Postal mail,301,170,609
+submitted_via,Referral,806,224,489
+submitted_via,Fax,91,0,0
+submitted_via,Email,0,0,0
