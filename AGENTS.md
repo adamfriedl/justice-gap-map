@@ -6,7 +6,7 @@ Guidance for AI coding agents, including Claude Code cloud sessions.
 
 A data pipeline and map joining CFPB debt-collection complaints, LSC legal aid funding, and Census ACS data to show where consumer-debt harm is high and legal aid is thin. The plan and current phase are in `docs/prd.md`. Read it first.
 
-Those measures are provisional. Phase 0 is testing whether complaints track need (people who default rarely complain) and whether LSC funding reflects legal aid capacity (most funding isn't LSC). Don't build on either until the PRD's go/no-go says so.
+Phase 0 changed the measures (see the PRD's core metrics and `docs/phase0/`). Complaints failed as a need measure, so Urban's debt-in-collections share is the pressure measure. LSC funding failed as a capacity measure, so maps label it "federal legal aid investment," with IRS nonprofit revenue as state context. The unit is LSC service areas built as county sets. Don't start Phase 1 until the maintainer makes the go/no-go call.
 
 ## Rules
 
@@ -44,7 +44,7 @@ For Terraform (once `infra/` exists): `terraform fmt -check -recursive infra && 
 - CFPB: `files.consumerfinance.gov`, `www.consumerfinance.gov`, `cfpb.github.io`
 - Census: `api.census.gov`, `www.census.gov`, `www2.census.gov`
 - HUD: `www.huduser.gov`
-- LSC: `www.lsc.gov`, `www.lscdataease.org`, `lsc-live.app.box.com`, `lsc-live.box.com`, `app.box.com`, `public.boxcloud.com`, `dl.boxcloud.com` (LSC's files on Box), `public.tableau.com` (DataEase dashboards), `api.lscdataease.org` (service-area JSON), `d29f85wyq8xezh.cloudfront.net` (LSC map assets)
+- LSC: `www.lsc.gov`, `www.lscdataease.org`, `lsc-live.app.box.com`, `lsc-live.box.com`, `app.box.com`, `public.boxcloud.com`, `dl.boxcloud.com` (LSC's files on Box), `public.tableau.com` (DataEase dashboards), `api.lscdataease.org` (service-area JSON), `d29f85wyq8xezh.cloudfront.net` (LSC map assets), `civilcourtdata.lsc.gov` (LSC court data initiative)
 - Phase 0 validity checks: `apps.urban.org`, `datacatalog.urban.org` (debt in collections), `www.irs.gov`, `projects.propublica.org` (990 data), `www.americanbar.org` (state funding), `www.txcourts.gov`, `card.txcourts.gov`, `januaryadvisors.com`, `www.januaryadvisors.com` (Texas court data)
 - Code and packages: `pypi.org`, `files.pythonhosted.org`, `github.com`, `raw.githubusercontent.com`
 
