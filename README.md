@@ -115,7 +115,7 @@ uv run pytest -q
 - [ ] **Phase 2–4:** the pipeline on AWS, scheduled ingest, the map, and the write-up.
 - [ ] **More states**, as their courts publish debt filings (Idaho is next).
 
-The project is purely informational. It reports what public records show about places, not why, and it doesn't call out or judge anyone: legal aid programs, courts, or the businesses that file suits.
+The project is purely informational. It reports what public records show about places, not why, and it doesn't call out or judge legal aid providers or their funders. The businesses that file the suits are named, with every figure sourced to court records.
 
 ## License
 

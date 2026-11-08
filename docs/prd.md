@@ -47,18 +47,18 @@ The longer-term goal is legal-process education for people who default on a comp
 - Storing names or street addresses of people sued (R15).
 - Products other than debt collection. The pipeline should handle any product, but only debt collection gets analyzed.
 - Causal claims. This is descriptive: it shows where need and resources diverge, not why.
-- Calling out, ranking, or criticizing anyone: legal aid programs, LSC, courts, or the businesses that file suits. See "Purely informational" below.
+- Calling out, ranking, or criticizing legal aid providers, LSC, or other legal aid funders. See "Purely informational" below.
 - A polished web app. A static map plus a write-up is enough.
 - The education product itself. This project picks where it should go first.
 
 ## Purely informational
 
-Everything published here reports what public records show. It doesn't judge anyone.
+About the legal aid side, everything published here reports what public records show. It doesn't judge legal aid providers, LSC, or other legal aid funders (IOLTA programs, bar foundations, and the like).
 
 - **Name places, not programs.** Maps, headlines, and rankings are about counties, service areas, and states. Grantee and nonprofit names appear only as source columns in data tables, never in map labels, headlines, or ranked lists.
 - **Funding describes money reaching an area, not how a program performs.** Say "federal legal aid investment per eligible resident in this area," never "this program is underfunded" or "under-serving."
-- **Plaintiffs are reported as counts from court records.** Who files, how many, and how cases end, with no characterization of the filers.
-- **Neutral words.** Use "higher," "lower," "more," "fewer." Avoid "worst," "failing," "neglected," "predatory," and the like.
+- **Plaintiffs are fair game.** Debt buyers, collectors, lenders, and their law firms can be named, ranked, and described: who files the most, how fast filings grow, how often their cases end in default. Every claim about a named plaintiff comes from court records and links to its source and script.
+- **Neutral words about places and legal aid.** Use "higher," "lower," "more," "fewer." Avoid "worst," "failing," "neglected," and the like. For plaintiffs, let the numbers make the point ("filed 12,000 suits; 80% ended in default") rather than labels such as "predatory": facts from court records hold up, labels invite argument.
 - **Frame gaps as where more help could go,** not as who is at fault.
 
 ## Data sources
@@ -268,7 +268,7 @@ The repo is public from 2026-11-08, so the work is visible as it happens. Everyt
 | Scope creep into a web app | High | Static site only until v1 is published |
 | Court sites change layout or block automated access | Medium | Each fetcher checks expected columns and fails loudly (the Harris fetcher does); polite rates (R17); monthly sources tolerate a missed run |
 | Personal data about people sued leaks or is retained | Low with R15 | Strip in memory before storage; tests; no defendant fields in the curated schema; threat model covers it |
-| The finding reads as an attack on LSC, grantees, courts, or filers | Low-medium | "Purely informational" rules (places, not programs; neutral words); Phase 5 accuracy check; frame it as "where more help could go," not "who is failing" |
+| The finding reads as an attack on LSC, grantees, or other legal aid funders | Low-medium | "Purely informational" rules (places, not programs; neutral words); Phase 5 accuracy check; frame it as "where more help could go," not "who is failing" |
 
 ## Open questions
 
