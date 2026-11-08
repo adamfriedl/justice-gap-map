@@ -46,6 +46,7 @@ h2 { font: 600 19px/1.25 var(--display); margin: 0 0 8px; text-wrap: balance; }
 #tip { position: fixed; pointer-events: none; background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
   padding: 8px 10px; font-size: 13px; box-shadow: 0 4px 14px rgba(0,0,0,.15); display: none; max-width: 280px; z-index: 5; }
 #tip b { display: block; font-weight: 600; }
+#tip .muted { color: var(--muted); }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 @media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
 table { width: 100%; border-collapse: collapse; font-size: 13.5px; font-variant-numeric: tabular-nums; }
@@ -66,7 +67,7 @@ td.n, th.n { text-align: right; }
 <main>
   <header>
     <h1>Where debt lawsuits are filed</h1>
-    <p class="lede">Debt-collection lawsuits per 1,000 residents, by county, in the three states with open county court counts used here: Texas (2025), Indiana (2024) and Virginia (2025). Every other county shows the share of people with debt in collections, for context.</p>
+    <p class="lede">Debt-collection lawsuits per 1,000 residents, by county, in the three states with open county court counts used here: Texas (2025), Indiana (2024) and Virginia (2025). Other states have no county court counts here and show in grey. The debt-in-collections view covers every county, for context.</p>
   </header>
   <section class="panel">
     <div class="switch" role="group" aria-label="Map layer">
@@ -125,7 +126,7 @@ const cp = g.selectAll("path.county").data(counties).join("path").attr("class", 
 g.append("path").attr("class", "state").attr("d", path(states));
 const LAYERS = {
   f: { label: "lawsuits per 1,000 residents, in fifths within each state", perState: true, fmt: v => v.toFixed(1), get: d => d.f,
-       note: "Each state is shaded against its own counties, because the three states count cases differently (Virginia's category is broader). Hover for the actual rate. Grey: outside these states, or incomplete court reporting." },
+       note: "Each state is shaded against its own counties, because the three states count cases differently (Virginia's category is broader). Hover for the actual rate. Grey: no county court counts used for that state, or incomplete court reporting." },
   dr: { label: "% of disposed debt cases ending in default, in fifths within each state", perState: true, fmt: v => v.toFixed(0) + "%", get: d => d.dr,
         note: "Each state is shaded against its own counties. Virginia's filing report has no disposition breakdown, so it is blank on this layer." },
   c: { label: "% of people with debt in collections", fmt: v => v.toFixed(0) + "%", get: d => d.c,
@@ -158,15 +159,20 @@ function draw() {
   layer = k; document.querySelectorAll(".switch button").forEach(b => b.setAttribute("aria-pressed", b === e.currentTarget));
   draw(); }));
 const tip = d3.select("#tip");
+// State postal codes by FIPS prefix, so every tooltip names the state.
+const ST = {"01":"AL","02":"AK","04":"AZ","05":"AR","06":"CA","08":"CO","09":"CT","10":"DE","11":"DC","12":"FL","13":"GA","15":"HI","16":"ID","17":"IL","18":"IN","19":"IA","20":"KS","21":"KY","22":"LA","23":"ME","24":"MD","25":"MA","26":"MI","27":"MN","28":"MS","29":"MO","30":"MT","31":"NE","32":"NV","33":"NH","34":"NJ","35":"NM","36":"NY","37":"NC","38":"ND","39":"OH","40":"OK","41":"OR","42":"PA","44":"RI","45":"SC","46":"SD","47":"TN","48":"TX","49":"UT","50":"VT","51":"VA","53":"WA","54":"WV","55":"WI","56":"WY","72":"PR"};
 cp.on("mousemove", (ev, f) => {
-  const d = data[f.id] || {}, nm = f.properties.name;
-  let h = `<b>${nm}${d.st ? ", " + d.st : ""}</b>`;
+  const d = data[f.id] || {}, nm = f.properties.name, st = d.st || ST[String(f.id).slice(0, 2)];
+  let h = `<b>${nm}${st ? ", " + st : ""}</b>`;
   if (d.court && d.court !== nm) h += `<div>Court: ${d.court}</div>`;
   if (d.f != null) h += `<div>${d.n.toLocaleString()} filed in ${d.y} · ${d.f.toFixed(1)} per 1K</div>`;
+  else if (layer !== "c" && !d.note) h += `<div class="muted">No county court counts for this state</div>`;
   if (d.note) h += `<div>${d.note}</div>`;
   if (d.dr != null) h += `<div>${d.dr.toFixed(0)}% of disposed cases were defaults</div>`;
   if (d.g != null) h += `<div>Garnishments: ${d.g.toFixed(1)} per 1K</div>`;
-  if (d.c != null) h += `<div>${d.c.toFixed(0)}% with debt in collections</div>`;
+  if (d.c != null) h += layer === "c"
+    ? `<div>${d.c.toFixed(0)}% of people with a credit record have debt in collections</div>`
+    : `<div class="muted">Context: ${d.c.toFixed(0)}% with debt in collections</div>`;
   tip.html(h).style("display", "block").style("left", Math.min(ev.clientX + 14, innerWidth - 290) + "px").style("top", (ev.clientY + 14) + "px");
 }).on("mouseleave", () => tip.style("display", "none"));
 // Trend chart
