@@ -76,4 +76,4 @@ So:
 
 ## Next states to add
 
-LSC's Baseline Court Statistics (2023) shows county debt case types for Idaho (creditor/debtor collections, courtdata.idaho.gov dashboard), Iowa, Alaska, Arkansas (to 2018), and Florida (contract and indebtedness, which mixes in business contracts). Idaho's dashboard is the most promising live source. Missouri, Minnesota, and North Dakota are tracked case-by-case by the Debt Collection Lab and January Advisors, but whether that data can be downloaded is **not confirmed**.
+LSC's Baseline Court Statistics (2023) shows county debt case types for Idaho (creditor/debtor collections, courtdata.idaho.gov dashboard), Iowa, Alaska, Arkansas (to 2018), and Florida (contract and indebtedness, which mixes in business contracts). Idaho's dashboard is the most promising live source. New York was checked on 2026-11-08 and can't be added yet: its court sites refuse scripts, and LSC's file has no debt category for it ([new-york.md](new-york.md)). Missouri, Minnesota, and North Dakota are tracked case-by-case by the Debt Collection Lab and January Advisors, but whether that data can be downloaded is **not confirmed**.
