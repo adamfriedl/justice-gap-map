@@ -2,7 +2,7 @@
 
 A one-time setup, done by the maintainer: seven steps, about an hour. Most of it happens on your own computer, plus two settings on GitHub. Afterwards, every AWS change goes through a pull request: GitHub Actions shows `plan` on the PR, and `apply` runs on `main` after you approve it. No long-lived AWS keys are kept anywhere.
 
-**What it creates** (all in `infra/bootstrap/`, region `us-east-1`):
+**What it creates** (all in `infra/bootstrap/`, region `us-east-2`; see the note on regions at the end):
 
 | Resource | Why | Cost |
 | --- | --- | --- |
@@ -35,7 +35,7 @@ c. Configure a CLI profile with that key:
 aws configure --profile jgm-admin
 ```
 
-Paste the key ID and secret. Region `us-east-1`, output `json`.
+Paste the key ID and secret. Region `us-east-2`, output `json`.
 
 d. Check who the CLI is:
 
@@ -149,6 +149,8 @@ terraform destroy -var="budget_email=YOU@EXAMPLE.COM"
 It stops at the state bucket, which is protected on purpose. To really delete it, first remove the `prevent_destroy` block in `state.tf`, and move the state back to local (delete `backend.tf`, run `terraform init -migrate-state`). Then delete the `production` environment and the three variables in GitHub, and the access key (Step 6).
 
 ## Notes
+
+- **Why us-east-2.** Accounts created through AWS's new sign-up flow get an organization rule, `AdvancedModeRegionRestrictionSecurityControlPolicy`. It allows only global services (IAM, STS, Budgets, billing and the like) in `us-east-1` and `us-west-2`, and nothing at all in other regions, except `us-east-2`, where everything works. The first bootstrap attempt in `us-east-1` created the IAM pieces and the budget but was refused the S3 bucket. If you move the project to an account without that rule, any region works: change `region` in `infra/bootstrap/variables.tf` and the region settings in `infra/main/versions.tf` and `.github/workflows/terraform.yml`.
 
 - `infra/bootstrap` is applied only by hand. CI only checks that it's formatted and valid. The apply role can't modify what it creates.
 - Cloud sessions never get these roles. They get the read-only key from Phase 2 (PRD R14), capped by the boundary created here.
