@@ -1,6 +1,6 @@
 # AWS setup (Phase 1 bootstrap)
 
-A one-time setup, done by the maintainer from their own computer, plus one GitHub setting. Afterwards, every AWS change goes through a pull request: GitHub Actions shows `plan` on the PR, and `apply` runs on `main` after the maintainer approves it. No long-lived AWS keys are kept anywhere.
+A one-time setup, done by the maintainer: seven steps, about an hour. Most of it happens on your own computer, plus two settings on GitHub. Afterwards, every AWS change goes through a pull request: GitHub Actions shows `plan` on the PR, and `apply` runs on `main` after you approve it. No long-lived AWS keys are kept anywhere.
 
 **What it creates** (all in `infra/bootstrap/`, region `us-east-1`):
 
@@ -13,33 +13,41 @@ A one-time setup, done by the maintainer from their own computer, plus one GitHu
 | IAM policy `justice-gap-map-claude-readonly-boundary` | The ceiling for the read-only key that cloud sessions get in Phase 2 (PRD R14): read project buckets, run Athena in the project workgroup, write only `athena-scratch/`, read project logs and job status. | Free |
 | AWS Budget `justice-gap-map-monthly` | Emails at 80% of the monthly budget (actual) and 100% (forecast). Default $10. Covers the **whole account**. | Free (first two budgets) |
 
-## 1. Your IAM user (console)
+**Don't run any of this as the root user.** That includes `aws login` with the root email: it gives the CLI root-level power. Use the IAM user from Step 1.
 
-1. As the root user:
-   - Turn on MFA for root if it isn't already.
-   - In **Account → IAM user and role access to Billing information**, choose **Activate**. That lets your IAM user see billing and budgets.
-2. **IAM → Users → Create user**, and attach the AWS-managed policy **AdministratorAccess**. Two options:
-   - **Machine user** (no console access; simplest). There's nothing to sign in with, so MFA doesn't apply. What protects it is that its access key exists only while you run the bootstrap.
-   - **Person user** (console access). Also assign an MFA device under **Security credentials → Assign MFA device**.
-3. Right before step 3 below: **Security credentials → Create access key** (use case: Command Line Interface). You'll delete it in step 6.
+## Step 1. Account and IAM user (AWS console)
 
-## 2. Your computer
+a. Signed in as the root user:
+   - Turn on MFA for root, if it isn't already.
+   - In **Account → IAM user and role access to Billing information**, choose **Activate**. That lets IAM users see billing and budgets.
 
-Install the [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and [Terraform 1.10 or newer](https://developer.hashicorp.com/terraform/install). Then configure the CLI:
+b. **IAM → Users → Create user**, named `jgm-admin`. Attach the AWS-managed policy **AdministratorAccess**. Leave console access off: it's a machine user, used only through the CLI, so there's no password and MFA doesn't apply. What protects it is that its access key exists only while you run the bootstrap.
+
+## Step 2. Your computer
+
+a. Install the [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and [Terraform 1.10 or newer](https://developer.hashicorp.com/terraform/install).
+
+b. In the console: **IAM → Users → jgm-admin → Security credentials → Create access key**. Choose "Command Line Interface (CLI)", tick the confirmation, then **Next**. Copy the access key ID and the secret; the secret is shown only once.
+
+c. Configure a CLI profile with that key:
 
 ```bash
 aws configure --profile jgm-admin
 ```
 
-Enter the access key and secret, region `us-east-1`, output `json`. Check it works:
+Paste the key ID and secret. Region `us-east-1`, output `json`.
+
+d. Check who the CLI is:
 
 ```bash
 aws sts get-caller-identity --profile jgm-admin
 ```
 
-## 3. Apply the bootstrap
+The `Arn` must end in `:user/jgm-admin`. If it says `assumed-role` or `root`, the profile is using other credentials: redo c.
 
-From the repo root:
+## Step 3. Apply the bootstrap
+
+From the repo root, in one terminal (the next steps reuse it):
 
 ```bash
 cd infra/bootstrap
@@ -57,19 +65,19 @@ terraform init
 terraform plan -var="budget_email=YOU@EXAMPLE.COM"
 ```
 
-Read the plan: it should create about 15 resources and change nothing else. Then:
+The plan should end with `Plan: 15 to add, 0 to change, 0 to destroy.` If it shows anything to change or destroy, stop and ask. Then:
 
 ```bash
 terraform apply -var="budget_email=YOU@EXAMPLE.COM"
 ```
 
-To use a different budget (say the account already runs other things), add `-var="monthly_budget_usd=25"` to both commands.
+To use a different budget (say the account runs other things), add `-var="monthly_budget_usd=25"` to both commands.
 
 AWS emails a confirmation for the budget alerts. Click it.
 
-## 4. Move the bootstrap's state into S3
+## Step 4. Move the bootstrap's state into S3
 
-The first apply kept its state on your computer. Move it into the bucket it just created:
+Step 3 kept Terraform's state on your computer. Move it into the bucket it just created. Still in `infra/bootstrap`:
 
 ```bash
 terraform output -raw state_bucket
@@ -85,45 +93,60 @@ Edit `backend.tf`: replace `justice-gap-map-tfstate-ACCOUNT_ID` with the bucket 
 terraform init -migrate-state
 ```
 
-Answer `yes`. You can then delete the local `terraform.tfstate` files in this folder (they're gitignored). `backend.tf` holds no secrets; it's fine to commit it in a later PR.
+Answer `yes`. Then delete the local `terraform.tfstate` and `terraform.tfstate.backup` in this folder; they're gitignored, and the state now lives in S3. `backend.tf` holds no secrets; commit it in a later PR.
 
-## 5. GitHub settings
+## Step 5. GitHub settings
+
+Print the three values you'll need:
+
+```bash
+terraform output
+```
 
 In the repository on github.com:
 
-1. **Settings → Environments → New environment**. Name it `production`. Under **Required reviewers**, add yourself. Under **Deployment branches**, choose **Selected branches** and add `main`.
-2. **Settings → Secrets and variables → Actions → Variables** tab. Add three repository variables, taking the values from `terraform output`:
+a. **Settings → Environments → New environment**, named `production`:
+   - Under **Required reviewers**, add yourself.
+   - Under **Deployment branches**, choose **Selected branches** and add `main`.
+
+b. **Settings → Secrets and variables → Actions → Variables** tab. Add three repository variables from the output above. They're identifiers, not secrets.
    - `AWS_PLAN_ROLE_ARN` = `plan_role_arn`
    - `AWS_APPLY_ROLE_ARN` = `apply_role_arn`
    - `TF_STATE_BUCKET` = `state_bucket`
 
-These are identifiers, not secrets.
+## Step 6. Delete the access key
 
-## 6. Delete the access key
+a. **IAM → Users → jgm-admin → Security credentials**: deactivate, then delete, the access key from Step 2b.
 
-**IAM → your user → Security credentials** → deactivate, then delete, the access key from step 1.3. Also remove the `[jgm-admin]` profile from `~/.aws/credentials` and `~/.aws/config` on your computer.
+b. On your computer, remove the `jgm-admin` entries from `~/.aws/credentials` and `~/.aws/config`.
 
-A machine user with no keys can't be used by anyone; you can also delete it. GitHub does everything from here through its own roles. If the bootstrap ever needs a change, create a fresh key (or user) for that session and delete it again.
+`jgm-admin` now has no key and no password, so nobody can use it. Keep it for the next time the bootstrap needs a change: create a fresh key then (Step 2b–d), and delete it again after.
 
-## 7. Check it end to end
+## Step 7. Check it end to end
 
-Open any small PR that touches `infra/main/`. The `terraform` workflow should:
+Open a small PR that touches `infra/main/` (any comment change will do). The `terraform` workflow should:
 - pass `check`;
-- run `plan` using the plan role, showing no changes (`infra/main` is empty until Phase 2).
+- run `plan` with the plan role, showing no changes (`infra/main` is empty until Phase 2).
 
-After you merge, the `apply` job waits for your approval under the PR's **Actions** tab.
+After you merge it, the `apply` job waits for your approval in the repo's **Actions** tab.
 
 ## Undo
+
+This needs admin credentials again: create a fresh `jgm-admin` key and profile (Step 2b–d). Then:
 
 ```bash
 cd infra/bootstrap
 ```
 
 ```bash
+export AWS_PROFILE=jgm-admin
+```
+
+```bash
 terraform destroy -var="budget_email=YOU@EXAMPLE.COM"
 ```
 
-It will stop at the state bucket, which is protected on purpose. Remove the `prevent_destroy` block in `state.tf` first if you really mean to delete it. Then delete the `production` environment and the three variables in GitHub.
+It stops at the state bucket, which is protected on purpose. To really delete it, first remove the `prevent_destroy` block in `state.tf`, and move the state back to local (delete `backend.tf`, run `terraform init -migrate-state`). Then delete the `production` environment and the three variables in GitHub, and the access key (Step 6).
 
 ## Notes
 
