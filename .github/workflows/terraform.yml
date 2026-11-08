@@ -1,14 +1,14 @@
-# Terraform for infra/main: plan on pull requests, apply on main after the
-# maintainer approves the "production" environment. infra/bootstrap is applied
-# by hand (docs/aws-setup.md) and is only format- and validity-checked here.
+# Terraform for infra/main: plan on pull requests; apply only when the
+# maintainer starts it by hand on main ("Run workflow" in the Actions tab, or
+# `gh workflow run terraform --ref main`). Merging does not apply anything.
+# infra/bootstrap is applied by hand (docs/aws-setup.md) and is only format-
+# and validity-checked here.
 name: terraform
 
 on:
   pull_request:
     paths: ["infra/**", ".github/workflows/terraform.yml"]
-  push:
-    branches: [main]
-    paths: ["infra/main/**", ".github/workflows/terraform.yml"]
+  workflow_dispatch: {}
 
 permissions:
   contents: read
@@ -52,10 +52,12 @@ jobs:
       - run: terraform -chdir=infra/main plan -input=false -no-color
 
   apply:
-    if: github.event_name == 'push' && vars.AWS_APPLY_ROLE_ARN != ''
+    # Manual runs on main only. The "production" environment is limited to the
+    # main branch, and the apply role trusts only jobs in that environment.
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && vars.AWS_APPLY_ROLE_ARN != ''
     needs: check
     runs-on: ubuntu-latest
-    environment: production   # requires the maintainer's approval before this job starts
+    environment: production   # the apply role's trust policy requires this environment
     permissions:
       contents: read
       id-token: write

@@ -106,7 +106,7 @@ Why these changed (Phase 0, `docs/phase0/`):
 ### Infrastructure
 
 - R10. All of it in Terraform: S3 (raw and curated), Glue catalog, an Athena workgroup with a scan limit, IAM roles, an EventBridge Scheduler schedule plus the job runner, Parameter Store, a budget alarm.
-- R11. GitHub Actions authenticating through OIDC. `terraform plan` on PRs; `apply` on main behind a GitHub environment that needs manual approval.
+- R11. GitHub Actions authenticating through OIDC. `terraform plan` on PRs; `apply` on main only when the maintainer starts it by hand, in a `production` GitHub environment limited to `main` (required reviewers need a paid GitHub plan on a private repo, so the manual start is the gate).
 - R12. Least privilege: the ingest role writes only to raw, the transform role reads raw and writes curated, the query role is read-only on curated.
 - R13. Scales to zero when idle. No always-on compute.
 - R14. **Read-only cloud-session access.** An IAM user `claude-cloud-readonly`, defined in Terraform, whose access key lives only in the Claude Code cloud environment's env vars. It may:
@@ -191,7 +191,7 @@ Otherwise write down why in `docs/phase0/` and stop.
 
 - [ ] Account hygiene, S3 Terraform state backend with `use_lockfile`, GitHub OIDC provider and plan/apply roles scoped to this repo
   _Written in `infra/bootstrap/` with a runbook in `docs/aws-setup.md`; the maintainer applies it by hand. The bootstrap runs as a plain IAM admin user (no IAM Identity Center), a machine user whose access key exists only for the bootstrap and is deleted afterwards._
-- [ ] A GitHub `production` environment with required reviewers, so `apply` needs approval
+- [ ] A GitHub `production` environment limited to `main`, with `apply` started by hand (required reviewers if the GitHub plan allows)
 - [ ] The permissions boundary for `claude-cloud-readonly` (R14). The user and its scoped policy land in Phase 2, once the buckets and workgroup exist.
 
 Cloud sessions never get write access to AWS. Every change reaches AWS through Actions. After Phase 2 they can hold the read-only key from R14 for querying and debugging.

@@ -1,6 +1,6 @@
 # AWS setup (Phase 1 bootstrap)
 
-A one-time setup, done by the maintainer: seven steps, about an hour. Most of it happens on your own computer, plus two settings on GitHub. Afterwards, every AWS change goes through a pull request: GitHub Actions shows `plan` on the PR, and `apply` runs on `main` after you approve it. No long-lived AWS keys are kept anywhere.
+A one-time setup, done by the maintainer: seven steps, about an hour. Most of it happens on your own computer, plus two settings on GitHub. Afterwards, every AWS change goes through a pull request: GitHub Actions shows `plan` on the PR, and after merging you start `apply` on `main` by hand. No long-lived AWS keys are kept anywhere.
 
 **What it creates** (all in `infra/bootstrap/`, region `us-east-2`; see the note on regions at the end):
 
@@ -108,10 +108,11 @@ terraform output
 In the repository on github.com:
 
 a. **Settings → Environments → New environment**, named `production`:
-   - Under **Required reviewers**, add yourself.
-   - Under **Deployment branches**, choose **Selected branches** and add `main`.
+   - Under **Deployment branches and tags**, choose **Selected branches and tags** and add `main`. This matters: the apply role trusts only jobs in this environment, so this limits admin access to workflows on `main`.
+   - Add no variables or secrets here (see b).
+   - **Required reviewers**, if the option appears, add yourself. GitHub offers it on private repositories only with a paid plan. Without it, the gate is that `apply` never runs on its own; you start it by hand (Step 7).
 
-b. **Settings → Secrets and variables → Actions → Variables** tab. Add three repository variables from the output above. They're identifiers, not secrets.
+b. **Settings → Secrets and variables → Actions → Variables** tab. Add three **repository** variables (not environment variables: the `plan` job doesn't run in `production` and wouldn't see them). Copy the values from the output above exactly; they're identifiers, not secrets.
    - `AWS_PLAN_ROLE_ARN` = `plan_role_arn`
    - `AWS_APPLY_ROLE_ARN` = `apply_role_arn`
    - `TF_STATE_BUCKET` = `state_bucket`
@@ -130,7 +131,13 @@ Open a small PR that touches `infra/main/` (any comment change will do). The `te
 - pass `check`;
 - run `plan` with the plan role, showing no changes (`infra/main` is empty until Phase 2).
 
-After you merge it, the `apply` job waits for your approval in the repo's **Actions** tab.
+Merging doesn't change AWS. To apply what's on `main`, start the workflow by hand: **Actions → terraform → Run workflow** (branch `main`), or
+
+```bash
+gh workflow run terraform --ref main
+```
+
+The `apply` job runs with the apply role. If you set up required reviewers, it waits for your approval first. For an empty `infra/main`, it reports no changes.
 
 ## Undo
 
