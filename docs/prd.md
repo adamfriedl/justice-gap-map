@@ -177,6 +177,7 @@ This decides whether the project is viable. No AWS needed, so it suits cloud ses
 - [ ] **Gap check, done properly:** search Google Scholar and SSRN. Check LSC's own reports, the NCSC, Pew, January Advisors (debt lawsuit data), and the Stanford Legal Design Lab and Suffolk LIT Lab sites. If someone already did this, look for what they left out or contribute to their work instead.
   _Preliminary scan done 2026-11-07 (no Scholar/SSRN): no published combination found; LSC's Civil Court Data Initiative is the nearest effort and a likely partner. See `docs/phase0/literature-scan.md`. The maintainer still searches Scholar and SSRN._
 - [ ] **One hand-built prototype:** a single state (pick one with clean ZIPs and county-based service areas) in DuckDB. Does any signal show up? Texas is the natural pick: court filings are already pulled, its three general service areas (TX-13, TX-14, TX-15, one grantee each) are whole-county lists, so no merged units are needed. Use the revised metrics above.
+  _Started 2026-11-08 with legal aid offices: 81% of Texas debt suits are filed in the 43 counties with an office, so distance isn't where the gap shows; suits per eligible resident range from 81 to 120 per 1,000 across the three service areas, each with 14–16 offices. See `docs/legal-aid/texas.md`._
 
 **Go/no-go:** continue if LSC data can be attached to some geography, more than ~70% of complaints can be placed, and nobody has already published this. Also:
 

@@ -65,7 +65,7 @@ uv run python scripts/lawsuits_map.py --atlas data/atlas/package/counties-albers
 
 So:
 - The places with the most suits stay fairly consistent over time.
-- How filing rates relate to poverty and debt differs a lot by state. In Indiana and Virginia, suits concentrate where debt and poverty are higher. In Texas they don't: the fast-growing suburban counties lead, and the poor border counties are middling.
+- How filing rates relate to poverty and debt differs a lot by state. In Indiana and Virginia, suits concentrate where debt and poverty are higher. In Texas they don't: the fast-growing suburban counties lead, and the poorer border counties are middling.
 - One measure won't stand in for another. Where lawsuits matter, you need the court data itself.
 
 ## Caveats

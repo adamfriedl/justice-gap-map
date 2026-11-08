@@ -18,10 +18,14 @@ It's a personal project: part research, part a working example of a small, revie
 
 **Where they're filed isn't simply where the poverty is:**
 - Indiana and Virginia suits concentrate where debt and poverty are high.
-- Texas's highest rates are in fast-growing suburbs around Dallas–Fort Worth and Houston (Kaufman, Ellis, Brazoria), not the poor border counties.
+- Texas's highest rates are in fast-growing suburbs around Dallas–Fort Worth and Houston (Kaufman, Ellis, Brazoria), not the poorer border counties.
 - So no single national measure stands in for court data.
 
-**Common proxies fail** ([docs/phase0](docs/phase0/)):
+**In Texas, legal aid offices are where the suits are; the difference is volume** ([docs/legal-aid/texas.md](docs/legal-aid/texas.md)):
+- 81% of 2025 debt suits were filed in the 43 counties with a legal aid office. The highest-rate counties without one are suburbs 20 to 35 miles from a metro office.
+- Each of the state's three legal aid service areas has 14 to 16 offices. Debt suits per eligible resident range from 81 to 120 per 1,000.
+
+**Common proxies fail** (early data checks, [docs/phase0](docs/phase0/)):
 - *CFPB complaints* don't measure need. In Texas, the poorest counties have the most debt in collections and the fewest complaints, and complaint rates barely track lawsuit rates ([write-up](docs/phase0/complaints-vs-need.md)).
 - *LSC funding* doesn't measure legal aid capacity. The federal formula is nearly flat per eligible person, while total legal aid nonprofit revenue runs from $18 to $275 per eligible person across states (outside DC) ([write-up](docs/phase0/lsc-funding-vs-capacity.md)).
 - LSC's 130 service areas can be rebuilt as county sets, so county data can be compared with legal aid geography ([write-up](docs/phase0/lsc-data-availability.md)).
@@ -37,8 +41,8 @@ CFPB complaints, Census ACS, HUD ZIP map   ├─► (scripts/) ─────�
 LSC service areas, IRS nonprofit revenue   ┘
 ```
 
-- **Today:** Python 3.12 scripts (managed with [uv](https://docs.astral.sh/uv/)) download each source and query it with [DuckDB](https://duckdb.org/). The CFPB file alone is ~6 GB, so no pandas.
-- **Next:** the same jobs run on AWS (details below).
+- **So far (as of November 2026):** Python 3.12 scripts (managed with [uv](https://docs.astral.sh/uv/)) download each source and query it with [DuckDB](https://duckdb.org/). The CFPB file alone is ~6 GB, so no pandas.
+- **Next:** the same jobs run on a schedule on AWS (details below).
 - **Built with AI coding agents under written rules.** [AGENTS.md](AGENTS.md) sets the limits:
   - read-only AWS access for agents;
   - no names or addresses of people sued, ever;
@@ -52,7 +56,7 @@ All of it is Terraform in [`infra/`](infra/), in two stacks.
 | Stack | What it holds | How it changes |
 | --- | --- | --- |
 | [`infra/bootstrap/`](infra/bootstrap/) | Terraform's state bucket; the link that lets GitHub Actions sign in to AWS (OIDC); the two CI roles; the ceiling on what AI agents can do; a monthly budget alert | Rarely. Applied by hand by the maintainer, with a temporary key that's deleted afterward ([runbook](docs/aws-setup.md)) |
-| [`infra/main/`](infra/main/) | The pipeline: data buckets, query engine (Athena), scheduled jobs. Empty until Phase 2. | Through pull requests only |
+| [`infra/main/`](infra/main/) | The pipeline: data buckets, query engine (Athena), scheduled jobs. Empty so far; the pipeline is the next step. | Through pull requests only |
 
 **How an infrastructure change ships:**
 1. A pull request changes something in `infra/main/`.
@@ -62,7 +66,7 @@ All of it is Terraform in [`infra/`](infra/), in two stacks.
 
 No AWS keys are stored in GitHub or anywhere else. The apply role is admin-level because it builds the pipeline, but explicit denies stop it from changing its own trust, the CI roles, the agents' ceiling, or the state bucket. A bad merge can break the pipeline, but it can't take over the account.
 
-**How the data will update (Phase 2–3):**
+**How the data will update (planned):**
 - Each source gets its own scheduled job, on the source's own rhythm: Harris County cases daily, CFPB weekly, Texas and Virginia court counts monthly, Indiana quarterly, Census and LSC yearly.
 - Raw downloads are kept as dated snapshots, so every number can be traced to the file it came from. The CFPB archive is locked against deletion.
 - A weekly job compares each county's filings with its own recent history and emails a summary when something moves well outside the usual range.
@@ -78,7 +82,7 @@ There's no national count of debt lawsuits. Each state's courts decide what to p
 | **Indiana** | A "Collection" case type with county counts ([ICOR](https://publicaccess.courts.in.gov/ICOR/)) | A clean statewide series, and default judgments for every county |
 | **Virginia** | Monthly General District Court filing reports (PDF) | Court-level counts that track LSC's earlier warrant-in-debt figures closely (Spearman 0.75) |
 
-Texas was also the test state for the Phase 0 checks. Next candidates come from LSC's Baseline Court Statistics, which lists states whose courts report debt case types by county. Idaho's court dashboard is the most promising. Maps say which states are covered; a blank state means no data, not no lawsuits.
+Texas was also the test state for the early data checks. Next candidates come from LSC's Baseline Court Statistics, which lists states whose courts report debt case types by county. Idaho's court dashboard is the most promising. Maps say which states are covered; a blank state means no data, not no lawsuits.
 
 ## Privacy
 
@@ -88,9 +92,10 @@ People sued for debt are private individuals. Case-level court feeds are reduced
 
 | Path | What |
 | --- | --- |
-| [`docs/prd.md`](docs/prd.md) | The plan: goals, data sources, metrics, phases |
+| [`docs/prd.md`](docs/prd.md) | The plan: goals, data sources, metrics |
 | [`docs/lawsuits/`](docs/lawsuits/) | Debt-lawsuit counts by county (TX, IN, VA) and what they show |
-| [`docs/phase0/`](docs/phase0/) | Data-validity checks: which measures hold up and which don't |
+| [`docs/legal-aid/`](docs/legal-aid/) | Where legal aid offices are, set next to debt suits (Texas) |
+| [`docs/phase0/`](docs/phase0/) | Early data checks: which measures hold up and which don't |
 | [`scripts/`](scripts/) | Download and analysis scripts |
 | [`site/`](site/) | The interactive map, published on GitHub Pages; rebuilt with `scripts/lawsuits_map.py` |
 | [`infra/`](infra/) | Terraform: `bootstrap/` (state, CI roles, budget) and `main/` (pipeline) |
@@ -113,12 +118,25 @@ Then follow the "Reproduce" steps in [docs/lawsuits/README.md](docs/lawsuits/REA
 uv run pytest -q
 ```
 
-## Status
+## Where it stands
 
-- [x] **Phase 0:** data checks. Complaints and LSC funding failed as measures; debt in collections, court filings, and IRS revenue replaced them.
-- [x] **Phase 1:** AWS bootstrap, Terraform state, and CI with OIDC.
-- [ ] **Phase 2–4:** the pipeline on AWS, scheduled ingest, the map, and the write-up.
-- [ ] **More states**, as their courts publish debt filings (Idaho is next).
+Done as of November 2026:
+- Data checks: complaints and LSC funding failed as measures; court filings, debt in collections, and IRS revenue replaced them.
+- Debt-suit counts by county for Texas, Indiana and Virginia, and the interactive map.
+- Legal aid office locations for Texas, set next to debt suits.
+- The AWS foundation: Terraform state, CI that signs in with OIDC, plan on every PR, apply on merge.
+
+**Next steps:**
+- Rework the map around the states with court data. Each state gets its own zoomed view instead of a mostly grey national map, and Texas gets the legal aid layer.
+- Build the pipeline on AWS, so court counts refresh on their own (Harris County daily, state counts monthly), with a weekly alert when a county or filer moves sharply.
+- Add Idaho, the most promising next state.
+
+**Possible later:**
+- Legal aid office locations for Indiana and Virginia, so the Texas comparison can be repeated.
+- New York, if its caseload reports break out consumer credit cases ([what was checked](docs/lawsuits/new-york.md)).
+- Who files: the largest plaintiffs and their outcomes, from Harris County's case-level data.
+- A plain-English question box over the data that shows the query it ran.
+- The long-term aim: plain-language guides to the debt-suit process, aimed first at the places this map shows need them most.
 
 The project is purely informational. It reports what public records show about places, not why, and it doesn't call out or judge legal aid providers or their funders. The businesses that file the suits are named, with every figure sourced to court records.
 

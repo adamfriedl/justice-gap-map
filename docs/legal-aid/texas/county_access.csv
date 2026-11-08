@@ -1,0 +1,255 @@
+fips,county,lsc_service_area,offices_in_county,nearest_office,nearest_office_miles
+48001,Anderson,TX-13,0,Tyler,38.9
+48003,Andrews,TX-14,0,Odessa,34.5
+48005,Angelina,TX-13,0,Nacogdoches,25.0
+48007,Aransas,TX-15,0,Corpus Christi (courthouse),28.4
+48009,Archer,TX-14,0,Wichita Falls,22.1
+48011,Armstrong,TX-14,0,Amarillo,31.4
+48013,Atascosa,TX-15,0,San Antonio,39.5
+48015,Austin,TX-13,0,Richmond,37.4
+48017,Bailey,TX-14,0,Plainview,63.9
+48019,Bandera,TX-15,0,Kerrville,20.7
+48021,Bastrop,TX-15,0,Austin,29.8
+48023,Baylor,TX-14,0,Wichita Falls,44.0
+48025,Bee,TX-15,0,Sinton,30.0
+48027,Bell,TX-13,1,Belton,0.7
+48029,Bexar,TX-15,1,San Antonio,1.0
+48031,Blanco,TX-15,0,Austin,38.6
+48033,Borden,TX-14,0,Lubbock,62.6
+48035,Bosque,TX-13,0,Waco,35.4
+48037,Bowie,TX-13,1,Texarkana,19.5
+48039,Brazoria,TX-13,1,Clute,10.1
+48041,Brazos,TX-13,1,Bryan,4.7
+48043,Brewster,TX-15,1,Alpine,45.6
+48045,Briscoe,TX-14,0,Plainview,37.5
+48047,Brooks,TX-15,0,Edinburg,49.7
+48049,Brown,TX-14,1,Brownwood,3.8
+48051,Burleson,TX-13,0,Bryan,18.6
+48053,Burnet,TX-15,0,Austin,43.1
+48055,Caldwell,TX-15,0,Austin,33.1
+48057,Calhoun,TX-15,0,Victoria,36.4
+48059,Callahan,TX-14,0,Abilene,24.1
+48061,Cameron,TX-15,2,Brownsville,7.6
+48063,Camp,TX-13,0,Longview,33.9
+48065,Carson,TX-14,0,Amarillo,30.5
+48067,Cass,TX-13,0,Texarkana,29.8
+48069,Castro,TX-14,0,Plainview,38.6
+48071,Chambers,TX-13,0,Galveston,39.5
+48073,Cherokee,TX-13,0,Nacogdoches,33.7
+48075,Childress,TX-14,0,Plainview,89.5
+48077,Clay,TX-14,0,Wichita Falls,19.8
+48079,Cochran,TX-14,0,Lubbock,54.3
+48081,Coke,TX-14,0,San Angelo,32.0
+48083,Coleman,TX-14,0,Brownwood,25.8
+48085,Collin,TX-14,1,McKinney,4.9
+48087,Collingsworth,TX-14,0,Amarillo,89.7
+48089,Colorado,TX-13,0,Richmond,45.0
+48091,Comal,TX-15,0,San Antonio,29.0
+48093,Comanche,TX-14,0,Brownwood,30.0
+48095,Concho,TX-14,0,San Angelo,35.6
+48097,Cooke,TX-14,0,Denton,29.4
+48099,Coryell,TX-13,0,Belton,30.0
+48101,Cottle,TX-14,0,Plainview,83.0
+48103,Crane,TX-14,0,Odessa,32.7
+48105,Crockett,TX-15,0,San Angelo,75.4
+48107,Crosby,TX-14,0,Lubbock,34.1
+48109,Culberson,TX-15,0,Alpine,90.6
+48111,Dallam,TX-14,0,Amarillo,86.5
+48113,Dallas,TX-14,1,Dallas,1.9
+48115,Dawson,TX-14,0,Midland,50.5
+48117,Deaf Smith,TX-14,0,Amarillo,47.3
+48119,Delta,TX-13,0,Paris,20.9
+48121,Denton,TX-14,1,Denton,1.4
+48123,DeWitt,TX-15,0,Victoria,28.7
+48125,Dickens,TX-14,0,Lubbock,63.5
+48127,Dimmit,TX-15,0,Eagle Pass,48.0
+48129,Donley,TX-14,0,Amarillo,59.9
+48131,Duval,TX-15,0,Laredo,61.3
+48133,Eastland,TX-14,0,Brownwood,43.1
+48135,Ector,TX-14,1,Odessa,11.6
+48137,Edwards,TX-15,0,Del Rio,54.6
+48139,Ellis,TX-14,1,Waxahachie,4.7
+48141,El Paso,TX-15,1,El Paso,12.5
+48143,Erath,TX-14,0,Weatherford,44.2
+48145,Falls,TX-13,0,Waco,26.0
+48147,Fannin,TX-14,0,Paris,32.6
+48149,Fayette,TX-13,0,Austin,57.7
+48151,Fisher,TX-14,0,Abilene,43.5
+48153,Floyd,TX-14,0,Plainview,25.4
+48155,Foard,TX-14,0,Wichita Falls,74.1
+48157,Fort Bend,TX-13,1,Richmond,3.8
+48159,Franklin,TX-13,0,Paris,39.0
+48161,Freestone,TX-13,0,Waco,62.3
+48163,Frio,TX-15,0,Uvalde,46.9
+48165,Gaines,TX-14,0,Midland,58.2
+48167,Galveston,TX-13,1,Galveston,5.7
+48169,Garza,TX-14,0,Lubbock,42.8
+48171,Gillespie,TX-15,0,Kerrville,22.8
+48173,Glasscock,TX-14,0,Midland,36.4
+48175,Goliad,TX-15,0,Victoria,29.3
+48177,Gonzales,TX-15,0,Victoria,53.4
+48179,Gray,TX-14,0,Amarillo,59.3
+48181,Grayson,TX-14,0,McKinney,29.3
+48183,Gregg,TX-13,1,Longview,4.0
+48185,Grimes,TX-13,0,Bryan,24.9
+48187,Guadalupe,TX-15,0,San Antonio,35.6
+48189,Hale,TX-14,1,Plainview,10.2
+48191,Hall,TX-14,0,Plainview,67.9
+48193,Hamilton,TX-13,0,Brownwood,50.9
+48195,Hansford,TX-14,0,Amarillo,78.9
+48197,Hardeman,TX-14,0,Wichita Falls,74.6
+48199,Hardin,TX-13,0,Beaumont,22.5
+48201,Harris,TX-13,1,Houston,4.9
+48203,Harrison,TX-13,0,Longview,22.6
+48205,Hartley,TX-14,0,Amarillo,62.3
+48207,Haskell,TX-14,0,Abilene,49.8
+48209,Hays,TX-15,0,Austin,23.2
+48211,Hemphill,TX-14,0,Amarillo,97.3
+48213,Henderson,TX-13,0,Tyler,32.8
+48215,Hidalgo,TX-15,1,Edinburg,5.7
+48217,Hill,TX-13,0,Waco,29.5
+48219,Hockley,TX-14,0,Lubbock,26.3
+48221,Hood,TX-14,0,Weatherford,22.6
+48223,Hopkins,TX-13,0,Paris,35.9
+48225,Houston,TX-13,0,Nacogdoches,49.6
+48227,Howard,TX-14,0,Midland,43.9
+48229,Hudspeth,TX-15,0,El Paso,67.8
+48231,Hunt,TX-14,0,McKinney,34.0
+48233,Hutchinson,TX-14,0,Amarillo,51.5
+48235,Irion,TX-14,0,San Angelo,32.7
+48237,Jack,TX-14,0,Weatherford,40.4
+48239,Jackson,TX-15,0,Victoria,25.7
+48241,Jasper,TX-13,0,Beaumont,46.7
+48243,Jeff Davis,TX-15,0,Alpine,36.2
+48245,Jefferson,TX-13,1,Beaumont,16.0
+48247,Jim Hogg,TX-15,0,Laredo,57.5
+48249,Jim Wells,TX-15,0,Sinton,41.7
+48251,Johnson,TX-14,0,Fort Worth,27.8
+48253,Jones,TX-14,0,Abilene,21.5
+48255,Karnes,TX-15,0,Victoria,52.7
+48257,Kaufman,TX-14,0,Dallas,30.9
+48259,Kendall,TX-15,0,Kerrville,26.1
+48261,Kenedy,TX-15,0,Harlingen,48.7
+48263,Kent,TX-14,0,Lubbock,69.6
+48265,Kerr,TX-15,1,Kerrville,13.4
+48267,Kimble,TX-15,0,Kerrville,47.7
+48269,King,TX-14,0,Abilene,85.3
+48271,Kinney,TX-15,0,Del Rio,28.0
+48273,Kleberg,TX-15,0,Corpus Christi (courthouse),37.0
+48275,Knox,TX-14,0,Wichita Falls,72.1
+48277,Lamar,TX-13,1,Paris,1.4
+48279,Lamb,TX-14,0,Plainview,36.7
+48281,Lampasas,TX-13,0,Belton,46.1
+48283,La Salle,TX-15,0,Laredo,59.7
+48285,Lavaca,TX-15,0,Victoria,38.5
+48287,Lee,TX-13,0,Bryan,42.7
+48289,Leon,TX-13,0,Bryan,49.4
+48291,Liberty,TX-13,0,Conroe,40.0
+48293,Limestone,TX-13,0,Waco,35.1
+48295,Lipscomb,TX-14,0,Amarillo,115.1
+48297,Live Oak,TX-15,0,Sinton,43.8
+48299,Llano,TX-15,0,Kerrville,53.4
+48301,Loving,TX-14,0,Odessa,71.4
+48303,Lubbock,TX-14,1,Lubbock,5.2
+48305,Lynn,TX-14,0,Lubbock,26.8
+48307,McCulloch,TX-14,0,Brownwood,41.7
+48309,McLennan,TX-13,1,Waco,0.9
+48311,McMullen,TX-15,0,Sinton,69.9
+48313,Madison,TX-13,0,Bryan,33.9
+48315,Marion,TX-13,0,Longview,30.4
+48317,Martin,TX-14,0,Midland,21.6
+48319,Mason,TX-15,0,Kerrville,46.4
+48321,Matagorda,TX-13,0,Clute,40.4
+48323,Maverick,TX-15,1,Eagle Pass,10.3
+48325,Medina,TX-15,0,San Antonio,36.1
+48327,Menard,TX-14,0,San Angelo,51.9
+48329,Midland,TX-14,1,Midland,15.9
+48331,Milam,TX-13,0,Belton,34.5
+48333,Mills,TX-14,0,Brownwood,27.1
+48335,Mitchell,TX-14,0,San Angelo,65.8
+48337,Montague,TX-14,0,Denton,46.3
+48339,Montgomery,TX-13,1,Conroe,2.3
+48341,Moore,TX-14,0,Amarillo,44.2
+48343,Morris,TX-13,0,Longview,41.2
+48345,Motley,TX-14,0,Plainview,54.0
+48347,Nacogdoches,TX-13,1,Nacogdoches,2.0
+48349,Navarro,TX-13,0,Waxahachie,32.6
+48351,Newton,TX-13,0,Beaumont,54.2
+48353,Nolan,TX-14,0,Abilene,40.9
+48355,Nueces,TX-15,2,Sinton,20.6
+48357,Ochiltree,TX-14,0,Amarillo,94.0
+48359,Oldham,TX-14,0,Amarillo,45.4
+48361,Orange,TX-13,0,Beaumont,15.2
+48363,Palo Pinto,TX-14,0,Weatherford,31.7
+48365,Panola,TX-13,0,Longview,36.3
+48367,Parker,TX-14,1,Weatherford,2.6
+48369,Parmer,TX-14,0,Plainview,65.0
+48371,Pecos,TX-15,0,Alpine,63.0
+48373,Polk,TX-13,0,Conroe,49.8
+48375,Potter,TX-14,1,Amarillo,14.3
+48377,Presidio,TX-15,0,Alpine,43.4
+48379,Rains,TX-13,0,Tyler,47.7
+48381,Randall,TX-14,0,Amarillo,16.7
+48383,Reagan,TX-14,0,Midland,57.0
+48385,Real,TX-15,0,Uvalde,42.5
+48387,Red River,TX-13,0,Paris,28.9
+48389,Reeves,TX-15,0,Alpine,65.3
+48391,Refugio,TX-15,0,Sinton,28.5
+48393,Roberts,TX-14,0,Amarillo,71.4
+48395,Robertson,TX-13,0,Bryan,26.1
+48397,Rockwall,TX-14,0,Dallas,21.9
+48399,Runnels,TX-14,0,San Angelo,39.2
+48401,Rusk,TX-13,0,Longview,28.4
+48403,Sabine,TX-13,0,Nacogdoches,50.7
+48405,San Augustine,TX-13,0,Nacogdoches,32.9
+48407,San Jacinto,TX-13,0,Conroe,25.6
+48409,San Patricio,TX-15,1,Sinton,2.0
+48411,San Saba,TX-14,0,Brownwood,39.6
+48413,Schleicher,TX-14,0,San Angelo,37.9
+48415,Scurry,TX-14,0,Abilene,71.3
+48417,Shackelford,TX-14,0,Abilene,30.3
+48419,Shelby,TX-13,0,Nacogdoches,32.4
+48421,Sherman,TX-14,0,Amarillo,74.8
+48423,Smith,TX-13,1,Tyler,4.5
+48425,Somervell,TX-14,0,Weatherford,37.0
+48427,Starr,TX-15,0,Edinburg,39.2
+48429,Stephens,TX-14,0,Abilene,55.9
+48431,Sterling,TX-14,0,San Angelo,44.8
+48433,Stonewall,TX-14,0,Abilene,58.4
+48435,Sutton,TX-15,0,San Angelo,63.6
+48437,Swisher,TX-14,0,Plainview,23.2
+48439,Tarrant,TX-14,1,Fort Worth,3.4
+48441,Taylor,TX-14,1,Abilene,14.0
+48443,Terrell,TX-15,0,Del Rio,92.8
+48445,Terry,TX-14,0,Lubbock,37.5
+48447,Throckmorton,TX-14,0,Abilene,58.3
+48449,Titus,TX-13,0,Paris,45.9
+48451,Tom Green,TX-14,1,San Angelo,3.1
+48453,Travis,TX-15,1,Austin,5.5
+48455,Trinity,TX-13,0,Nacogdoches,46.2
+48457,Tyler,TX-13,0,Beaumont,49.2
+48459,Upshur,TX-13,0,Longview,18.2
+48461,Upton,TX-14,0,Odessa,40.5
+48463,Uvalde,TX-15,1,Uvalde,9.4
+48465,Val Verde,TX-15,1,Del Rio,38.1
+48467,Van Zandt,TX-13,0,Tyler,35.2
+48469,Victoria,TX-15,1,Victoria,2.4
+48471,Walker,TX-13,0,Conroe,29.1
+48473,Waller,TX-13,0,Richmond,32.7
+48475,Ward,TX-14,0,Odessa,51.4
+48477,Washington,TX-13,0,Bryan,31.2
+48479,Webb,TX-15,1,Laredo,16.6
+48481,Wharton,TX-13,0,Richmond,35.1
+48483,Wheeler,TX-14,0,Amarillo,90.1
+48485,Wichita,TX-14,1,Wichita Falls,11.9
+48487,Wilbarger,TX-14,0,Wichita Falls,42.9
+48489,Willacy,TX-15,0,Harlingen,21.1
+48491,Williamson,TX-15,0,Austin,25.8
+48493,Wilson,TX-15,0,San Antonio,33.1
+48495,Winkler,TX-14,0,Odessa,41.8
+48497,Wise,TX-14,0,Denton,29.6
+48499,Wood,TX-13,0,Tyler,32.5
+48501,Yoakum,TX-14,0,Lubbock,61.0
+48503,Young,TX-14,0,Wichita Falls,52.4
+48505,Zapata,TX-15,0,Laredo,43.2
+48507,Zavala,TX-15,0,Uvalde,24.2
