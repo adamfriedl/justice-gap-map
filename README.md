@@ -6,6 +6,10 @@ Debt collectors file hundreds of thousands of lawsuits a year in state courts. M
 
 It's a personal project: part research, part a working example of a small, reviewable data pipeline on AWS.
 
+[![Map of debt lawsuits per 1,000 residents by county in Texas, Indiana and Virginia](docs/img/lawsuits-map.png)](https://adamfriedl.github.io/justice-gap-map/)
+
+**[Open the interactive map →](https://adamfriedl.github.io/justice-gap-map/)** Hover over a county for its numbers, switch to default judgments or debt in collections, and see filings over time and the highest-rate counties.
+
 ## What it shows so far
 
 **Debt suits are surging** ([docs/lawsuits](docs/lawsuits/README.md)):
@@ -88,6 +92,7 @@ People sued for debt are private individuals. Case-level court feeds are reduced
 | [`docs/lawsuits/`](docs/lawsuits/) | Debt-lawsuit counts by county (TX, IN, VA) and what they show |
 | [`docs/phase0/`](docs/phase0/) | Data-validity checks: which measures hold up and which don't |
 | [`scripts/`](scripts/) | Download and analysis scripts |
+| [`site/`](site/) | The interactive map, published on GitHub Pages; rebuilt with `scripts/lawsuits_map.py` |
 | [`infra/`](infra/) | Terraform: `bootstrap/` (state, CI roles, budget) and `main/` (pipeline) |
 | [`tests/`](tests/) | Tests, including the privacy filter |
 

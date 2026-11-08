@@ -19,7 +19,7 @@ uv run python scripts/phase0_tx_courts_fetch.py --statewide --years 2014 2015 20
 uv run python scripts/lawsuits_fetch_indiana.py --years 2014 2024
 curl -o data/vacourts/2026-11-07/gdc_filings.pdf https://www.courts.state.va.us/static/courtadmin/aoc/djs/programs/cpss/csi/stats/gdc_filings.pdf
 uv run python scripts/lawsuits.py --out docs/lawsuits
-uv run python scripts/lawsuits_map.py --atlas data/atlas/package/counties-albers-10m.json   # us-atlas@3.0.1 from npm
+uv run python scripts/lawsuits_map.py --atlas data/atlas/package/counties-albers-10m.json   # us-atlas@3.0.1 from npm; writes site/index.html (GitHub Pages)
 ```
 
 ## Sources and definitions
