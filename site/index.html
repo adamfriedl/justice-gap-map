@@ -124,7 +124,7 @@ td.n, th.n { text-align: right; }
       <li><b>Indiana:</b> new "Collection" (CC) cases in all courts in the county, from Indiana Court Online Reports. Small-claims cases, which include some debt suits, are not counted here.</li>
       <li><b>Virginia:</b> "General Civil" filings in General District Court, 2025, from the court system's filing report. Most are warrants in debt, but the category also holds other civil cases; its county pattern tracks true warrant-in-debt counts from 2016–2019 closely (rank correlation 0.75). Some courts serve more than one locality, so those localities share a rate.</li>
       <li><b>Default share:</b> default judgments as a share of all cases disposed that year.</li>
-      <li><b>Legal aid offices (Texas):</b> locations listed on the websites of the three LSC-funded Texas programs, 2026-11-08, placed at their city. Distance is a straight line from the county's center to the nearest office. Phone and online intake, outreach sites, and programs without LSC funding are not shown.</li>
+      <li><b>LSC-funded legal aid offices (Texas):</b> locations listed on the websites of the three LSC-funded Texas programs, 2026-11-08, placed at their city. Distance is a straight line from the county's center to the nearest office. Phone and online intake, outreach sites, and programs without LSC funding are not shown.</li>
       <li><b>Debt in collections:</b> Urban Institute, Debt in America: share of people with a credit record who have any debt in collections, August 2025.</li>
       <li>Rates use ACS 2020–2024 population. Built from public data; the scripts, sources, and caveats are in the <a href="https://github.com/adamfriedl/justice-gap-map">project repository</a> (<a href="https://github.com/adamfriedl/justice-gap-map/blob/main/docs/lawsuits/README.md">methods and findings</a>).</li>
     </ul>
@@ -155,9 +155,9 @@ const LAYERS = {
        note: "Hover a county for its numbers. Grey: courts filed fewer than 90% of their expected reports." },
   dr: { button: "Default judgments", label: "% of disposed debt cases ending in default, in fifths of the state's counties", fmt: v => v.toFixed(0) + "%", get: d => d.dr,
         note: "Default judgments as a share of debt cases disposed that year." },
-  mi: { button: "Miles to a legal aid office", label: "straight-line miles from the county's center to the nearest legal aid office", fmt: v => v.toFixed(0), get: d => d.mi, cuts: [0.5, 25, 50, 75],
+  mi: { button: "Miles to an LSC-funded office", label: "straight-line miles from the county's center to the nearest LSC-funded legal aid office", fmt: v => v.toFixed(0), get: d => d.mi, cuts: [0.5, 25, 50, 75],
         legendText: ["office in county", "under 25", "25–49", "50–74", "75+"],
-        note: "Distance from each county's center to the nearest office listed by the three LSC-funded Texas programs. 81% of 2025 debt suits were filed in counties with an office." },
+        note: "Distance from each county's center to the nearest office listed by the three LSC-funded Texas programs. 81% of 2025 debt suits were filed in counties with one. Other legal aid nonprofits, clinics, and hotlines are not shown yet." },
   c: { button: "Debt in collections", label: "% of people with a credit record who have debt in collections", fmt: v => v.toFixed(0) + "%", get: d => d.c,
        note: "Urban Institute, August 2025. Available for every county, so it gives national context; it counts people being collected on, not lawsuits." },
 };
@@ -199,7 +199,7 @@ function draw() {
     }
     if (showOffices) svg.append("g").selectAll("circle").data(offices).join("circle").attr("class", "office").attr("r", 4.5)
       .attr("transform", o => `translate(${proj([o.lon, o.lat])})`)
-      .on("mousemove", (ev, o) => showTip(ev, `<b>Legal aid office</b><div>${o.o}</div>`)).on("mouseleave", hideTip);
+      .on("mousemove", (ev, o) => showTip(ev, `<b>LSC-funded legal aid office</b><div>${o.o}</div>`)).on("mouseleave", hideTip);
   }
   // legend
   let html = `<span>${L.label}:</span>`;
@@ -210,7 +210,7 @@ function draw() {
     const t = scale.quantiles(), ext = d3.extent(vals);
     html += `<span class="sw">range ${L.fmt(ext[0])}–${L.fmt(ext[1])}; fifths at ${t.map(L.fmt).join(" / ")}</span>`; }
   html += `<span class="sw"><i style="background:${css("--nodata")}"></i>no data</span>`;
-  if (view === "TX") html += `<span class="sw"><svg width="14" height="14"><circle cx="7" cy="7" r="4.5" fill="${css("--surface")}" stroke="${css("--ink")}" stroke-width="1.6"/></svg>legal aid office</span>
+  if (view === "TX") html += `<span class="sw"><svg width="14" height="14"><circle cx="7" cy="7" r="4.5" fill="${css("--surface")}" stroke="${css("--ink")}" stroke-width="1.6"/></svg>LSC-funded legal aid office</span>
     <span class="sw"><svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke="${css("--ink")}" stroke-width="2" stroke-dasharray="5 3"/></svg>LSC service area</span>`;
   d3.select("#legend").html(html);
   d3.select("#layer-note").text(L.note);
@@ -224,7 +224,7 @@ function countyTip(f) {
   if (d.note) h += `<div>${d.note}</div>`;
   if (d.dr != null) h += `<div>${d.dr.toFixed(0)}% of disposed cases were defaults</div>`;
   if (d.g != null) h += `<div>Garnishments: ${d.g.toFixed(1)} per 1K</div>`;
-  if (d.sa) h += `<div>${d.oc ? (d.oc > 1 ? d.oc + " legal aid offices" : "Legal aid office") + " in county" : "Nearest legal aid office: " + d.no + ", " + d.mi.toFixed(0) + " mi"} · ${d.sa}</div>`;
+  if (d.sa) h += `<div>${d.oc ? (d.oc > 1 ? d.oc + " LSC-funded legal aid offices" : "LSC-funded legal aid office") + " in county" : "Nearest LSC-funded legal aid office: " + d.no + ", " + d.mi.toFixed(0) + " mi"} · ${d.sa}</div>`;
   if (d.c != null) h += `<div class="muted">Context: ${d.c.toFixed(0)}% with debt in collections</div>`;
   return h;
 }
@@ -240,14 +240,14 @@ function facts() {
   if (last && last.pct_default) h += `<div><b>${(+last.pct_default).toFixed(0)}%</b>of disposed cases ended in default</div>`;
   if (tr.length > 1) { const first = tr.find(t => +t.rows > (view === "IN" ? 80 : 0)) || tr[0];
     h += `<div><b>${(+last.filed / +first.filed).toFixed(1)}×</b>the ${first.year} count</div>`; }
-  if (view === "TX") h += `<div><b>${offices.length}</b>legal aid offices</div>`;
+  if (view === "TX") h += `<div><b>${offices.length}</b>LSC-funded legal aid offices</div>`;
   d3.select("#facts").html(h);
 }
 function switches() {
   const V = VIEWS[view];
   if (!V.layers.includes(layer)) layer = V.layers[0];
   let h = V.layers.map(k => `<button data-l="${k}" aria-pressed="${k === layer}">${LAYERS[k].button}</button>`).join("");
-  if (view === "TX") h += `<label class="toggle"><input type="checkbox" id="off" ${showOffices ? "checked" : ""}> show offices</label>`;
+  if (view === "TX") h += `<label class="toggle"><input type="checkbox" id="off" ${showOffices ? "checked" : ""}> show LSC-funded offices</label>`;
   d3.select("#switch").html(h).classed("hidden", V.layers.length < 2 && view !== "TX");
   document.querySelectorAll("#switch button").forEach(b => b.addEventListener("click", () => { layer = b.dataset.l; switches(); draw(); }));
   const off = document.getElementById("off"); if (off) off.addEventListener("change", e => { showOffices = e.target.checked; draw(); });
