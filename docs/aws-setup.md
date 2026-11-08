@@ -163,3 +163,4 @@ It stops at the state bucket, which is protected on purpose. To really delete it
 
 - `infra/bootstrap` is applied only by hand. CI only checks that it's formatted and valid. The apply role can't modify what it creates.
 - Cloud sessions never get these roles. They get the read-only key from Phase 2 (PRD R14), capped by the boundary created here.
+- **GitHub's token subject.** The CI roles trust tokens whose `sub` claim starts with `var.github_sub_prefix` in `infra/bootstrap/variables.tf`. This repo uses GitHub's immutable subject format (`repo:adamfriedl@6491211/justice-gap-map@1447560546:…`), not `repo:adamfriedl/justice-gap-map:…`. If a CI job fails with `Not authorized to perform sts:AssumeRoleWithWebIdentity`, compare `sub_claim_prefix` from `gh api repos/OWNER/REPO/actions/oidc/customization/sub` with that variable; CloudTrail's `AssumeRoleWithWebIdentity` events show the subject AWS actually received.

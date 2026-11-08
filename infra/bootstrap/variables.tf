@@ -15,10 +15,15 @@ variable "project" {
   default     = "justice-gap-map"
 }
 
-variable "github_repo" {
-  description = "GitHub repository allowed to use the CI roles, as owner/name."
+variable "github_sub_prefix" {
+  # GitHub's OIDC tokens name the repository in their "sub" claim. This repo
+  # uses GitHub's immutable form, owner@owner_id/repo@repo_id, so a renamed or
+  # deleted-and-recreated repo with the same name can't inherit access. Check
+  # with: gh api repos/OWNER/REPO/actions/oidc/customization/sub
+  # (sub_claim_prefix). The plain form would be "repo:owner/name".
+  description = "Start of the OIDC sub claim for the one repository allowed to use the CI roles."
   type        = string
-  default     = "adamfriedl/justice-gap-map"
+  default     = "repo:adamfriedl@6491211/justice-gap-map@1447560546"
 }
 
 variable "budget_email" {
