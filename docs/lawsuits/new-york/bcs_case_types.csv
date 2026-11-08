@@ -1,0 +1,13 @@
+court,case_type,first_year,last_year,counties,filings_all_years
+new york city civil court,civil filings,2016,2021,5,1564639
+new york city civil court,housing filings,2016,2021,5,1091105
+new york city civil court,small claims filings,2016,2021,5,92166
+new york city civil court,comm claims filings,2016,2021,5,23853
+outside NYC (court type not given),total,2016,2021,37,4642264
+outside NYC (court type not given),mv,2016,2021,37,2062607
+outside NYC (court type not given),criminal,2016,2021,37,1160277
+outside NYC (court type not given),civil,2016,2021,37,497185
+outside NYC (court type not given),parking,2016,2021,37,437291
+outside NYC (court type not given),l&t,2016,2021,37,353491
+outside NYC (court type not given),small claims,2016,2021,37,190498
+outside NYC (court type not given),commercial,2016,2021,37,36164
