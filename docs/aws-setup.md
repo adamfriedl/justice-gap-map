@@ -93,7 +93,9 @@ Edit `backend.tf`: replace `justice-gap-map-tfstate-ACCOUNT_ID` with the bucket 
 terraform init -migrate-state
 ```
 
-Answer `yes`. Then delete the local `terraform.tfstate` and `terraform.tfstate.backup` in this folder; they're gitignored, and the state now lives in S3. `backend.tf` holds no secrets; commit it in a later PR.
+Answer `yes`. Then delete the local `terraform.tfstate` and `terraform.tfstate.backup` in this folder; they're gitignored, and the state now lives in S3.
+
+For the current account (`347787089274`), `backend.tf` is already committed, so this step was a one-time move. For a different account, copy the example as above and commit the result. The lock files list checksums for Mac and Linux; if you add another platform, run `terraform providers lock -platform=<os_arch>` in each stack and commit the result.
 
 ## Step 5. GitHub settings
 
