@@ -6,7 +6,7 @@ Guidance for AI coding agents, including Claude Code cloud sessions.
 
 A data pipeline and map joining CFPB debt-collection complaints, LSC legal aid funding, and Census ACS data to show where consumer-debt harm is high and legal aid is thin. The plan and current phase are in `docs/prd.md`. Read it first.
 
-Phase 0 changed the measures (see the PRD's core metrics and `docs/phase0/`). Complaints failed as a need measure, so Urban's debt-in-collections share is the pressure measure. LSC funding failed as a capacity measure, so maps label it "federal legal aid investment," with IRS nonprofit revenue as state context. The unit is LSC service areas built as county sets. The maintainer made the go call on 2026-11-07; Phase 1 (AWS bootstrap) is under way.
+Phase 0 changed the measures (see the PRD's core metrics and `docs/phase0/`). Complaints failed as a need measure, so Urban's debt-in-collections share is the pressure measure. LSC funding failed as a capacity measure, so maps label it "federal legal aid investment," with IRS nonprofit revenue as state context. The unit is LSC service areas built as county sets. The maintainer made the go call on 2026-11-07; Phase 1 (AWS bootstrap) is done; Phase 2 (pipeline infrastructure) is next.
 
 ## Rules
 
@@ -17,7 +17,7 @@ Phase 0 changed the measures (see the PRD's core metrics and `docs/phase0/`). Co
 - **Never store names or street addresses of people sued.** Case-level court feeds are stripped in memory before anything is written (PRD R15; see `scripts/lawsuits_fetch_harris.py` and its test).
 - **Raw data never goes in git.** Downloads go under `data/` (gitignored). Commit only small derived results: summary tables, data-quality reports, and notes under `docs/`.
 - **No secrets in the repo.** `CENSUS_API_KEY` and `HUD_API_TOKEN` come from the environment. If one is missing, say so and stop that step. Don't hardcode a workaround.
-- **Be descriptive, not causal.** Findings describe where need and resources diverge. Don't rank or criticize individual legal aid programs.
+- **Purely informational.** Findings describe what public records show, not why, and never call out or criticize anyone: legal aid programs, LSC, courts, or plaintiffs. Name places, not programs, in maps, headlines, and rankings. Use neutral words (higher, lower, more, fewer). Details are in the PRD's "Purely informational" section.
 - **Show your work.** Every number in a write-up names its source snapshot date and the query or script that produced it.
 - **Phase 0 work: one PR per check.** Put results under `docs/phase0/` with the script that produced them, and say plainly whether the check passed. Skip the literature search (Google Scholar, SSRN block automated access); the maintainer does it.
 - **Data-source facts need a citation.** If you can't confirm something about a dataset (fields, geography, masking rules), mark it "not confirmed" rather than guessing.

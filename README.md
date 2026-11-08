@@ -34,17 +34,47 @@ LSC service areas, IRS nonprofit revenue   ┘
 ```
 
 - **Today:** Python 3.12 scripts (managed with [uv](https://docs.astral.sh/uv/)) download each source and query it with [DuckDB](https://duckdb.org/). The CFPB file alone is ~6 GB, so no pandas.
-- **Next:** the same jobs on AWS (S3, Athena, scheduled jobs). They refresh each source on its own schedule, keep dated snapshots, and flag unusual changes by county or plaintiff.
-- **Infrastructure as code:** all of it is in Terraform under [`infra/`](infra/):
-  - GitHub Actions authenticates to AWS with OIDC, so no AWS keys are stored anywhere.
-  - Every PR shows a `terraform plan`, and merging to `main` applies it.
-  - The deploy role has explicit guard rails: it can't change its own trust, the CI roles, or the state bucket.
-  - Setup runbook: [docs/aws-setup.md](docs/aws-setup.md).
+- **Next:** the same jobs run on AWS (details below).
 - **Built with AI coding agents under written rules.** [AGENTS.md](AGENTS.md) sets the limits:
   - read-only AWS access for agents;
   - no names or addresses of people sued, ever;
   - downloaded data treated as untrusted;
   - every data fact cited or marked "not confirmed".
+
+### Infrastructure
+
+All of it is Terraform in [`infra/`](infra/), in two stacks.
+
+| Stack | What it holds | How it changes |
+| --- | --- | --- |
+| [`infra/bootstrap/`](infra/bootstrap/) | Terraform's state bucket; the link that lets GitHub Actions sign in to AWS (OIDC); the two CI roles; the ceiling on what AI agents can do; a monthly budget alert | Rarely. Applied by hand by the maintainer, with a temporary key that's deleted afterward ([runbook](docs/aws-setup.md)) |
+| [`infra/main/`](infra/main/) | The pipeline: data buckets, query engine (Athena), scheduled jobs. Empty until Phase 2. | Through pull requests only |
+
+**How an infrastructure change ships:**
+1. A pull request changes something in `infra/main/`.
+2. GitHub Actions signs in to AWS with a short-lived token (OIDC) and posts `terraform plan`, a preview of exactly what will change. The plan role is read-only.
+3. The maintainer reads the plan and merges. Merging is the approval.
+4. Actions runs `terraform apply` on `main` with the apply role.
+
+No AWS keys are stored in GitHub or anywhere else. The apply role is admin-level because it builds the pipeline, but explicit denies stop it from changing its own trust, the CI roles, the agents' ceiling, or the state bucket. A bad merge can break the pipeline, but it can't take over the account.
+
+**How the data will update (Phase 2–3):**
+- Each source gets its own scheduled job, on the source's own rhythm: Harris County cases daily, CFPB weekly, Texas and Virginia court counts monthly, Indiana quarterly, Census and LSC yearly.
+- Raw downloads are kept as dated snapshots, so every number can be traced to the file it came from. The CFPB archive is locked against deletion.
+- A weekly job compares each county's filings with its own recent history and emails a summary when something moves well outside the usual range.
+- Idle cost is near zero, with a budget of about $10/month.
+
+## Why these states
+
+There's no national count of debt lawsuits. Each state's courts decide what to publish, and most don't separate debt cases, publish by county, or publish at all. The project covers states where the courts publish debt suits by county, free and in a form a script can read:
+
+| State | What the courts publish | Why it's useful |
+| --- | --- | --- |
+| **Texas** | A "Debt Claim" case type in justice courts since 2013, with county counts of filings, defaults, and dispositions ([OCA](https://card.txcourts.gov/)); plus Harris County's daily case-level extract | The largest volume of the three (518,852 suits in 2025), a 12-year series, and one county with case-level detail: who files, claim amounts, outcomes |
+| **Indiana** | A "Collection" case type with county counts ([ICOR](https://publicaccess.courts.in.gov/ICOR/)) | A clean statewide series, and default judgments for every county |
+| **Virginia** | Monthly General District Court filing reports (PDF) | Court-level counts that track LSC's earlier warrant-in-debt figures closely (Spearman 0.75) |
+
+Texas was also the test state for the Phase 0 checks. Next candidates come from LSC's Baseline Court Statistics, which lists states whose courts report debt case types by county. Idaho's court dashboard is the most promising. Maps say which states are covered; a blank state means no data, not no lawsuits.
 
 ## Privacy
 
@@ -85,7 +115,7 @@ uv run pytest -q
 - [ ] **Phase 2–4:** the pipeline on AWS, scheduled ingest, the map, and the write-up.
 - [ ] **More states**, as their courts publish debt filings (Idaho is next).
 
-The findings are descriptive. They show where need and resources diverge, not why, and they don't rank or judge individual legal aid programs.
+The project is purely informational. It reports what public records show about places, not why, and it doesn't call out or judge anyone: legal aid programs, courts, or the businesses that file suits.
 
 ## License
 

@@ -47,9 +47,19 @@ The longer-term goal is legal-process education for people who default on a comp
 - Storing names or street addresses of people sued (R15).
 - Products other than debt collection. The pipeline should handle any product, but only debt collection gets analyzed.
 - Causal claims. This is descriptive: it shows where need and resources diverge, not why.
-- Ranking or criticizing individual legal aid programs.
+- Calling out, ranking, or criticizing anyone: legal aid programs, LSC, courts, or the businesses that file suits. See "Purely informational" below.
 - A polished web app. A static map plus a write-up is enough.
 - The education product itself. This project picks where it should go first.
+
+## Purely informational
+
+Everything published here reports what public records show. It doesn't judge anyone.
+
+- **Name places, not programs.** Maps, headlines, and rankings are about counties, service areas, and states. Grantee and nonprofit names appear only as source columns in data tables, never in map labels, headlines, or ranked lists.
+- **Funding describes money reaching an area, not how a program performs.** Say "federal legal aid investment per eligible resident in this area," never "this program is underfunded" or "under-serving."
+- **Plaintiffs are reported as counts from court records.** Who files, how many, and how cases end, with no characterization of the filers.
+- **Neutral words.** Use "higher," "lower," "more," "fewer." Avoid "worst," "failing," "neglected," "predatory," and the like.
+- **Frame gaps as where more help could go,** not as who is at fault.
 
 ## Data sources
 
@@ -106,7 +116,7 @@ Why these changed (Phase 0, `docs/phase0/`):
 ### Infrastructure
 
 - R10. All of it in Terraform: S3 (raw and curated), Glue catalog, an Athena workgroup with a scan limit, IAM roles, an EventBridge Scheduler schedule plus the job runner, Parameter Store, a budget alarm.
-- R11. GitHub Actions authenticating through OIDC. `terraform plan` on PRs; `apply` on merge to main, in a `production` GitHub environment limited to `main` (required reviewers need a paid GitHub plan on a private repo, so the maintainer's merge, after reading the plan, is the gate).
+- R11. GitHub Actions authenticating through OIDC. `terraform plan` on PRs; `apply` on merge to main, in a `production` GitHub environment limited to `main` (the maintainer's merge, after reading the plan, is the gate; required reviewers on the environment are available but not used).
 - R12. Least privilege: the ingest role writes only to raw, the transform role reads raw and writes curated, the query role is read-only on curated.
 - R13. Scales to zero when idle. No always-on compute.
 - R14. **Read-only cloud-session access.** An IAM user `claude-cloud-readonly`, defined in Terraform, whose access key lives only in the Claude Code cloud environment's env vars. It may:
@@ -189,10 +199,11 @@ Otherwise write down why in `docs/phase0/` and stop.
 
 ### Phase 1: AWS bootstrap (run once locally with admin credentials)
 
-- [ ] Account hygiene, S3 Terraform state backend with `use_lockfile`, GitHub OIDC provider and plan/apply roles scoped to this repo
-  _Written in `infra/bootstrap/` with a runbook in `docs/aws-setup.md`; the maintainer applies it by hand. The bootstrap runs as a plain IAM admin user (no IAM Identity Center), a machine user whose access key exists only for the bootstrap and is deleted afterwards._
-- [ ] A GitHub `production` environment limited to `main`; `apply` runs on merge (required reviewers if the GitHub plan allows)
-- [ ] The permissions boundary for `claude-cloud-readonly` (R14). The user and its scoped policy land in Phase 2, once the buckets and workgroup exist.
+- [x] Account hygiene, S3 Terraform state backend with `use_lockfile`, GitHub OIDC provider and plan/apply roles scoped to this repo
+  _Applied 2026-11-08 (us-east-2, because of the account's organization region rule), with the trust policies updated the same day for GitHub's immutable OIDC subject format. Written in `infra/bootstrap/` with a runbook in `docs/aws-setup.md`; the maintainer applies it by hand. The bootstrap runs as a plain IAM admin user (no IAM Identity Center), a machine user whose access key exists only for the bootstrap and is deleted afterwards._
+- [x] A GitHub `production` environment limited to `main`; `apply` runs on merge
+  _Verified 2026-11-08: `plan` ran on a PR through OIDC, and the first apply-on-merge ran on `main`._
+- [x] The permissions boundary for `claude-cloud-readonly` (R14). The user and its scoped policy land in Phase 2, once the buckets and workgroup exist.
 
 Cloud sessions never get write access to AWS. Every change reaches AWS through Actions. After Phase 2 they can hold the read-only key from R14 for querying and debugging.
 
@@ -219,12 +230,12 @@ Cloud sessions never get write access to AWS. Every change reaches AWS through A
 - [ ] Static map + table (R7)
 - [ ] Draft the write-up (R8)
 
-### Phase 5: share privately, then publish
+### Phase 5: publish
 
-Findings about legal aid funding can read as criticism, so the people affected see them first. The repo stays private until this phase is done.
+The repo is public from 2026-11-08, so the work is visible as it happens. Everything in it follows "Purely informational" above.
 
-- [ ] Send the draft to 1–3 legal aid or A2J reviewers, including someone at LSC's data office and a legal aid program in a top-ranked area. Ask what's wrong and what would make it useful.
-- [ ] Revise, make the repo public, and publish the map and write-up.
+- [ ] Accuracy check before the map and write-up go on GitHub Pages: ask 1–3 people who know the field (LSC's data office, a legal aid program, a court data researcher) whether the data is read correctly and what would make it useful. This checks accuracy. It doesn't give anyone a veto.
+- [ ] Publish the map and write-up (R7, R8).
 
 ### Phase 6: optional extras
 
@@ -257,7 +268,7 @@ Findings about legal aid funding can read as criticism, so the people affected s
 | Scope creep into a web app | High | Static site only until v1 is published |
 | Court sites change layout or block automated access | Medium | Each fetcher checks expected columns and fails loudly (the Harris fetcher does); polite rates (R17); monthly sources tolerate a missed run |
 | Personal data about people sued leaks or is retained | Low with R15 | Strip in memory before storage; tests; no defendant fields in the curated schema; threat model covers it |
-| The finding reads as an attack on LSC or grantees | Low-medium | Phase 5 private review; frame it as "where more help is needed," not "who is failing" |
+| The finding reads as an attack on LSC, grantees, courts, or filers | Low-medium | "Purely informational" rules (places, not programs; neutral words); Phase 5 accuracy check; frame it as "where more help could go," not "who is failing" |
 
 ## Open questions
 
