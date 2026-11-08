@@ -16,14 +16,14 @@ terraform {
   # TF_STATE_BUCKET repository variable.
   backend "s3" {
     key          = "main/terraform.tfstate"
-    region       = "us-east-1"
+    region       = "us-east-2"
     encrypt      = true
     use_lockfile = true
   }
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
 
   default_tags {
     tags = {

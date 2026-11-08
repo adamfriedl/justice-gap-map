@@ -1,7 +1,12 @@
 variable "region" {
+  # The account's organization rules (AdvancedModeRegionRestrictionSecurityControlPolicy,
+  # set up by AWS's new sign-up flow) allow only global services such as IAM
+  # and Budgets in us-east-1 and us-west-2, and nothing outside those plus
+  # us-east-2. So us-east-2 is the one region where S3, Athena, Lambda and the
+  # rest all work.
   description = "AWS region for everything in this project."
   type        = string
-  default     = "us-east-1"
+  default     = "us-east-2"
 }
 
 variable "project" {
