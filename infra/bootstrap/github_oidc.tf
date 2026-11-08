@@ -48,7 +48,7 @@ data "aws_iam_policy_document" "trust_apply" {
       values   = ["sts.amazonaws.com"]
     }
     # Only jobs running in the "production" GitHub environment, which is
-    # limited to the main branch and used only by the manually started apply job.
+    # limited to the main branch and used only by the apply job.
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"

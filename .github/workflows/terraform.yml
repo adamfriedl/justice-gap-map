@@ -1,12 +1,16 @@
-# Terraform for infra/main: plan on pull requests; apply only when the
-# maintainer starts it by hand on main ("Run workflow" in the Actions tab, or
-# `gh workflow run terraform --ref main`). Merging does not apply anything.
+# Terraform for infra/main: plan on pull requests; apply when a merge lands on
+# main. "Run workflow" in the Actions tab re-runs apply on main by hand.
+# Without required reviewers (paid plan), merging is the approval: read the
+# PR's plan before merging.
 # infra/bootstrap is applied by hand (docs/aws-setup.md) and is only format-
 # and validity-checked here.
 name: terraform
 
 on:
   pull_request:
+    paths: ["infra/**", ".github/workflows/terraform.yml"]
+  push:
+    branches: [main]
     paths: ["infra/**", ".github/workflows/terraform.yml"]
   workflow_dispatch: {}
 
@@ -52,9 +56,9 @@ jobs:
       - run: terraform -chdir=infra/main plan -input=false -no-color
 
   apply:
-    # Manual runs on main only. The "production" environment is limited to the
-    # main branch, and the apply role trusts only jobs in that environment.
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && vars.AWS_APPLY_ROLE_ARN != ''
+    # Merges to main (or a manual re-run on main). The "production" environment
+    # is limited to the main branch, and the apply role trusts only jobs in it.
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.AWS_APPLY_ROLE_ARN != ''
     needs: check
     runs-on: ubuntu-latest
     environment: production   # the apply role's trust policy requires this environment
