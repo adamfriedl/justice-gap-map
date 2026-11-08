@@ -1,0 +1,37 @@
+# Publishes site/ to GitHub Pages when it changes on main.
+# site/index.html is built locally by scripts/lawsuits_map.py (its inputs include
+# downloads under data/, which aren't in git), then committed.
+# One-time setup: Settings → Pages → Source: "GitHub Actions".
+name: pages
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", ".github/workflows/pages.yml"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write      # publish to GitHub Pages
+      id-token: write   # Pages verifies the deployment with an OIDC token
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4

@@ -5,7 +5,9 @@ the us-atlas county outlines (npm package us-atlas@3.0.1, counties-albers-10m.js
 pre-projected). Writes one HTML page with everything embedded.
 
     uv run python scripts/lawsuits_map.py \
-        --atlas data/atlas/package/counties-albers-10m.json --out data/maps/lawsuits_map.html
+        --atlas data/atlas/package/counties-albers-10m.json --out site/index.html
+
+site/index.html is what GitHub Pages serves (.github/workflows/pages.yml).
 """
 
 import argparse
@@ -27,7 +29,7 @@ def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--lawsuits", default="docs/lawsuits")
     p.add_argument("--atlas", required=True)
-    p.add_argument("--out", default="data/maps/lawsuits_map.html")
+    p.add_argument("--out", default="site/index.html")
     p.add_argument("--tx-year", type=int, default=2025)
     p.add_argument("--in-year", type=int, default=2024)
     a = p.parse_args()
@@ -126,6 +128,7 @@ td.n, th.n { text-align: right; }
 .tabs button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
 .notes { font-size: 13.5px; color: var(--muted); max-width: 80ch; }
 .notes li { margin: 4px 0; }
+.notes a { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
@@ -171,7 +174,7 @@ td.n, th.n { text-align: right; }
       <li><b>Virginia:</b> "General Civil" filings in General District Court, 2025, from the court system's filing report. Most are warrants in debt, but the category also holds other civil cases; its county pattern tracks true warrant-in-debt counts from 2016–2019 closely (rank correlation 0.75). Some courts serve more than one locality, so those localities share a rate.</li>
       <li><b>Default share:</b> default judgments as a share of all cases disposed that year.</li>
       <li><b>Debt in collections:</b> Urban Institute, Debt in America, credit-bureau data from August 2025.</li>
-      <li>Rates use ACS 2020–2024 population. Built from public data; source scripts are in the project repository under <code>scripts/lawsuits*.py</code>.</li>
+      <li>Rates use ACS 2020–2024 population. Built from public data; the scripts, sources, and caveats are in the <a href="https://github.com/adamfriedl/justice-gap-map">project repository</a> (<a href="https://github.com/adamfriedl/justice-gap-map/blob/main/docs/lawsuits/README.md">methods and findings</a>).</li>
     </ul>
   </section>
 </main>
