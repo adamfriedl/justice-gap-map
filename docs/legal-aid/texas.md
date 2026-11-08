@@ -1,12 +1,12 @@
-# Texas: where legal aid offices are, and where debt suits are filed
+# Texas: where LSC-funded legal aid offices are, and where debt suits are filed
 
 _Built 2026-11-08. Script: [`scripts/tx_legal_aid.py`](../../scripts/tx_legal_aid.py). Tables: [`texas/`](texas/)._
 
-This is the one-state prototype from the plan: debt suits by county, set next to where legal aid has offices. It describes places, not the programs. Office lists come from each program's own website, and "office" means a location listed there.
+This is the one-state prototype from the plan: debt suits by county, set next to where the three LSC-funded programs have offices. Other legal aid nonprofits, law school clinics, court self-help centers and hotlines aren't included yet; adding them is the next step. It describes places, not the programs. Office lists come from each program's own website, and "office" means a location listed there.
 
 ## Verdict
 
-- **Most debt suits are filed in counties that have a legal aid office.** In 2025, 81% of Texas debt suits were filed in the 43 counties with an office (413,502 of 511,984, counting counties with complete court reporting). Those counties hold 79% of Texans.
+- **Most debt suits are filed in counties that have an LSC-funded legal aid office.** In 2025, 81% of Texas debt suits were filed in the 43 counties with an office (413,502 of 511,984, counting counties with complete court reporting). Those counties hold 79% of Texans.
 - **Distance isn't where the gap shows.** Counties farther from an office have fewer suits per resident, not more (Spearman −0.48 across 225 counties). The suburban counties with the highest filing rates sit 20 to 35 miles from an office in Dallas, Fort Worth, Austin or San Antonio.
 - **Volume is where it shows.** Each of the state's three LSC service areas has 14 to 16 offices. But the number of debt suits per eligible resident differs by half:
 

@@ -21,8 +21,8 @@ It's a personal project: part research, part a working example of a small, revie
 - Texas's highest rates are in fast-growing suburbs around Dallas–Fort Worth and Houston (Kaufman, Ellis, Brazoria), not the poorer border counties.
 - So no single national measure stands in for court data.
 
-**In Texas, legal aid offices are where the suits are; the difference is volume** ([docs/legal-aid/texas.md](docs/legal-aid/texas.md)):
-- 81% of 2025 debt suits were filed in the 43 counties with a legal aid office. The highest-rate counties without one are suburbs 20 to 35 miles from a metro office.
+**In Texas, LSC-funded legal aid offices are where the suits are; the difference is volume** ([docs/legal-aid/texas.md](docs/legal-aid/texas.md)):
+- 81% of 2025 debt suits were filed in the 43 counties with an LSC-funded legal aid office. The highest-rate counties without one are suburbs 20 to 35 miles from a metro office.
 - Each of the state's three legal aid service areas has 14 to 16 offices. Debt suits per eligible resident range from 81 to 120 per 1,000.
 
 **Common proxies fail** (early data checks, [docs/phase0](docs/phase0/)):
@@ -94,7 +94,7 @@ People sued for debt are private individuals. Case-level court feeds are reduced
 | --- | --- |
 | [`docs/prd.md`](docs/prd.md) | The plan: goals, data sources, metrics |
 | [`docs/lawsuits/`](docs/lawsuits/) | Debt-lawsuit counts by county (TX, IN, VA) and what they show |
-| [`docs/legal-aid/`](docs/legal-aid/) | Where legal aid offices are, set next to debt suits (Texas) |
+| [`docs/legal-aid/`](docs/legal-aid/) | Where LSC-funded legal aid offices are, set next to debt suits (Texas) |
 | [`docs/phase0/`](docs/phase0/) | Early data checks: which measures hold up and which don't |
 | [`scripts/`](scripts/) | Download and analysis scripts |
 | [`site/`](site/) | The interactive map, published on GitHub Pages; rebuilt with `scripts/lawsuits_map.py` |
