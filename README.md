@@ -6,9 +6,9 @@ Debt collectors file hundreds of thousands of lawsuits a year in state courts. M
 
 It's a personal project: part research, part a working example of a small, reviewable data pipeline on AWS.
 
-[![Map of debt lawsuits per 1,000 residents by county in Texas, Indiana and Virginia](docs/img/lawsuits-map.png)](https://adamfriedl.github.io/justice-gap-map/)
+[![Texas map of debt lawsuits per 1,000 residents by county, with legal aid offices and service areas](docs/img/lawsuits-map.png)](https://adamfriedl.github.io/justice-gap-map/)
 
-**[Open the interactive map →](https://adamfriedl.github.io/justice-gap-map/)** Hover over a county for its numbers, switch to default judgments or debt in collections, and see filings over time and the highest-rate counties.
+**[Open the interactive map →](https://adamfriedl.github.io/justice-gap-map/)** Each state with court data (Texas, Indiana, Virginia) gets its own view: lawsuit rates, default judgments, filings over time, and the highest-rate counties. Texas adds legal aid offices, service areas, and distance to the nearest office. A national view shows debt in collections for context.
 
 ## What it shows so far
 
@@ -123,11 +123,10 @@ uv run pytest -q
 Done as of November 2026:
 - Data checks: complaints and LSC funding failed as measures; court filings, debt in collections, and IRS revenue replaced them.
 - Debt-suit counts by county for Texas, Indiana and Virginia, and the interactive map.
-- Legal aid office locations for Texas, set next to debt suits.
+- Legal aid office locations for Texas, set next to debt suits, and a map with one view per state.
 - The AWS foundation: Terraform state, CI that signs in with OIDC, plan on every PR, apply on merge.
 
 **Next steps:**
-- Rework the map around the states with court data. Each state gets its own zoomed view instead of a mostly grey national map, and Texas gets the legal aid layer.
 - Build the pipeline on AWS, so court counts refresh on their own (Harris County daily, state counts monthly), with a weekly alert when a county or filer moves sharply.
 - Add Idaho, the most promising next state.
 
