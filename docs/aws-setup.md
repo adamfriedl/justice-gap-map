@@ -1,6 +1,6 @@
 # AWS setup (Phase 1 bootstrap)
 
-A one-time setup, done by the maintainer: seven steps, about an hour. Most of it happens on your own computer, plus two settings on GitHub. Afterwards, every AWS change goes through a pull request: GitHub Actions shows `plan` on the PR, and merging to `main` runs `apply`. No long-lived AWS keys are kept anywhere.
+A one-time setup, done by the maintainer: seven steps, about an hour, plus Step 8 once the pipeline's first resources exist. Most of it happens on your own computer, plus two settings on GitHub. Afterwards, every AWS change goes through a pull request: GitHub Actions shows `plan` on the PR, and merging to `main` runs `apply`. No long-lived AWS keys are kept anywhere.
 
 **What it creates** (all in `infra/bootstrap/`, region `us-east-2`; see the note on regions at the end):
 
@@ -138,6 +138,26 @@ To re-run apply on `main` without a new merge (say a run failed partway): **Acti
 ```bash
 gh workflow run terraform --ref main
 ```
+
+## Step 8. Read-only key for cloud sessions
+
+Once the main stack has created the `claude-cloud-readonly` user (the storage PR), give Claude Code cloud sessions its key. Terraform deliberately doesn't create the key, so the secret never lands in state or CI logs.
+
+a. **IAM → Users → claude-cloud-readonly → Security credentials → Create access key**, choose "Application running outside AWS", and copy the key ID and secret.
+
+b. In the Claude Code cloud environment's settings (environment menu in the session's title bar → Edit), add three environment variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION` = `us-east-2`. Don't paste the key into a chat. A new session picks them up.
+
+c. Check from a new session that it works, and that a write is refused:
+
+```bash
+aws sts get-caller-identity
+```
+
+The `Arn` should end in `:user/claude-cloud-readonly`.
+
+d. Rotate the key at least every 90 days (create a new one, update the variables, delete the old one), and delete it at once on any suspicion of a leak.
+
+What the key can do: read the raw, curated and Athena-results buckets; run queries in the `justice-gap-map` Athena workgroup (1 GB scan cap); read the Glue catalog, project logs, and job status. It can't write anywhere except Athena's `athena-scratch/` results, and it can't touch IAM or the Terraform state. The bootstrap's permissions boundary enforces that ceiling even if its policy is edited later.
 
 ## Undo
 

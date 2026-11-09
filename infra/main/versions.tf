@@ -1,6 +1,7 @@
-# The main stack: the pipeline's buckets, catalog, jobs, schedules and IAM
-# (PRD Phase 2). Applied only by GitHub Actions, through the approved
-# "production" environment. Empty until Phase 2.
+# The main stack: the pipeline's buckets, catalog, jobs, schedules and IAM.
+# Applied only by GitHub Actions, on merge to main, in the "production"
+# environment. One file per concern: storage.tf, catalog.tf, readonly_user.tf
+# so far; jobs and schedules come next.
 
 terraform {
   required_version = ">= 1.10"

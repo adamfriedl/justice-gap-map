@@ -97,7 +97,7 @@ Why these changed (Phase 0, `docs/phase0/`):
 
 ### Pipeline
 
-- R1. Download each source into a raw S3 bucket under dated keys, unchanged (except case-level court data, reduced under R15 before it is written). The raw bucket is versioned, and the CFPB prefix has Object Lock (governance mode).
+- R1. Download each source into a raw S3 bucket under dated keys, unchanged (except case-level court data, reduced under R15 before it is written). The raw bucket is versioned, with Object Lock (governance mode, 365 days) on every object; the first draft limited the lock to the CFPB prefix.
 - R2. Normalize to Parquet in a curated bucket, partitioned by source and snapshot date.
 - R3. Write geography crosswalks (ZIP → county → service area) once per snapshot and version them.
 - R4. Build the metric tables with SQL (Athena, with DuckDB for local development). Keep queries in the repo.
@@ -212,7 +212,8 @@ Cloud sessions never get write access to AWS. Every change reaches AWS through A
 
 - [ ] Terraform modules under `infra/`: `storage` (raw/curated buckets, versioning, Object Lock, lifecycle), `catalog` (Glue database and tables, Athena workgroup with a 1 GB scan cap), `jobs` (ECR repo, Fargate task definitions, Lambda), `schedule` (EventBridge Scheduler), `iam` (the three roles from R12, plus the `claude-cloud-readonly` user from R14), `budget`
 - [ ] After apply, the maintainer creates the read-only user's access key in the console and pastes it into the cloud environment's env vars (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`). Terraform must not create the key, so it never lands in state.
-- [ ] Threat model, one page, written **before** building: data integrity of the archive, IAM blast radius, and the public site (STRIDE)
+- [x] Threat model, one page, written **before** building: data integrity of the archive, IAM blast radius, and the public site (STRIDE)
+  _Done 2026-11-09: `docs/threat-model.md`._
 - [ ] CI: plan on PRs, apply on main, tflint + checkov
 
 ### Phase 3: ingest + transform (~8–10 hours)
