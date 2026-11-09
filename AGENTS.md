@@ -48,6 +48,7 @@ For Terraform: `terraform fmt -check -recursive infra`, then `terraform -chdir=i
 - LSC: `www.lsc.gov`, `www.lscdataease.org`, `lsc-live.app.box.com`, `lsc-live.box.com`, `app.box.com`, `public.boxcloud.com`, `dl.boxcloud.com` (LSC's files on Box), `public.tableau.com` (DataEase dashboards), `api.lscdataease.org` (service-area JSON), `d29f85wyq8xezh.cloudfront.net` (LSC map assets), `civilcourtdata.lsc.gov` (LSC court data initiative)
 - Phase 0 validity checks: `apps.urban.org`, `datacatalog.urban.org` (debt in collections), `www.irs.gov`, `projects.propublica.org` (990 data), `www.americanbar.org` (state funding), `www.txcourts.gov`, `card.txcourts.gov`, `januaryadvisors.com`, `www.januaryadvisors.com` (Texas court data)
 - Lawsuit data by state: `publicaccess.courts.in.gov` (Indiana ICOR), `www.courts.state.va.us`, `www.vacourts.gov` (Virginia filing reports), `courtdata.idaho.gov` (Idaho, not yet used), `jpwebsite.harriscountytx.gov` (Harris County JP case extracts), `www.nycourts.gov`, `ww2.nycourts.gov`, `iapps.courts.state.ny.us` (New York; refuse scripts, see `docs/lawsuits/new-york.md`)
+- Legal aid offices (Texas): `www.lonestarlegal.org`, `legalaidtx.org` (Legal Aid of NorthWest Texas, formerly `internet.lanwt.org`), `www.trla.org`; Census Gazetteer files come from `www2.census.gov`
 - Code and packages: `pypi.org`, `files.pythonhosted.org`, `github.com`, `raw.githubusercontent.com`
 
 If a request is blocked, report which host so the environment allowlist can be updated. Don't route around it.

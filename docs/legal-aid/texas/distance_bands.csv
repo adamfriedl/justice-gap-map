@@ -1,0 +1,5 @@
+distance_band,counties,population,pop_under_125pct_poverty,debt_suits_2025_full_reporting,median_suits_per_1k
+0: office in county,43,24004860,4325075.0,413502.0,18.4
+1: under 50 miles,151,5742120,915862.0,93943.0,15.7
+2: 50-99 miles,59,438526,80782.0,4534.0,10.2
+3: 100+ miles,1,2918,549.0,5.0,1.7

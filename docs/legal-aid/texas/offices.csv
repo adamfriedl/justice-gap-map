@@ -1,0 +1,46 @@
+program,office,city,address_line,county_fips,county,lat,lon,counties_served,note,source,fetched
+Lone Star Legal Aid,Beaumont,Beaumont,"Beaumont, TX 77701",48245,Jefferson,30.08491,-94.14533,Hardin; Jefferson; Liberty; Orange,,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Belton,Belton,"Belton, TX 76513",48027,Bell,31.05234,-97.47954,Bell; Coryell; Hamilton; Lampasas; Milam,,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Bryan,Bryan,"Bryan, TX 77802",48041,Brazos,30.66602,-96.38105,Brazos; Burleson; Grimes; Lee; Leon; Madison; Robertson,,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Clute,Clute,"Clute, TX 77531",48039,Brazoria,29.02585,-95.39823,Brazoria; Matagorda; Wharton,,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Conroe,Conroe,,48339,Montgomery,30.32872,-95.4846,Montgomery; Polk; San Jacinto; Trinity; Walker; Waller,no street address on the office page,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Galveston,Galveston,,48167,Galveston,29.18633,-94.96576,Chambers; Galveston,no street address on the office page,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Houston,Houston,"Houston, TX 77002",48201,Harris,29.78574,-95.38881,Harris,,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Longview,Longview,"Longview, TX 75601-7240",48183,Gregg,32.52023,-94.76111,Camp; Gregg; Harrison; Marion; Panola; Rusk; Upshur,,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Nacogdoches,Nacogdoches,"Nacogdoches, TX 75961-5511",48347,Nacogdoches,31.61236,-94.65205,Anderson; Angelina; Cherokee; Houston; Jasper; Nacogdoches; Newton; Sabine; San Augustine; Shelby; Tyler,,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Paris,Paris,"Paris, Texas 75460",48277,Lamar,33.66893,-95.54662,Delta; Franklin; Hopkins; Lamar; Morris; Red River; Titus,,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Texarkana,Texarkana,"Texarkana, TX 75503-0710",48037,Bowie,33.4492,-94.08501,Bowie; Cass,,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Tyler,Tyler,"Tyler, TX 75702",48423,Smith,32.31726,-95.30589,Henderson; Rains; Smith; Van Zandt; Wood,,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Richmond,Richmond,,48157,Fort Bend,29.58116,-95.76048,Austin; Colorado; Fayette; Fort Bend; Washington,no street address on the office page,https://www.lonestarlegal.org/offices/,2026-11-08
+Lone Star Legal Aid,Waco,Waco,"Waco, TX 76701",48309,McLennan,31.55799,-97.18975,Bosque; Falls; Freestone; Hill; Limestone; McLennan; Navarro,,https://www.lonestarlegal.org/offices/,2026-11-08
+Legal Aid of NorthWest Texas,Abilene,Abilene,,48441,Taylor,32.45451,-99.73815,Callahan; Eastland; Fisher; Haskell; Jones; Mitchell; Nolan; Scurry; Shackelford; Stephens; Stonewall; Taylor; Throckmorton,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Amarillo,Amarillo,,48375,Potter,35.19806,-101.83311,Armstrong; Carson; Collingsworth; Dallam; Deaf Smith; Donley; Gray; Hansford; Hartley; Hemphill; Hutchinson; Lipscomb; Moore; Ochiltree; Oldham; Potter; Randall; Roberts; Sherman; Wheeler,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Brownwood,Brownwood,,48049,Brown,31.71286,-98.97705,Brown; Comanche; Coleman; McCulloch; Mills; San Saba,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Dallas,Dallas,,48113,Dallas,32.79333,-96.76651,Dallas,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Denton,Denton,,48121,Denton,33.21745,-97.14135,Cooke; Denton; Jack; Montague; Wise,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Fort Worth,Fort Worth,,48439,Tarrant,32.78195,-97.34857,Erath; Hood; Johnson; Palo Pinto; Parker; Somervell; Tarrant,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Lubbock,Lubbock,,48303,Lubbock,33.5619,-101.88888,Borden; Cochran; Crosby; Dawson; Dickens; Gaines; Garza; Hockley; Kent; Lubbock; Lynn; Terry; Yoakum,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,McKinney,McKinney,,48085,Collin,33.20112,-96.66416,Collin; Fannin; Grayson; Hunt; Rockwall,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Midland,Midland,,48329,Midland,32.02464,-102.11347,Glasscock; Howard; Martin; Midland; Reagan; Upton,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Odessa,Odessa,,48135,Ector,31.88046,-102.34531,Andrews; Crane; Ector; Loving; Ward; Winkler,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Plainview,Plainview,,48189,Hale,34.19112,-101.7235,Bailey; Briscoe; Castro; Floyd; Hale; Hall; Lamb; Motley; Parmer; Swisher,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,San Angelo,San Angelo,,48451,Tom Green,31.44108,-100.4505,Coke; Concho; Irion; Menard; Runnels; Schleicher; Sterling; Tom Green,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Waxahachie,Waxahachie,,48139,Ellis,32.40248,-96.84449,Ellis; Kaufman,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Weatherford,Weatherford,,48367,Parker,32.75319,-97.77194,Erath; Hood; Johnson; Palo Pinto; Parker; Somervell,,https://legalaidtx.org/locations/,2026-11-08
+Legal Aid of NorthWest Texas,Wichita Falls,Wichita Falls,,48485,Wichita,33.90665,-98.52585,Archer; Baylor; Childress; Clay; Cottle; Foard; Hardeman; King; Knox; Wichita; Wilbarger; Young,,https://legalaidtx.org/locations/,2026-11-08
+Texas RioGrande Legal Aid,Alpine,Alpine,"Alpine, TX 79830",48043,Brewster,30.3639,-103.66446,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Austin,Austin,"Austin, TX 78751",48453,Travis,30.29862,-97.75413,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Brownsville,Brownsville,"Brownsville, TX 78520",48061,Cameron,25.99569,-97.45085,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Corpus Christi (courthouse),Corpus Christi,"Corpus Christi, TX 78401",48355,Nueces,27.75425,-97.17338,,help desk in the county courthouse,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Corpus Christi,Corpus Christi,"Corpus Christi, Texas 78401",48355,Nueces,27.75425,-97.17338,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Del Rio,Del Rio,"Del Rio, TX 78840",48465,Val Verde,29.37305,-100.88185,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Eagle Pass,Eagle Pass,"Eagle Pass, Texas 78852",48323,Maverick,28.7128,-100.48481,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Edinburg,Edinburg,"Edinburg, TX 78539",48215,Hidalgo,26.31828,-98.15345,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,El Paso,El Paso,"El Paso, TX 79901",48141,El Paso,31.84778,-106.43111,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Harlingen,Harlingen,"Harlingen, TX 78550",48061,Cameron,26.1912,-97.69738,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Kerrville,Kerrville,"Kerrville, Texas 78028",48265,Kerr,30.03832,-99.13107,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Laredo,Laredo,"Laredo, TX 78040",48479,Webb,27.56038,-99.48918,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,San Antonio,San Antonio,"San Antonio, TX 78229",48029,Bexar,29.46281,-98.52464,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Sinton,Sinton,"Sinton, TX 78387",48409,San Patricio,28.03719,-97.50146,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Uvalde,Uvalde,"Uvalde, Texas 78801",48463,Uvalde,29.21518,-99.77721,,,https://www.trla.org/offices,2026-11-08
+Texas RioGrande Legal Aid,Victoria,Victoria,"Victoria, TX 77901",48469,Victoria,28.82853,-96.98601,,,https://www.trla.org/offices,2026-11-08
