@@ -2,7 +2,7 @@
 
 _Built 2026-11-08. Script: [`scripts/tx_legal_aid.py`](../../scripts/tx_legal_aid.py). Tables: [`texas/`](texas/)._
 
-This is the one-state prototype from the plan: debt suits by county, set next to where the three LSC-funded programs have offices. Other legal aid nonprofits, law school clinics, court self-help centers and hotlines aren't included yet; adding them is the next step. It describes places, not the programs. Office lists come from each program's own website, and "office" means a location listed there.
+This is the one-state prototype from the plan: debt suits by county, set next to where the three LSC-funded programs have offices. Other organizations are covered below, from the Texas Access to Justice Commission's county directory, which lists who serves each county but not where offices are. It describes places, not the programs. Office lists come from each program's own website, and "office" means a location listed there.
 
 ## Verdict
 
@@ -32,6 +32,30 @@ From [`texas/distance_bands.csv`](texas/distance_bands.csv). Distance is measure
 The median county without an office is 40 miles from one; the farthest is 115 miles away. Distance has almost no relationship to the share of people in poverty (Spearman 0.06, [`texas/checks.csv`](texas/checks.csv)).
 
 The counties without an office that have the most suits are **Williamson** (11,621 in 2025; 26 miles from Austin), **Hays** (4,799; 23 miles from Austin), **Kaufman** (4,722; 31 miles from Dallas), **Johnson** (4,506; 28 miles from Fort Worth) and **Guadalupe** (4,141; 36 miles from San Antonio).
+
+## Beyond LSC: who else lists each county
+
+The Texas Access to Justice Commission keeps a directory of legal help organizations by county ([texasatj.org/legal-help](https://texasatj.org/legal-help/), read through the site's public API on 2026-11-09; script [`scripts/tx_legal_help_directory.py`](../../scripts/tx_legal_help_directory.py)). It has 1,844 entries from 327 organizations: legal aid nonprofits, law school clinics, immigration services, family violence programs, public defenders and dispute resolution centers, LSC-funded or not. Each entry names a county the organization serves, or "Statewide", with practice-area tags. **It lists coverage, not office locations.**
+
+- **Every county lists at least one organization tagged "Consumer/Transactional",** the closest tag to debt cases. In every county, that includes the area's LSC-funded program.
+- **In 158 of 254 counties, the LSC program is the only one,** apart from low-income taxpayer clinics, which handle tax disputes, not debt suits. Those counties hold 5.8 million people and saw 95,766 debt suits in 2025 (counties with complete reporting). They include Bell, Ellis, Kaufman, Jefferson, Smith, Midland, Taylor and Ector.
+- **Additional consumer-law help is concentrated in the big metros.** 14 counties list three or more such organizations beyond the LSC program. They hold 13.9 million people and 254,817 of the 2025 suits.
+- Filing rates barely track how many organizations a county lists (Spearman 0.16 for consumer help beyond LSC and tax clinics; 0.21 for all civil legal help).
+
+| Consumer-law organizations listed beyond the LSC program and tax clinics | Counties | Population | 2025 debt suits (complete reporting) | Median suits per 1,000 |
+| --- | ---: | ---: | ---: | ---: |
+| None | 158 | 5,768,200 | 95,766 | 14.9 |
+| 1 | 59 | 3,402,412 | 56,244 | 15.4 |
+| 2 | 23 | 7,068,733 | 105,157 | 16.2 |
+| 3 or more | 14 | 13,949,079 | 254,817 | 18.7 |
+
+There are also 109 "Statewide" listings, mostly hotlines and specialized programs. Four carry the consumer tag: the Attorney General's Consumer Protection Division, the Office of Consumer Credit Commissioner, a credit counseling service, and a law school's clinical programs. Whether any of them represent people in debt suits is **not confirmed**. The tables: [`texas/directory_county.csv`](texas/directory_county.csv), [`texas/directory_orgs.csv`](texas/directory_orgs.csv), [`texas/directory_bands.csv`](texas/directory_bands.csv), [`texas/directory_checks.csv`](texas/directory_checks.csv).
+
+Caveats:
+- A listing says an organization serves a county, not how much. One volunteer clinic and one large program each count as one.
+- Practice-area tags are the Commission's and are broad. "Consumer/Transactional" isn't the same as debt-suit defense.
+- **The map pattern follows service-area lines** because a few organizations list whole regions. In South Texas (TX-15), most counties' single listing is Texas Community Building with Attorney Resources (Texas CBAR, 68 counties). As its name suggests, it works with community groups, not individuals (**not confirmed**), so the "1" band there may overstate help for someone being sued. In North and East Texas, the extra listings are mostly metro bar referral services and law school clinics.
+- TexasLawHelp.org's directory, a possible source of addresses, refuses scripted access (HTTP 403 from the site), so it wasn't used.
 
 ## Sources and method
 

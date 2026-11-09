@@ -24,6 +24,7 @@ It's a personal project: part research, part a working example of a small, revie
 **In Texas, LSC-funded legal aid offices are where the suits are; the difference is volume** ([docs/legal-aid/texas.md](docs/legal-aid/texas.md)):
 - 81% of 2025 debt suits were filed in the 43 counties with an LSC-funded legal aid office. The highest-rate counties without one are suburbs 20 to 35 miles from a metro office.
 - Each of the state's three legal aid service areas has 14 to 16 offices. Debt suits per eligible resident range from 81 to 120 per 1,000.
+- Counting all legal help organizations in the Texas Access to Justice Commission's directory: in 158 of 254 counties (5.8 million people), the LSC program is the only consumer-law help listed.
 
 **Common proxies fail** (early data checks, [docs/phase0](docs/phase0/)):
 - *CFPB complaints* don't measure need. In Texas, the poorest counties have the most debt in collections and the fewest complaints, and complaint rates barely track lawsuit rates ([write-up](docs/phase0/complaints-vs-need.md)).

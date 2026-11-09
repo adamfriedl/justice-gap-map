@@ -71,6 +71,8 @@ def main() -> None:
         d = data.setdefault(r["fips"], {})
         d.update(sa=r["lsc_service_area"], no=r["nearest_office"], mi=num(r["nearest_office_miles"]),
                  oc=int(r["offices_in_county"]))
+    for r in csv.DictReader(open(la / "directory_county.csv")):
+        data.setdefault(r["fips"], {})["co"] = int(r["consumer_orgs_non_lsc_non_tax"])
     areas = [{k: r[k] for k in ("lsc_service_area", "offices", "lsc_eligible_population", "debt_suits_2025",
                                 "suits_per_1k_eligible", "suits_per_office")}
              for r in csv.DictReader(open(la / "service_areas.csv"))]
@@ -215,6 +217,7 @@ td.n, th.n { text-align: right; }
       <li><b>Virginia:</b> "General Civil" filings in General District Court, 2025, from the court system's filing report. Most are warrants in debt, but the category also holds other civil cases; its county pattern tracks true warrant-in-debt counts from 2016–2019 closely (rank correlation 0.75). Some courts serve more than one locality, so those localities share a rate.</li>
       <li><b>Default share:</b> default judgments as a share of all cases disposed that year.</li>
       <li><b>LSC-funded legal aid offices (Texas):</b> locations listed on the websites of the three LSC-funded Texas programs, 2026-11-08, placed at their city. Distance is a straight line from the county's center to the nearest office. Phone and online intake, outreach sites, and programs without LSC funding are not shown.</li>
+      <li><b>Consumer-law help beyond LSC (Texas):</b> organizations the Texas Access to Justice Commission's directory lists for each county with a "Consumer/Transactional" tag, not counting the area's LSC-funded program or low-income taxpayer clinics, 2026-11-09. It shows coverage, not offices or capacity.</li>
       <li><b>Debt in collections:</b> Urban Institute, Debt in America: share of people with a credit record who have any debt in collections, August 2025.</li>
       <li>Rates use ACS 2020–2024 population. Built from public data; the scripts, sources, and caveats are in the <a href="https://github.com/adamfriedl/justice-gap-map">project repository</a> (<a href="https://github.com/adamfriedl/justice-gap-map/blob/main/docs/lawsuits/README.md">methods and findings</a>).</li>
     </ul>
@@ -235,7 +238,7 @@ const fmtInt = d3.format(",");
 const all = topojson.feature(atlas, atlas.objects.counties).features;
 const ST = {"01":"AL","02":"AK","04":"AZ","05":"AR","06":"CA","08":"CO","09":"CT","10":"DE","11":"DC","12":"FL","13":"GA","15":"HI","16":"ID","17":"IL","18":"IN","19":"IA","20":"KS","21":"KY","22":"LA","23":"ME","24":"MD","25":"MA","26":"MI","27":"MN","28":"MS","29":"MO","30":"MT","31":"NE","32":"NV","33":"NH","34":"NJ","35":"NM","36":"NY","37":"NC","38":"ND","39":"OH","40":"OK","41":"OR","42":"PA","44":"RI","45":"SC","46":"SD","47":"TN","48":"TX","49":"UT","50":"VT","51":"VA","53":"WA","54":"WV","55":"WI","56":"WY","72":"PR"};
 const VIEWS = {
-  TX: { fips: "48", name: "Texas", year: {{TX_YEAR}}, layers: ["f", "dr", "mi"] },
+  TX: { fips: "48", name: "Texas", year: {{TX_YEAR}}, layers: ["f", "dr", "mi", "co"] },
   IN: { fips: "18", name: "Indiana", year: {{IN_YEAR}}, layers: ["f", "dr"] },
   VA: { fips: "51", name: "Virginia", year: 2025, layers: ["f"] },
   US: { name: "United States", layers: ["c"] },
@@ -248,6 +251,9 @@ const LAYERS = {
   mi: { button: "Miles to an LSC-funded office", label: "straight-line miles from the county's center to the nearest LSC-funded legal aid office", fmt: v => v.toFixed(0), get: d => d.mi, cuts: [0.5, 25, 50, 75],
         legendText: ["office in county", "under 25", "25–49", "50–74", "75+"],
         note: "Distance from each county's center to the nearest office listed by the three LSC-funded Texas programs. 81% of 2025 debt suits were filed in counties with one. Other legal aid nonprofits, clinics, and hotlines are not shown yet." },
+  co: { button: "Consumer-law help beyond LSC", label: "organizations listing consumer-law help for the county, besides the LSC-funded program and tax clinics", fmt: v => v.toFixed(0), get: d => d.co, cuts: [1, 2, 3], reverse: true,
+        legendText: ["none", "1", "2", "3 or more"],
+        note: "From the Texas Access to Justice Commission's county directory (2026-11-09). Every county lists its LSC-funded program; this counts the others. A listing shows coverage, not office locations or capacity. In South Texas most single listings are one organization that works with community groups, which may overstate help for individuals." },
   c: { button: "Debt in collections", label: "% of people with a credit record who have debt in collections", fmt: v => v.toFixed(0) + "%", get: d => d.c,
        note: "Urban Institute, August 2025. Available for every county, so it gives national context; it counts people being collected on, not lawsuits." },
 };
@@ -267,7 +273,9 @@ function draw() {
   const [[, y0], [, y1]] = path.bounds(fc), H = Math.ceil(y1 - y0 + 8);
   svg.attr("viewBox", `0 ${Math.floor(y0) - 4} ${W} ${H}`).selectAll("*").remove();
   const vals = fs.map(f => data[f.id] && L.get(data[f.id])).filter(v => v != null && isFinite(v));
-  const scale = L.cuts ? d3.scaleThreshold().domain(L.cuts).range(R) : d3.scaleQuantile().domain(vals).range(R);
+  // "reverse": fewer is darker (used where the layer counts help available, so darker still means less).
+  const RR = L.reverse ? [R[4], R[3], R[2], R[1]] : R;
+  const scale = L.cuts ? d3.scaleThreshold().domain(L.cuts).range(RR) : d3.scaleQuantile().domain(vals).range(R);
   svg.append("g").selectAll("path").data(fs).join("path").attr("class", "county").attr("d", path)
     .attr("fill", f => { const d = data[f.id]; const v = d && L.get(d); return v == null || !isFinite(v) ? css("--nodata") : scale(v); })
     .on("mousemove", (ev, f) => showTip(ev, countyTip(f))).on("mouseleave", hideTip);
@@ -293,7 +301,7 @@ function draw() {
   }
   // legend
   let html = `<span>${L.label}:</span>`;
-  if (L.cuts) html += R.map((c, i) => `<span class="sw"><i style="background:${c}"></i>${L.legendText[i]}</span>`).join("");
+  if (L.cuts) html += RR.map((c, i) => `<span class="sw"><i style="background:${c}"></i>${L.legendText[i]}</span>`).join("");
   else if (view === "US") { const t = scale.quantiles(), cuts = [d3.min(vals), ...t];
     html += R.map((c, i) => `<span class="sw"><i style="background:${c}"></i>${L.fmt(cuts[i])}${i < 4 ? "–" + L.fmt(cuts[i + 1]) : "+"}</span>`).join(""); }
   else { html += R.map((c, i) => `<span class="sw"><i style="background:${c}"></i>${["lowest","","middle","","highest"][i]}</span>`).join("");
@@ -315,6 +323,7 @@ function countyTip(f) {
   if (d.dr != null) h += `<div>${d.dr.toFixed(0)}% of disposed cases were defaults</div>`;
   if (d.g != null) h += `<div>Garnishments: ${d.g.toFixed(1)} per 1K</div>`;
   if (d.sa) h += `<div>${d.oc ? (d.oc > 1 ? d.oc + " LSC-funded legal aid offices" : "LSC-funded legal aid office") + " in county" : "Nearest LSC-funded legal aid office: " + d.no + ", " + d.mi.toFixed(0) + " mi"} · ${d.sa}</div>`;
+  if (d.co != null && view === "TX") h += `<div>Consumer-law help listed beyond LSC: ${d.co ? d.co + " organization" + (d.co > 1 ? "s" : "") : "none"}</div>`;
   if (d.c != null) h += `<div class="muted">Context: ${d.c.toFixed(0)}% with debt in collections</div>`;
   return h;
 }
