@@ -31,7 +31,7 @@ Phase 0 changed the measures (see the PRD's core metrics and `docs/phase0/`). Co
 
 ## Verify
 
-Before claiming done:
+Before claiming done (the quick subset lives in `.claude/fast-check`, which the local commit hook runs; keep the two in sync):
 
 ```bash
 uv run python -m compileall -q src scripts

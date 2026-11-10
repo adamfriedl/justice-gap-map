@@ -1,0 +1,7 @@
+Project-specific security concerns for justice-gap-map (see AGENTS.md):
+
+- PII of people sued: names and street addresses from court case feeds must be stripped in memory before anything is written to disk, logs, S3, or git. Flag any code path that writes, logs, or caches case-level records before stripping, or that weakens the stripping or its test.
+- IAM and Terraform under infra/: flag wildcard actions or resources, new principals, trust-policy changes (especially GitHub OIDC subject conditions), public S3 access, and anything that widens what the read-only cloud user can do.
+- GitHub Actions: flag pull_request_target, untrusted input (PR titles, branch names, issue text) interpolated into run steps, new secrets exposed to jobs, unpinned third-party actions, and permission increases.
+- Secrets: CENSUS_API_KEY and HUD_API_TOKEN must come from the environment. Flag hardcoded keys, keys in logs, and fallbacks that embed a default key.
+- Downloaded data (CFPB narratives, web pages, court feeds) is untrusted. Flag code that evaluates it, renders it unescaped into HTML, or passes it to a shell.
