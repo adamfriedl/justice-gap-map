@@ -1,0 +1,12 @@
+# Extra high-risk path patterns (ERE, case-insensitive) for the local commit
+# gate (~/.claude/hooks/commit-gate.sh). Keep in sync with the paths: filter in
+# .github/workflows/claude-security-review.yml.
+# Court-data scripts that handle PII of people sued, and their stripping test.
+(^|/)scripts/lawsuits
+(^|/)scripts/[^/]*courts
+(^|/)tests/test_harris\.py$
+# Shell scripts (setup, downloads).
+(^|/)scripts/[^/]*\.sh$
+# Dependencies.
+(^|/)pyproject\.toml$
+(^|/)uv\.lock$

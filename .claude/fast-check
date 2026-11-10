@@ -1,0 +1,9 @@
+#!/bin/sh
+# Fast checks run by ~/.claude/hooks/commit-gate.sh before Claude commits.
+# Keep this under ~a minute; the full verify path is in AGENTS.md.
+set -e
+uv run python -m compileall -q src scripts
+uv run pytest -q -x
+if [ -d infra ] && command -v terraform >/dev/null; then
+  terraform fmt -check -recursive infra
+fi
