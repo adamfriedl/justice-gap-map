@@ -16,8 +16,3 @@ output "athena_workgroup" {
 output "glue_database" {
   value = aws_glue_catalog_database.main.name
 }
-
-output "readonly_user" {
-  description = "Create its access key in the console (never in Terraform); see docs/aws-setup.md."
-  value       = aws_iam_user.claude_readonly.name
-}

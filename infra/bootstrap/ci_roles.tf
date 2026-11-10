@@ -81,6 +81,25 @@ data "aws_iam_policy_document" "apply_guard_rails" {
     actions   = ["s3:DeleteBucket", "s3:PutBucketPolicy", "s3:DeleteBucketPolicy", "s3:PutBucketVersioning"]
     resources = [aws_s3_bucket.state.arn]
   }
+  # The read-only user and its policy are bootstrap-owned (readonly_user.tf).
+  # CI may not delete, rename or re-path the user, or remove or swap its
+  # boundary. Detaching its policy would only shrink it; attaching more is
+  # capped by the boundary and its explicit denies.
+  statement {
+    sid       = "ProtectReadonlyUser"
+    effect    = "Deny"
+    actions   = ["iam:DeleteUser", "iam:UpdateUser", "iam:DeleteUserPermissionsBoundary", "iam:PutUserPermissionsBoundary"]
+    resources = [aws_iam_user.claude_readonly.arn]
+  }
+  # CI never needs to override Object Lock, on raw or any bucket added later.
+  # (It can still change lock or lifecycle settings through a merged PR; see
+  # docs/threat-model.md.)
+  statement {
+    sid       = "NoLockBypass"
+    effect    = "Deny"
+    actions   = ["s3:BypassGovernanceRetention"]
+    resources = ["*"]
+  }
 }
 
 resource "aws_iam_role_policy" "apply_guard_rails" {

@@ -204,7 +204,7 @@ Otherwise write down why in `docs/phase0/` and stop.
   _Applied 2026-11-08 (us-east-2, because of the account's organization region rule), with the trust policies updated the same day for GitHub's immutable OIDC subject format. Written in `infra/bootstrap/` with a runbook in `docs/aws-setup.md`; the maintainer applies it by hand. The bootstrap runs as a plain IAM admin user (no IAM Identity Center), a machine user whose access key exists only for the bootstrap and is deleted afterwards._
 - [x] A GitHub `production` environment limited to `main`; `apply` runs on merge
   _Verified 2026-11-08: `plan` ran on a PR through OIDC, and the first apply-on-merge ran on `main`._
-- [x] The permissions boundary for `claude-cloud-readonly` (R14). The user and its scoped policy land in Phase 2, once the buckets and workgroup exist.
+- [x] The permissions boundary for `claude-cloud-readonly` (R14). The user itself was later moved into the bootstrap too, with that policy as both its boundary and its only policy, so CI can't widen it.
 
 Cloud sessions never get write access to AWS. Every change reaches AWS through Actions. After Phase 2 they can hold the read-only key from R14 for querying and debugging.
 

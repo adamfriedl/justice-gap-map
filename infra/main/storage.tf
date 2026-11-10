@@ -64,10 +64,11 @@ resource "aws_s3_bucket_versioning" "data" {
 }
 
 # Every raw file is a dated snapshot that should never change. Governance mode:
-# nobody can overwrite or delete a locked version for 365 days unless they hold
-# s3:BypassGovernanceRetention (only the admin roles do; the job roles and the
-# read-only user won't). The PRD first scoped this to cfpb/; a bucket-wide
-# default is simpler and matches R1 ("unchanged") for every source.
+# nobody can delete a locked version for 365 days without
+# s3:BypassGovernanceRetention, which the CI apply role is denied (bootstrap
+# guard rails). Plain deletes are refused by the bucket policy below. The PRD
+# first scoped this to cfpb/; a bucket-wide default is simpler and matches R1
+# ("unchanged") for every source.
 resource "aws_s3_bucket_object_lock_configuration" "raw" {
   bucket = aws_s3_bucket.data["raw"].id
   rule {
@@ -79,8 +80,11 @@ resource "aws_s3_bucket_object_lock_configuration" "raw" {
   depends_on = [aws_s3_bucket_versioning.data]
 }
 
-# Raw: move snapshots to a cheaper class after 30 days (still readable in
-# milliseconds), and clean up old versions once their lock has run out.
+# Raw: move snapshots to Glacier Instant Retrieval after 30 days (still read
+# in milliseconds; ~1/6 the storage cost, but $0.03/GB to read and a 90-day
+# minimum, so revisit if full rebuilds from history become routine).
+# Old versions are never expired: an overwrite of a dated key keeps the
+# original, so nothing in raw is ever lost to a lifecycle rule.
 resource "aws_s3_bucket_lifecycle_configuration" "raw" {
   bucket = aws_s3_bucket.data["raw"].id
   rule {
@@ -90,9 +94,6 @@ resource "aws_s3_bucket_lifecycle_configuration" "raw" {
     transition {
       days          = 30
       storage_class = "GLACIER_IR"
-    }
-    noncurrent_version_expiration {
-      noncurrent_days = 400
     }
     abort_incomplete_multipart_upload {
       days_after_initiation = 7
@@ -132,9 +133,29 @@ resource "aws_s3_bucket_lifecycle_configuration" "athena" {
   }
 }
 
-# Refuse any request that isn't over TLS.
-data "aws_iam_policy_document" "tls_only" {
+# Refuse any request that isn't over TLS. On raw, also refuse plain deletes:
+# Object Lock can't stop a delete marker, which hides a snapshot from every
+# reader. Deleting a specific version is still governed by the lock. This
+# applies to everyone, admins included, so jobs writing to raw can't clean up
+# after themselves: write each object once, complete (no temp files). To remove
+# a bad upload, edit this policy first.
+data "aws_iam_policy_document" "bucket" {
   for_each = aws_s3_bucket.data
+
+  dynamic "statement" {
+    for_each = each.key == "raw" ? [1] : []
+    content {
+      sid       = "NoDeleteMarkers"
+      effect    = "Deny"
+      actions   = ["s3:DeleteObject"]
+      resources = ["${each.value.arn}/*"]
+      principals {
+        type        = "*"
+        identifiers = ["*"]
+      }
+    }
+  }
+
   statement {
     sid     = "DenyInsecureTransport"
     effect  = "Deny"
@@ -155,6 +176,6 @@ data "aws_iam_policy_document" "tls_only" {
 resource "aws_s3_bucket_policy" "data" {
   for_each   = aws_s3_bucket.data
   bucket     = each.value.id
-  policy     = data.aws_iam_policy_document.tls_only[each.key].json
+  policy     = data.aws_iam_policy_document.bucket[each.key].json
   depends_on = [aws_s3_bucket_public_access_block.data]
 }
