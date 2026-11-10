@@ -124,11 +124,12 @@ data "aws_iam_policy_document" "readonly" {
   }
 }
 
-# Same resource address and name as the Phase 1 boundary, so this updates the
-# existing policy in place.
+# Same resource address, name and description as the Phase 1 boundary, so this
+# updates the existing policy in place (changing the description would force
+# Terraform to delete and recreate it).
 resource "aws_iam_policy" "readonly_boundary" {
   name        = "${var.project}-claude-readonly-boundary"
-  description = "claude-cloud-readonly (PRD R14): project reads, Athena queries, athena-scratch writes only. Boundary and identity policy."
+  description = "Ceiling for the claude-cloud-readonly user (PRD R14): project reads, Athena queries, athena-scratch writes only"
   policy      = data.aws_iam_policy_document.readonly.json
 }
 
