@@ -97,7 +97,7 @@ Why these changed (Phase 0, `docs/phase0/`):
 
 ### Pipeline
 
-- R1. Download each source into a raw S3 bucket under dated keys, unchanged (except case-level court data, reduced under R15 before it is written). The raw bucket is versioned, and the CFPB prefix has Object Lock (governance mode).
+- R1. Download each source into a raw S3 bucket under dated keys, unchanged (except case-level court data, reduced under R15 before it is written). The raw bucket is versioned, with Object Lock (governance mode, 365 days) on every object; the first draft limited the lock to the CFPB prefix.
 - R2. Normalize to Parquet in a curated bucket, partitioned by source and snapshot date.
 - R3. Write geography crosswalks (ZIP → county → service area) once per snapshot and version them.
 - R4. Build the metric tables with SQL (Athena, with DuckDB for local development). Keep queries in the repo.
@@ -204,7 +204,7 @@ Otherwise write down why in `docs/phase0/` and stop.
   _Applied 2026-11-08 (us-east-2, because of the account's organization region rule), with the trust policies updated the same day for GitHub's immutable OIDC subject format. Written in `infra/bootstrap/` with a runbook in `docs/aws-setup.md`; the maintainer applies it by hand. The bootstrap runs as a plain IAM admin user (no IAM Identity Center), a machine user whose access key exists only for the bootstrap and is deleted afterwards._
 - [x] A GitHub `production` environment limited to `main`; `apply` runs on merge
   _Verified 2026-11-08: `plan` ran on a PR through OIDC, and the first apply-on-merge ran on `main`._
-- [x] The permissions boundary for `claude-cloud-readonly` (R14). The user and its scoped policy land in Phase 2, once the buckets and workgroup exist.
+- [x] The permissions boundary for `claude-cloud-readonly` (R14). The user itself was later moved into the bootstrap too, with that policy as both its boundary and its only policy, so CI can't widen it.
 
 Cloud sessions never get write access to AWS. Every change reaches AWS through Actions. After Phase 2 they can hold the read-only key from R14 for querying and debugging.
 
@@ -212,7 +212,8 @@ Cloud sessions never get write access to AWS. Every change reaches AWS through A
 
 - [ ] Terraform modules under `infra/`: `storage` (raw/curated buckets, versioning, Object Lock, lifecycle), `catalog` (Glue database and tables, Athena workgroup with a 1 GB scan cap), `jobs` (ECR repo, Fargate task definitions, Lambda), `schedule` (EventBridge Scheduler), `iam` (the three roles from R12, plus the `claude-cloud-readonly` user from R14), `budget`
 - [ ] After apply, the maintainer creates the read-only user's access key in the console and pastes it into the cloud environment's env vars (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`). Terraform must not create the key, so it never lands in state.
-- [ ] Threat model, one page, written **before** building: data integrity of the archive, IAM blast radius, and the public site (STRIDE)
+- [x] Threat model, one page, written **before** building: data integrity of the archive, IAM blast radius, and the public site (STRIDE)
+  _Done 2026-11-09: `docs/threat-model.md`._
 - [ ] CI: plan on PRs, apply on main, tflint + checkov
 
 ### Phase 3: ingest + transform (~8–10 hours)

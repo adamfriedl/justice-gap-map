@@ -13,7 +13,7 @@ output "apply_role_arn" {
   value       = aws_iam_role.apply.arn
 }
 
-output "readonly_boundary_arn" {
-  description = "Boundary for the claude-cloud-readonly user created in Phase 2."
-  value       = aws_iam_policy.readonly_boundary.arn
+output "readonly_user" {
+  description = "Read-only user for cloud sessions. Create its access key in the console (never in Terraform); see docs/aws-setup.md Step 8."
+  value       = aws_iam_user.claude_readonly.name
 }
