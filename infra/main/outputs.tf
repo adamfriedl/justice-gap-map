@@ -16,3 +16,13 @@ output "athena_workgroup" {
 output "glue_database" {
   value = aws_glue_catalog_database.main.name
 }
+
+output "ingest_harris_function" {
+  description = "Daily Harris County download. Logs: /aws/lambda/<this name>."
+  value       = aws_lambda_function.ingest_harris.function_name
+}
+
+output "alerts_topic" {
+  description = "Job failures are published here. Subscribe an email address in the console."
+  value       = aws_sns_topic.alerts.arn
+}

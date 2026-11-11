@@ -1,6 +1,6 @@
 # AWS setup (Phase 1 bootstrap)
 
-A one-time setup, done by the maintainer: seven steps, about an hour, plus Step 8 once the pipeline's first resources exist. Most of it happens on your own computer, plus two settings on GitHub. Afterwards, every AWS change goes through a pull request: GitHub Actions shows `plan` on the PR, and merging to `main` runs `apply`. No long-lived AWS keys are kept anywhere.
+A one-time setup, done by the maintainer: seven steps, about an hour, plus Step 8 once the pipeline's first resources exist and Step 9 once the first scheduled job does. Most of it happens on your own computer, plus two settings on GitHub. Afterwards, every AWS change goes through a pull request: GitHub Actions shows `plan` on the PR, and merging to `main` runs `apply`. No long-lived AWS keys are kept anywhere.
 
 **What it creates** (all in `infra/bootstrap/`, region `us-east-2`; see the note on regions at the end):
 
@@ -164,6 +164,16 @@ echo test | aws s3 cp - "s3://justice-gap-map-curated-$(aws sts get-caller-ident
 d. Rotate the key at least every 90 days (create a new one, update the variables, delete the old one), and delete it at once on any suspicion of a leak.
 
 What the key can do: read the raw, curated and Athena-results buckets; run queries in the `justice-gap-map` Athena workgroup (1 GB scan cap); read the Glue catalog, project logs, and job status. It can't write anywhere except Athena's `athena-scratch/` results, and it can't touch IAM or the Terraform state. The user and its policy live in the bootstrap, so CI can't change them: the apply role is denied deleting, renaming or re-pathing the user, swapping its boundary, or editing the policy. The policy explicitly denies every action it doesn't list, and writes outside `athena-scratch/`, so even a role or bucket policy that a merge adds naming this user can't give it more. Widening it means changing the bootstrap by hand.
+
+## Step 9. Email for job-failure alerts
+
+The main stack creates an SNS topic, `justice-gap-map-alerts`, and a CloudWatch alarm that publishes to it when the daily Harris County download fails (`infra/main/jobs.tf`). Terraform doesn't subscribe anyone, so no email address lands in git or in state. Until someone subscribes, a failed run raises the alarm and nobody hears about it.
+
+a. **SNS → Topics → justice-gap-map-alerts → Create subscription**. Protocol **Email**, endpoint your address.
+
+b. Open the confirmation email from AWS and choose **Confirm subscription**.
+
+c. Check the job after its first scheduled run (12:00 UTC daily): **CloudWatch → Log groups → /aws/lambda/justice-gap-map-ingest-harris** should show one line naming the object it wrote and the number of cases. A cloud session with the read-only key can read the same log.
 
 ## Undo
 

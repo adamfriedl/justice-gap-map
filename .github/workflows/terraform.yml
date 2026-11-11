@@ -7,11 +7,14 @@
 name: terraform
 
 on:
+  # src/ and the Harris fetch script are the Lambda function's code, which
+  # Terraform zips and deploys (infra/main/jobs.tf), so a change to them needs
+  # a plan and an apply too.
   pull_request:
-    paths: ["infra/**", ".github/workflows/terraform.yml"]
+    paths: ["infra/**", "src/**", "scripts/lawsuits_fetch_harris.py", ".github/workflows/terraform.yml"]
   push:
     branches: [main]
-    paths: ["infra/**", ".github/workflows/terraform.yml"]
+    paths: ["infra/**", "src/**", "scripts/lawsuits_fetch_harris.py", ".github/workflows/terraform.yml"]
   workflow_dispatch: {}
 
 permissions:

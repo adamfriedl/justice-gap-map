@@ -1,7 +1,7 @@
 # The main stack: the pipeline's buckets, catalog, jobs, schedules and IAM.
 # Applied only by GitHub Actions, on merge to main, in the "production"
-# environment. One file per concern: storage.tf, catalog.tf, readonly_user.tf
-# so far; jobs and schedules come next.
+# environment. One file per concern: storage.tf, catalog.tf, jobs.tf. (The
+# read-only user for cloud sessions lives in infra/bootstrap.)
 
 terraform {
   required_version = ">= 1.10"
@@ -10,6 +10,11 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = ">= 5.80, < 7.0"
+    }
+    # Zips the Lambda function's two source files (jobs.tf).
+    archive = {
+      source  = "hashicorp/archive"
+      version = "~> 2.7"
     }
   }
 
