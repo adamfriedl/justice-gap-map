@@ -57,7 +57,7 @@ All of it is Terraform in [`infra/`](infra/), in two stacks.
 | Stack | What it holds | How it changes |
 | --- | --- | --- |
 | [`infra/bootstrap/`](infra/bootstrap/) | Terraform's state bucket; the link that lets GitHub Actions sign in to AWS (OIDC); the two CI roles; the ceiling on what AI agents can do; a monthly budget alert | Rarely. Applied by hand by the maintainer, with a temporary key that's deleted afterward ([runbook](docs/aws-setup.md)) |
-| [`infra/main/`](infra/main/) | The pipeline: data buckets, query engine (Athena), scheduled jobs. Empty so far; the pipeline is the next step. | Through pull requests only |
+| [`infra/main/`](infra/main/) | The pipeline: data buckets, query engine (Athena), scheduled jobs. So far: the buckets, Athena, and the first job, a daily Harris County download. | Through pull requests only |
 
 **How an infrastructure change ships:**
 1. A pull request changes something in `infra/main/`.
