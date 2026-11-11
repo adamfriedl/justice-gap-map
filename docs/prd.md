@@ -219,7 +219,7 @@ Cloud sessions never get write access to AWS. Every change reaches AWS through A
 ### Phase 3: ingest + transform (~8–10 hours)
 
 - [ ] Ingest jobs for CFPB, ACS, the HUD crosswalk, Urban debt in collections, the IRS BMF, and LSC (`about.json` per service area plus state profiles; scriptable, no manual drop needed)
-- [ ] Court ingest jobs _(Harris County drafted 2026-11-11: `src/ingest_harris.py`, each run a snapshot of cases filed in the last 30 days)_: Harris County cases (daily, R15 applied in the job), Texas OCA counties (monthly), Virginia filing report (monthly), Indiana ICOR (quarterly). The fetch scripts in `scripts/lawsuits_fetch_*.py` and `scripts/phase0_tx_courts_fetch.py` are the starting point.
+- [ ] Court ingest jobs _(Harris County drafted 2026-11-11: `src/ingest_harris.py`, each run a snapshot of cases filed in the last 14 days)_: Harris County cases (daily, R15 applied in the job), Texas OCA counties (monthly), Virginia filing report (monthly), Indiana ICOR (quarterly). The fetch scripts in `scripts/lawsuits_fetch_*.py` and `scripts/phase0_tx_courts_fetch.py` are the starting point.
 - [ ] Plaintiff name normalization (case, punctuation, "successor by merger" variants) as a versioned lookup table.
 - [ ] Transform job: CSV → Parquet, apply the crosswalk, write the DQ report (R6)
 - [ ] Local dev path: the same Python running against local files with DuckDB, plus a small fixture dataset for tests

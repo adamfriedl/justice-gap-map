@@ -10,9 +10,17 @@ Each run asks for cases filed in the last WINDOW_DAYS days, in one request. The
 windows overlap on purpose: a case's status and hearing date change after
 filing, and each snapshot records them as of its download date.
 
-A backfill passes its own window (the source allows up to 180 days a request):
+A backfill passes its own window, a month at a time:
 
-    {"from": "2026-01-01", "to": "2026-03-31"}
+    {"from": "2026-01-01", "to": "2026-01-31"}
+
+Why the windows are short: the county's server takes about 55 seconds to build
+a 31-day extract (9,854 rows, measured 2026-11-11), and a 179-day request timed
+out at the site's proxy (HTTP 524). The service's own limit is 180 days.
+
+The extract has one row per case and party, so a case with two defendants
+appears twice (about 5% more rows than cases). Rows are stored as received;
+count distinct case numbers downstream.
 """
 
 import csv
@@ -22,8 +30,8 @@ import os
 
 from lawsuits_fetch_harris import KEEP, fetch
 
-WINDOW_DAYS = 30
-MAX_DAYS = 180  # the extract service's limit per request
+WINDOW_DAYS = 14
+MAX_DAYS = 31  # longer requests risk the timeout described above
 FIELDS = KEEP + ["Defendant Has Attorney"]
 
 
@@ -72,6 +80,7 @@ def handler(event, context, s3=None, today=None):
         Bucket=os.environ["RAW_BUCKET"], Key=key, Body=to_csv(rows),
         ContentType="text/csv", ChecksumAlgorithm="SHA256",
     )
+    cases = len({r["Case Number"] for r in rows})
     # Counts only. Rows never go to the logs.
-    print(f"wrote s3://{os.environ['RAW_BUCKET']}/{key} ({len(rows)} cases filed {start} to {end})")
-    return {"key": key, "cases": len(rows), "from": str(start), "to": str(end)}
+    print(f"wrote s3://{os.environ['RAW_BUCKET']}/{key} ({len(rows)} rows, {cases} cases filed {start} to {end})")
+    return {"key": key, "rows": len(rows), "cases": cases, "from": str(start), "to": str(end)}

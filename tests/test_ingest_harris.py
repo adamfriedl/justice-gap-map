@@ -28,15 +28,15 @@ class FakeS3:
         self.puts.append(kw)
 
 
-def test_default_window_is_the_30_days_ending_yesterday():
-    assert ingest_harris.window(TODAY, {}) == (dt.date(2026, 10, 12), dt.date(2026, 11, 10))
+def test_default_window_is_the_14_days_ending_yesterday():
+    assert ingest_harris.window(TODAY, {}) == (dt.date(2026, 10, 28), dt.date(2026, 11, 10))
 
 
 def test_backfill_window_comes_from_the_event_and_is_capped():
-    assert ingest_harris.window(TODAY, {"from": "2026-01-01", "to": "2026-03-31"}) == (
-        dt.date(2026, 1, 1), dt.date(2026, 3, 31))
+    assert ingest_harris.window(TODAY, {"from": "2026-01-01", "to": "2026-01-31"}) == (
+        dt.date(2026, 1, 1), dt.date(2026, 1, 31))
     with pytest.raises(ValueError):
-        ingest_harris.window(TODAY, {"from": "2026-01-01", "to": "2026-07-01"})  # 182 days
+        ingest_harris.window(TODAY, {"from": "2026-01-01", "to": "2026-02-01"})  # 32 days
     with pytest.raises(ValueError):
         ingest_harris.window(TODAY, {"from": "2026-03-02", "to": "2026-03-01"})  # backwards
     with pytest.raises(KeyError):
@@ -45,16 +45,17 @@ def test_backfill_window_comes_from_the_event_and_is_capped():
 
 def test_handler_writes_one_dated_object_without_defendant_identifiers(monkeypatch):
     monkeypatch.setenv("RAW_BUCKET", "raw-bucket")
-    monkeypatch.setattr(ingest_harris, "fetch", lambda start, end: [safe_row(RAW_ROW)])
+    # Two rows for one case: the extract repeats a case for each party.
+    monkeypatch.setattr(ingest_harris, "fetch", lambda start, end: [safe_row(RAW_ROW), safe_row(RAW_ROW)])
     s3 = FakeS3()
     out = ingest_harris.handler({}, None, s3=s3, today=TODAY)
 
     assert len(s3.puts) == 1
     put = s3.puts[0]
     assert put["Bucket"] == "raw-bucket"
-    assert put["Key"] == "harris/debt_claims_filed/downloaded=2026-11-11/filed_2026-10-12_2026-11-10.csv"
+    assert put["Key"] == "harris/debt_claims_filed/downloaded=2026-11-11/filed_2026-10-28_2026-11-10.csv"
     assert put["ChecksumAlgorithm"] == "SHA256"  # Object Lock refuses uploads without a checksum
-    assert out == {"key": put["Key"], "cases": 1, "from": "2026-10-12", "to": "2026-11-10"}
+    assert out == {"key": put["Key"], "rows": 2, "cases": 1, "from": "2026-10-28", "to": "2026-11-10"}
 
     body = put["Body"].decode()
     for secret in ["JANE", "MAIN ST", "DOE"]:

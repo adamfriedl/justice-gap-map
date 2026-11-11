@@ -10,7 +10,7 @@
 # and src/ingest_harris.py (the handler). Standard library plus boto3, which
 # the Lambda runtime supplies, so there's no build step and no dependencies.
 #
-# Cost: one run a day of about a minute, about 2 MB stored per run, one alarm.
+# Cost: one run a day of about half a minute, about 1 MB stored per run, one alarm.
 # Inside the free tier; without it, a few cents a month.
 
 locals {
@@ -50,7 +50,7 @@ resource "aws_lambda_function" "ingest_harris" {
   filename         = data.archive_file.ingest_harris.output_path
   source_code_hash = data.archive_file.ingest_harris.output_base64sha256
   memory_size      = 256
-  # The download allows itself 600 seconds; a normal run takes about a minute.
+  # The download allows itself 600 seconds; a normal run takes about half a minute.
   timeout = 660
 
   environment {
@@ -65,7 +65,7 @@ resource "aws_lambda_function" "ingest_harris" {
 # A failed run is not retried (R17: back off on errors). Lambda's default for
 # scheduled invocations is two more attempts, which would send the county's
 # server the same request three times. The next day's run covers the same
-# dates, because each run asks for the last 30 days.
+# dates, because each run asks for the last 14 days.
 resource "aws_lambda_function_event_invoke_config" "ingest_harris" {
   function_name          = aws_lambda_function.ingest_harris.function_name
   maximum_retry_attempts = 0
