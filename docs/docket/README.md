@@ -70,6 +70,23 @@ The same company is typed many ways ("LVNV Funding, LLC", "Lvnv Funding Llc", "L
 - **The attorney field** records an attorney of record. Advice or limited help that never appears on the docket isn't in it. What else the field includes or misses is **not confirmed**.
 - **2026 is incomplete,** and November 2026 covers ten days.
 
+## Next steps
+
+_Noted 2026-11-12. In rough order._
+
+1. **Check the daily job's first runs.** It started 2026-11-12 at 12:00 UTC. Read its log group, confirm a file lands under `raw/harris/debt_claims_filed/`, and subscribe an email address to the alerts topic ([`docs/aws-setup.md`](../aws-setup.md), Step 9).
+2. **Test the Athena table.** Once a snapshot exists, run the saved query `harris-cases-latest` and compare its case count with the job's log line. Not yet run against AWS. Cloud sessions need `AWS_REGION=us-east-2` set and an AWS client to do this.
+3. **Load the history into the raw bucket.** Invoke the function once per month of filings, 2025-01 onward (`{"from": "2025-01-01", "to": "2025-01-31"}`), with a pause between calls. Needs someone who can invoke the function; the read-only user can't.
+4. **Build these tables on AWS.** Move the queries in `scripts/docket.py` to Athena (or a scheduled job writing to the curated bucket), with `plaintiff_names.csv` as a small lookup table, so the page rebuilds from the bucket and not from a local download.
+5. **Refresh older cases.** The daily job re-reads only the last 14 days of filings, so outcomes that arrive months later are missed. Add a slower job that re-pulls each past month on a rotation.
+6. **Weekly alert (PRD R16).** Compare each large plaintiff's filings with its own recent weeks and publish to the alerts topic when one moves well outside them. Thresholds in the repo.
+7. **Review the lookup.** Read `plaintiff_names.csv`, especially the kinds, and check the debt-buyer grouping against a source (a state registry or the companies' own filings).
+8. **Ask what the attorney field means.** Whether it includes limited-scope appearances and debt-settlement firms is not confirmed. The county clerk's office or a local legal aid program would know.
+9. **Compare within a court.** Outcome shares by plaintiff are shaped by court pace. A plaintiff-by-court table would separate the two.
+10. **Decide the project's framing.** The README still leads with the legal aid gap. If the docket is the main track, the title, summary and PRD goals should say so.
+11. **Fix the county rates on the map,** if the map stays: use Census annual population estimates for the filing year, and say where Hidalgo County is missing ([docs/lawsuits](../lawsuits/README.md)).
+12. **A second place.** Virginia may publish case-level General District Court data with attorney fields: not confirmed. It would show whether the Harris County patterns hold elsewhere.
+
 ## Reproduce
 
 ```bash
