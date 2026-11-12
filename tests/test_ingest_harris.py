@@ -77,3 +77,12 @@ def test_an_empty_download_fails_the_run_and_writes_nothing(monkeypatch):
     with pytest.raises(RuntimeError):
         ingest_harris.handler({}, None, s3=s3, today=TODAY)
     assert s3.puts == []
+
+
+def test_athena_table_columns_match_the_csv_the_job_writes():
+    """infra/main/harris_table.tf lists the table's columns by position; they must follow FIELDS."""
+    import re
+    tf = (root / "infra" / "main" / "harris_table.tf").read_text()
+    block = tf[tf.index("harris_columns = ["):]
+    cols = re.findall(r'"([a-z_]+)"', block[:block.index("]")])
+    assert cols == [f.lower().replace(" ", "_") for f in ingest_harris.FIELDS]
