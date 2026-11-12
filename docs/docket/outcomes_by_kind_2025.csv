@@ -1,0 +1,6 @@
+kind,cases_2025,median_claim,pct_default_judgment,pct_dropped_by_plaintiff,pct_agreed_judgment,pct_dismissed_not_pursued,pct_trial_or_other,pct_open,pct_defendant_had_attorney
+debt buyer,53661,2814,24.5,28.0,8.1,6.9,7.5,25.0,10.4
+bank or card issuer,33708,5740,20.8,27.6,12.8,8.5,6.3,24.0,14.5
+consumer lender,3618,3989,12.9,13.5,14.8,10.8,5.4,42.6,12.8
+other or not classified,2809,6535,16.3,26.1,5.8,11.0,8.6,32.2,10.5
+auto lender,1203,9946,15.5,38.4,2.4,12.4,4.3,27.0,6.8

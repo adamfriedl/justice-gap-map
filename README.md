@@ -12,6 +12,11 @@ It's a personal project: part research, part a working example of a small, revie
 
 ## What it shows so far
 
+**In Harris County (Houston), ten companies file three quarters of the debt claims** ([docs/docket](docs/docket/README.md), [page](https://adamfriedl.github.io/justice-gap-map/docket/)):
+- 206,858 debt claims were filed in the county's justice courts from January 2025 to November 10, 2026. Ten plaintiffs filed 75.4% of them, and companies that buy unpaid accounts filed 63.0%.
+- The median claim is $3,667.
+- Of cases filed in 2025, 11.9% have an attorney recorded for the defendant. 2.7% of those ended in a default judgment, against 25.0% of the rest. That describes the records; it doesn't show what an attorney changes.
+
 **Debt suits are surging** ([docs/lawsuits](docs/lawsuits/README.md)):
 - Texas justice courts took 106,061 debt claims in 2014 and **518,852 in 2025**, up 33% from 2024 alone.
 - Indiana collection cases rose from 67,683 (2014) to **140,846 (2024)**. **68%** of those disposed in 2024 ended in default judgments.
@@ -94,6 +99,7 @@ People sued for debt are private individuals. Case-level court feeds are reduced
 | Path | What |
 | --- | --- |
 | [`docs/prd.md`](docs/prd.md) | The plan: goals, data sources, metrics |
+| [`docs/docket/`](docs/docket/) | The Harris County docket: who files, for how much, how cases end |
 | [`docs/lawsuits/`](docs/lawsuits/) | Debt-lawsuit counts by county (TX, IN, VA) and what they show |
 | [`docs/legal-aid/`](docs/legal-aid/) | Where LSC-funded legal aid offices are, set next to debt suits (Texas) |
 | [`docs/phase0/`](docs/phase0/) | Early data checks: which measures hold up and which don't |
@@ -126,6 +132,7 @@ Done as of November 2026:
 - Debt-suit counts by county for Texas, Indiana and Virginia, and the interactive map.
 - Legal aid office locations for Texas, set next to debt suits, and a map with one view per state.
 - The AWS foundation: Terraform state, CI that signs in with OIDC, plan on every PR, apply on merge.
+- The first scheduled job (Harris County cases, daily) and the Harris County docket: who files, for how much, and how cases end.
 
 **Next steps:**
 - Build the pipeline on AWS, so court counts refresh on their own (Harris County daily, state counts monthly), with a weekly alert when a county or filer moves sharply.
@@ -134,7 +141,6 @@ Done as of November 2026:
 **Possible later:**
 - Legal aid office locations for Indiana and Virginia, so the Texas comparison can be repeated.
 - New York, if its caseload reports break out consumer credit cases ([what was checked](docs/lawsuits/new-york.md)).
-- Who files: the largest plaintiffs and their outcomes, from Harris County's case-level data.
 - A plain-English question box over the data that shows the query it ran.
 - The long-term aim: plain-language guides to the debt-suit process, aimed first at the places this map shows need them most.
 

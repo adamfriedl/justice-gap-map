@@ -6,7 +6,7 @@ Guidance for AI coding agents, including Claude Code cloud sessions.
 
 A data pipeline and map joining CFPB debt-collection complaints, LSC legal aid funding, and Census ACS data to show where consumer-debt harm is high and legal aid is thin. The plan and current phase are in `docs/prd.md`. Read it first.
 
-Phase 0 changed the measures (see the PRD's core metrics and `docs/phase0/`). Complaints failed as a need measure, so Urban's debt-in-collections share is the pressure measure. LSC funding failed as a capacity measure, so maps label it "federal legal aid investment," with IRS nonprofit revenue as state context. The unit is LSC service areas built as county sets. The maintainer made the go call on 2026-11-07; Phase 1 (AWS bootstrap) is done; Phase 2 (pipeline infrastructure) is under way: buckets, Athena, and the first scheduled job (Harris County, daily) exist; the other jobs and the transform are next.
+Phase 0 changed the measures (see the PRD's core metrics and `docs/phase0/`). Complaints failed as a need measure, so Urban's debt-in-collections share is the pressure measure. LSC funding failed as a capacity measure, so maps label it "federal legal aid investment," with IRS nonprofit revenue as state context. The unit is LSC service areas built as county sets. The maintainer made the go call on 2026-11-07; Phase 1 (AWS bootstrap) is done; Phase 2 (pipeline infrastructure) is under way: buckets, Athena, and the first scheduled job (Harris County, daily) exist; the other jobs and the transform are next. The Harris County docket (`docs/docket/`, who files and how cases end) is built locally from the same extract.
 
 ## Rules
 
