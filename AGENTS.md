@@ -29,6 +29,17 @@ Phase 0 changed the measures (see the PRD's core metrics and `docs/phase0/`). Co
 - Cloud sessions: the environment setup script only installs `uv`. The SessionStart hook in `.claude/settings.json` runs `uv sync` and creates `data/`.
 - Terraform ≥ 1.10 on AWS (later phases).
 
+## What's in AWS now
+
+As of 2026-11-13 (`infra/main/`, applied by CI on merge):
+
+- **One scheduled job.** A Lambda (`justice-gap-map-ingest-harris`) runs daily at 12:00 UTC, pulls the last 14 days of Harris County debt-claim filings, strips defendant names and addresses in memory, and writes a dated CSV to `raw/harris/debt_claims_filed/` in the raw bucket.
+- **Storage.** Raw, curated and Athena-results buckets. Raw is versioned with Object Lock (365 days). Curated is empty.
+- **Query.** Glue table `harris_debt_claims_raw` over the raw snapshots, the `justice-gap-map` Athena workgroup (1 GB scan cap), and the saved query `harris-cases-latest`.
+- **Alerts.** A CloudWatch alarm on job errors publishes to the SNS topic `justice-gap-map-alerts`. Nobody is subscribed yet.
+
+Not built yet: the history backfill (2025 onward, one invoke per month, done by the maintainer), a re-pull of older months for late outcomes, a transform that builds the docket tables into curated, the state-count jobs, the weekly plaintiff alert, and an automated page rebuild. The docket tables and page are still built locally (`docs/docket/README.md`, next steps).
+
 ## Verify
 
 Before claiming done (the quick subset lives in `.claude/fast-check`, which the local commit hook runs; keep the two in sync):
