@@ -19,8 +19,7 @@ uv run python scripts/phase0_tx_courts_fetch.py --statewide --years 2014 2015 20
 uv run python scripts/lawsuits_fetch_indiana.py --years 2014 2024
 curl -o data/vacourts/2026-11-07/gdc_filings.pdf https://www.courts.state.va.us/static/courtadmin/aoc/djs/programs/cpss/csi/stats/gdc_filings.pdf
 uv run python scripts/lawsuits.py --out docs/lawsuits
-uv run python scripts/tx_legal_aid.py   # Texas legal aid offices (docs/legal-aid/texas.md)
-uv run python scripts/lawsuits_map.py --atlas data/atlas/package/counties-10m.json   # us-atlas@3.0.1 from npm; writes site/index.html (GitHub Pages)
+uv run python scripts/tx_legal_aid.py   # Texas legal aid offices (docs/legal-aid/texas.md); needs data/atlas/package/counties-10m.json from us-atlas@3.0.1 on npm
 ```
 
 ## Sources and definitions

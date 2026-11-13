@@ -1,6 +1,6 @@
 # Publishes site/ to GitHub Pages when it changes on main.
-# site/index.html is built locally by scripts/lawsuits_map.py (its inputs include
-# downloads under data/, which aren't in git), then committed.
+# site/index.html is built by scripts/docket_page.py from the committed tables in
+# docs/docket/, then committed. site/docket/ redirects the page's old address.
 # One-time setup: Settings → Pages → Source: "GitHub Actions".
 name: pages
 

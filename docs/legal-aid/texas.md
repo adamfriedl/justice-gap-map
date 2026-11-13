@@ -1,6 +1,6 @@
 # Texas: where LSC-funded legal aid offices are, and where debt suits are filed
 
-_Built 2026-11-08. Script: [`scripts/tx_legal_aid.py`](../../scripts/tx_legal_aid.py). Tables: [`texas/`](texas/)._
+_Built 2026-11-08. Script: [`scripts/tx_legal_aid.py`](../../scripts/tx_legal_aid.py). Tables: [`texas/`](texas/). Earlier work: the county map this fed was retired on 2026-11-13._
 
 This is the one-state prototype from the plan: debt suits by county, set next to where the three LSC-funded programs have offices. Other organizations are covered below, from the Texas Access to Justice Commission's county directory, which lists who serves each county but not where offices are. It describes places, not the programs. Office lists come from each program's own website, and "office" means a location listed there.
 

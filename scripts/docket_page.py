@@ -1,4 +1,4 @@
-"""Build the docket page (site/docket/index.html) from the tables in docs/docket/.
+"""Build the docket page (site/index.html, the published front page) from the tables in docs/docket/.
 
     uv run python scripts/docket.py          # the tables, from data/harris/
     uv run python scripts/docket_page.py     # the page, from the tables
@@ -197,7 +197,7 @@ details summary { cursor: pointer; color: var(--accent); font-weight: 500; margi
 <main>
   <header>
     <h1>The Harris County debt docket</h1>
-    <p class="lede">Who files debt-collection lawsuits in the justice courts of Harris County, Texas (Houston), for how much, and how the cases end. From the county's public case records, __FIRST__ to __LAST__. No names or addresses of the people sued are collected. <a href="../">County maps for Texas, Indiana and Virginia</a></p>
+    <p class="lede">Who files debt-collection lawsuits in the justice courts of Harris County, Texas (Houston), for how much, and how the cases end. From the county's public case records, __FIRST__ to __LAST__. No names or addresses of the people sued are collected. <a href="https://github.com/adamfriedl/justice-gap-map/blob/main/docs/lawsuits/README.md">Statewide filing counts for Texas, Indiana and Virginia</a></p>
   </header>
 
   <section class="panel facts">__FACTS__</section>
@@ -260,7 +260,7 @@ document.addEventListener("pointerleave", () => { tip.style.display = "none"; })
 def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--tables", default="docs/docket")
-    p.add_argument("--out", default="site/docket/index.html")
+    p.add_argument("--out", default="site/index.html")
     p.add_argument("--cohort", type=int, default=2025)
     a = p.parse_args()
     t, y = Path(a.tables), a.cohort
