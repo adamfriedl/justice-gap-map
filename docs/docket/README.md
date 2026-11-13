@@ -72,21 +72,24 @@ The same company is typed many ways ("LVNV Funding, LLC", "Lvnv Funding Llc", "L
 
 ## Next steps
 
-_Noted 2026-11-12. In rough order._
+_Noted 2026-11-12; reordered 2026-11-13. In order: the daily feed alone only adds new filings, which are nearly all still open, so the outcome figures stay frozen at the local download until older months are re-pulled (step 2)._
 
-1. **Check the daily job's first runs.** _Runs checked 2026-11-13: both scheduled runs (11-12, 11-13) succeeded and wrote a snapshot under `raw/harris/debt_claims_filed/`._ Still to do: subscribe an email address to the alerts topic ([`docs/aws-setup.md`](../aws-setup.md), Step 9); the read-only user can't see whether that's done.
-2. **Test the Athena table.** _Partly done 2026-11-13: `harris_debt_claims_raw` returns both partitions, with row counts matching the job's log lines (5,121 and 4,982)._ The saved query `harris-cases-latest` hasn't been run yet. Cloud sessions need `AWS_DEFAULT_REGION=us-east-2` (boto3 ignores `AWS_REGION`) and `boto3` (`uv run --with boto3`).
-   **Then set the window length:** cases reach the extract late ([late-entries.md](late-entries.md)). After about two weeks of snapshots, rerun that comparison and set `WINDOW_DAYS` so it catches nearly all late entries.
-3. **Load the history into the raw bucket.** Invoke the function once per month of filings, 2025-01 onward (`{"from": "2025-01-01", "to": "2025-01-31"}`), with a pause between calls. Needs someone who can invoke the function; the read-only user can't.
-4. **Build these tables on AWS.** Move the queries in `scripts/docket.py` to Athena (or a scheduled job writing to the curated bucket), with `plaintiff_names.csv` as a small lookup table, so the page rebuilds from the bucket and not from a local download.
-5. **Refresh older cases.** The daily job re-reads only the last 14 days of filings, so outcomes that arrive months later are missed. Add a slower job that re-pulls each past month on a rotation.
+1. **Subscribe to the alerts topic.** Subscribe an email address to `justice-gap-map-alerts` ([`docs/aws-setup.md`](../aws-setup.md), Step 9). Until someone does, a failed run goes unnoticed. Maintainer only; the read-only user can't see subscriptions. _(The daily runs themselves were checked 2026-11-13: both succeeded.)_
+2. **History and outcome refresh, as one rotating job.** A second schedule on the same function re-pulls one past month of filings per run, cycling from 2025-01 to the latest full month, so about 23 months in the cycle as of November 2026, growing by one each month. This one job loads the history (no one-off backfill by hand) and keeps outcomes current, since outcomes arrive months after filing. At one month a day, the history fills in within about three weeks and then refreshes at that pace. Each request takes about 55 seconds of the county's server time (R17).
+   - **Decided 2026-11-13:** refresh pulls write to the same prefix as the daily job (`raw/harris/debt_claims_filed/downloaded=<date>/`), so "latest snapshot per case" covers both. The filename says which schedule wrote it (for example `daily_filed_…csv` and `refresh_filed_…csv`).
+   - Needs: `window()` picks the month itself (the schedule's input is fixed), a filename tag, a test, and one more `aws_scheduler_schedule`. No new IAM; the scheduler role can already invoke the function.
+3. **Build the docket tables on AWS.** Port the queries in `scripts/docket.py` to Athena (or a small job writing to the curated bucket): one row per case from its latest snapshot across both schedules, with `plaintiff_names.csv` as a lookup table. The counting logic already handles repeated snapshots; this moves it, it doesn't redesign it.
+4. **Rebuild the page from the bucket.** Automate `scripts/docket_page.py` on top of step 3, so the page no longer depends on a local download.
+5. **Set the daily window length.** Cases reach the extract late ([late-entries.md](late-entries.md)). After about two weeks of daily snapshots (around 2026-11-26), rerun that comparison and set `WINDOW_DAYS` to catch nearly all late entries. Less urgent once step 2 runs, since the rotation catches stragglers too, weeks later.
 6. **Weekly alert (PRD R16).** Compare each large plaintiff's filings with its own recent weeks and publish to the alerts topic when one moves well outside them. Thresholds in the repo.
 7. **Review the lookup.** Read `plaintiff_names.csv`, especially the kinds, and check the debt-buyer grouping against a source (a state registry or the companies' own filings).
 8. **Ask what the attorney field means.** Whether it includes limited-scope appearances and debt-settlement firms is not confirmed. The county clerk's office or a local legal aid program would know.
 9. **Compare within a court.** Outcome shares by plaintiff are shaped by court pace. A plaintiff-by-court table would separate the two.
-10. ~~**Decide the project's framing.**~~ Done 2026-11-13: the project is now Debt Docket, led by this page; README, PRD and AGENTS.md say so.
-11. ~~**Fix the county rates on the map.**~~ The map was retired on 2026-11-13 and its script removed (recoverable from git history before that date). Its county rates used ACS 2020–2024 population, not the filing year ([docs/lawsuits](../lawsuits/README.md)).
-12. **A second place.** Virginia may publish case-level General District Court data with attorney fields: not confirmed. It would show whether the Harris County patterns hold elsewhere.
+10. **A second place.** Virginia may publish case-level General District Court data with attorney fields: not confirmed. It would show whether the Harris County patterns hold elsewhere.
+
+Done: checking the first daily runs and the Athena table (2026-11-13; the saved query `harris-cases-latest` is folded into step 3); the project's framing (2026-11-13, now Debt Docket); the county map (retired 2026-11-13, script removed, recoverable from git history; its rates used ACS 2020–2024 population, not the filing year, [docs/lawsuits](../lawsuits/README.md)).
+
+Cloud sessions querying AWS need `AWS_DEFAULT_REGION=us-east-2` (boto3 ignores `AWS_REGION`) and `boto3` (`uv run --with boto3`).
 
 ## Reproduce
 

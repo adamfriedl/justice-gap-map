@@ -38,7 +38,7 @@ As of 2026-11-13 (`infra/main/`, applied by CI on merge):
 - **Query.** Glue table `harris_debt_claims_raw` over the raw snapshots, the `justice-gap-map` Athena workgroup (1 GB scan cap), and the saved query `harris-cases-latest`.
 - **Alerts.** A CloudWatch alarm on job errors publishes to the SNS topic `justice-gap-map-alerts`. Nobody is subscribed yet.
 
-Not built yet: the history backfill (2025 onward, one invoke per month, done by the maintainer), a re-pull of older months for late outcomes, a transform that builds the docket tables into curated, the state-count jobs, the weekly plaintiff alert, and an automated page rebuild. The docket tables and page are still built locally (`docs/docket/README.md`, next steps).
+Not built yet: a second schedule that re-pulls one past month per run (it loads the history from 2025 and keeps outcomes current, writing to the same prefix), a transform that builds the docket tables into curated, the state-count jobs, the weekly plaintiff alert, and an automated page rebuild. The docket tables and page are still built locally (`docs/docket/README.md`, next steps).
 
 ## Verify
 
