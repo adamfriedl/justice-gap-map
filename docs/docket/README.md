@@ -83,7 +83,7 @@ _Noted 2026-11-12. In rough order._
 7. **Review the lookup.** Read `plaintiff_names.csv`, especially the kinds, and check the debt-buyer grouping against a source (a state registry or the companies' own filings).
 8. **Ask what the attorney field means.** Whether it includes limited-scope appearances and debt-settlement firms is not confirmed. The county clerk's office or a local legal aid program would know.
 9. **Compare within a court.** Outcome shares by plaintiff are shaped by court pace. A plaintiff-by-court table would separate the two.
-10. **Decide the project's framing.** The README still leads with the legal aid gap. If the docket is the main track, the title, summary and PRD goals should say so.
+10. ~~**Decide the project's framing.**~~ Done 2026-11-13: the project is now Debt Docket, led by this page; README, PRD and AGENTS.md say so.
 11. ~~**Fix the county rates on the map.**~~ The map was retired on 2026-11-13 and its script removed (recoverable from git history before that date). Its county rates used ACS 2020–2024 population, not the filing year ([docs/lawsuits](../lawsuits/README.md)).
 12. **A second place.** Virginia may publish case-level General District Court data with attorney fields: not confirmed. It would show whether the Harris County patterns hold elsewhere.
 

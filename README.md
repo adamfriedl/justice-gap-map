@@ -1,54 +1,42 @@
-# Justice Gap Map
+# Debt Docket
 
-**Where are debt-collection lawsuits filed, and where is civil legal aid thin?**
+**Who files debt-collection lawsuits, for how much, and how the cases end, counted from court records.**
 
-Debt collectors file hundreds of thousands of lawsuits a year in state courts. Most end in default judgments against people who never show up, often people who had a defense, or didn't know they could negotiate. This project pulls public court, credit, complaint, Census, and legal aid data into one place to show where that pressure falls and how it lines up with the help available.
+Debt collectors file hundreds of thousands of lawsuits a year in state courts. Many end in default judgments against people who never show up, often people who had a defense or could have negotiated. This project reads the courts' own case records, starting with Harris County, Texas (Houston), and reports what they show about the plaintiffs and the cases. It never collects the names or addresses of the people sued.
 
 It's a personal project: part research, part a working example of a small, reviewable data pipeline on AWS.
 
-**[Open the Harris County docket →](https://adamfriedl.github.io/justice-gap-map/)** Who files debt-collection lawsuits in Houston's justice courts, for how much, and how the cases end, counted from the county's case records.
-
-The county map that used to be published here was retired on 2026-11-13: its rates used the wrong year's population, one large Texas county was missing, and the three states couldn't be compared. The findings below that came from it are in [docs/lawsuits](docs/lawsuits/README.md) with their caveats.
+**[Open the Harris County docket →](https://adamfriedl.github.io/justice-gap-map/)**
 
 ## What it shows so far
 
-**In Harris County (Houston), ten companies file three quarters of the debt claims** ([docs/docket](docs/docket/README.md), [page](https://adamfriedl.github.io/justice-gap-map/)):
+**In Harris County, ten companies file three quarters of the debt claims** ([docs/docket](docs/docket/README.md)):
 - 206,858 debt claims were filed in the county's justice courts from January 2025 to November 10, 2026. Ten plaintiffs filed 75.4% of them, and companies that buy unpaid accounts filed 63.0%.
 - The median claim is $3,667.
 - Of cases filed in 2025, 11.9% have an attorney recorded for the defendant. 2.7% of those ended in a default judgment, against 25.0% of the rest. That describes the records; it doesn't show what an attorney changes.
 
-**Debt suits are surging** ([docs/lawsuits](docs/lawsuits/README.md)):
-- Texas justice courts took 106,061 debt claims in 2014 and **518,852 in 2025**, up 33% from 2024 alone.
-- Indiana collection cases rose from 67,683 (2014) to **140,846 (2024)**. **68%** of those disposed in 2024 ended in default judgments.
+**For scale, from statewide court counts** ([docs/lawsuits](docs/lawsuits/README.md)):
+- Harris County's 91,823 debt claims in 2025 were 17.7% of the 518,852 filed in Texas justice courts that year (Texas Office of Court Administration, downloaded 2026-11-06 and 2026-11-07).
+- Texas debt claims rose from 106,061 in 2014 to 518,852 in 2025, up 33% from 2024 alone. Indiana collection cases rose from 67,683 (2014) to 140,846 (2024).
 
-**Where they're filed isn't simply where the poverty is:**
-- Indiana and Virginia suits concentrate where debt and poverty are high.
-- Texas's highest rates are in fast-growing suburbs around Dallas–Fort Worth and Houston (Kaufman, Ellis, Brazoria), not the poorer border counties.
-- So no single national measure stands in for court data.
+These counts are context, not comparisons: each state defines and reports debt cases its own way.
 
-**In Texas, LSC-funded legal aid offices are where the suits are; the difference is volume** ([docs/legal-aid/texas.md](docs/legal-aid/texas.md)):
-- 81% of 2025 debt suits were filed in the 43 counties with an LSC-funded legal aid office. The highest-rate counties without one are suburbs 20 to 35 miles from a metro office.
-- Each of the state's three legal aid service areas has 14 to 16 offices. Debt suits per eligible resident range from 81 to 120 per 1,000.
-- Counting all legal help organizations in the Texas Access to Justice Commission's directory: in 158 of 254 counties (5.8 million people), the LSC program is the only consumer-law help listed.
+Every number names its source, its download date, and the script that produced it.
 
-**Common proxies fail** (early data checks, [docs/phase0](docs/phase0/)):
-- *CFPB complaints* don't measure need. In Texas, the poorest counties have the most debt in collections and the fewest complaints, and complaint rates barely track lawsuit rates ([write-up](docs/phase0/complaints-vs-need.md)).
-- *LSC funding* doesn't measure legal aid capacity. The federal formula is nearly flat per eligible person, while total legal aid nonprofit revenue runs from $18 to $275 per eligible person across states (outside DC) ([write-up](docs/phase0/lsc-funding-vs-capacity.md)).
-- LSC's 130 service areas can be rebuilt as county sets, so county data can be compared with legal aid geography ([write-up](docs/phase0/lsc-data-availability.md)).
+### Where the project started
 
-Every number in these write-ups names its source, its download date, and the script that produced it.
+It began as a "justice gap" map setting debt pressure against legal aid, by county and LSC service area. The early data checks ([docs/phase0](docs/phase0/)) found that the usual proxies don't hold up: CFPB complaints don't track need, and LSC funding doesn't measure legal aid capacity. The county map that followed had rates that couldn't be compared across states, so it was retired on 2026-11-13 in favor of the docket. Those write-ups stay in the repository: [docs/phase0](docs/phase0/), [docs/lawsuits](docs/lawsuits/README.md), and [docs/legal-aid](docs/legal-aid/texas.md) (Texas legal aid offices next to debt suits).
 
 ## How it's built
 
 ```
-State courts (TX, IN, VA, Harris County)   ┐
-Urban Institute debt in collections        │   Python + DuckDB         county / service-area
-CFPB complaints, Census ACS, HUD ZIP map   ├─► (scripts/) ──────────►  tables, page, write-ups
-LSC service areas, IRS nonprofit revenue   ┘
+Harris County case extract (daily)  ─┐
+                                     ├─►  Python + DuckDB  ─►  docket tables, page, write-up
+State court counts (TX, IN, VA)     ─┘
 ```
 
-- **So far (as of November 2026):** Python 3.12 scripts (managed with [uv](https://docs.astral.sh/uv/)) download each source and query it with [DuckDB](https://duckdb.org/). The CFPB file alone is ~6 GB, so no pandas.
-- **Next:** the same jobs run on a schedule on AWS (details below).
+- **So far (as of November 2026):** Python 3.12 scripts (managed with [uv](https://docs.astral.sh/uv/)) download each source and query it with [DuckDB](https://duckdb.org/). The Harris County extract is also pulled daily on AWS into a locked archive.
+- **Next:** build the docket tables on AWS from that archive, so the page rebuilds without a local download.
 - **Built with AI coding agents under written rules.** [AGENTS.md](AGENTS.md) sets the limits:
   - read-only AWS access for agents;
   - no names or addresses of people sued, ever;
@@ -73,22 +61,22 @@ All of it is Terraform in [`infra/`](infra/), in two stacks.
 No AWS keys are stored in GitHub or anywhere else. The apply role is admin-level because it builds the pipeline, but explicit denies stop it from changing its own trust, the CI roles, the agents' ceiling, or the state bucket. A bad merge can break the pipeline, but it can't take over the account.
 
 **How the data will update (planned):**
-- Each source gets its own scheduled job, on the source's own rhythm: Harris County cases daily, CFPB weekly, Texas and Virginia court counts monthly, Indiana quarterly, Census and LSC yearly.
-- Raw downloads are kept as dated snapshots, so every number can be traced to the file it came from. The CFPB archive is locked against deletion.
-- A weekly job compares each county's filings with its own recent history and emails a summary when something moves well outside the usual range.
+- Each source gets its own scheduled job, on the source's own rhythm: Harris County cases daily (running now), Texas and Virginia court counts monthly, Indiana quarterly.
+- Raw downloads are kept as dated snapshots, locked against deletion, so every number can be traced to the file it came from.
+- A weekly job compares each large plaintiff's filings with its own recent weeks and emails a summary when one moves well outside them.
 - Idle cost is near zero, with a budget of about $10/month.
 
-## Why these states
+## Why Harris County
 
-There's no national count of debt lawsuits. Each state's courts decide what to publish, and most don't separate debt cases, publish by county, or publish at all. The project covers states where the courts publish debt suits by county, free and in a form a script can read:
+There's no national count of debt lawsuits, and very few courts publish case-level records a script can read. Harris County's justice courts do: a daily public extract with the plaintiff, its attorney, the filing date, the claim amount, hearings, and how each case ended. It's also big, about one in six Texas debt claims.
 
-| State | What the courts publish | Why it's useful |
+Statewide counts give the context around it:
+
+| State | What the courts publish | What it's used for |
 | --- | --- | --- |
-| **Texas** | A "Debt Claim" case type in justice courts since 2013, with county counts of filings, defaults, and dispositions ([OCA](https://card.txcourts.gov/)); plus Harris County's daily case-level extract | The largest volume of the three (518,852 suits in 2025), a 12-year series, and one county with case-level detail: who files, claim amounts, outcomes |
-| **Indiana** | A "Collection" case type with county counts ([ICOR](https://publicaccess.courts.in.gov/ICOR/)) | A clean statewide series, and default judgments for every county |
-| **Virginia** | Monthly General District Court filing reports (PDF) | Court-level counts that track LSC's earlier warrant-in-debt figures closely (Spearman 0.75) |
-
-Texas was also the test state for the early data checks. Next candidates come from LSC's Baseline Court Statistics, which lists states whose courts report debt case types by county. Idaho's court dashboard is the most promising.
+| **Texas** | A "Debt Claim" case type in justice courts since 2013, with county counts of filings, defaults, and dispositions ([OCA](https://card.txcourts.gov/)) | Scale, a check on the Harris County extract's counts, and where to look next |
+| **Indiana** | A "Collection" case type with county counts ([ICOR](https://publicaccess.courts.in.gov/ICOR/)) | A clean statewide series with default judgments |
+| **Virginia** | Monthly General District Court filing reports (PDF) | Court-level counts; Virginia may also publish case-level data (not confirmed) |
 
 ## Privacy
 
@@ -98,11 +86,11 @@ People sued for debt are private individuals. Case-level court feeds are reduced
 
 | Path | What |
 | --- | --- |
-| [`docs/prd.md`](docs/prd.md) | The plan: goals, data sources, metrics |
+| [`docs/prd.md`](docs/prd.md) | The plan: goals, data sources, phases |
 | [`docs/docket/`](docs/docket/) | The Harris County docket: who files, for how much, how cases end |
-| [`docs/lawsuits/`](docs/lawsuits/) | Debt-lawsuit counts by county (TX, IN, VA) and what they show |
-| [`docs/legal-aid/`](docs/legal-aid/) | Where LSC-funded legal aid offices are, set next to debt suits (Texas) |
-| [`docs/phase0/`](docs/phase0/) | Early data checks: which measures hold up and which don't |
+| [`docs/lawsuits/`](docs/lawsuits/) | Statewide debt-lawsuit counts (TX, IN, VA), used as context |
+| [`docs/legal-aid/`](docs/legal-aid/) | Earlier work: Texas legal aid offices set next to debt suits |
+| [`docs/phase0/`](docs/phase0/) | Earlier work: which measures held up and which didn't |
 | [`scripts/`](scripts/) | Download and analysis scripts |
 | [`site/`](site/) | The published page (the Harris County docket); rebuilt with `scripts/docket_page.py` |
 | [`infra/`](infra/) | Terraform: `bootstrap/` (state, CI roles, budget) and `main/` (pipeline) |
@@ -114,12 +102,7 @@ People sued for debt are private individuals. Case-level court feeds are reduced
 uv sync
 ```
 
-```bash
-export CENSUS_API_KEY=...   # https://api.census.gov/data/key_signup.html
-export HUD_API_TOKEN=...    # https://www.huduser.gov/portal/dataset/uspszip-api.html
-```
-
-Then follow the "Reproduce" steps in [docs/lawsuits/README.md](docs/lawsuits/README.md). Downloads go in `data/`, which is gitignored; raw data never goes in git. A few sources need a manual download: [docs/manual-downloads.md](docs/manual-downloads.md).
+The docket: follow "Reproduce" in [docs/docket/README.md](docs/docket/README.md). The statewide counts: follow "Reproduce" in [docs/lawsuits/README.md](docs/lawsuits/README.md). Downloads go in `data/`, which is gitignored; raw data never goes in git. A few sources need a manual download: [docs/manual-downloads.md](docs/manual-downloads.md).
 
 ```bash
 uv run pytest -q
@@ -128,23 +111,21 @@ uv run pytest -q
 ## Where it stands
 
 Done as of November 2026:
-- Data checks: complaints and LSC funding failed as measures; court filings, debt in collections, and IRS revenue replaced them.
-- Debt-suit counts by county for Texas, Indiana and Virginia, and a county map (retired 2026-11-13).
-- Legal aid office locations for Texas, set next to debt suits.
-- The AWS foundation: Terraform state, CI that signs in with OIDC, plan on every PR, apply on merge.
-- The first scheduled job (Harris County cases, daily) and the Harris County docket: who files, for how much, and how cases end.
+- The Harris County docket: who files, for how much, and how cases end, published as the project's page.
+- A daily Harris County download on AWS into a locked archive, and the AWS foundation under it: Terraform state, CI that signs in with OIDC, plan on every PR, apply on merge.
+- Statewide debt-suit counts for Texas, Indiana and Virginia.
+- Earlier: data checks that retired complaints and LSC funding as measures, Texas legal aid offices next to debt suits, and a county map (retired 2026-11-13).
 
-**Next steps:**
-- Build the pipeline on AWS, so court counts refresh on their own (Harris County daily, state counts monthly), with a weekly alert when a county or filer moves sharply.
-- Add Idaho, the most promising next state.
+**Next steps** (the full list is in [docs/docket](docs/docket/README.md#next-steps)):
+- Build the docket tables on AWS from the daily archive, and re-pull older months so late outcomes are caught.
+- A weekly alert when a large plaintiff's filings move well outside its own recent weeks.
+- A second place with case-level records. Virginia comes first; Texas counties with heavy filing volume are the other option.
 
 **Possible later:**
-- Legal aid office locations for Indiana and Virginia, so the Texas comparison can be repeated.
-- New York, if its caseload reports break out consumer credit cases ([what was checked](docs/lawsuits/new-york.md)).
 - A plain-English question box over the data that shows the query it ran.
-- The long-term aim: plain-language guides to the debt-suit process, aimed first at the places the court records show need them most.
+- The long-term aim: plain-language guides to the debt-suit process for people who've been sued. The Harris County extract has hearing dates by court, which shows where and when people are due to appear.
 
-The project is purely informational. It reports what public records show about places, not why, and it doesn't call out or judge legal aid providers or their funders. The businesses that file the suits are named, with every figure sourced to court records.
+The project is purely informational. It reports what public records show, not why, and it doesn't call out or judge legal aid providers or their funders. The businesses that file the suits are named, with every figure sourced to court records.
 
 ## License
 
