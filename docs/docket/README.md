@@ -74,8 +74,9 @@ The same company is typed many ways ("LVNV Funding, LLC", "Lvnv Funding Llc", "L
 
 _Noted 2026-11-12. In rough order._
 
-1. **Check the daily job's first runs.** It started 2026-11-12 at 12:00 UTC. Read its log group, confirm a file lands under `raw/harris/debt_claims_filed/`, and subscribe an email address to the alerts topic ([`docs/aws-setup.md`](../aws-setup.md), Step 9).
-2. **Test the Athena table.** Once a snapshot exists, run the saved query `harris-cases-latest` and compare its case count with the job's log line. Not yet run against AWS. Cloud sessions need `AWS_REGION=us-east-2` set and an AWS client to do this.
+1. **Check the daily job's first runs.** _Runs checked 2026-11-13: both scheduled runs (11-12, 11-13) succeeded and wrote a snapshot under `raw/harris/debt_claims_filed/`._ Still to do: subscribe an email address to the alerts topic ([`docs/aws-setup.md`](../aws-setup.md), Step 9); the read-only user can't see whether that's done.
+2. **Test the Athena table.** _Partly done 2026-11-13: `harris_debt_claims_raw` returns both partitions, with row counts matching the job's log lines (5,121 and 4,982)._ The saved query `harris-cases-latest` hasn't been run yet. Cloud sessions need `AWS_DEFAULT_REGION=us-east-2` (boto3 ignores `AWS_REGION`) and `boto3` (`uv run --with boto3`).
+   **Then set the window length:** cases reach the extract late ([late-entries.md](late-entries.md)). After about two weeks of snapshots, rerun that comparison and set `WINDOW_DAYS` so it catches nearly all late entries.
 3. **Load the history into the raw bucket.** Invoke the function once per month of filings, 2025-01 onward (`{"from": "2025-01-01", "to": "2025-01-31"}`), with a pause between calls. Needs someone who can invoke the function; the read-only user can't.
 4. **Build these tables on AWS.** Move the queries in `scripts/docket.py` to Athena (or a scheduled job writing to the curated bucket), with `plaintiff_names.csv` as a small lookup table, so the page rebuilds from the bucket and not from a local download.
 5. **Refresh older cases.** The daily job re-reads only the last 14 days of filings, so outcomes that arrive months later are missed. Add a slower job that re-pulls each past month on a rotation.
