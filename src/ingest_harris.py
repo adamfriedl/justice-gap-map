@@ -7,8 +7,16 @@ dropped in memory, so they never reach S3 (PRD R15). This file only picks the
 date window and writes the result.
 
 Each run asks for cases filed in the last WINDOW_DAYS days, in one request. The
-windows overlap on purpose: a case's status and hearing date change after
-filing, and each snapshot records them as of its download date.
+windows overlap on purpose, because cases reach the county's extract days after
+their filing date. In the first two snapshots, a next-morning pull held about
+half of the previous day's filings, and cases filed 11 days earlier were still
+being added (docs/docket/late-entries.md). The overlap also means a failed run
+loses nothing: the next day's run covers the same dates. Snapshots repeat most
+cases, so downstream, keep each case number's row from the latest snapshot.
+
+The overlap is not how outcomes get tracked: they arrive months after filing,
+past any window this job can ask for. Whether 14 days catches nearly all late
+entries is not yet known; the note above says how to check.
 
 A backfill passes its own window, a month at a time:
 

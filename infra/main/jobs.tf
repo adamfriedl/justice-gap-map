@@ -65,7 +65,9 @@ resource "aws_lambda_function" "ingest_harris" {
 # A failed run is not retried (R17: back off on errors). Lambda's default for
 # scheduled invocations is two more attempts, which would send the county's
 # server the same request three times. The next day's run covers the same
-# dates, because each run asks for the last 14 days.
+# dates, because each run asks for the last 14 days. (The overlap is mainly
+# there because cases reach the county's extract late; see
+# docs/docket/late-entries.md.)
 resource "aws_lambda_function_event_invoke_config" "ingest_harris" {
   function_name          = aws_lambda_function.ingest_harris.function_name
   maximum_retry_attempts = 0
